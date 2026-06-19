@@ -144,7 +144,7 @@
   .wa h4{font-size:15.5px;font-weight:700;margin:14px 0 3px;color:#0d0d0d}
   .wa h4:first-of-type{margin-top:0}
   .wa .wbody p{font-size:15.5px;line-height:1.6;margin:0 0 4px;color:#0d0d0d}
-  .wa blockquote{border-left:3px solid #10a37f;background:#f6fbf9;border-radius:8px;padding:10px 14px;margin:8px 0;font-style:italic;font-size:15.5px;line-height:1.5;color:#0d0d0d}
+  .wa blockquote{border-left:3px solid #D97757;background:#fcf7f4;border-radius:8px;padding:10px 14px;margin:8px 0;font-style:italic;font-size:15.5px;line-height:1.5;color:#0d0d0d}
   .wa ul{margin:4px 0 4px 20px}
   .wa li{margin:4px 0;font-size:15.5px;line-height:1.6}
   .wa em{color:#444}
@@ -317,11 +317,11 @@
 <section id="winner">
   <div class="wrap">
     <span class="eyebrow">Your next winner, faster</span>
-    <h2 style="margin-top:14px">Ask once. Get the angle to test, word for word.</h2>
-    <p class="muted" style="margin-top:14px;max-width:620px">Not insights. Orcool ranks what's proven in your competitors' live ads and hands you the hook to run, in whatever client you call it from.</p>
+    <h2 style="margin-top:14px">Ask in Claude. Get the angle to test, word for word.</h2>
+    <p class="muted" style="margin-top:14px;max-width:620px">Not insights. Orcool ranks what's proven in your competitors' live ads and hands you the hook to run, right where you're already working.</p>
 
     <div class="wgpt">
-      <div class="wbar"><span>ChatGPT</span> <span class="mdl">· with Orcool</span></div>
+      <div class="wbar"><span class="cmark" style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:5px;background:#D97757;margin-right:2px"><svg width="11" height="11" viewBox="0 0 24 24" aria-hidden="true"><g stroke="#fff" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="5.6" y1="5.6" x2="18.4" y2="18.4"/><line x1="18.4" y1="5.6" x2="5.6" y2="18.4"/></g></svg></span><span>Claude</span> <span class="mdl">· with Orcool</span></div>
       <div class="wthread">
         <div class="wu"><div class="wbub">Orcool, in my category: which angle has run longest and spawned the most variants? Rank the proven winners, then give me the single winning hook word for word, plus a few variants and the bar for what "holds in spend" means.</div></div>
         <div class="wa">
@@ -331,7 +331,7 @@
             <h4>Proven engine</h4>
             <p>Specific mental struggle, then immediate relief. The longest-running, most-varied structure in your category: most of the competitor ads, March to June, kept fresh.</p>
             <h4>The breakout to test now</h4>
-            <p>A mechanism a category leader is scaling hard: <em>"a 60-second sound that resets your nervous system."</em> About 12 of 28 ads over three months, many variants. That spread means a scaling winner, not a fluke.</p>
+            <p>A mechanism a category leader is scaling hard: <em>"a 60-second sound that resets your nervous system."</em> About 12 of 28 ads over three months, many variants. That spread means a scaling winner, not a fluke. The other big player stays in a quieter convenience lane with fewer variants, so this is the angle with room to run.</p>
             <h4>Hook to test, word for word</h4>
             <blockquote>"There's a 60-second sound trick that quiets a racing mind before bed. Most people have never tried it."</blockquote>
             <h4>Two of four variants</h4>
@@ -345,7 +345,7 @@
         </div>
       </div>
     </div>
-    <p class="note" style="text-align:center;margin:16px auto 0;max-width:620px">This run came back in ChatGPT, on a free plan.</p>
+    <p class="note" style="text-align:center;margin:16px auto 0;max-width:620px">This run came back in Claude, with the MCP connected.</p>
   </div>
 </section>
 
@@ -513,12 +513,14 @@ REVIEWS:
   <div class="wrap">
     <span class="eyebrow">Questions</span>
     <h2 style="margin-top:14px">The honest answers.</h2>
-    <details><summary>What will I get in the first 5 minutes?</summary>
-      <p>Three true, specific things about your market: the hooks your competitors are running right now and why they work, the messages that dominate your category, and the one thing your customers care about most, pulled from your own reviews. Real signal from live ads and real customers, before your coffee's cold.</p></details>
+    <details><summary>What do I get in the first five minutes?</summary>
+      <p>Three true, specific things about your market: the hooks your competitors are running right now and why they work, the messages that dominate your category, and the one thing your customers care about most, pulled from your own reviews. Real signal from live ads and real reviews, back before your coffee's cold.</p></details>
+    <details><summary>Why not just ask Claude on its own?</summary>
+      <p>Claude is sharp, but on its own it answers from training plus whatever it can browse in the moment. Connect Orcool and it gets a tool that reads what's live right now: the ads your competitors are running this week and your own customer reviews, structured and ranked. The MCP turns a confident guess into an answer grounded in today's market, in the same chat you already work in.</p></details>
+    <details><summary>Can my agent call it, not just me?</summary>
+      <p>Yes. Every signal is a tool call, so anything that speaks MCP can trigger it: Claude, Cursor, your own agent, a cron, Clay, n8n. Read it in chat, or wire the output into a pipeline and join it to your own data. Same engine either way.</p></details>
     <details><summary>Who is this for?</summary>
-      <p>Creative and growth teams who decide what to make next: founders, marketers, producers, UA. If you ship ads and want to know what's working before you spend, it's for you. No engineering needed.</p></details>
-    <details><summary>Why not just use ChatGPT?</summary>
-      <p>ChatGPT answers from what it was trained on. Orcool reads what's live right now: the ads your competitors are actually running this week and your own customer reviews. You ask in plain language, inside the assistant you already use, and the answer comes back grounded in today's market, not a confident guess.</p></details>
+      <p>GTM engineers, growth, producers, and UA: anyone who decides what to make next and would rather call for the answer than dig for it. If you ship ads and want a read on what's working before you spend, it's for you.</p></details>
     <details><summary>How is this different from the Meta Ad Library?</summary>
       <p>The Ad Library hands you raw ads to scroll through one by one, with no read on what matters. Orcool watches them for you and tells you the pattern: which hooks repeat, which are holding, why they work, and how to use it. You get the conclusion, not a research project.</p></details>
     <details><summary>Where do the signals come from?</summary>
@@ -526,9 +528,9 @@ REVIEWS:
     <details><summary>How fresh is the data?</summary>
       <p>It's pulled the moment you ask. Competitor ads reflect what's running now, so a fast-spreading hook reaches you while it's still worth testing, not after everyone has copied it. The sooner you see what's working, the sooner you find a winner.</p></details>
     <details><summary>Do I need to install anything?</summary>
-      <p>No. You add Orcool to an assistant you already use, Claude, ChatGPT, or Cursor, and sign in with one click from your email. No new app, no password, no card. Then you just ask.</p></details>
+      <p>No. You add Orcool to a client you already use, Claude, Cursor, or ChatGPT, and sign in with one click from your email. No new app, no password, no card. Then you just ask.</p></details>
     <details><summary>What does it cost?</summary>
-      <p>Connecting is free, and you get a two-week free trial with no card. Your first market signal comes back in the first five minutes. After the trial, the recurring intelligence is about $250/mo, on a card, cancel anytime. The full creative cycle, finished ads that clear your bar and keep performing, is a separate engagement we scope with you. We don't sell one-off scripts or concepts.</p></details>
+      <p>Connecting is free, and you get a two-week trial with no card. Your first market signal comes back in the first five minutes. After the trial, the recurring intelligence is about $250/mo, on a card, cancel anytime. The full creative cycle, finished ads that clear your bar and keep performing, is a separate engagement we scope with you. We don't sell one-off scripts or concepts.</p></details>
     <details><summary>What happens after the first signal?</summary>
       <p>You'll have the hooks that win, the messages that dominate, and what your customers actually want. The next step is turning that into creative that clears your bar and keeps performing. That's the full Orcool cycle, and it's one message away.</p></details>
   </div>
