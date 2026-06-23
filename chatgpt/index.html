@@ -29,6 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<script defer data-domain="get.orcool.com" src="https://plausible.io/js/script.js"></script>
 <style>
   :root{
     --bg:#f8f7f5; --ink:#443D3D; --black:#000000;
@@ -567,6 +568,14 @@ REVIEWS:
       });
     });
   });
+</script>
+<script>
+(function(){
+  window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)};
+  function fire(n){return function(){plausible(n);};}
+  document.querySelectorAll('a[href="#connect"]').forEach(function(a){a.addEventListener('click',fire('Connect click'));});
+  document.querySelectorAll('.ucopy').forEach(function(b){b.addEventListener('click',fire('Copy MCP URL'));});
+})();
 </script>
 </body>
 </html>
