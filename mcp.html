@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orcool MCP Server</title>
+<meta name="description" content="Connect Claude to Orcool Studio: AI ad-creative research and production. How to connect, tools, examples, troubleshooting.">
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #faf9f5; color: #1d1d1b; font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.65; }
+  main { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  h1 { font-size: 32px; line-height: 1.2; margin: 0 0 8px; }
+  .lede { font-size: 18px; color: #4a4843; margin: 0 0 28px; }
+  h2 { font-size: 22px; margin: 40px 0 10px; padding-top: 14px; border-top: 1px solid #ece9e1; }
+  h3 { font-size: 17px; margin: 22px 0 6px; }
+  p { margin: 10px 0; }
+  ul { margin: 10px 0; padding-left: 22px; }
+  li { margin: 5px 0; }
+  a { color: #b85c3c; }
+  code { background: #f0ede5; padding: 1px 5px; border-radius: 4px; font-family: "SF Mono", ui-monospace, Menlo, monospace; font-size: 13.5px; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 14.5px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #ece9e1; vertical-align: top; }
+  th { background: #f5f3ec; font-weight: 600; }
+  td code { white-space: nowrap; }
+  .tag { display:inline-block; font-size:12px; color:#3a7a4e; background:#eaf5ee; border:1px solid #cfe8d8; padding:1px 7px; border-radius:999px; }
+  footer { margin-top: 44px; padding-top: 16px; border-top: 1px solid #ece9e1; font-size: 14px; color: #6b6862; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Orcool MCP Server</h1>
+  <p class="lede">Connect Claude to Orcool Studio, an AI ad-creative research and production platform that takes market signals to scored creative concepts to finished video, in one pipeline.</p>
+
+  <h2>What you can do with it</h2>
+  <ul>
+    <li><strong>Research competitors and audiences:</strong> pull competitor references, inspiring creatives, top-performing ads, brand trends, and global signals directly in Claude.</li>
+    <li><strong>Generate and score creative concepts:</strong> ask Claude to produce ad concepts for any brand, format, and duration. Each concept is AI-scored for potential.</li>
+    <li><strong>Produce video creatives:</strong> generate creative packs, individual videos, footage, and AI avatars without leaving your conversation.</li>
+    <li><strong>Analyze reviews and build target audiences:</strong> summarize app-store or product reviews, extract themes, and define structured target audiences.</li>
+    <li><strong>Organize and govern creative work:</strong> manage folders, policies, and brand settings across your Orcool workspace.</li>
+  </ul>
+
+  <h2>Requirements</h2>
+  <ul>
+    <li>An <strong>Orcool Studio account</strong>. Start a free 7-day trial at <a href="https://app.orcool.com">app.orcool.com</a>. No credit card required.</li>
+    <li>Available globally, with no regional restrictions.</li>
+  </ul>
+
+  <h2>How to connect in Claude</h2>
+  <ol>
+    <li>Open Claude and go to <strong>Settings &gt; Connectors</strong> (the custom connector panel).</li>
+    <li>Add a new connector with the URL: <code>https://mcp.orcool.com</code></li>
+    <li>Claude initiates an OAuth 2.0 sign-in flow. You receive a <strong>magic link</strong> by email, no password needed.</li>
+    <li>Click the magic link to authorize, and the connector becomes active.</li>
+  </ol>
+  <p><strong>Transport:</strong> Streamable HTTP (recommended) and SSE are both supported. Dynamic Client Registration (DCR) handles client setup automatically, so there is no client secret or manual app registration required.</p>
+
+  <h2>Authentication</h2>
+  <ul>
+    <li><strong>Protocol:</strong> OAuth 2.0 with Dynamic Client Registration (DCR).</li>
+    <li><strong>Sign-in method:</strong> passwordless magic link sent to your Orcool account email.</li>
+    <li><strong>No secrets to manage:</strong> DCR means the MCP client registers itself automatically. You do not share any client ID or secret manually.</li>
+    <li>Sessions persist across conversations until you revoke access from your Orcool account settings.</li>
+  </ul>
+
+  <h2>Tools overview</h2>
+  <p>The server exposes 100+ tools discoverable via the connector. Below is a representative set, grouped by category. Most tools require a <code>brandId</code>: resolve a brand name to an ID with <code>studio_list_brands</code> before calling other tools.</p>
+
+  <h3>Brands</h3>
+  <table><tr><th>Tool</th><th>What it does</th></tr>
+    <tr><td><code>studio_list_brands</code></td><td>List all brands in your workspace</td></tr>
+    <tr><td><code>studio_get_brand</code></td><td>Fetch full details for a specific brand</td></tr>
+    <tr><td><code>studio_create_brand</code></td><td>Create a new brand</td></tr>
+    <tr><td><code>studio_update_brand</code></td><td>Update brand settings or metadata</td></tr>
+  </table>
+
+  <h3>Signals and research</h3>
+  <table><tr><th>Tool</th><th>What it does</th></tr>
+    <tr><td><code>studio_list_insights</code></td><td>List strategic insights for a brand</td></tr>
+    <tr><td><code>studio_create_insight</code></td><td>Add a new insight</td></tr>
+    <tr><td><code>studio_list_competitor_references</code></td><td>List competitor ad references</td></tr>
+    <tr><td><code>studio_create_competitor_reference</code></td><td>Add a competitor ad reference</td></tr>
+    <tr><td><code>studio_list_inspiring_references</code></td><td>List creative inspiration sources</td></tr>
+    <tr><td><code>studio_list_best_performing_references</code></td><td>List top-performing ad references</td></tr>
+    <tr><td><code>studio_list_brand_trends</code></td><td>List trends curated for a brand</td></tr>
+    <tr><td><code>studio_list_global_trends</code></td><td>Browse global creative trends</td></tr>
+    <tr><td><code>studio_list_reviews</code></td><td>List product or app reviews for a brand</td></tr>
+    <tr><td><code>studio_analyze_reviews</code></td><td>Run AI analysis on reviews (async, returns job id)</td></tr>
+    <tr><td><code>studio_list_target_audiences</code></td><td>List defined target audiences</td></tr>
+    <tr><td><code>studio_create_target_audience</code></td><td>Create a structured target audience</td></tr>
+  </table>
+
+  <h3>Concepts</h3>
+  <table><tr><th>Tool</th><th>What it does</th></tr>
+    <tr><td><code>studio_list_concepts</code></td><td>List existing ad concepts for a brand</td></tr>
+    <tr><td><code>studio_generate_concept</code></td><td>Generate and score a new concept (async)</td></tr>
+    <tr><td><code>studio_update_concept</code></td><td>Edit concept fields</td></tr>
+    <tr><td><code>studio_toggle_concept_favorite</code></td><td>Mark or unmark a concept as a favorite</td></tr>
+  </table>
+
+  <h3>Production</h3>
+  <table><tr><th>Tool</th><th>What it does</th></tr>
+    <tr><td><code>studio_generate_creative_pack</code></td><td>Generate a full creative pack from a concept (async)</td></tr>
+    <tr><td><code>studio_list_creative_packs</code></td><td>List creative packs for a brand</td></tr>
+    <tr><td><code>studio_generate_video</code></td><td>Generate a video from a creative pack (async)</td></tr>
+    <tr><td><code>studio_list_videos</code></td><td>List generated videos</td></tr>
+    <tr><td><code>studio_create_footage</code></td><td>Upload or register footage</td></tr>
+    <tr><td><code>studio_generate_footage_from_url</code></td><td>Generate footage from a URL (async)</td></tr>
+    <tr><td><code>studio_generate_avatar</code></td><td>Generate an AI avatar (async)</td></tr>
+    <tr><td><code>studio_list_avatars</code></td><td>List available avatars</td></tr>
+  </table>
+
+  <h3>Organization and jobs</h3>
+  <table><tr><th>Tool</th><th>What it does</th></tr>
+    <tr><td><code>studio_list_folders</code></td><td>List folders in your workspace</td></tr>
+    <tr><td><code>studio_create_folder</code></td><td>Create a folder</td></tr>
+    <tr><td><code>studio_list_policies</code></td><td>List creative or brand policies</td></tr>
+    <tr><td><code>get_job</code></td><td>Poll an async job by job id until status is terminal</td></tr>
+  </table>
+
+  <p><span class="tag">Async pattern</span> Generation tools (concepts, creative packs, videos, footage, avatars, review analysis) return a <code>jobId</code> immediately. Call <code>get_job</code> repeatedly until the status is <code>completed</code> or <code>failed</code>. Terminal results contain the created resource or an error message.</p>
+
+  <h2>Example prompts</h2>
+  <ul>
+    <li>"List my brands in Orcool."</li>
+    <li>"Show me insights, competitor references, and global trends for my [Brand Name] brand."</li>
+    <li>"Generate a testimonial ad concept for [Brand Name], targeting Meta, 15 seconds."</li>
+    <li>"Analyze the latest reviews for [Brand Name] and summarize the main themes."</li>
+    <li>"Generate a creative pack from concept [ID] and tell me when it is ready."</li>
+  </ul>
+
+  <h2>Troubleshooting</h2>
+  <p><strong>Cannot connect or connector not loading.</strong> Verify the URL is exactly <code>https://mcp.orcool.com</code>. Remove and re-add the connector if the OAuth flow did not complete.</p>
+  <p><strong>Magic link not received.</strong> Check your spam folder. The link expires in 10 minutes. Retry the sign-in flow to request a new one, and make sure the email matches your Orcool account.</p>
+  <p><strong>"Brand not found" or missing brandId.</strong> Run <code>studio_list_brands</code> first to retrieve the correct <code>brandId</code>. Brand names are not accepted directly by most tools.</p>
+  <p><strong>Generation is taking a long time.</strong> Video, avatar, and creative pack generation can take 30 seconds to several minutes. Use <code>get_job</code> with the returned <code>jobId</code> and poll until the status is <code>completed</code> or <code>failed</code>. Do not resubmit the request.</p>
+  <p><strong>Trial expired.</strong> Your 7-day trial has ended. Visit <a href="https://app.orcool.com">app.orcool.com</a> to upgrade or contact support.</p>
+  <p><strong>Tools not visible after connecting.</strong> Disconnect and reconnect the connector to trigger a fresh capability discovery. If the issue persists, contact support.</p>
+
+  <footer>
+    Support: <a href="mailto:boris.ryss@orcool.com">boris.ryss@orcool.com</a> &nbsp;·&nbsp;
+    <a href="https://orcool.com/privacy">Privacy policy</a> &nbsp;·&nbsp;
+    <a href="https://orcool.com/terms">Terms of service</a>
+  </footer>
+</main>
+</body>
+</html>
