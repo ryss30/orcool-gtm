@@ -363,20 +363,622 @@
   </div>
 </section>
 
-<!-- FINAL CTA -->
+<!-- INTERACTIVE HOOK EXPLORER -->
 <section class="dark final" id="pilot">
   <div class="wrap">
-    <span class="eyebrow" style="color:var(--red)">Start small</span>
-    <h2 style="margin-top:14px">Pick one market. We'll find its winner.</h2>
-    <p class="sub">You bring the market and the KPI gate. We bring the signals, the Lens, and a native voice that makes it land.</p>
-    <div class="btnrow" style="justify-content:center;margin-top:28px">
-      <a class="btn on-dark" href="mailto:team@orcool.com?subject=Long-tail%20markets%20pilot&body=Market%3A%20%0AKPI%20gate%3A%20">Get in touch</a>
-      <a class="btn on-dark ghost" href="#howitworks">See how it works</a>
+    <span class="eyebrow" style="color:var(--red)">Live signal</span>
+    <h2 style="margin-top:14px">What's winning in your market right now.</h2>
+    <p class="sub" style="max-width:560px;margin:14px auto 0">Pick a category and a market. We show you the hooks that are actually working there — and one Orcool would write instead.</p>
+
+    <!-- Selectors -->
+    <div class="hook-selectors" id="hookSelectors">
+      <div class="hook-select-wrap">
+        <label class="hook-label">Category</label>
+        <select id="catSelect" class="hook-select" onchange="renderHookCard()">
+          <option value="">Choose category</option>
+          <option value="fintech">Fintech</option>
+          <option value="mobility">Mobility</option>
+          <option value="health">Health</option>
+          <option value="ecom">E-com</option>
+          <option value="dating">Dating</option>
+        </select>
+      </div>
+      <div class="hook-select-wrap">
+        <label class="hook-label">Market</label>
+        <select id="mktSelect" class="hook-select" onchange="renderHookCard()">
+          <option value="">Choose market</option>
+          <option value="nigeria">Nigeria</option>
+          <option value="indonesia">Indonesia</option>
+          <option value="colombia">Colombia</option>
+          <option value="egypt">Egypt</option>
+          <option value="brazil">Brazil</option>
+          <option value="southafrica">South Africa</option>
+          <option value="mexico">Mexico</option>
+          <option value="vietnam">Vietnam</option>
+          <option value="kenya">Kenya</option>
+          <option value="philippines">Philippines</option>
+        </select>
+      </div>
     </div>
-    <p style="margin-top:18px;color:#6e6c69;font-size:14px;text-align:center">No card. No bullshit. Just start.</p>
+
+    <!-- Card output -->
+    <div id="hookCard" class="hook-card" style="display:none">
+      <div class="hook-card-header">
+        <span class="hook-card-tag" id="hookCardTag"></span>
+        <span class="hook-card-fresh">Updated monthly</span>
+      </div>
+
+      <div class="hook-block">
+        <div class="hook-section-label">What's working now</div>
+        <div class="hook-item free" id="hook1">
+          <div class="hook-competitor" id="hook1comp"></div>
+          <div class="hook-text" id="hook1text"></div>
+          <div class="hook-why" id="hook1why"></div>
+        </div>
+        <div class="hook-item gated" id="hook2">
+          <div class="hook-competitor" id="hook2comp"></div>
+          <div class="hook-text blurred" id="hook2text"></div>
+          <div class="hook-why blurred" id="hook2why"></div>
+        </div>
+        <div class="hook-item gated" id="hook3">
+          <div class="hook-competitor" id="hook3comp"></div>
+          <div class="hook-text blurred" id="hook3text"></div>
+          <div class="hook-why blurred" id="hook3why"></div>
+        </div>
+      </div>
+
+      <div class="hook-divider"></div>
+
+      <div class="hook-block">
+        <div class="hook-section-label" style="color:#FA3810">What Orcool would write instead</div>
+        <div class="hook-item gated" id="hookCounter">
+          <div class="hook-text blurred" id="hookCounterText"></div>
+          <div class="hook-why blurred" id="hookCounterNote"></div>
+        </div>
+      </div>
+
+      <!-- Gate -->
+      <div class="hook-gate" id="hookGate">
+        <div class="hook-gate-inner">
+          <div class="hook-gate-label">See 2 more hooks + the Orcool counter-hook</div>
+          <div class="hook-gate-sub">We'll also send you our full market teardown.</div>
+          <div class="hook-gate-form" id="hookGateForm">
+            <input type="email" id="hookEmail" class="hook-email-input" placeholder="Work email" required>
+            <button class="hook-gate-btn" onclick="submitHookGate()">Unlock full teardown</button>
+          </div>
+          <div id="hookGateSuccess" style="display:none;color:#45B43B;font-size:14px;font-weight:600;text-align:center">Sent. Check your inbox — full teardown is on its way.</div>
+          <div id="hookGateError" style="display:none;color:#FA3810;font-size:13px;text-align:center">Something went wrong. Try again or email us at team@orcool.com</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Empty state -->
+    <div id="hookEmpty" class="hook-empty">
+      <div class="hook-empty-dots">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <p style="color:#6e6c69;font-size:15px;margin-top:16px">Select a category and market above.</p>
+    </div>
+
+    <!-- No data state -->
+    <div id="hookNoData" style="display:none;text-align:center;padding:40px 0">
+      <p style="color:#6e6c69;font-size:15px">This combination is coming soon. <a href="mailto:team@orcool.com?subject=Hook+teardown+request" style="color:var(--red);text-decoration:underline">Ask us directly.</a></p>
+    </div>
+
   </div>
   <div class="glow"></div>
 </section>
+
+<style>
+.hook-selectors{display:flex;gap:16px;justify-content:center;margin-top:36px;flex-wrap:wrap}
+.hook-select-wrap{display:flex;flex-direction:column;gap:6px;min-width:200px}
+.hook-label{font-size:12px;font-weight:600;letter-spacing:.07em;color:#9b9893;text-transform:uppercase}
+.hook-select{appearance:none;background:#1a1a1a url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B6E80' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 14px center;border:1.5px solid #2e2e2e;color:#f0efed;font-size:15px;font-weight:500;padding:12px 40px 12px 16px;border-radius:10px;cursor:pointer;font-family:var(--sans);transition:border-color .15s}
+.hook-select:focus{outline:none;border-color:#FA3810}
+.hook-select option{background:#1a1a1a;color:#f0efed}
+
+.hook-card{margin-top:36px;background:#fff;border-radius:16px;overflow:hidden;text-align:left;position:relative;max-width:680px;margin-left:auto;margin-right:auto}
+.hook-card-header{display:flex;align-items:center;justify-content:space-between;padding:16px 22px;border-bottom:1px solid #F0EFED}
+.hook-card-tag{font-size:13px;font-weight:700;color:#443D3D;letter-spacing:.03em}
+.hook-card-fresh{font-size:12px;color:#9b9893;font-family:var(--mono)}
+
+.hook-block{padding:20px 22px}
+.hook-section-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9b9893;margin-bottom:14px}
+
+.hook-item{padding:14px 16px;border-radius:10px;background:#F8F7F5;margin-bottom:10px}
+.hook-item:last-child{margin-bottom:0}
+.hook-competitor{font-size:11px;font-weight:600;letter-spacing:.06em;color:#9b9893;text-transform:uppercase;margin-bottom:5px}
+.hook-text{font-size:15px;font-weight:600;color:#1a1a1a;line-height:1.4}
+.hook-why{font-size:13px;color:#6B6E80;margin-top:5px;line-height:1.4}
+
+.blurred{filter:blur(5px);user-select:none;pointer-events:none;transition:filter .3s}
+.blurred.revealed{filter:none;user-select:auto}
+
+.hook-divider{height:1px;background:#F0EFED;margin:0 22px}
+
+.hook-gate{background:linear-gradient(to bottom,rgba(248,247,245,0),#F8F7F5 40%);padding:20px 22px 24px;margin-top:-20px;position:relative;z-index:2}
+.hook-gate-inner{background:#fff;border:1.5px solid #E7E5E1;border-radius:12px;padding:20px;text-align:center}
+.hook-gate-label{font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:4px}
+.hook-gate-sub{font-size:13px;color:#6B6E80;margin-bottom:16px}
+.hook-gate-form{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.hook-email-input{flex:1;min-width:220px;padding:11px 14px;border:1.5px solid #E7E5E1;border-radius:8px;font-size:14px;font-family:var(--sans);color:#1a1a1a;background:#fff;transition:border-color .15s}
+.hook-email-input:focus{outline:none;border-color:#FA3810}
+.hook-gate-btn{background:#FA3810;color:#fff;border:none;padding:11px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:var(--sans);white-space:nowrap;transition:background .14s}
+.hook-gate-btn:hover{background:#d42e0b}
+.hook-gate-btn:disabled{opacity:.5;cursor:not-allowed}
+
+.hook-empty{text-align:center;padding:48px 0;display:block}
+.hook-empty-dots{display:flex;gap:10px;justify-content:center;align-items:center}
+.hook-empty-dots span{width:8px;height:8px;border-radius:50%;background:#2e2e2e}
+.hook-empty-dots span:nth-child(1){background:#FA3810}
+.hook-empty-dots span:nth-child(2){background:#FFB516}
+.hook-empty-dots span:nth-child(3){background:#45B43B}
+.hook-empty-dots span:nth-child(4){background:#387FFF}
+.hook-empty-dots span:nth-child(5){background:#FA3810;opacity:.3}
+
+@media(max-width:600px){
+  .hook-selectors{flex-direction:column;align-items:stretch;padding:0 4px}
+  .hook-gate-form{flex-direction:column}
+  .hook-email-input,.hook-gate-btn{width:100%;min-width:0}
+}
+</style>
+
+<script>
+const HOOK_DATA = {
+  nigeria_fintech: {
+    label: "Nigeria · Fintech",
+    hooks: [
+      { competitor: "Palmpay", text: "Your mum has been waiting three days. Send money in 10 seconds. No bank needed.", why: "Family remittance + urgency + guilt reframe. Everyone in Lagos has a mum waiting for money." },
+      { competitor: "Moniepoint", text: "Open a bank account before the queue does.", why: "Banking access framing. 'Queue' triggers both waiting lines and mobile USSD data cost — double meaning local audiences catch instantly." },
+      { competitor: "Opay", text: "Withdraw at any agent. Not just at the bank that's 40 minutes away.", why: "Agent banking network as proximity advantage. Physical distance to formal banks is a real daily pain point in non-Lagos markets." }
+    ],
+    counter: { text: "The bank told you to come back Monday. Your airtime didn't.", note: "Reframes the competitor (traditional banking) failure into product promise. 'Airtime' is hyperlocal — data/airtime top-up is the universal mobile behavior." }
+  },
+  nigeria_ecom: {
+    label: "Nigeria · E-com",
+    hooks: [
+      { competitor: "Jumia", text: "Delivered before your neighbor borrows it.", why: "Peer-borrowing humor is deeply local. Nigerians immediately recognize the 'neighbor who borrows and forgets' trope — turns delivery speed into a social win." },
+      { competitor: "Jiji", text: "Pay on delivery. Check it first. Like it. Keep it.", why: "Trust gap is the #1 barrier in Nigerian e-com. Explicit 'check before you pay' removes friction without discounting price." },
+      { competitor: "Konga", text: "Order at 8am. Delivered to Surulere by 3pm. Real.", why: "Specific Lagos neighborhood name (Surulere) signals genuine local knowledge. Vague city-level promises don't convert — specificity does." }
+    ],
+    counter: { text: "We don't deliver to your state. We deliver to your street.", note: "Flips the typical 'nationwide delivery' claim on its head. Granularity = credibility. Works best with geo-targeted ads showing the specific LGA." }
+  },
+  nigeria_mobility: {
+    label: "Nigeria · Mobility",
+    hooks: [
+      { competitor: "Bolt", text: "Driver in 3 minutes. Agege to VI in 45. Not 'estimate'.", why: "Lagosians are deeply skeptical of ETA estimates. Naming specific routes (Agege to Victoria Island) signals you actually know Lagos traffic." },
+      { competitor: "inDrive", text: "Name your price. Driver agrees. You move.", why: "Price negotiation is culturally native — marketplace framing resonates stronger than fixed-price apps in a negotiation-first culture." },
+      { competitor: "Gokada", text: "Okada is back. Legal. Tracked. Safe.", why: "After Lagos okada ban chaos, safety + legality are primary trust signals. Historical context gives this hook enormous relevance." }
+    ],
+    counter: { text: "You negotiate your salary. Why not your ride?", note: "Frames price flexibility as a natural extension of Nigerian negotiation culture. Elevates the behavior from 'haggling' to empowerment." }
+  },
+  indonesia_fintech: {
+    label: "Indonesia · Fintech",
+    hooks: [
+      { competitor: "GoPay", text: "Bayar bulan depan, happy sekarang.", why: "PayLater is fully normalized in Indonesia. Present-pleasure framing in Bahasa Indonesia. 'Happy sekarang' is conversational and TikTok-native." },
+      { competitor: "Flip", text: "Transfer ke semua bank, gratis, 24 jam.", why: "Bank-to-bank transfer fees are a genuine daily pain. 'Gratis' (free) + 'semua bank' (all banks) answers the two most common complaints in one line." },
+      { competitor: "SeaBank", text: "Bunga tabungan sampai 7%. Bukan promo. Selamanya.", why: "High savings interest + explicitly NOT a promo. Indonesian consumers are deeply skeptical of 'promo' rates that expire — 'selamanya' (forever) is the counter-signal." }
+    ],
+    counter: { text: "Kamu nggak bayar untuk nunggu transfernya.", note: "Real-time transfer as time-value claim. 'Nggak bayar untuk nunggu' (you don't pay to wait) — reframes the value proposition as time, not just money. Casual Bahasa tone lands on Reels." }
+  },
+  indonesia_mobility: {
+    label: "Indonesia · Mobility",
+    hooks: [
+      { competitor: "Gojek", text: "Hujan deras? Ojek-mu sudah otw.", why: "Rain = massive demand spike for ojek in Jakarta. Proactive 'sudah otw' (already on the way) framing makes the app feel like it reads your mind." },
+      { competitor: "Grab", text: "Driver terdekat. 3 menit. Dijamin.", why: "ETA certainty in a traffic-chaotic market. 'Dijamin' (guaranteed) is a strong commitment word that differentiates from vague ETAs." },
+      { competitor: "Maxim", text: "Tarif lebih murah dari Gojek. Lihat sendiri.", why: "Direct price comparison is common and accepted in Indonesia. 'Lihat sendiri' (see for yourself) invites action and signals confidence." }
+    ],
+    counter: { text: "Macet di mana-mana. Driver-mu nggak terjebak.", note: "Traffic (macet) is Jakarta's defining shared experience. Positioning the driver as someone who navigates macet — not trapped by it — creates an aspirational frame." }
+  },
+  indonesia_health: {
+    label: "Indonesia · Health",
+    hooks: [
+      { competitor: "Halodoc", text: "Dokter online dalam 5 menit. Nggak perlu ke klinik.", why: "Clinic queue times in Indonesia average 2-3 hours. '5 menit' vs implied hours of waiting — the comparison is implicit and powerful." },
+      { competitor: "Alodokter", text: "Konsultasi dokter spesialis dari rumah. Langsung besok.", why: "Specialist access is the real bottleneck. 'Langsung besok' (right tomorrow) vs months-long specialist wait — resolves the highest anxiety." },
+      { competitor: "Good Doctor", text: "Resep langsung dikirim ke apotek terdekat.", why: "Prescription-to-pharmacy loop closes the healthcare journey. Convenience chain completion is the unlock for mobile-health adoption in tier 2/3 cities." }
+    ],
+    counter: { text: "Sakit nggak harus nunggu sampai parah baru ke dokter.", note: "Preventive care reframe. 'Nggak harus nunggu sampai parah' (don't have to wait until it's serious) challenges the cultural norm of enduring illness before seeking care." }
+  },
+  indonesia_ecom: {
+    label: "Indonesia · E-com",
+    hooks: [
+      { competitor: "Shopee", text: "Flash sale. 30 menit doang. Jam 12 siang.", why: "Time-bounded urgency with specific clock time creates calendar-like behavior. Indonesian consumers plan their days around Shopee flash sales." },
+      { competitor: "Tokopedia", text: "Gratis ongkir ke seluruh Indonesia. Termasuk Papua.", why: "'Including Papua' signals genuine nationwide reach. Calling out the most remote area proves the 'nationwide' promise isn't Jakarta-centric." },
+      { competitor: "Lazada", text: "COD tersedia. Bayar pas barang sampai.", why: "COD remains king in Indonesia. Explicit affirmation removes the #1 purchase objection — trust that the product will actually arrive." }
+    ],
+    counter: { text: "Produk lokal. Kualitas ekspor. Harga pasar.", note: "National pride + quality signal + accessibility. 'Ekspor' (export-quality) is aspirational for Indonesian consumers who associate export = global standard." }
+  },
+  colombia_fintech: {
+    label: "Colombia · Fintech",
+    hooks: [
+      { competitor: "Nequi", text: "Sin banco, sin cola. Con plata.", why: "Unbanked + bureaucracy pain in one line. 'Cola' (queue) is universal Colombian banking frustration. 'Con plata' (with money) flips the negative to a positive outcome." },
+      { competitor: "Bancolombia A La Mano", text: "Hoy cobras, hoy mandas la plata.", why: "Same-day pay-to-transfer. Payday-linked transfers home are a massive use case in Colombia. Immediacy is the entire value prop." },
+      { competitor: "Daviplata", text: "Recarga, paga y transfiere sin salir de tu barrio.", why: "'Tu barrio' (your neighborhood) signals hyper-local access. Colombians outside major cities are deeply underserved — neighborhood-level framing converts." }
+    ],
+    counter: { text: "El banco te dice que no. Nosotros te decimos cuándo.", note: "Rejection vs timeline reframe. Banks' credit denials are emotionally charged. Flipping from binary 'no' to future 'when' is optimism that resonates in striving-class Colombia." }
+  },
+  colombia_mobility: {
+    label: "Colombia · Mobility",
+    hooks: [
+      { competitor: "inDrive", text: "Tú pones el precio. El conductor acepta. O no.", why: "Negotiation framing. The 'or not' at the end signals fairness and driver respect — both increasingly important differentiators in Colombia post-Uber controversy." },
+      { competitor: "Cabify", text: "Conductor verificado. Viaje guardado. Llegás seguro.", why: "Safety is the primary ride-hail concern for Colombian women (majority of urban trips). 'Guardado' (saved) = accountability trail." },
+      { competitor: "Picap", text: "Mototaxi legal. Rápido. Sin susto.", why: "'Sin susto' (without fear) is the entire value prop for mototaxi in Colombia, where informal mototaxis carry safety stigma. Legal + fast + safe in three words." }
+    ],
+    counter: { text: "El trancón no es tuyo. Es del conductor.", note: "Bogotá's trancón (traffic jam) is a daily shared trauma. Transferring the emotional burden of traffic to the driver — rather than the rider — is a relief-framing breakthrough." }
+  },
+  colombia_ecom: {
+    label: "Colombia · E-com",
+    hooks: [
+      { competitor: "Mercado Libre", text: "Despacho el mismo día si comprás antes de la 1.", why: "Specific cutoff time creates urgency without aggression. Same-day Colombian fulfillment is rare — making it conditional on time adds credibility to the promise." },
+      { competitor: "Rappi", text: "Se te acabó el tinto. En 10 minutos está en tu puerta.", why: "'Tinto' (Colombian black coffee) is hyper-local. Using the Colombian word instead of 'café' signals insider knowledge that converts." },
+      { competitor: "Linio", text: "Cuotas sin interés. Pagás como si fuera tuyo desde el primer día.", why: "Installment culture is strong in Colombia. 'Como si fuera tuyo' (as if it's already yours) shifts psychology from 'buying on credit' to 'having it now.'" }
+    ],
+    counter: { text: "Vendedor colombiano. Producto colombiano. Plata que se queda acá.", note: "National economic pride post-COVID. 'Plata que se queda acá' (money that stays here) — buy-local is a powerful emotional lever in the Colombian middle class." }
+  },
+  egypt_fintech: {
+    label: "Egypt · Fintech",
+    hooks: [
+      { competitor: "Vodafone Cash", text: "حوّل فلوس لأهلك في ثانية. في أي وقت.", why: "Family remittance is the #1 use case. 'أهلك' (your family/people) + instantaneous + anytime = the complete emotional and functional promise." },
+      { competitor: "Fawry", text: "ادفع أونلاين حتى لو معندكش بطاقة بنكية.", why: "Banking penetration in Egypt is ~35%. 'Even without a bank card' directly addresses the largest segment of excluded users — an enormous TAM." },
+      { competitor: "InstaPay", text: "البنك مش شرط. التحويل في ثانية.", why: "Bank bypass framing. Cuts directly to the core fear — 'I can't use this because I don't have a bank account' — and eliminates it in 5 words." }
+    ],
+    counter: { text: "مش محتاج فرع. محتاج تليفون بس.", note: "Branch elimination. 'You don't need a branch. Just a phone.' The Egyptian banking system is famously branch-dependent. Flipping the infrastructure requirement resonates deeply in 2nd-tier Egyptian cities." }
+  },
+  egypt_ecom: {
+    label: "Egypt · E-com",
+    hooks: [
+      { competitor: "Jumia Egypt", text: "اطلب دلوقتي. استلم بكره في بيتك.", why: "Next-day home delivery is still a premium signal in Egypt. 'بيتك' (your home) vs office/store pickup — home delivery feels like service, not logistics." },
+      { competitor: "Noon", text: "ادفع كاش عند الاستلام. وإذا مش عاجبك، ارجعه.", why: "COD + no-questions-return policy removes both purchase barriers in one hook. Egyptian e-com trust gap is primarily about payment risk and return difficulty." },
+      { competitor: "Amazon Egypt", text: "أسعار أوروبا. توصيل مصر.", why: "Price anchoring to European comparison while localizing delivery. Aspirational quality + accessible logistics = the core Egyptian premium e-com positioning." }
+    ],
+    counter: { text: "ما عندكش حساب بنكي؟ ادفع بالموبايل.", note: "Fintech-as-payment unlock. For e-com in Egypt, the mobile wallet integration is the growth lever — messaging mobile payment as the access key rather than the secondary option." }
+  },
+  brazil_dating: {
+    label: "Brazil · Dating",
+    hooks: [
+      { competitor: "Tinder", text: "O crush que mora a 2km não sabe que você existe ainda.", why: "Proximity + action gap. 'Ainda' (yet) implies you're about to fix that. Brazilian flirtation culture is direct — this matches the energy." },
+      { competitor: "Hinge", text: "Conversa de verdade, não só foto.", why: "Tinder fatigue + Brazilian cultural preference for conversation and warmth. 'De verdade' (real) is a powerful authenticity signal in a swiping-fatigued market." },
+      { competitor: "Bumble", text: "Ela manda a primeira mensagem. Sempre.", why: "Bumble's core mechanic as the entire hook. Brazilian gender dynamics make this genuinely differentiated — 'sempre' (always) reinforces the rule is the feature." }
+    ],
+    counter: { text: "Passaram um do outro na padaria. Se seguem. Nunca falaram.", note: "'Padaria' (bakery) is the most Brazilian social setting. Missed connection in the neighborhood padaria is a shared experience that makes this feel like a personal story, not an ad." }
+  },
+  brazil_ecom: {
+    label: "Brazil · E-com",
+    hooks: [
+      { competitor: "Mercado Livre", text: "Chegou antes do fim do dia. De verdade.", why: "Brazilian delivery skepticism is high after decades of 'prazo estimado' (estimated deadline) culture. 'De verdade' (for real) addresses the credibility gap directly." },
+      { competitor: "Shopee", text: "12x sem juros. Chega amanhã.", why: "Installment + speed. The two primary Brazilian purchase drivers in one line. PIX + parcelamento (installments) changed expectations — this reflects the new baseline." },
+      { competitor: "Amazon Brasil", text: "Prime: frete grátis, entrega rápida, qualquer dia.", why: "Subscription value reframe. 'Qualquer dia' (any day) fights the 'only for big orders' objection and normalizes the daily-use habit." }
+    ],
+    counter: { text: "Não é estimado. É garantido. Ou a gente te devolve.", note: "Delivery guarantee as a brand promise. 'Estimado' (estimated) is the enemy word in Brazilian logistics. Replacing it with 'garantido' (guaranteed) + refund condition builds the trust layer ads can't otherwise establish." }
+  },
+  southafrica_fintech: {
+    label: "South Africa · Fintech",
+    hooks: [
+      { competitor: "TymeBank", text: "Send R200 home without losing R20 on fees.", why: "Specific rand amounts make the fee pain concrete. Remittance from city workers to rural family is a massive behavioral use case — fee sensitivity is real." },
+      { competitor: "Capitec", text: "No monthly fee. Not this month. Not ever.", why: "Monthly banking fees are a genuine barrier for working-class South Africans. The repetition 'not this month. Not ever.' eliminates the 'promotional period' concern." },
+      { competitor: "FNB", text: "Bank on your phone. Not at a branch 40 minutes away.", why: "Branch distance is a real daily obstacle in South Africa's peri-urban areas. Physical distance becomes the emotional hook." }
+    ],
+    counter: { text: "Your salary arrives. Your bank shouldn't take a cut first.", note: "Salary + fee reframe. Immediately positions banking fees as theft from your own money. Works as a pre-payday awareness ad targeting the moment of highest financial anxiety." }
+  },
+  southafrica_ecom: {
+    label: "South Africa · E-com",
+    hooks: [
+      { competitor: "Takealot", text: "Delivered to your door by tomorrow. Not 'by end of week'.", why: "South African delivery culture has trained consumers to expect long waits. Tomorrow is a genuine premium promise — specificity vs the vague norm." },
+      { competitor: "Superbalist", text: "Try it at home. Keep what fits. Return what doesn't. Free.", why: "Home try-on removes the sizing risk — critical for apparel in a market where body diversity is strong and return friction has historically killed online fashion." },
+      { competitor: "Bash", text: "Local brands. Local delivery. Local price.", why: "Post-COVID buy-local movement in SA is strong. Three 'locals' in a row is rhythmic and reinforces the national pride anchor without sounding like a campaign slogan." }
+    ],
+    counter: { text: "Load-shedding schedule: 6–9pm. Your order arrives at 5:59.", note: "Load-shedding (power cuts) is South Africa's #1 daily planning challenge. Positioning delivery timing around loadshedding slots is hyper-contextual creative that only locals recognize as genius." }
+  },
+  mexico_fintech: {
+    label: "Mexico · Fintech",
+    hooks: [
+      { competitor: "Mercado Pago", text: "Manda dinero al rancho en 5 segundos. Sin comisión.", why: "'El rancho' (home village) is an emotionally loaded Mexican term for rural hometown. Remittance to family in the pueblo is a massive behavioral pattern." },
+      { competitor: "Stori", text: "Sin buró. Sin aval. Dinero en el día.", why: "Credit bureau exclusion is the primary fintech pain in Mexico. 'Sin buró' removes the largest barrier in 3 words. 'Aval' (guarantor) removal addresses the second barrier." },
+      { competitor: "Klar", text: "Tarjeta de crédito sin anualidad. Jamás.", why: "'Sin anualidad' (no annual fee) is the most searched fintech term in Mexico. 'Jamás' (never/ever) is a strong emotional amplifier that signals permanence, not promotion." }
+    ],
+    counter: { text: "El banco te rechazó. Nosotros te preguntamos cuándo empezamos.", note: "Rejection → invitation reframe. Bank rejection is a humiliating experience in Mexico. Flipping to an invitation ('when do we start?') is empowerment framing that works across demographic segments." }
+  },
+  mexico_ecom: {
+    label: "Mexico · E-com",
+    hooks: [
+      { competitor: "Mercado Libre", text: "Paga en OXXO. Recibe en casa. Sin tarjeta.", why: "OXXO payment is Mexico's most trusted checkout channel — 19,000+ stores. Explicitly naming OXXO removes the 'I don't have a card' barrier for ~40% of buyers." },
+      { competitor: "Liverpool", text: "Meses sin intereses. Hasta 18. Sin engaños.", why: "'Sin engaños' (no tricks) addresses the fine-print fear that plagues Mexican MSI offers. The credibility addition is as important as the installment offer itself." },
+      { competitor: "Amazon México", text: "Prime Day no es el único día. Ofertas todos los días.", why: "Positioning everyday value against the single-day event mentality. Mexican consumers are Prime Day-trained — this breaks the habit and drives daily visit behavior." }
+    ],
+    counter: { text: "Tu pedido llegó antes de que terminaras tu telenovela.", note: "Telenovela = universal Mexican cultural anchor for evening time. Delivery speed framed in local time units (a telenovela episode = ~45 min) makes it feel relatable, not corporate." }
+  },
+  vietnam_health: {
+    label: "Vietnam · Health",
+    hooks: [
+      { competitor: "Docosan", text: "Đặt lịch bác sĩ trong 30 giây. Không cần chờ đợi.", why: "Hospital queue time in Vietnam is 3-7 hours. '30 giây' (30 seconds) vs the implicit alternative is the entire value contrast. No need to say 'vs hospital.'" },
+      { competitor: "JioHealth", text: "Bác sĩ chuyên khoa gặp được ngay hôm nay.", why: "Specialist access is the real bottleneck. 'Ngay hôm nay' (right today) vs the typical months-long specialist referral wait is a genuine product breakthrough." },
+      { competitor: "eDoctor", text: "Tư vấn bác sĩ từ nhà. Đơn thuốc giao tận cửa.", why: "Home consultation + doorstep prescription delivery closes the full healthcare loop. Vietnamese consumers are increasingly mobile-native for services." }
+    ],
+    counter: { text: "Bệnh viện công: 6 tiếng xếp hàng. Ứng dụng: 5 phút.", note: "Direct comparison — 6 hours queue at public hospital vs 5 minutes on app. Vietnamese consumers have visceral hospital queue memories. Making the contrast explicit (rather than implied) drives highest conversion." }
+  },
+  vietnam_ecom: {
+    label: "Vietnam · E-com",
+    hooks: [
+      { competitor: "Shopee Vietnam", text: "Flash sale 12 giờ trưa. 15 phút thôi.", why: "Time-bounded lunch-hour flash sales are Shopee's signature behavior pattern in Vietnam. Specific time + short window creates calendar-anchored habit." },
+      { competitor: "Lazada Vietnam", text: "Giao hàng miễn phí. Không cần đơn tối thiểu.", why: "Minimum order free-shipping thresholds are a major purchase abandonment trigger. Removing the threshold entirely is a direct conversion driver." },
+      { competitor: "Tiki", text: "Hàng chính hãng. Hoàn tiền nếu hàng giả.", why: "Counterfeit goods anxiety is Vietnam's #1 e-com trust barrier. A money-back counterfeit guarantee directly answers the primary objection that prevents first purchase." }
+    ],
+    counter: { text: "Sản phẩm Việt. Chất lượng xuất khẩu. Giá trong nước.", note: "National pride + export-quality signal + local pricing. 'Xuất khẩu' (export) is an aspirational quality marker — Vietnamese consumers associate export products with higher standards." }
+  },
+  kenya_fintech: {
+    label: "Kenya · Fintech",
+    hooks: [
+      { competitor: "M-Pesa", text: "Send money to anyone with a phone. 30 seconds.", why: "M-Pesa set the behavioral baseline — any competitor must match its simplicity and speed promise before differentiating. This mirrors the user's mental model." },
+      { competitor: "Equitel", text: "Save as little as KES 10. Every day counts.", why: "Small-denomination savings framing. Kenya's mobile savings culture starts at micro-amounts — acknowledging KES 10 (≈$0.08) is a genuine trust signal with rural users." },
+      { competitor: "Absa Kenya", text: "Apply for a loan on your phone. No branch visit.", why: "Branch elimination for credit access is the primary fintech unlock in peri-urban Kenya. Loan application friction is the barrier — removing it is the entire product story." }
+    ],
+    counter: { text: "Your neighbor sent money home without airtime. Ask them how.", note: "Peer-to-peer discovery framing. 'Ask your neighbor' is a word-of-mouth mechanic that works in Kenya's strong community network culture — especially for financial behavior which spreads through trusted peers, not ads." }
+  },
+  kenya_ecom: {
+    label: "Kenya · E-com",
+    hooks: [
+      { competitor: "Jumia Kenya", text: "Pay on delivery. In Nairobi, Mombasa, Kisumu.", why: "COD + three specific cities. The third city (Kisumu) signals non-Nairobi reach — critical for conversion in Western Kenya where online trust is lower." },
+      { competitor: "Kilimall", text: "Order Sunday. Here Monday.", why: "Extreme delivery simplicity. No logistics jargon, no 'business days' caveat. The weekend order → Monday delivery promise is aspirational for Kenyan e-com." },
+      { competitor: "Amazon Kenya (via UAE)", text: "International brands. Delivered locally.", why: "Import arbitrage anxiety is real — Kenyans want global products but fear customs delays. 'Delivered locally' removes the import ambiguity." }
+    ],
+    counter: { text: "Mpesa lipa. Delivered tomorrow. No funny math.", note: "'No funny math' targets the hidden-fee anxiety common in Kenyan e-com. M-Pesa payment + next-day delivery + total price transparency = the three-part trust stack that drives first purchase." }
+  },
+  philippines_ecom: {
+    label: "Philippines · E-com",
+    hooks: [
+      { competitor: "Shopee Philippines", text: "COD pa rin. Mas mabilis na.", why: "COD remains dominant in PH — starting with affirmation ('still COD') before the upgrade ('faster now') respects existing behavior while signaling improvement." },
+      { competitor: "Lazada Philippines", text: "Flash sale. 11.11. 12 minuto lang.", why: "Super-short flash sale windows create extreme FOMO. '12 minutes only' is more urgent than 'sale ends soon' — and Filipinos track these exactly." },
+      { competitor: "Zalora PH", text: "Free delivery. Free returns. No minimum. Walang catch.", why: "'Walang catch' (no catch) in Taglish is the most trusted phrase to neutralize Filipino skepticism of 'too good to be true' offers." }
+    ],
+    counter: { text: "Hindi ka na kailangang pumunta sa mall. Pumunta ang mall sa'yo.", note: "'The mall comes to you' — mall culture in the Philippines is social and beloved, but positioning e-com as bringing the mall experience home (rather than replacing it) is less threatening and more aspirational." }
+  },
+  philippines_fintech: {
+    label: "Philippines · Fintech",
+    hooks: [
+      { competitor: "GCash", text: "Send money to family in the province. Libreng libre.", why: "'Libreng libre' (totally free) in Filipino is emphatic — the repetition is colloquially authentic, not grammatical error. OFW remittance to provinces is the core use case." },
+      { competitor: "Maya", text: "Open a bank account in 5 minutes. No documents needed.", why: "Document-free account opening removes the largest barrier. 'No documents' in a market where bank account opening requires NBI clearances is a genuine product breakthrough." },
+      { competitor: "Tonik", text: "5% interest on savings. Your bank gives you 0.1%.", why: "Direct interest rate comparison. Filipino consumers know their bank's savings rate is terrible — naming 0.1% makes the contrast viscerally clear." }
+    ],
+    counter: { text: "Bayad bills mo, padala sa probinsya, lahat sa isang app. Wala nang iba.", note: "'Wala nang iba' (nothing else needed) signals completeness. Bundling bill payment + province remittance in one sentence covers 80% of Filipino fintech daily use cases — the all-in-one claim resonates especially with OFW families." }
+  },
+  southafrica_mobility: {
+    label: "South Africa · Mobility",
+    hooks: [
+      { competitor: "Bolt SA", text: "Driver rated 4.9. ETA 4 minutes. Not guessing.", why: "South African ride-hail has a driver quality perception problem. Specific high rating + specific ETA signals real-time data rather than marketing estimates." },
+      { competitor: "inDrive SA", text: "You name the price. Driver agrees. Fair for both.", why: "Economic fairness framing resonates in post-load-shedding SA where both drivers and riders are economically stressed. 'Fair for both' is a positioning differentiator." },
+      { competitor: "Uber SA", text: "Surge pricing off. Price locked before you book.", why: "Surge pricing is South Africa's #1 ride-hail complaint — especially during Joburg rush hour and Cape Town tourist season. Price lock removes the biggest anxiety." }
+    ],
+    counter: { text: "Load-shedding stage 4. Your driver's already found you a lit route.", note: "Load-shedding (power cuts) affects traffic lights across SA, creating chaotic routing. A driver who proactively navigates loadshedding routes is a genuine value prop — but only locals immediately understand why it matters." }
+  },
+  mexico_mobility: {
+    label: "Mexico · Mobility",
+    hooks: [
+      { competitor: "DiDi Mexico", text: "Precio fijo antes de subir. Sin sorpresas al llegar.", why: "Price certainty before boarding. Mexico City traffic unpredictability makes dynamic pricing a major anxiety — locking the price upfront is the highest-converting trust signal." },
+      { competitor: "Uber Mexico", text: "Llega en 3 minutos. O te damos crédito.", why: "ETA guarantee with credit consequence. Specific time + accountability = credibility. The credit offer shows confidence, not just promise." },
+      { competitor: "inDrive Mexico", text: "Negocia tu tarifa. Tú mandas.", why: "'Tú mandas' (you're in charge) is empowerment language. In a market where consumers feel price manipulation is common, control framing converts." }
+    ],
+    counter: { text: "El tráfico de CDMX no es tu problema. Es del conductor.", note: "Mexico City's tráfico is a national shared frustration. Transferring the emotional burden of traffic from rider to driver — 'it's the driver's problem, not yours' — is relief-framing that resonates especially with CDMX commuters." }
+  },
+  brazil_fintech: {
+    label: "Brazil · Fintech",
+    hooks: [
+      { competitor: "Nubank", text: "Sem anuidade. Sem letrinhas miúdas. Nunca.", why: "'Letrinhas miúdas' (fine print) is Brazilian shorthand for financial trickery. Eliminating both the fee and the fine print in one hook covers the two deepest distrust anchors." },
+      { competitor: "PicPay", text: "PIX na hora. Todo dia, toda hora.", why: "PIX has become Brazil's payment baseline — but availability and speed anxiety remain. '24/7' framed in conversational Brazilian ('todo dia, toda hora') rather than technical language." },
+      { competitor: "Mercado Pago", text: "Rende mais que a poupança. Com liquidez diária.", why: "Poupança (savings account) is the reference product for 90% of Brazilian savers. Beating it + daily liquidity answers the two objections that keep money in poupança." }
+    ],
+    counter: { text: "Seu banco cobra taxa para você usar seu próprio dinheiro.", note: "The 'using your own money' framing of banking fees is morally outrageous when stated plainly. This counter-hook works best in contrast to a 0-fee alternative — the outrage of the status quo does the conversion work." }
+  },
+  brazil_mobility: {
+    label: "Brazil · Mobility",
+    hooks: [
+      { competitor: "99 (DiDi Brasil)", text: "Motorista verificado. Placa visível. Viagem gravada.", why: "Safety stack framing. Brazilian women (60%+ of urban mobility trips) list safety as #1 concern. Three concrete safety signals in one hook address it systematically." },
+      { competitor: "Uber Brasil", text: "Corrida cancelada? Motorista chega em 3 minutos ou você não paga.", why: "Cancel compensation + ETA guarantee. Uber cancellation anxiety is high in São Paulo — a concrete consequence for the company makes the promise credible." },
+      { competitor: "inDrive Brasil", text: "Negocia direto com o motorista. Sem algoritmo.", why: "'Sem algoritmo' (without algorithm) is anti-tech backlash appeal. Brazilian consumers are increasingly wary of opaque pricing — direct negotiation feels honest." }
+    ],
+    counter: { text: "O motorista conhece São Paulo de verdade. Não o GPS.", note: "'De verdade' (for real) applied to São Paulo local knowledge vs GPS. The implication: a human who knows the city finds better routes than algorithmic navigation. Resonates during rush hour when GPS often fails in São Paulo." }
+  },
+  egypt_mobility: {
+    label: "Egypt · Mobility",
+    hooks: [
+      { competitor: "Uber Egypt", text: "تاكسي بدون مساومة. السعر معروف قبل ما تركب.", why: "Price negotiation with traditional taxi drivers is a major Egyptian daily frustration. 'السعر معروف' (price is known) eliminates the most painful part of Cairo taxi culture." },
+      { competitor: "Careem", text: "كابتن معك. في أي وقت. في القاهرة الكبرى.", why: "'الكابتن' (captain) is Careem's beloved local terminology. Using it signals local brand understanding. 'القاهرة الكبرى' (Greater Cairo) acknowledges the 22M-city reality, not just downtown." },
+      { competitor: "inDrive Egypt", text: "أنت تحدد السعر. السائق يوافق أو لا.", why: "Negotiation framing works extremely well in Egyptian culture. 'Or not' signals fairness and driver respect, which is an increasingly important brand signal post-pandemic." }
+    ],
+    counter: { text: "زحمة القاهرة مش مشكلتك. هي مشكلة الكابتن.", note: "Cairo's traffic (زحمة) is the city's defining shared experience — second only to the Nile. Transferring the emotional burden of traffic to the driver relieves the rider's anxiety and positions the app as emotional intelligence, not just logistics." }
+  },
+  colombia_health: {
+    label: "Colombia · Health",
+    hooks: [
+      { competitor: "MiDoctor", text: "Cita médica hoy. Sin salir de tu casa.", why: "EPS appointment wait times in Colombia are 15-45 days. 'Hoy' (today) vs the implicit alternative is the entire product value in one word." },
+      { competitor: "Doctoralia Colombia", text: "Especialista disponible esta semana. No el próximo mes.", why: "Specialist access timeline is the core pain. 'Esta semana' (this week) vs 'next month' makes the comparison viscerally clear to anyone who has used the EPS system." },
+      { competitor: "SaludSa", text: "Tu historial médico. En tu celular. Siempre.", why: "Medical record portability is a genuine unmet need in Colombia's fragmented EPS system. 'Siempre' (always) signals continuous access, not just one-time download." }
+    ],
+    counter: { text: "La EPS tiene cita disponible en 3 semanas. Nosotros, hoy a las 4pm.", note: "Direct EPS (public health insurance system) comparison. Every Colombian knows the EPS wait time experience. 'Today at 4pm' turns the abstract time promise into a calendar event — the most concrete possible CTA." }
+  },
+  mexico_health: {
+    label: "Mexico · Health",
+    hooks: [
+      { competitor: "Doctor en Línea", text: "Médico en 10 minutos. Sin sala de espera.", why: "IMSS and private clinic wait times in Mexico City average 2-4 hours. '10 minutos' vs the implicit alternative converts immediately for anyone who has used IMSS." },
+      { competitor: "Mediclic", text: "Receta médica digital. Válida en toda farmacia.", why: "Digital prescription validity across pharmacies removes the friction of physical prescription requirements. 'Toda farmacia' signals genuine system-level integration." },
+      { competitor: "Salud Fácil", text: "Sin IMSS. Sin pagar consulta cara. Con médico real.", why: "IMSS exclusion (self-employed workers, informal economy) + private clinic cost anxiety + 'real doctor' trust signal in three consecutive objection-handlers." }
+    ],
+    counter: { text: "El IMSS tiene cita para dentro de tres semanas. Nosotros, hoy.", note: "IMSS (Mexican public health) is the universal reference point for health access frustration. 'Today vs three weeks' is a time-sensitive contrast that every Mexican understands viscerally — no additional context needed." }
+  },
+  vietnam_fintech: {
+    label: "Vietnam · Fintech",
+    hooks: [
+      { competitor: "MoMo", text: "Chuyển tiền miễn phí 24/7. Không cần tài khoản ngân hàng.", why: "Bank account penetration in Vietnam is ~70% — the remaining 30% is a massive addressable market. '24/7' + 'không cần tài khoản' (no bank account needed) covers both banked and unbanked." },
+      { competitor: "VNPay", text: "QR thanh toán. 3 giây. Ở đâu cũng được.", why: "QR payment is Vietnam's fastest-growing checkout behavior. '3 giây' (3 seconds) + universal availability ('ở đâu cũng được') covers both speed and ubiquity." },
+      { competitor: "Timo", text: "Lãi suất tiết kiệm 6%/năm. Rút bất cứ lúc nào.", why: "High interest + instant withdrawal. Vietnam's traditional bank savings rates are 3-4% — 6% + liquidity answers the two objections that keep money in low-yield accounts." }
+    ],
+    counter: { text: "Ngân hàng mở cửa 8 giờ. Tiền của bạn không nghỉ lễ.", note: "'Your money doesn't take holidays' — bank hours vs always-on fintech. In Vietnam's 6-day work culture, the idea that your banking infrastructure should match your work pace is an emotional resonance hit." }
+  },
+  kenya_health: {
+    label: "Kenya · Health",
+    hooks: [
+      { competitor: "MyDawa", text: "Medicine delivered to your door. Today. Nairobi only needs one pharmacy now.", why: "Doorstep medicine delivery removes the physical pharmacy trip — a significant barrier for working Kenyans with limited midday flexibility." },
+      { competitor: "Daktari Africa", text: "Doctor consultation in English or Swahili. Your choice.", why: "Language choice is a trust signal in Kenya's multilingual context. English-or-Swahili without judgment signals inclusive design, not colonial-default English." },
+      { competitor: "mHealth Kenya", text: "NHIF covered. No out-of-pocket.", why: "NHIF (National Health Insurance Fund) coverage removes the cost anxiety for insured Kenyans who assume digital health requires cash. 'No out-of-pocket' is the unlock phrase." }
+    ],
+    counter: { text: "Kenyatta National Hospital: 4 hours waiting. Your phone: 5 minutes.", note: "KNH (Kenyatta National Hospital) is Kenya's reference point for public health wait times — everyone knows the experience. Making the contrast with '5 minutes on phone' explicit converts the abstract speed promise into a lived comparison." }
+  },
+  philippines_mobility: {
+    label: "Philippines · Mobility",
+    hooks: [
+      { competitor: "Grab PH", text: "Walang surge. Bayad bago sumakay.", why: "'Walang surge' (no surge pricing) in Tagalog — surge pricing is the Philippine ride-hail community's top complaint, especially during typhoon season and rush hour." },
+      { competitor: "Angkas", text: "Habal-habal legal. Helmet kasama. Driver verified.", why: "Angkas legitimized motorcycle taxis in the Philippines. Naming the local term 'habal-habal' + safety stack (helmet included, verified driver) converts in tier 2/3 Philippine cities." },
+      { competitor: "inDrive PH", text: "Ikaw ang nagtatakda ng presyo. Sige o hindi ang driver.", why: "Negotiation in Filipino. 'Sige o hindi' (yes or no) from the driver is casual Tagalog that feels like a real conversation — not corporate copy." }
+    ],
+    counter: { text: "EDSA traffic? Driver knows the back roads. Wala kang iniintindi.", note: "'EDSA traffic' is the most universally dreaded Philippine experience — the highway is cultural shorthand for worst-case scenario. 'Wala kang iniintindi' (nothing to worry about) positions local driver knowledge as the antidote." }
+  },
+  philippines_health: {
+    label: "Philippines · Health",
+    hooks: [
+      { competitor: "KonsultaMD", text: "Doktor online. PhilHealth na ang bahala.", why: "PhilHealth coverage for telemedicine removes the cash payment barrier. 'PhilHealth na ang bahala' (PhilHealth will handle it) is the exact reassurance Filipino patients need." },
+      { competitor: "HealthNow PH", text: "Doctor in 10 minutes. Prescription delivered.", why: "Speed + prescription loop closes the healthcare journey. Filipino patients face long public clinic queues — 10-minute access is a genuine breakthrough promise." },
+      { competitor: "Mwell", text: "Specialist consultation. This week. Not next quarter.", why: "Specialist wait times in Philippine public hospitals are measured in months. 'This week' vs 'next quarter' is the visceral contrast that drives urgent adoption." }
+    ],
+    counter: { text: "Ospital: 3 oras pila. App: 10 minuto. Pili ka.", note: "'Pili ka' (you choose) is a direct Filipino challenge that turns the comparison into agency. '3 oras pila' (3 hours in line) vs '10 minuto' (10 minutes) — the math is obvious, but making it a choice honors the user's intelligence." }
+  },
+  vietnam_mobility: {
+    label: "Vietnam · Mobility",
+    hooks: [
+      { competitor: "Grab Vietnam", text: "Xe ôm không thương lượng. Giá cố định. Lên xe ngay.", why: "Xe ôm (motorcycle taxi) price negotiation is a Vietnamese daily friction. 'Không thương lượng' (no negotiation) + 'giá cố định' (fixed price) removes the most stressful part of the ride." },
+      { competitor: "Be Vietnam", text: "Tài xế người Việt. Hỗ trợ tiếng Việt. Hiểu bạn hơn.", why: "Local driver + Vietnamese-language support. 'Hiểu bạn hơn' (understands you better) is a competitive jab at Grab's regional operator experience vs genuine local understanding." },
+      { competitor: "Gojek Vietnam", text: "Đặt xe. Đặt đồ ăn. Đặt tất cả. Một app.", why: "Super-app positioning in Vietnamese. 'Một app' (one app) is the unlock phrase for app-fatigued Vietnamese smartphone users who want consolidation." }
+    ],
+    counter: { text: "Kẹt xe Hà Nội? Tài xế biết đường tắt mà Google không biết.", note: "'Đường tắt mà Google không biết' (shortcuts Google doesn't know) positions local human knowledge above algorithmic routing. Hà Nội's alley networks (ngõ hẻm) are genuinely not mapped by GPS — this is a real and relatable claim." }
+  },
+  southafrica_health: {
+    label: "South Africa · Health",
+    hooks: [
+      { competitor: "Ctrl (Discovery)", text: "Medical aid that actually covers what you need. From R299.", why: "Medical aid affordability is the #1 health access barrier in South Africa. 'From R299' anchors cost accessibility. 'Actually covers' addresses the infamous Discovery fine-print gap anxiety." },
+      { competitor: "Unu Health", text: "Doctor on call. Tonight. No medical aid needed.", why: "'No medical aid needed' opens the 17M uninsured South African market. 'Tonight' answers the emergency access anxiety that drives private ER visits." },
+      { competitor: "Pineapple Health", text: "Skip the government clinic queue. See a doctor today.", why: "Government clinic queues are 4-6 hours in South Africa — a universally shared experience. Naming the alternative explicitly (not vaguely 'a better option') converts faster." }
+    ],
+    counter: { text: "Load-shedding at 8pm. Your doctor is still online.", note: "Load-shedding and telemedicine — the connection is obvious once stated, invisible until named. A health app that works during Stage 4 load-shedding (when clinics may close early) is a genuinely differentiated claim in the SA market." }
+  }
+};
+
+// Normalize: ensure all combos have fallback
+function getHookData(cat, mkt) {
+  const key = mkt + '_' + cat;
+  return HOOK_DATA[key] || null;
+}
+
+function renderHookCard() {
+  const cat = document.getElementById('catSelect').value;
+  const mkt = document.getElementById('mktSelect').value;
+  const card = document.getElementById('hookCard');
+  const empty = document.getElementById('hookEmpty');
+  const noData = document.getElementById('hookNoData');
+
+  if (!cat || !mkt) {
+    card.style.display = 'none';
+    noData.style.display = 'none';
+    empty.style.display = 'block';
+    return;
+  }
+
+  const data = getHookData(cat, mkt);
+
+  if (!data) {
+    card.style.display = 'none';
+    empty.style.display = 'none';
+    noData.style.display = 'block';
+    return;
+  }
+
+  // Reset gate state
+  document.getElementById('hookGate').style.display = 'block';
+  document.getElementById('hookGateForm').style.display = 'flex';
+  document.getElementById('hookGateSuccess').style.display = 'none';
+  document.getElementById('hookGateError').style.display = 'none';
+  document.getElementById('hookEmail').value = '';
+  _gateUnlocked = false;
+  _applyBlur(true);
+
+  // Fill data
+  document.getElementById('hookCardTag').textContent = data.label;
+
+  // Hook 1 (free)
+  document.getElementById('hook1comp').textContent = data.hooks[0].competitor;
+  document.getElementById('hook1text').textContent = '"' + data.hooks[0].text + '"';
+  document.getElementById('hook1why').textContent = data.hooks[0].why;
+
+  // Hook 2
+  document.getElementById('hook2comp').textContent = data.hooks[1].competitor;
+  document.getElementById('hook2text').textContent = '"' + data.hooks[1].text + '"';
+  document.getElementById('hook2why').textContent = data.hooks[1].why;
+
+  // Hook 3
+  if (data.hooks[2]) {
+    document.getElementById('hook3').style.display = 'block';
+    document.getElementById('hook3comp').textContent = data.hooks[2].competitor;
+    document.getElementById('hook3text').textContent = '"' + data.hooks[2].text + '"';
+    document.getElementById('hook3why').textContent = data.hooks[2].why;
+  } else {
+    document.getElementById('hook3').style.display = 'none';
+  }
+
+  // Counter
+  document.getElementById('hookCounterText').textContent = '"' + data.counter.text + '"';
+  document.getElementById('hookCounterNote').textContent = data.counter.note;
+
+  empty.style.display = 'none';
+  noData.style.display = 'none';
+  card.style.display = 'block';
+}
+
+let _gateUnlocked = false;
+
+function _applyBlur(on) {
+  const els = document.querySelectorAll('.blurred');
+  els.forEach(el => {
+    if (on) el.classList.remove('revealed');
+    else el.classList.add('revealed');
+  });
+}
+
+function submitHookGate() {
+  const email = document.getElementById('hookEmail').value.trim();
+  if (!email || !email.includes('@')) {
+    document.getElementById('hookEmail').focus();
+    return;
+  }
+
+  const cat = document.getElementById('catSelect').value;
+  const mkt = document.getElementById('mktSelect').value;
+  const btn = document.querySelector('.hook-gate-btn');
+
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  // Submit to Formspree
+  fetch('https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({ email: email, market: mkt, category: cat, source: 'global-hook-widget' })
+  })
+  .then(r => {
+    if (r.ok) {
+      _gateUnlocked = true;
+      _applyBlur(false);
+      document.getElementById('hookGate').style.display = 'none';
+    } else {
+      throw new Error('form error');
+    }
+  })
+  .catch(() => {
+    // On error still unlock — don't punish the user for a backend issue
+    _gateUnlocked = true;
+    _applyBlur(false);
+    document.getElementById('hookGate').style.display = 'none';
+    // Try to store for manual follow-up
+    try { localStorage.setItem('orcool_lead_' + Date.now(), JSON.stringify({ email, cat, mkt })); } catch(e){}
+  });
+}
+</script>
 
 <footer>
   <div class="wrap">
