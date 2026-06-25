@@ -952,31 +952,18 @@ function submitHookGate() {
   const btn = document.querySelector('.hook-gate-btn');
 
   btn.disabled = true;
-  btn.textContent = 'Sending...';
+  btn.textContent = 'Unlocking...';
 
-  // Submit to Formspree
-  fetch('https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-    body: JSON.stringify({ email: email, market: mkt, category: cat, source: 'global-hook-widget' })
-  })
-  .then(r => {
-    if (r.ok) {
-      _gateUnlocked = true;
-      _applyBlur(false);
-      document.getElementById('hookGate').style.display = 'none';
-    } else {
-      throw new Error('form error');
-    }
-  })
-  .catch(() => {
-    // On error still unlock — don't punish the user for a backend issue
-    _gateUnlocked = true;
-    _applyBlur(false);
-    document.getElementById('hookGate').style.display = 'none';
-    // Try to store for manual follow-up
-    try { localStorage.setItem('orcool_lead_' + Date.now(), JSON.stringify({ email, cat, mkt })); } catch(e){}
-  });
+  // Reveal content immediately
+  _gateUnlocked = true;
+  _applyBlur(false);
+  document.getElementById('hookGate').style.display = 'none';
+
+  // Open mailto so Boris receives the lead with full context
+  const subject = encodeURIComponent('Hook teardown request — ' + (document.getElementById('hookCardTag').textContent || cat + ' × ' + mkt));
+  const body = encodeURIComponent('Lead email: ' + email + '\nMarket: ' + mkt + '\nCategory: ' + cat + '\n\nSource: get.orcool.com/global hook widget');
+  const mailto = 'mailto:team@orcool.com?subject=' + subject + '&body=' + body;
+  window.location.href = mailto;
 }
 </script>
 
