@@ -381,6 +381,9 @@
           <option value="health">Health</option>
           <option value="ecom">E-com</option>
           <option value="dating">Dating</option>
+          <option value="saas">SaaS</option>
+          <option value="ai_first">AI First Service</option>
+          <option value="subscription">Subscription App</option>
         </select>
       </div>
       <div class="hook-select-wrap">
@@ -857,6 +860,282 @@ const HOOK_DATA = {
       { competitor: "Pineapple Health", text: "Skip the government clinic queue. See a doctor today.", why: "Government clinic queues are 4-6 hours in South Africa — a universally shared experience. Naming the alternative explicitly (not vaguely 'a better option') converts faster." }
     ],
     counter: { text: "Load-shedding at 8pm. Your doctor is still online.", note: "Load-shedding and telemedicine — the connection is obvious once stated, invisible until named. A health app that works during Stage 4 load-shedding (when clinics may close early) is a genuinely differentiated claim in the SA market." }
+  },
+
+  /* ── SaaS ── */
+  nigeria_saas: {
+    label: "Nigeria · SaaS",
+    hooks: [
+      { competitor: "Zoho Nigeria", text: "Bill your clients in naira. Collect in dollars. No Excel.", why: "FX complexity is the #1 pain for Nigerian SMBs with international clients. Naira/USD split billing is a genuine gap that most global SaaS tools ignore. 'No Excel' signals a real alternative, not just a better spreadsheet." },
+      { competitor: "Paystack Business", text: "Your accountant charges ₦50K/month. This costs ₦8K.", why: "Price anchoring against local professional fees lands harder than comparing to Sage or QuickBooks pricing. Lagos accountants are expensive and the comparison is viscerally familiar." },
+      { competitor: "Sage Nigeria", text: "FIRS filing day. No panic. Everything's already done.", why: "FIRS (Federal Inland Revenue Service) deadlines cause genuine SMB stress. A hook that names the specific pain event and removes the emotion converts fast because it's about relief, not features." }
+    ],
+    counter: { text: "Your accountant is in Lagos traffic. Your invoices don't have to wait.", note: "Combines two universal Lagos frustrations — accountant dependency and traffic — into a single moment. The insight is that SaaS removes a human bottleneck without directly attacking the accountant relationship." }
+  },
+  indonesia_saas: {
+    label: "Indonesia · SaaS",
+    hooks: [
+      { competitor: "Mekari", text: "Kelola bisnis dari HP. Tanpa akuntan. Tanpa Excel.", why: "'Tanpa akuntan, tanpa Excel' (without accountant, without Excel) names both the current workarounds Indonesian SMBs use. Mobile-first framing is essential — Indonesian SMB owners often run their business primarily from phone." },
+      { competitor: "Jurnal", text: "Laporan pajak PPh 21 selesai sebelum deadline DJP.", why: "DJP (Direktorat Jenderal Pajak) and PPh 21 are the exact terminology Indonesian business owners fear. Naming them precisely signals category expertise that generic 'accounting software' copy misses." },
+      { competitor: "Majoo", text: "Dari 1 toko ke 10 cabang. Satu dashboard. Satu harga.", why: "Franchise and multi-outlet businesses are booming in Indonesian tier-2/3 cities. The 'one dashboard, one price' construct removes the biggest objection to scaling — perceived cost complexity." }
+    ],
+    counter: { text: "Tim finance-mu fokus pada strategi. Bukan pada rekap manual.", note: "Reframes automation from 'replacing your team' to 'freeing your team for strategy' — a more palatable message in a market where layoff anxiety is high and the finance team is often the founder's trusted inner circle." }
+  },
+  colombia_saas: {
+    label: "Colombia · SaaS",
+    hooks: [
+      { competitor: "Siigo", text: "Factura electrónica DIAN en 30 segundos. Sin contador.", why: "DIAN (Dirección de Impuestos y Aduanas Nacionales) facturación electrónica is mandatory in Colombia. The pain of compliance is universal for SMBs. '30 segundos, sin contador' removes the two biggest objections simultaneously." },
+      { competitor: "Alegra", text: "Tu contador cobra $3M/mes. El software, $180K.", why: "Direct cost comparison using local COP pricing. Colombian accountant market rates are well-known to business owners. The ×16 ratio creates immediate re-evaluation without needing feature lists." },
+      { competitor: "Aspire CO", text: "Nómina para 5. Nómina para 50. Mismo tiempo. Mismo clic.", why: "Scaling payroll (nómina) is a real inflection point for Colombian SMBs between 5-50 employees. The symmetry in the hook (mismo tiempo, mismo clic) creates a memorability effect that resonates on word of mouth." }
+    ],
+    counter: { text: "Semana de impuestos. Tú dormiste. Tu software trabajó.", note: "Tax season sleep loss is a shared SMB trauma in Colombia. The hook creates a contrast between the anxiety of 'impuesto week' and the calm of 'it's already handled' — relief-based conversion rather than feature-based." }
+  },
+  egypt_saas: {
+    label: "Egypt · SaaS",
+    hooks: [
+      { competitor: "Odoo Egypt", text: "أصدر فاتورة ضريبية معتمدة من الجوال في دقيقة.", why: "E-invoicing compliance with Egypt's Tax Authority (ETA) is mandatory since 2021. The promise of issuing a compliant invoice from mobile in one minute removes the two biggest barriers — complexity and location dependency." },
+      { competitor: "QuickBooks ME", text: "فريقك في الإسكندرية. حساباتك في القاهرة. كلها في شاشة واحدة.", why: "Egypt's major commercial corridor is Cairo–Alexandria. Multi-branch visibility for businesses operating across these cities is a genuine operational pain point. 'One screen' is the relief hook." },
+      { competitor: "Paymob Business", text: "الضريبة القيمة المضافة، الرواتب، الفواتير. كل شيء بضغطة.", why: "VAT, payroll (رواتب), and invoicing (فواتير) are the three compliance pillars that consume Egyptian SMB owners' time. Listing them all and promising one tap creates a 'finally, someone gets it' moment." }
+    ],
+    counter: { text: "نهاية الشهر بلا ضغط. كل الأرقام جاهزة قبل ما تطلبها.", note: "Month-end close anxiety is universal but especially acute in Egypt where many SMBs still reconcile manually. 'Before you ask' positions the software as proactively on top of things — intelligence, not just automation." }
+  },
+  brazil_saas: {
+    label: "Brazil · SaaS",
+    hooks: [
+      { competitor: "Conta Azul", text: "NF-e, boleto, DAS do MEI. Tudo sem sair do WhatsApp.", why: "Brazilian SMBs live in WhatsApp. NF-e (nota fiscal eletrônica), boleto payment, and DAS (MEI tax document) are the three most common compliance tasks. Integration with the app they're already in removes the switching cost entirely." },
+      { competitor: "Totvs", text: "Receita Federal na sua porta. Você já estava pronto.", why: "Receita Federal (Brazilian IRS) audits are feared by every small business. The hook creates the confidence of compliance-readiness rather than just compliance tooling. Fear-to-confidence arc converts." },
+      { competitor: "RD Station", text: "Seu concorrente automatizou as vendas. Você ainda usa planilha.", why: "Competitive pressure hook works in Brazil because the local business culture is intensely competitive, especially in retail and food service. Naming 'your competitor' without a name creates the 'who?' anxiety that drives urgency." }
+    ],
+    counter: { text: "Segunda de manhã sem aquela planilha de reconciliação.", note: "Monday morning reconciliation spreadsheet is a known suffering for Brazilian SMB owners. The relief is extremely specific and personal — the hook works because it names the exact moment, not the general category of pain." }
+  },
+  southafrica_saas: {
+    label: "South Africa · SaaS",
+    hooks: [
+      { competitor: "Sage SA", text: "SARS eFiling done before the deadline. Without the accountant.", why: "SARS (South African Revenue Service) eFiling is mandatory for registered businesses. 'Without the accountant' is provocative — it names the trusted intermediary being replaced, which creates both attention and a re-evaluation moment." },
+      { competitor: "Xero SA", text: "Load-shedding hits. Your invoices still went out.", why: "Load-shedding is an existential business disruption in South Africa. Cloud-based SaaS that works regardless of power interruptions is a genuine differentiator that any local business owner immediately understands." },
+      { competitor: "QuickBooks SA", text: "PAYE, VAT, UIF. All filed. You didn't touch Excel.", why: "PAYE (payroll tax), VAT, and UIF (Unemployment Insurance Fund) are the three compliance burdens every South African employer faces. The triple acronym hook signals deep local compliance knowledge — not generic 'accounting software.'" }
+    ],
+    counter: { text: "Your accountant is on leave. Your month-end isn't.", note: "South African leave culture (especially December school holidays) creates genuine business anxiety around accountant availability. The hook names a specific, seasonal, relatable moment of vulnerability." }
+  },
+  mexico_saas: {
+    label: "Mexico · SaaS",
+    hooks: [
+      { competitor: "Aspel", text: "CFDI sellado en segundos. El SAT, contento. Tú, dormido.", why: "CFDI (Comprobante Fiscal Digital por Internet) is Mexico's mandatory electronic invoice format. SAT compliance is the #1 SMB anxiety. 'Tú, dormido' is the relief signal — the work is done while you rest." },
+      { competitor: "CONTPAQi", text: "Tu despacho cobra $8K al mes. Esto cuesta $800.", why: "Contadores in Mexico charge despacho fees that small businesses resent. The 10× cost comparison is both accurate and immediately actionable. Despacho is the local term that signals insider knowledge." },
+      { competitor: "Contobox", text: "Nómina SUA, IMSS, Infonavit. Todo en un solo clic.", why: "SUA (Sistema Único de Autodeterminación), IMSS, and Infonavit payments are the three recurring payroll compliance tasks every Mexican employer knows. Naming all three in the hook signals 'we understand your whole situation.'" }
+    ],
+    counter: { text: "Declaración mensual. La hiciste en el Uber de regreso a la oficina.", note: "Mexico's monthly tax declaration (declaración mensual) is often done last minute. Completing it from mobile while commuting is both realistic and aspirational for the Mexican SMB owner who never has time at a desk." }
+  },
+  vietnam_saas: {
+    label: "Vietnam · SaaS",
+    hooks: [
+      { competitor: "MISA", text: "Báo cáo thuế cho Bộ Tài chính. Xong trước 9h sáng.", why: "Bộ Tài chính (Ministry of Finance) tax reporting is required monthly for Vietnamese businesses. 'Done before 9am' creates a vivid before-work completion image that resonates with Vietnam's early-rising business culture." },
+      { competitor: "Base.vn", text: "Kế toán ở Hà Nội. Giám đốc ở TP.HCM. Một màn hình.", why: "Hanoi–HCM City business split is extremely common for Vietnamese companies with operations in both cities. 'One screen' solves the operational visibility gap without requiring remote management complexity." },
+      { competitor: "Fast Accounting", text: "Hóa đơn điện tử VAT hợp lệ. Trong 30 giây. Từ điện thoại.", why: "E-invoicing (hóa đơn điện tử) is mandatory in Vietnam since 2022. '30 seconds, from phone' removes the complexity perception around compliance. The specificity (30 giây) signals confidence in the product." }
+    ],
+    counter: { text: "Quyết toán cuối năm. Không cần thức đến 2 giờ sáng.", note: "Year-end reconciliation (quyết toán) is Vietnam's most feared accounting period. Late-night reconciliation is a shared trauma for business owners and finance staff. The hook names the specific emotional cost, not the feature." }
+  },
+  kenya_saas: {
+    label: "Kenya · SaaS",
+    hooks: [
+      { competitor: "Odoo Kenya", text: "KRA PIN filing done. M-Pesa reconciled. Before your chai.", why: "KRA (Kenya Revenue Authority) PIN filing and M-Pesa reconciliation are the two most time-consuming daily business tasks in Kenya. 'Before your chai' is a local timing reference (morning tea break) that signals speed without sounding like a Western tech claim." },
+      { competitor: "Wave Kenya", text: "From Mpesa float to quarterly VAT. One tap.", why: "M-Pesa float management (for agents and retailers) to VAT compliance is the full financial arc for Kenyan SMBs. Connecting them with 'one tap' signals a unified system that no locally-built product currently offers." },
+      { competitor: "QuickBooks KE", text: "Your CPA is in Westlands traffic. Your payroll isn't waiting.", why: "Westlands (Nairobi's business district) traffic is a universally shared complaint. Using it as the reason your CPA is unavailable makes the 'software instead' argument feel logical rather than threatening." }
+    ],
+    counter: { text: "iTax deadline. You filed last week. Your competitor filed this morning.", note: "iTax is Kenya's online tax filing system. Filing early vs last-minute is a genuine differentiator for Kenyan businesses because late filing attracts penalties and audits. The competitive framing (your competitor) adds urgency." }
+  },
+  philippines_saas: {
+    label: "Philippines · SaaS",
+    hooks: [
+      { competitor: "Zoho PH", text: "BIR-compliant ORs in seconds. No CPA needed for this part.", why: "BIR (Bureau of Internal Revenue) Official Receipts (ORs) compliance is a constant operational pain in the Philippines. 'No CPA needed for this part' is a permission slip — it doesn't threaten the accountant relationship, it scopes what the software handles." },
+      { competitor: "QuickBooks PH", text: "Payroll for yung team mo. Done before the cutoff. Every time.", why: "'Yung team mo' uses Filipino colloquial mixed-code (Taglish) to signal local authenticity. Payroll cutoff anxiety is universal for Filipino SMB employers — missing it damages trust with employees fast." },
+      { competitor: "Alegra PH", text: "Monthly VAT return, withholding tax, SSS. Lahat, isang app.", why: "VAT return, withholding tax, and SSS (Social Security System) contributions are the three recurring compliance tasks every Filipino employer knows. 'Lahat, isang app' (all in one app) in Tagalog signals that this understands the local reality." }
+    ],
+    counter: { text: "Walang accountant? Walang problema. Your books are already done.", note: "'Walang' (there is no/nothing) in Tagalog is a casual, colloquial term that signals cultural fluency. The hook removes the biggest Philippine SMB objection — 'I can't do accounting without my accountant' — directly and without condescension." }
+  },
+
+  /* ── AI First Service ── */
+  nigeria_ai_first: {
+    label: "Nigeria · AI First Service",
+    hooks: [
+      { competitor: "Local creative agencies (Lagos)", text: "Your agency takes 6 weeks. The AI service takes 6 hours.", why: "Lagos agency timelines are notoriously long due to client approval chains and resource contention. The 6w vs 6h contrast is believable and specific enough to stop the scroll. Time-to-market is the real pain, not cost." },
+      { competitor: "Flutterwave Growth", text: "One product manager. Ten markets. AI handles the other nine.", why: "Nigerian tech companies expanding across Africa face a localization resourcing problem. AI-first framing as a force multiplier for a lean team resonates with the Andela-generation of African tech PMs who see themselves as operators, not operators-with-teams." },
+      { competitor: "Daba Finance content", text: "100 ad creatives. One brief. Three days. AI, not interns.", why: "'Not interns' is a provocative contrast that names the current workaround without making it an insult. Nigerian growth teams understand intern-powered content farms — the AI alternative is aspirational, not threatening." }
+    ],
+    counter: { text: "Your competitor launched in Ghana, Kenya, and Cameroon this quarter. You still have one market.", note: "Multi-market expansion at speed is the defining AI-first service value prop in Nigeria's tech ecosystem. The competitive framing creates urgency by naming the observable consequence of being slower — not a hypothetical risk." }
+  },
+  indonesia_ai_first: {
+    label: "Indonesia · AI First Service",
+    hooks: [
+      { competitor: "GoTo AI services", text: "Tim 3 orang. Output seperti tim 30. AI yang beda.", why: "The 3-vs-30 ratio is psychologically sticky. Indonesian startup culture has normalized 'lean team' as a badge of honor since Go-Jek's early days. AI as the force multiplier — not the replacement — is the right framing for this culture." },
+      { competitor: "Mekari AI", text: "Konten untuk 5 kanal. Dibuat dalam satu hari. Bukan copy-paste.", why: "'Bukan copy-paste' (not copy-paste) names the quality objection before the buyer raises it. Indonesian B2B buyers are skeptical of AI quality after being burned by low-quality machine translation. Preempting the objection converts." },
+      { competitor: "Local AI agencies Jakarta", text: "Kampanye lokal untuk Jawa, Sulawesi, Papua. Satu tim. Satu minggu.", why: "Indonesia's 17,000+ islands and 700+ languages make localization a genuine operational challenge. An AI service that can produce culturally appropriate content for regions as different as Java and Papua in one week is a real differentiator." }
+    ],
+    counter: { text: "Kuartal ini kamu masuk ke 3 pasar baru. Tanpa rekrut. Tanpa agensi.", note: "Entering three new markets in one quarter without hiring or agency overhead is the AI-first service promise that CFO and CMO both care about. The double 'tanpa' (without) construct creates a clean benefit stack." }
+  },
+  colombia_ai_first: {
+    label: "Colombia · AI First Service",
+    hooks: [
+      { competitor: "Local agencies Bogotá", text: "Tu agencia tarda 3 semanas. El servicio de IA, 3 días.", why: "Bogotá agency timelines are a known frustration for growth teams — the 7× speed comparison is realistic and the pairing of 'semanas' vs 'días' creates a memorable contrast. Time is the anchor, not price." },
+      { competitor: "Rappi Growth", text: "Una campaña para Medellín, una para Bogotá, una para Cali. Al mismo tiempo.", why: "Colombia's three major cities (Medellín, Bogotá, Cali) have meaningfully different consumer cultures and slang. An AI service that produces localized campaigns for all three simultaneously — not just Spanish-with-a-city-name-swap — is a genuine differentiator." },
+      { competitor: "Digital marketing boutiques", text: "Tu equipo de 2 creó más contenido este trimestre que el equipo de 20 del año pasado.", why: "Before/after comparisons with your own team are more persuasive than competitor comparisons in Colombia's trust-oriented B2B culture. The insight is that AI doesn't replace the team — it makes the same team look like a 10× version of itself." }
+    ],
+    counter: { text: "El tiempo entre la señal del mercado y el anuncio publicado: 48 horas.", note: "Time-to-Winner expressed in hours (not weeks) is the core AI-first service metric. For Colombian growth teams watching competitors move faster, 48 hours from signal to live ad is the promise that re-frames what 'fast' means." }
+  },
+  egypt_ai_first: {
+    label: "Egypt · AI First Service",
+    hooks: [
+      { competitor: "Cairo digital agencies", text: "إعلان مُحلَّق للقاهرة والإسكندرية والمنصورة. في يوم واحد.", why: "Egypt's three major markets (Cairo, Alexandria, Mansoura) have distinct dialects and consumer behaviors. AI-generated localized content for all three in one day removes the multi-city campaign production bottleneck that has historically required separate agency briefs." },
+      { competitor: "Instabug Growth", text: "فريقك من 3 أشخاص ينتج مثل فريق من 30. هذا هو الذكاء الاصطناعي.", why: "The 3-vs-30 ratio resonates universally but especially in Egypt where scaling a marketing team is costly due to office space, social insurance, and salary inflation in Cairo. AI as multiplier is more compelling than AI as replacement." },
+      { competitor: "Local martech agencies", text: "الحملة الإعلانية من الإشارة إلى الإطلاق: 72 ساعة.", why: "72 hours from signal to launch is a credible AI-first service promise for the Egyptian market where typical agency turnaround is 2-4 weeks. The specificity of '72 ساعة' signals operational confidence, not marketing vagueness." }
+    ],
+    counter: { text: "منافسك دخل السوق السعودي وأنت لا تزال تنتظر موافقة الوكالة.", note: "Regional expansion (Egypt to Saudi Arabia or UAE) is the growth ambition of every successful Egyptian tech company. The 'waiting for agency approval' line names the specific bottleneck that AI-first services remove — and frames it as a competitive loss." }
+  },
+  brazil_ai_first: {
+    label: "Brazil · AI First Service",
+    hooks: [
+      { competitor: "Rock Content", text: "A agência demora 3 semanas. O serviço de IA entrega em 3 dias.", why: "Brazilian agency timelines are notorious — the 7× speed comparison is accurate and relatable. The parallel structure (semanas vs dias) creates a natural reading rhythm that makes the comparison sticky." },
+      { competitor: "Pipedrive AI tools", text: "Um time de 4 entregou mais criativo este trimestre do que o time de 40 do ano passado.", why: "Before/after team comparison resonates with Brazilian growth teams who've experienced the pressure to 'do more with less' post-pandemic. The 10× multiplier is aspirational without being unbelievable." },
+      { competitor: "V4 Company", text: "Nordeste, Sudeste, Sul. Campanhas diferentes. Produzidas ao mesmo tempo.", why: "Brazil's regional marketing diversity is massive — Nordeste and Sul have different slang, cultural references, and product preferences. AI-first services that actually localize (not just translate) for Brazil's regions are genuinely differentiated from São Paulo-centric agencies." }
+    ],
+    counter: { text: "Seu concorrente testou 100 criativos esse trimestre. Você testou 10.", note: "Creative velocity as a proxy for performance is the AI-first service proof point that CMOs and performance marketers immediately understand. The gap (100 vs 10) creates urgency without requiring a features conversation." }
+  },
+  southafrica_ai_first: {
+    label: "South Africa · AI First Service",
+    hooks: [
+      { competitor: "Ogilvy SA", text: "Agency retainer: R120K/month. AI service: R12K. Same output.", why: "Ogilvy is the most recognized agency name in South African marketing circles. The 10× cost comparison using ZAR pricing creates immediate sticker shock. 'Same output' is the bold claim that earns the click." },
+      { competitor: "Loot AI", text: "Content for Cape Town, Joburg, and Durban. In their language. This week.", why: "Cape Town (Afrikaans/English), Johannesburg (Zulu/Sotho/English), and Durban (Zulu/Indian English) have genuinely different cultural registers. 'In their language' is about cultural fluency, not just translation — a meaningful AI-first differentiator." },
+      { competitor: "Local digital agencies", text: "Load-shedding hit. Your content schedule didn't stop.", why: "Load-shedding disrupts local agencies' production capacity — it doesn't disrupt AI services. Cloud-based AI creative production as load-shedding-resilient is a genuinely unique South African value proposition." }
+    ],
+    counter: { text: "Your Time-to-Winner used to be 8 weeks. It's now 8 days.", note: "Time-to-Winner as the metric reframes the AI-first value proposition from 'cheaper' to 'faster to results' — a more defensible claim for a South African CMO justifying budget to a cost-conscious CFO in a recession-pressured economy." }
+  },
+  mexico_ai_first: {
+    label: "Mexico · AI First Service",
+    hooks: [
+      { competitor: "Local CDMX agencies", text: "Tu agencia te cobra $150K/mes. Nosotros, $15K. Mismo ROI.", why: "CDMX agency retainers are a known pain point for Mexican marketing directors. The 10× cost delta using Mexican pesos creates an immediate re-evaluation moment. 'Mismo ROI' is the bold qualifier that earns attention." },
+      { competitor: "Clip Marketing", text: "Norte, Centro, Sur. Creativos diferentes para cada región. En una semana.", why: "Mexico's regional diversity (Norteños, Capitalinos, Sureños) is significant for consumer marketing. A service that produces genuinely regional creative — not just the same ad with different state names — is a meaningful differentiator in a market where CDMX agencies often miss the provinces." },
+      { competitor: "Marketeros MX", text: "De la señal de tendencia al anuncio publicado: menos de 72 horas.", why: "Trend-to-ad speed in Mexico is critical because social trends move fast in a market with very high TikTok and Instagram engagement rates among 18-35 year olds. 72 hours is specific enough to be credible and fast enough to matter." }
+    ],
+    counter: { text: "Tu competidor ya probó 50 creativos este mes. Tú vas en 5.", note: "Creative testing velocity is the metric that separates AI-first growth teams from traditional agency-dependent ones. The 50-vs-5 gap creates urgency without requiring a product demo — the number does the selling." }
+  },
+  vietnam_ai_first: {
+    label: "Vietnam · AI First Service",
+    hooks: [
+      { competitor: "FPT AI services", text: "Tiết kiệm 80% chi phí marketing. Không giảm chất lượng.", why: "80% cost reduction is a bold claim that works in Vietnam's price-sensitive B2B market, but the 'không giảm chất lượng' (without reducing quality) qualifier is essential — Vietnamese buyers have been burned by cheap-but-bad outsourcing and are skeptical." },
+      { competitor: "Base AI Vietnam", text: "Team 5 người. Output như team 50. AI làm phần còn lại.", why: "The force-multiplier framing (5 vs 50) is universally effective but especially resonant in Vietnam's startup ecosystem where lean teams are a norm and hiring is expensive due to rapid talent market inflation in HCM City." },
+      { competitor: "Local digital agencies HCM", text: "Từ trend TikTok đến quảng cáo đã chạy: 48 tiếng.", why: "TikTok is Vietnam's dominant growth channel for consumer apps and e-commerce. 48 hours from trending sound/format to live ad is the speed metric that Vietnamese performance marketers care about — agencies take 2-3 weeks for the same workflow." }
+    ],
+    counter: { text: "Đối thủ của bạn vào thị trường mới mỗi quý. Bạn vẫn đang lên kế hoạch.", note: "Vietnam's rapid regional expansion into neighboring SEA markets (Thailand, Philippines, Indonesia) is the growth ambition of leading Vietnamese tech companies. 'Still planning' vs 'already executing' is the competitive comparison that creates executive urgency." }
+  },
+  kenya_ai_first: {
+    label: "Kenya · AI First Service",
+    hooks: [
+      { competitor: "Local Nairobi agencies", text: "Nairobi agency: $5K/month. AI service: $500/month. You do the math.", why: "Direct cost comparison with local Nairobi agency pricing is viscerally effective for Kenyan marketing managers who know exactly what agencies charge. 'You do the math' is a confidence signal — the number is so clear it needs no explanation." },
+      { competitor: "Safaricom marketing", text: "Content for Nairobi, Mombasa, Kisumu, and Nakuru. This week. Not next quarter.", why: "Kenya's four major cities have distinct cultural and linguistic registers (Sheng in Nairobi, coastal Swahili in Mombasa, Luo influence in Kisumu). An AI service claiming genuine local relevance across these cities is differentiating in a market where most agencies default to Nairobi-centric English." },
+      { competitor: "Twiga Foods Growth", text: "From M-Pesa signal to Facebook ad: 48 hours.", why: "M-Pesa transaction data as a market signal is uniquely Kenyan. Connecting that local data source directly to paid social creative — and doing it in 48 hours — is a claim no traditional agency can make and signals deep market understanding." }
+    ],
+    counter: { text: "Your competitor expanded into Uganda and Tanzania this year. You noticed on LinkedIn.", note: "East Africa regional expansion is the strategic goal of every successful Kenyan tech company. Noticing a competitor's expansion on LinkedIn is the painful moment of realizing you moved too slowly — naming it creates visceral urgency." }
+  },
+  philippines_ai_first: {
+    label: "Philippines · AI First Service",
+    hooks: [
+      { competitor: "Local Manila agencies", text: "Agency retainer: ₱200K/month. AI service: ₱20K. Same output.", why: "Manila agency retainer rates are well-known to Philippine marketing managers. The 10× comparison in PHP makes it immediately tangible. 'Same output' is the provocative qualifier that earns the second look." },
+      { competitor: "Kumu AI", text: "Luzon, Visayas, Mindanao. Tatlong campaign. Isang linggo.", why: "The Philippines' three island groups (Luzon, Visayas, Mindanao) have distinct cultural identities, languages (Tagalog, Cebuano, Ilonggo), and consumer behaviors. An AI service producing genuinely distinct campaigns for all three in one week is a real differentiator vs Manila-centric agencies." },
+      { competitor: "BPO-based content teams", text: "Hindi na kailangan ng BPO para sa content. AI na ang gumawa. Mas mabilis.", why: "'Hindi na kailangan ng BPO' (No longer need a BPO) is a bold claim in a country where BPO is a national industry. Framing AI as faster — not cheaper (which would feel like an attack on livelihoods) — is the respectful version of the same comparison." }
+    ],
+    counter: { text: "Ang iyong kakumpitensya ay nag-test ng 100 creatives ngayong buwan. Ikaw, 10.", note: "Creative testing velocity in Tagalog. The 100-vs-10 ratio is the performance marketing truth that AI-first services unlock. Using Filipino language in the counter-hook signals genuine market commitment vs generic global messaging." }
+  },
+
+  /* ── Subscription App ── */
+  nigeria_subscription: {
+    label: "Nigeria · Subscription App",
+    hooks: [
+      { competitor: "Duolingo Nigeria", text: "Less than your weekly data bundle. Lasts the whole month.", why: "Data bundle cost is the primary price reference frame for Nigerian app buyers. Positioning a subscription app below the data bundle threshold removes the price objection entirely without requiring a discount." },
+      { competitor: "Headspace NG", text: "7 days free. No card. If you love it, ₦1,500 keeps it.", why: "Card skepticism is high in Nigeria due to debit card fraud and unauthorized charges. 'No card' for the trial explicitly removes the biggest barrier to trial signup. The '₦1,500 keeps it' framing anchors price to action, not obligation." },
+      { competitor: "Babbel Africa", text: "Cancel anytime. We mean it. No WhatsApp chasing you after.", why: "'No WhatsApp chasing you' directly addresses the Nigerian experience of subscription apps using aggressive local-market retention tactics. The promise of frictionless cancellation paradoxically increases subscription conversion in markets where lock-in is feared." }
+    ],
+    counter: { text: "Used it on the bus. Finished the lesson before Third Mainland Bridge.", note: "Third Mainland Bridge (Lagos) is Nigeria's longest bridge and a known commute landmark. Naming it as the time context for completing a lesson creates a vivid, specific, shareable image that works in word-of-mouth marketing among Lagos commuters." }
+  },
+  indonesia_subscription: {
+    label: "Indonesia · Subscription App",
+    hooks: [
+      { competitor: "Ruangguru Premium", text: "Kurang dari segelas kopi susu per minggu. Lebih berguna dari 10 buku.", why: "'Kopi susu' (milk coffee) is Indonesia's dominant café drink and a known cultural price anchor — GoTo named a major initiative after it. Below-kopi-susu pricing is an instantly relatable value reference that needs no further explanation." },
+      { competitor: "Belajar.id Premium", text: "Coba 7 hari gratis. Tidak perlu kartu kredit. Tidak ada jebakan.", why: "'Tidak ada jebakan' (no trap) directly addresses Indonesian consumer skepticism about subscription apps hiding cancellation hurdles. Naming the fear explicitly and denying it converts better than simply saying 'easy cancel.'" },
+      { competitor: "Headspace ID", text: "Batalkan kapan saja. Dari aplikasi. Bukan dari email ke customer service.", why: "The 'email to customer service' cancellation path is a known dark pattern that Indonesian consumers have experienced. Naming it as what this service doesn't do creates a trust signal that's more persuasive than generic 'cancel anytime' language." }
+    ],
+    counter: { text: "Langganan yang kamu pakai tiap hari. Bukan yang kamu lupakan tiap bulan.", note: "'Langganan yang kamu lupakan' (the subscription you forget) is a shared consumer experience. The contrast between 'use every day' vs 'forget every month' creates a quality signal without feature comparisons — product confidence through usage frequency." }
+  },
+  colombia_subscription: {
+    label: "Colombia · Subscription App",
+    hooks: [
+      { competitor: "Duolingo Plus CO", text: "Menos que un café al mes. Más que un coach particular.", why: "Café price anchoring works in Colombia where tinto (Colombian black coffee) is the cultural daily ritual and price reference. Compared to a coach (instructor), the subscription looks like an obvious deal — two anchors in one line." },
+      { competitor: "Calm Colombia", text: "7 días gratis. Sin tarjeta. Sin call center persiguiéndote.", why: "'Call center persiguiéndote' (call center chasing you) names the specific Colombian consumer trauma from telecoms and cable companies who use aggressive retention calling. Promising freedom from that behavior is a genuine differentiator." },
+      { competitor: "Babbel ES", text: "Cancela cuando quieras. Directo desde la app. Sin formularios.", why: "Colombian subscription apps often require email cancellation or form submission (influenced by US dark patterns). 'Directo desde la app, sin formularios' (directly from the app, no forms) is the specific frictionlessness that converts skeptical Colombian buyers." }
+    ],
+    counter: { text: "Menos que Netflix. Más útil para lo que realmente necesitas aprender.", note: "Netflix is the universal subscription price anchor in Colombia. Positioning below Netflix price while claiming higher personal utility creates an instant favorability shift — 'I already pay for entertainment subscriptions, why not one that actually helps me?'" }
+  },
+  egypt_subscription: {
+    label: "Egypt · Subscription App",
+    hooks: [
+      { competitor: "Noon Academy Premium", text: "أقل من وجبة فطور. أكثر من مدرس خصوصي.", why: "Breakfast cost (فطور) is a universal Egyptian household reference point. Positioning below it while claiming superiority to a private tutor (مدرس خصوصي — a significant cultural investment in Egypt) creates a powerful value ratio." },
+      { competitor: "LinguaArabica", text: "7 أيام مجاناً. بدون بطاقة بنكية. بدون التزام.", why: "Card registration skepticism is high in Egypt due to concerns about unauthorized charges and bank security. 'بدون بطاقة بنكية' (without a bank card) for the trial period directly removes the primary barrier to starting." },
+      { competitor: "Almentor Premium", text: "ألغِ الاشتراك في دقيقة. بدون اتصال بخدمة العملاء.", why: "Egyptian subscription services are known for difficult cancellation processes requiring phone calls to customer service. Promising one-minute self-service cancellation removes the most feared lock-in anxiety in the Egyptian consumer market." }
+    ],
+    counter: { text: "في المواصلات. في الاستراحة. في أي وقت. الدرس الواحد خمس دقائق.", note: "'في المواصلات' (on public transport/commute) names the most common Egyptian mobile usage context — crowded microbuses, metro, and ring-road service vehicles. Five-minute lessons designed for commute time is a genuinely local product insight." }
+  },
+  brazil_subscription: {
+    label: "Brazil · Subscription App",
+    hooks: [
+      { competitor: "Duolingo Plus BR", text: "R$14,90/mês. Menos que um açaí com granola.", why: "Açaí com granola (açaí bowl with granola) is Brazil's most recognizable healthy snack and a middle-class daily treat. The price comparison is both relatable and aspirational — the subscription is cheaper than the snack you already buy." },
+      { competitor: "Calm Brazil", text: "7 dias grátis. Sem cartão. Cancela pelo app em 30 segundos.", why: "Brazilian consumers fear subscription traps (cobranças escondidas) due to widespread experience with gym memberships and phone plans that are hard to cancel. Naming '30 seconds from the app' creates trust through specificity." },
+      { competitor: "Nalu Mindfulness", text: "Cancela quando quiser. Sem email para o suporte. Sem espera.", why: "Waiting for support to cancel is a shared Brazilian consumer trauma from telecom and streaming services. 'Sem espera' (no wait) combined with self-service cancellation is a trust signal that converts skeptical Brazilian app buyers." }
+    ],
+    counter: { text: "No Uber. No metrô. Nos 7 minutos antes da reunião. Sempre cabe.", note: "São Paulo and Rio commuting contexts (Uber, metrô) named explicitly. '7 minutes before a meeting' creates a specific mobile-learning moment that any Brazilian professional recognizes from their own life." }
+  },
+  southafrica_subscription: {
+    label: "South Africa · Subscription App",
+    hooks: [
+      { competitor: "Headspace SA", text: "Less than your Netflix. More useful than your gym membership.", why: "Netflix and gym memberships are the two universal subscription price references in South Africa. Positioning below Netflix (R99-199) and above gym value creates an immediate favorability frame without needing to state the actual price." },
+      { competitor: "8Fit SA", text: "7-day free trial. No card. Cancel from the app. That's it.", why: "South African consumers have been trained by cell phone contract culture to be extremely wary of 'free trials' that automatically charge. 'No card, cancel from the app' directly counters the learned skepticism from MTN and Vodacom's SIM deal history." },
+      { competitor: "Calm SA", text: "Works during load-shedding. Downloaded content. No excuses.", why: "Load-shedding kills data connectivity regularly. A subscription app with offline/downloaded content that explicitly works during Stage 4 load-shedding is a genuinely differentiated claim for South Africa that no other market requires." }
+    ],
+    counter: { text: "You kept the Netflix. You kept the Spotify. Keep this one too.", note: "The subscription stack framing ('you already have X and Y, add this') normalizes the decision by referencing existing subscription behavior. South Africans spend significantly on streaming despite economic pressure — this positions the app as peer to established categories." }
+  },
+  mexico_subscription: {
+    label: "Mexico · Subscription App",
+    hooks: [
+      { competitor: "Duolingo Plus MX", text: "Menos que un café de Starbucks al mes. Cancela cuando quieras.", why: "Starbucks México is culturally loaded in Mexico as a marker of urban middle-class spending. Below-Starbucks-coffee pricing creates both an accessibility signal and a 'you already spend more on a coffee' justification that neutralizes price objections." },
+      { competitor: "Calm MX", text: "7 días gratis. Sin tarjeta de crédito. Sin letra chica.", why: "'Sin letra chica' (no fine print) directly names the Mexican consumer's deepest subscription fear — the hidden clause that authorizes recurring charges. Naming it explicitly and denying it is more powerful than any reassurance about easy cancellation." },
+      { competitor: "Noom MX", text: "Cancela desde la app. Sin llamar al 800. Sin esperar 20 minutos.", why: "Mexican subscription cancellation processes notoriously route through 800 number call centers (a legacy of telecoms regulation). The specificity of '20 minutos de espera' (20 minute wait) names a shared consumer trauma that makes self-service cancellation feel like a gift." }
+    ],
+    counter: { text: "En el Metrobús. En el pesero. En los 8 minutos que nadie te habla.", note: "Metrobús and pesero (Mexico City's public microbuses) are the real commute contexts for Mexico City's 22M metro population. '8 minutes that nobody talks to you' is the specific commute dead-time that mobile learning apps should own." }
+  },
+  vietnam_subscription: {
+    label: "Vietnam · Subscription App",
+    hooks: [
+      { competitor: "ELSA Speak Premium", text: "Dùng thử 7 ngày miễn phí. Không cần thẻ tín dụng. Hủy bất kỳ lúc nào.", why: "Vietnamese consumers distrust subscription apps due to limited consumer protection for digital recurring charges. 'Không cần thẻ tín dụng' (no credit card) removes the primary barrier since most Vietnamese users prefer bank transfer (chuyển khoản) or e-wallets over card-based payments." },
+      { competitor: "Cake Learning", text: "Ít hơn một ly trà sữa mỗi tuần. Hữu ích hơn 10 lần.", why: "Bubble tea (trà sữa) is Vietnam's most culturally loaded consumer product — a status drink, a meeting place, and a price anchor all at once. Positioning a subscription app below trà sữa cost while claiming 10× the value is both playful and persuasive for the 20-30 demographic." },
+      { competitor: "Headspace VN", text: "Học trong lúc kẹt xe. 10 phút. Mỗi ngày.", why: "Ho Chi Minh City traffic (kẹt xe) is the defining urban experience of every working Vietnamese adult. A mobile learning app designed explicitly for 10-minute traffic sessions is a product insight, not just a feature — and it converts because it names the real usage moment." }
+    ],
+    counter: { text: "Hủy trong 30 giây từ ứng dụng. Không cần email hỗ trợ.", note: "Self-service cancellation from within the app (30 seconds) vs emailing support is the specific friction that Vietnamese app users have experienced with previous subscription services. Naming the exact alternative (email hỗ trợ) makes the promise concrete." }
+  },
+  kenya_subscription: {
+    label: "Kenya · Subscription App",
+    hooks: [
+      { competitor: "M-Shule Premium", text: "Cheaper than a matatu fare. Works offline. No data needed.", why: "Matatu fare (KSh 30-80 per trip) is Kenya's most universally relatable small spending reference. 'Works offline' is a genuine differentiator in a market where data costs are high relative to income and connectivity outside Nairobi is unreliable." },
+      { competitor: "Duolingo KE", text: "7 days free. Cancel via M-Pesa. No email, no call.", why: "M-Pesa-linked cancellation removes the credit card dependency that most Western subscription apps assume. In Kenya, if you can cancel via M-Pesa (which everyone has), the subscription feels controllable and safe." },
+      { competitor: "Headspace KE", text: "Downloaded for offline. Lesson done before Thika Road.", why: "Thika Road is Nairobi's main commuter highway and a universally recognized commute reference. Completing a downloaded lesson before reaching a commute landmark creates a specific, local, aspirational image of productive commuting." }
+    ],
+    counter: { text: "Paid via M-Pesa. Cancelled via M-Pesa. The whole subscription, in the app.", note: "Full M-Pesa integration (payment and cancellation) within the app is the Kenyan subscription app gold standard. It signals that the product was built for Kenya, not adapted to it — a critical distinction for local market trust." }
+  },
+  philippines_subscription: {
+    label: "Philippines · Subscription App",
+    hooks: [
+      { competitor: "Duolingo Plus PH", text: "Less than your milk tea budget this week. Cancel anytime. Walang catch.", why: "'Walang catch' (Tagalog: no catch/trick) directly addresses Filipino consumer skepticism from experience with telecom promos that have hidden conditions. The milk tea price anchor (₱80-150) is universally relatable for the 18-35 demographic that is the core subscription app buyer." },
+      { competitor: "Kumu Premium", text: "7 days free. No GCash or credit card needed to start. Just download.", why: "Removing GCash or credit card requirement for trial signup is a meaningful conversion unlock in the Philippines where card penetration is lower and GCash linking anxiety (unauthorized charges) is real. 'Just download' removes all barriers to starting." },
+      { competitor: "Calm PH", text: "Mag-cancel kahit kailan. Sa app mismo. Hindi email. Hindi hotline.", why: "'Hindi email, hindi hotline' (not email, not hotline) names the two most frustrating cancellation paths in Filipino consumer experience — telecoms and banks both use these. The Tagalog phrasing creates cultural authenticity that English-only copy misses." }
+    ],
+    counter: { text: "Sa commute. Sa lunch break. Sa 5 minutong walang nagche-check ng phone mo.", note: "'Sa 5 minutong walang nagche-check ng phone mo' (in the 5 minutes when nobody's checking your phone) captures the stolen moments of the Filipino office worker's day. This is the real mobile usage context — not dedicated study time, but micro-sessions in the in-between." }
   }
 };
 
