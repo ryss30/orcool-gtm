@@ -134,6 +134,21 @@
   .cbox li{padding:8px 0 8px 26px;position:relative;font-size:15px;color:#5a5450}
   .cbox li::before{content:"\2192";position:absolute;left:0;color:var(--blue);font-weight:700}
 
+  /* Pattern output card */
+  .patcard{background:#0a0a0a;border:1px solid #1e1e1e;border-radius:16px;overflow:hidden;max-width:760px;margin-top:16px}
+  .patcard .phead{padding:14px 18px;border-bottom:1px solid #1a1a1a;display:flex;align-items:center;gap:10px}
+  .patcard .ptag{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+  .patcard .pbody{padding:20px 22px}
+  .patcard .psect{margin-bottom:18px}
+  .patcard .psect:last-child{margin-bottom:0}
+  .patcard .plabel{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#555;margin-bottom:7px}
+  .patcard .ptext{color:#EDEBE8;font-size:15px;line-height:1.65}
+  .patcard .plist{list-style:none;margin:6px 0 0;padding:0}
+  .patcard .plist li{padding:4px 0 4px 18px;position:relative;font-size:14.5px;color:#C9C7C4;line-height:1.5}
+  .patcard .plist li::before{content:"\2013";position:absolute;left:0;color:var(--blue)}
+  .patcard .phook{background:#111;border-left:3px solid var(--yellow);border-radius:0 8px 8px 0;padding:13px 16px;color:#FFD57A;font-family:var(--serif);font-style:italic;font-size:15.5px;line-height:1.6}
+  .patcard .pfoot{padding:12px 18px;border-top:1px solid #151515;font-size:12.5px;color:#444;font-family:var(--mono);line-height:1.6}
+
   .faq details{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-top:12px;cursor:pointer}
   .faq summary{font-weight:600;font-size:17px;list-style:none}
   .faq summary::-webkit-details-marker{display:none}
@@ -224,6 +239,67 @@
         <p>What shifted across mobile-gaming UA this week, which mechanics are heating up, where spend is moving. One read before planning instead of five tabs and a guess. First one is free.</p>
         <div class="ship">Slack: weekly digest<br><span class="m">MCP: on demand, any category</span></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEE THE OUTPUT -->
+<section class="dark" id="output" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow">See the output</span>
+    <h2 style="margin-top:14px">Concrete signal, not another dashboard.</h2>
+    <p style="margin-top:14px;max-width:600px">You do not get a vague trend report. You get the mechanic that is moving, where it shows up, why it works, and what your creative team should test next. Structured enough for agents, readable enough for Slack.</p>
+
+    <p style="margin-top:28px;font-size:13.5px;font-family:var(--mono);color:#666;letter-spacing:.01em">A UA lead asks. Orcool returns a Pattern your team can brief from the same session:</p>
+
+    <div class="qbox" style="margin-top:10px;border-left-color:#D97757;max-width:760px">
+      <div class="ql" style="color:#D97757">Claude &middot; with Orcool connected</div>
+      <p>What creative pattern is working right now in casual puzzle competitors?</p>
+    </div>
+
+    <div class="patcard">
+      <div class="phead">
+        <span style="width:8px;height:8px;border-radius:50%;background:var(--green);flex:0 0 8px;display:block"></span>
+        <span class="ptag" style="color:var(--green)">Pattern</span>
+        <span style="font-family:var(--mono);font-size:11.5px;color:#3a3a3a;margin-left:auto">Orcool &middot; casual puzzle &middot; US</span>
+      </div>
+      <div class="pbody">
+        <div class="psect">
+          <div class="plabel">Pattern name</div>
+          <div class="ptext" style="font-weight:700;font-size:19px;color:#fff;letter-spacing:-.01em">Fake-fail rescue loop</div>
+        </div>
+        <div class="psect">
+          <div class="plabel">What we observe</div>
+          <div class="ptext">Competitors are opening ads with an intentionally bad move, a near-loss board state, or a trapped character moment. The viewer sees the mistake immediately and wants to fix it.</div>
+        </div>
+        <div class="psect">
+          <div class="plabel">Where it shows up</div>
+          <ul class="plist">
+            <li>Casual puzzle onboarding creatives</li>
+            <li>Match-3 fail-state hooks</li>
+            <li>Playable-style video ads</li>
+            <li>Short UGC explainers</li>
+          </ul>
+        </div>
+        <div class="psect">
+          <div class="plabel">Why it works</div>
+          <div class="ptext">The mechanic creates instant agency. The player understands the problem in under two seconds and feels smarter than the person on screen. That makes the first tap feel obvious instead of requested.</div>
+        </div>
+        <div class="psect">
+          <div class="plabel">Test first</div>
+          <ul class="plist">
+            <li>6-second fail-state cold open</li>
+            <li>&ldquo;Can you fix this?&rdquo; playable-style variant</li>
+            <li>UGC creator reacting to the obvious mistake</li>
+            <li>Before/after board rescue sequence</li>
+          </ul>
+        </div>
+        <div class="psect">
+          <div class="plabel">Briefing note</div>
+          <div class="phook">Do not copy a competitor's creative. Use the mechanic: visible mistake &rarr; viewer diagnosis &rarr; fast rescue payoff.</div>
+        </div>
+      </div>
+      <div class="pfoot">No competitor needs to be copied. The mechanic is the asset. Your team adapts the angle, format, and pacing to your own game.</div>
     </div>
   </div>
 </section>
