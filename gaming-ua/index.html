@@ -149,13 +149,41 @@
   .patcard .phook{background:#111;border-left:3px solid var(--yellow);border-radius:0 8px 8px 0;padding:13px 16px;color:#FFD57A;font-family:var(--serif);font-style:italic;font-size:15.5px;line-height:1.6}
   .patcard .pfoot{padding:12px 18px;border-top:1px solid #151515;font-size:12.5px;color:#444;font-family:var(--mono);line-height:1.6}
 
-  /* Output tabs */
-  .tabbar{display:flex;gap:8px;flex-wrap:wrap;margin-top:28px}
-  .tabbt{background:transparent;border:1px solid #2a2a2a;color:#555;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;padding:7px 14px;border-radius:8px;cursor:pointer;transition:all .13s ease}
-  .tabbt:hover{border-color:#555;color:#ccc}
-  .tabbt.active{background:#1a1a1a;border-color:#555;color:#fff}
-  .tabpane{display:none}
-  .tabpane.active{display:block}
+  /* Claude conversation screenshot */
+  .clshot{background:#f0f0f0;border-radius:10px;overflow:hidden;max-width:780px;margin-top:28px;border:1px solid rgba(255,255,255,.07);box-shadow:0 6px 48px rgba(0,0,0,.55)}
+  .clshot .chrome{background:#e2e2e2;padding:9px 14px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #ccc}
+  .clshot .dots{display:flex;gap:6px;flex:0 0 auto}
+  .clshot .dot{width:12px;height:12px;border-radius:50%}
+  .clshot .dot.r{background:#ED6A5E}
+  .clshot .dot.y{background:#F4BE4F}
+  .clshot .dot.g{background:#61C554}
+  .clshot .urlbar{flex:1;background:#fff;border-radius:5px;padding:3px 10px;font-family:var(--mono);font-size:11.5px;color:#888;display:flex;align-items:center;gap:5px;letter-spacing:.01em}
+  .clshot .urlbar svg{flex:0 0 10px}
+  .clshot .convo{background:#fff;padding:18px 20px 22px}
+  .clshot .appbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid #f0f0f0}
+  .clshot .appname{font-size:14px;font-weight:600;color:#1a1a1a;font-family:var(--sans)}
+  .clshot .ocon{display:inline-flex;align-items:center;gap:5px;background:#edfaed;color:#1a6e1a;font-size:11px;font-weight:500;font-family:var(--mono);padding:4px 10px;border-radius:20px;border:1px solid #b8e4b8}
+  .clshot .umsg{display:flex;justify-content:flex-end;margin-bottom:16px}
+  .clshot .ubub{background:#f2f2f2;border:0.5px solid #e0e0e0;border-radius:14px 14px 4px 14px;padding:10px 14px;max-width:78%;font-size:14px;color:#1a1a1a;line-height:1.5;font-family:var(--sans)}
+  .clshot .cmsg{display:flex;gap:12px;align-items:flex-start}
+  .clshot .cav{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#FA3810,#FFB516);flex:0 0 28px;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;font-weight:700;font-family:var(--sans)}
+  .clshot .cresp{flex:1;min-width:0}
+  .toolcall{background:#f8f8f8;border:0.5px solid #ddd;border-radius:7px;overflow:hidden;margin-bottom:14px}
+  .toolcall .tc-head{display:flex;align-items:center;justify-content:space-between;padding:7px 12px}
+  .toolcall .tc-name{font-family:var(--mono);font-size:11.5px;color:#555;font-weight:500}
+  .toolcall .tc-done{font-family:var(--mono);font-size:11px;color:#1a7a1a;font-weight:500}
+  .toolcall .tc-params{padding:5px 12px 8px;border-top:0.5px solid #e8e8e8;font-family:var(--mono);font-size:10.5px;color:#aaa;line-height:1.5}
+  .clshot .cprose{font-size:14px;color:#1a1a1a;line-height:1.65;font-family:var(--sans)}
+  .clshot .cprose p{margin:0 0 10px}
+  .clshot .csection{font-size:11.5px;font-weight:600;color:#888;letter-spacing:.04em;text-transform:uppercase;font-family:var(--sans);margin:14px 0 7px}
+  .pcard-row{display:flex;align-items:center;justify-content:space-between;background:#f9f9f9;border:0.5px solid #e8e8e8;border-radius:6px;padding:8px 12px;margin-bottom:6px}
+  .pcard-row .pn{font-size:13.5px;color:#1a1a1a;font-weight:500;font-family:var(--sans)}
+  .pcard-row .ps{font-family:var(--mono);font-size:12px;color:#387FFF;font-weight:500}
+  .gapcall{background:#fffdf0;border:1px solid #f0d050;border-radius:7px;padding:12px 14px;margin-top:13px}
+  .gapcall .gt{font-size:11.5px;font-weight:600;color:#8a6000;text-transform:uppercase;letter-spacing:.04em;margin-bottom:5px;font-family:var(--sans)}
+  .gapcall .gx{font-size:13.5px;color:#5a3a00;line-height:1.55;font-family:var(--sans)}
+  .clshot .coffer{margin-top:14px;font-size:13.5px;color:#666;font-style:italic;font-family:var(--sans)}
+  .clshot-aside{font-family:var(--mono);font-size:12px;color:#3a3a3a;margin-top:14px;max-width:780px;line-height:1.6}
 
   .faq details{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-top:12px;cursor:pointer}
   .faq summary{font-weight:600;font-size:17px;list-style:none}
@@ -255,268 +283,77 @@
 <section class="dark" id="output" style="padding-top:0">
   <div class="wrap">
     <span class="eyebrow">See the output</span>
-    <h2 style="margin-top:14px">Concrete signal, not another dashboard.</h2>
-    <p style="margin-top:14px;max-width:600px">You do not get a vague trend report. You get the mechanic that is moving, where it shows up, why it works, and what your creative team should test next. Structured enough for agents, readable enough for Slack.</p>
+    <h2 style="margin-top:14px">A real session. Redacted for this page.</h2>
+    <p style="margin-top:14px;max-width:600px">A UA lead asks a category question. Claude calls Orcool, reads patterns and alerts, and replies with structured signal. Here is what that looks like.</p>
 
-    <p style="margin-top:28px;font-size:13.5px;font-family:var(--mono);color:#666;letter-spacing:.01em">A UA lead asks. Orcool responds &mdash; structured, specific, ready to send to the team:</p>
-
-    <div class="tabbar" role="tablist">
-      <button class="tabbt active" data-tab="pattern" role="tab">Pattern</button>
-      <button class="tabbt" data-tab="decision" role="tab">Decision</button>
-      <button class="tabbt" data-tab="durability" role="tab">Durability</button>
-      <button class="tabbt" data-tab="brief" role="tab">Brief</button>
-      <button class="tabbt" data-tab="report" role="tab">Report</button>
-      <button class="tabbt" data-tab="alert" role="tab">Alert</button>
-    </div>
-
-    <!-- TAB: PATTERN -->
-    <div id="tab-pattern" class="tabpane active">
-      <div class="qbox" style="margin-top:16px;border-left-color:#D97757;max-width:760px">
-        <div class="ql" style="color:#D97757">Claude &middot; with Orcool connected</div>
-        <p>What creative pattern is working right now in casual puzzle competitors?</p>
+    <!-- macOS browser chrome mock -->
+    <div class="clshot">
+      <!-- Chrome bar -->
+      <div class="chrome">
+        <div class="dots">
+          <div class="dot r"></div>
+          <div class="dot y"></div>
+          <div class="dot g"></div>
+        </div>
+        <div class="urlbar">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          claude.ai/chat
+        </div>
       </div>
-      <div class="patcard">
-        <div class="phead">
-          <span style="width:8px;height:8px;border-radius:50%;background:var(--green);flex:0 0 8px;display:block"></span>
-          <span class="ptag" style="color:var(--green)">Pattern</span>
-          <span style="font-family:var(--mono);font-size:11.5px;color:#3a3a3a;margin-left:auto">Orcool &middot; casual puzzle &middot; US</span>
+      <!-- Conversation area -->
+      <div class="convo">
+        <!-- App bar -->
+        <div class="appbar">
+          <span class="appname">Claude</span>
+          <span class="ocon">&#x26A1; Orcool connected</span>
         </div>
-        <div class="pbody">
-          <div class="psect">
-            <div class="plabel">Pattern name</div>
-            <div class="ptext" style="font-weight:700;font-size:19px;color:#fff;letter-spacing:-.01em">Fake-fail rescue loop</div>
-          </div>
-          <div class="psect">
-            <div class="plabel">What we observe</div>
-            <div class="ptext">Competitors are opening ads with an intentionally bad move, a near-loss board state, or a trapped character moment. The viewer sees the mistake immediately and wants to fix it.</div>
-          </div>
-          <div class="psect">
-            <div class="plabel">Where it shows up</div>
-            <ul class="plist">
-              <li>Casual puzzle onboarding creatives</li>
-              <li>Match-3 fail-state hooks</li>
-              <li>Playable-style video ads</li>
-              <li>Short UGC explainers</li>
-            </ul>
-          </div>
-          <div class="psect">
-            <div class="plabel">Why it works</div>
-            <div class="ptext">The mechanic creates instant agency. The player understands the problem in under two seconds and feels smarter than the person on screen. That makes the first tap feel obvious instead of requested.</div>
-          </div>
-          <div class="psect">
-            <div class="plabel">Test first</div>
-            <ul class="plist">
-              <li>6-second fail-state cold open</li>
-              <li>&ldquo;Can you fix this?&rdquo; playable-style variant</li>
-              <li>UGC creator reacting to the obvious mistake</li>
-              <li>Before/after board rescue sequence</li>
-            </ul>
-          </div>
-          <div class="psect">
-            <div class="plabel">Briefing note</div>
-            <div class="phook">Do not copy a competitor&rsquo;s creative. Use the mechanic: visible mistake &rarr; viewer diagnosis &rarr; fast rescue payoff.</div>
-          </div>
+        <!-- User message -->
+        <div class="umsg">
+          <div class="ubub">We&rsquo;re spinning up a new casual puzzle title in the US. What&rsquo;s actually working in the category right now, and where&rsquo;s the gap we could own?</div>
         </div>
-        <div class="pfoot">No competitor needs to be copied. The mechanic is the asset. Your team adapts the angle, format, and pacing to your own game.</div>
-      </div>
-    </div>
-
-    <!-- TAB: DECISION -->
-    <div id="tab-decision" class="tabpane">
-      <div class="qbox" style="margin-top:16px;border-left-color:#D97757;max-width:760px">
-        <div class="ql" style="color:#D97757">Claude &middot; with Orcool connected</div>
-        <p>ROAS slipped on our top title this week. What do I test first &mdash; don&rsquo;t tell me to just make more ads.</p>
-      </div>
-      <div class="patcard">
-        <div class="phead">
-          <span style="width:8px;height:8px;border-radius:50%;background:var(--yellow);flex:0 0 8px;display:block"></span>
-          <span class="ptag" style="color:var(--yellow)">Decision Support</span>
-          <span style="font-family:var(--mono);font-size:11.5px;color:#3a3a3a;margin-left:auto">Orcool &middot; color-flow puzzle &middot; US &middot; ROAS triage</span>
-        </div>
-        <div class="pbody">
-          <div class="psect">
-            <div class="plabel">Most likely cause</div>
-            <div class="ptext">Creative concentration + install-quality mismatch. Your entire active US creative is 2 headline variants on one concept. If any fake-fail angles have been in the mix, that&rsquo;s the prime suspect &mdash; rage-bait drives installs but creates an install&rarr;retention gap that bleeds ROAS on a top-20 grossing title.</div>
-          </div>
-          <div class="psect">
-            <div class="plabel">Test order</div>
-            <ul class="plist">
-              <li>Cut or cap any &ldquo;you can never lose&rdquo; or rage-bait creative. It front-loads low-intent installs that churn at the mid-game pay wall.</li>
-              <li>Re-weight budget to the satisfying engine (BPR A, score&nbsp;0.82, 34+&nbsp;days running) &mdash; it pre-qualifies retaining players.</li>
-              <li>Add one pre-qualifying angle to broaden intent without lowering quality: mascot/character recall or real-money earn hook.</li>
-            </ul>
-          </div>
-          <div class="psect">
-            <div class="plabel">Hard guardrail</div>
-            <div class="phook">Don&rsquo;t promise frictionless UX. Ad-overload is the #1 player complaint &mdash; over-promising on UX in creative undermines store conversion before install.</div>
+        <!-- Claude response -->
+        <div class="cmsg">
+          <div class="cav">O</div>
+          <div class="cresp">
+            <!-- Tool call -->
+            <div class="toolcall">
+              <div class="tc-head">
+                <span class="tc-name">Orcool &rsaquo; list_patterns &middot; list_alerts</span>
+                <span class="tc-done">&#x2713; done</span>
+              </div>
+              <div class="tc-params">category: casual_puzzle &nbsp;&middot;&nbsp; geo: US &nbsp;&middot;&nbsp; 4 competitors &nbsp;&middot;&nbsp; Meta + TikTok</div>
+            </div>
+            <!-- Prose -->
+            <div class="cprose">
+              <p>Two patterns are running long enough to trust. One gap nobody in the field has claimed.</p>
+            </div>
+            <!-- Patterns section -->
+            <div class="csection">Patterns &mdash; durable, 34+ days running</div>
+            <div class="pcard-row">
+              <span class="pn">Satisfying engine &mdash; pure flow, calm open</span>
+              <span class="ps">score 0.82</span>
+            </div>
+            <div class="pcard-row">
+              <span class="pn">Calm body &plus; action headline swap</span>
+              <span class="ps">score 0.66</span>
+            </div>
+            <!-- More prose -->
+            <div class="cprose" style="margin-top:12px">
+              <p>Both are running across all four tracked competitors on Meta. The satisfying-mechanic lane is saturated at the top; joining it means fighting for margin against mature creatives with 34+ days of optimization behind them.</p>
+              <p>One pattern that <em>isn&rsquo;t</em> running: the fake-fail rescue loop is getting installs but bleeding retention. Players churn at the mid-game pay wall. Worth watching as a signal, not a model to copy.</p>
+            </div>
+            <!-- Gap callout -->
+            <div class="gapcall">
+              <div class="gt">Gap &mdash; character lane is wide open</div>
+              <div class="gx">Zero character or mascot creative is live across all four competitors, yet the category leader wins recall on its mascot in brand surveys. The satisfying-mechanic lane is crowded. The character lane is wide open in the US right now.</div>
+            </div>
+            <!-- Closing offer -->
+            <div class="coffer">Want me to draft 3 character-led hook concepts using your brand signals? I can score them against the pattern library before you brief the team.</div>
           </div>
         </div>
-        <div class="pfoot">Triage built from BPR performance data, retention-mismatch insight, and churn-cliff review signals.</div>
       </div>
     </div>
-
-    <!-- TAB: DURABILITY -->
-    <div id="tab-durability" class="tabpane">
-      <div class="qbox" style="margin-top:16px;border-left-color:#D97757;max-width:760px">
-        <div class="ql" style="color:#D97757">Claude &middot; with Orcool connected</div>
-        <p>Is the calm/satisfying angle fatiguing yet, or do I keep feeding it budget?</p>
-      </div>
-      <div class="patcard">
-        <div class="phead">
-          <span style="width:8px;height:8px;border-radius:50%;background:var(--blue);flex:0 0 8px;display:block"></span>
-          <span class="ptag" style="color:var(--blue)">Pattern &middot; Durability</span>
-          <span style="font-family:var(--mono);font-size:11.5px;color:#3a3a3a;margin-left:auto">Orcool &middot; color-flow puzzle &middot; US</span>
-        </div>
-        <div class="pbody">
-          <div class="psect">
-            <div class="plabel">Verdict</div>
-            <div class="ptext" style="font-weight:700;font-size:17px;color:#fff">Calm/satisfying is still durable. Keep feeding it &mdash; but diversify the wrapper.</div>
-          </div>
-          <div class="psect">
-            <div class="plabel">Evidence it&rsquo;s holding</div>
-            <ul class="plist">
-              <li>BPR A (&ldquo;Relaxing Puzzle, Pure Flow&rdquo;) &mdash; score <b style="color:#fff">0.82</b>, live <b style="color:#fff">34+&nbsp;days</b>, 6&nbsp;variations across all Meta surfaces. Still running.</li>
-              <li>BPR B (calm body + action headline) &mdash; score <b style="color:#fff">0.66</b>, also 34+&nbsp;days running. The calm body survives even a high-energy headline swap.</li>
-              <li>Category-level: ASMR/satisfying color-flow is the dominant scroll-stopper, not a spike.</li>
-            </ul>
-          </div>
-          <div class="psect">
-            <div class="plabel">The real fatigue risk</div>
-            <div class="ptext">Not the angle &mdash; the expression. Two headline variants on one concept will saturate the same audience pocket long before the satisfying mechanic tires.</div>
-          </div>
-          <div class="psect">
-            <div class="plabel">Recommended action</div>
-            <div class="phook">Sustain budget on the satisfying engine. Spend new test dollars on new wrappers &mdash; mascot, first-person UGC &mdash; over the same proven calm body.</div>
-          </div>
-        </div>
-        <div class="pfoot">Durability read from live BPR runtime, variation spread, and category trend persistence.</div>
-      </div>
-    </div>
-
-    <!-- TAB: BRIEF -->
-    <div id="tab-brief" class="tabpane">
-      <div class="qbox" style="margin-top:16px;border-left-color:#D97757;max-width:760px">
-        <div class="ql" style="color:#D97757">Claude &middot; with Orcool connected</div>
-        <p>Build me a creative brief for the next test batch. We need to break out of the calm-only box without killing what works.</p>
-      </div>
-      <div class="patcard">
-        <div class="phead">
-          <span style="width:8px;height:8px;border-radius:50%;background:#D97757;flex:0 0 8px;display:block"></span>
-          <span class="ptag" style="color:#D97757">Brief</span>
-          <span style="font-family:var(--mono);font-size:11.5px;color:#3a3a3a;margin-left:auto">Orcool &middot; color-flow puzzle &middot; US &middot; next-batch</span>
-        </div>
-        <div class="pbody">
-          <div class="psect">
-            <div class="plabel">Objective</div>
-            <div class="ptext">Expand beyond 2 calm headline variants without abandoning the proven satisfying engine. Close the character, UGC, and social-proof gap vs. the field.</div>
-          </div>
-          <div class="psect">
-            <div class="plabel">Keep (control)</div>
-            <ul class="plist">
-              <li>Satisfying color-flow first frame as the opening hook</li>
-              <li>BPR A as the performance benchmark (score&nbsp;0.82)</li>
-            </ul>
-          </div>
-          <div class="psect">
-            <div class="plabel">Test &mdash; 3 new angles</div>
-            <ul class="plist">
-              <li><b style="color:#fff">Mascot.</b> Game character&ndash;led, calm color-flow body. Builds the recall you currently concede to [Competitor A].</li>
-              <li><b style="color:#fff">First-person UGC.</b> &ldquo;POV: I&rsquo;m addicted to this game&rdquo; hook on TikTok. Validated by real player reviews.</li>
-              <li><b style="color:#fff">Multi-generational.</b> Family-play angle (&ldquo;me and my dad both play&rdquo;). Untapped, widens the calm segment.</li>
-            </ul>
-          </div>
-          <div class="psect">
-            <div class="plabel">Hard guardrails</div>
-            <div class="phook">No &ldquo;you can never lose&rdquo; promise. No frictionless-UX claim. Real-money earn angle permitted &mdash; never quote specific payouts.</div>
-          </div>
-        </div>
-        <div class="pfoot">Brief assembled from BPR winners, player insights, brand trends, and competitive gap analysis. Ready to hand to the team.</div>
-      </div>
-    </div>
-
-    <!-- TAB: REPORT -->
-    <div id="tab-report" class="tabpane">
-      <div class="qbox" style="margin-top:16px;border-left-color:#D97757;max-width:760px">
-        <div class="ql" style="color:#D97757">Claude &middot; with Orcool connected</div>
-        <p>Give me the week in our category. One screen, send-to-team ready.</p>
-      </div>
-      <div class="patcard">
-        <div class="phead">
-          <span style="width:8px;height:8px;border-radius:50%;background:#888;flex:0 0 8px;display:block"></span>
-          <span class="ptag" style="color:#888">Report</span>
-          <span style="font-family:var(--mono);font-size:11.5px;color:#3a3a3a;margin-left:auto">Orcool &middot; color-flow puzzle &middot; US &middot; week-in-category</span>
-        </div>
-        <div class="pbody">
-          <div class="psect">
-            <div class="plabel">Scroll-stoppers holding</div>
-            <div class="ptext">ASMR/satisfying color-flow remains the #1 opener. Fake-fail rage-bait still drives top install volume but the retention tax persists.</div>
-          </div>
-          <div class="psect">
-            <div class="plabel">Competitor moves</div>
-            <ul class="plist">
-              <li>[Competitor A] launched a mascot/IP brand push &mdash; recall play, not a spend spike.</li>
-              <li>[Competitor D] ran a seasonal event tie-in. Standard cadence, no creative-strategy shift.</li>
-              <li>[Competitor B] and [Competitor C] &mdash; quiet.</li>
-            </ul>
-          </div>
-          <div class="psect">
-            <div class="plabel">Your position</div>
-            <ul class="plist">
-              <li>2 live winners, both calm &mdash; BPR A (0.82, 34+d) and BPR B (0.66, 34+d). Both still running.</li>
-              <li>Concentration risk: entire active US set = 2 headline variants on one concept. Zero character, zero UGC, zero social-proof.</li>
-            </ul>
-          </div>
-          <div class="psect">
-            <div class="plabel">Untapped this week</div>
-            <ul class="plist">
-              <li>Mascot/character &mdash; direct gap vs. Competitor A</li>
-              <li>First-person &ldquo;POV: I&rsquo;m addicted&rdquo; UGC on TikTok</li>
-              <li>Real-money earn hook</li>
-            </ul>
-          </div>
-          <div class="psect">
-            <div class="plabel">Watch-outs</div>
-            <div class="phook">Ad-overload and the mid-game pay wall are your churn cliffs. Don&rsquo;t run &ldquo;never lose&rdquo; or frictionless-UX promises in creative.</div>
-          </div>
-        </div>
-        <div class="pfoot">Compiled from competitor monitoring + BPR library + audience insights + brand trends.</div>
-      </div>
-    </div>
-
-    <!-- TAB: ALERT -->
-    <div id="tab-alert" class="tabpane">
-      <div class="qbox" style="margin-top:16px;border-left-color:#D97757;max-width:760px">
-        <div class="ql" style="color:#D97757">Claude &middot; with Orcool connected</div>
-        <p>Anything I need to know about my competitors this week before our creative sync?</p>
-      </div>
-      <div class="patcard">
-        <div class="phead">
-          <span style="width:8px;height:8px;border-radius:50%;background:var(--red);flex:0 0 8px;display:block"></span>
-          <span class="ptag" style="color:var(--red)">Alert</span>
-          <span style="font-family:var(--mono);font-size:11.5px;color:#3a3a3a;margin-left:auto">Orcool &middot; color-flow puzzle &middot; US &middot; 4&nbsp;competitors monitored</span>
-        </div>
-        <div class="pbody">
-          <div class="psect">
-            <div class="plabel">Two moves this week &mdash; one worth reacting to</div>
-            <div class="ptext" style="font-weight:600;color:#fff;font-size:16px;margin-top:4px"></div>
-          </div>
-          <div class="psect">
-            <div class="plabel">[Competitor A] &mdash; character / IP push</div>
-            <div class="ptext">Premium castle match-3 launched a mascot-led brand campaign (press + paid social). This is the recall-through-characters play they&rsquo;ve won on before. Relevant because your active US creative runs <b style="color:#fff">zero character ads</b> &mdash; direct exposure on the one axis they out-recall you.</div>
-          </div>
-          <div class="psect">
-            <div class="plabel">[Competitor D] &mdash; seasonal event tie-in</div>
-            <div class="ptext">Kingdom-battle match-3 announced a live-ops summer event. Standard cadence, no creative-strategy shift. Monitor only.</div>
-          </div>
-          <div class="psect">
-            <div class="plabel">Recommendation</div>
-            <div class="phook">[Competitor A]&rsquo;s push is the signal. You have a latent mascot you&rsquo;ve never put in an ad. This is the moment to test it &mdash; not because they&rsquo;re winning installs today, but because they&rsquo;re building durable recall you have no answer to.</div>
-          </div>
-        </div>
-        <div class="pfoot">Alerts track press, launches, market entries, and sponsorships &mdash; not ad-creative drops. 4 titles tracked on Meta + TikTok.</div>
-      </div>
-    </div>
-
+    <p class="clshot-aside">Real session output from a connected brand. Competitor names redacted; category and market preserved.</p>
   </div>
 </section>
 
@@ -705,15 +542,6 @@ Reviews:
 </footer>
 
 <script>
-  document.querySelectorAll('.tabbt').forEach(function(btn){
-    btn.addEventListener('click',function(){
-      document.querySelectorAll('.tabbt').forEach(function(b){b.classList.remove('active');});
-      document.querySelectorAll('.tabpane').forEach(function(p){p.classList.remove('active');});
-      btn.classList.add('active');
-      document.getElementById('tab-'+btn.getAttribute('data-tab')).classList.add('active');
-    });
-  });
-
   document.querySelectorAll('.copy,.ucopy').forEach(function(b){
     b.addEventListener('click', function(){
       var t=b.getAttribute('data-c');
