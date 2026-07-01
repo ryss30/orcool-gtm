@@ -281,91 +281,200 @@
 
 <!-- SEE THE OUTPUT -->
 <section class="dark" id="output" style="padding-top:0">
-  <div class="wrap">
-    <span class="eyebrow">See the output</span>
-    <h2 style="margin-top:14px">A real session. Brand redacted.</h2>
-    <p style="margin-top:14px;max-width:600px">A UA lead asks what&rsquo;s saturating the category and where the gap is. Claude calls Orcool, reads 387 ingested competitor ads, and comes back with a structured answer in under a minute.</p>
+  <style>
+    .qa-intro{max-width:640px;margin:0 auto 28px;text-align:center}
+    .qa-intro h2{font-size:clamp(24px,4vw,38px);line-height:1.05;margin:0 0 12px;color:#fff;font-family:var(--sans);font-weight:600;letter-spacing:-.01em}
+    .qa-intro p{font-size:15px;line-height:1.5;color:#9a9a9a;margin:0;font-family:var(--sans)}
+    .qa-tabs{display:flex;gap:4px;justify-content:center;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 auto 22px;max-width:900px;padding-bottom:4px;scrollbar-width:none}
+    .qa-tabs::-webkit-scrollbar{display:none}
+    .qa-tab{flex:0 0 auto;font-family:var(--mono);font-size:12px;letter-spacing:.02em;color:#555;background:transparent;border:0;border-bottom:2px solid transparent;padding:8px 14px;cursor:pointer;white-space:nowrap;transition:color .15s ease,border-color .15s ease}
+    .qa-tab:hover{color:#aaa}
+    .qa-tab.active{color:#fff;border-bottom-color:var(--yellow)}
+    .qa-panel{display:none}
+    .qa-panel.active{display:block}
+    .qa-b{font-weight:600;color:#000}
+    .qa-list{margin:8px 0 0;padding:0;list-style:none}
+    .qa-list li{position:relative;padding:3px 0 3px 16px;font-size:14px;line-height:1.5;color:#1a1a1a}
+    .qa-list li::before{content:"—";position:absolute;left:0;color:var(--grey)}
+    .qa-lens{font-family:var(--mono);font-size:11px;color:var(--blue);background:rgba(56,127,255,.1);padding:1px 5px;border-radius:3px}
+    .qa-h{font-size:14px;font-weight:600;color:#000;margin:14px 0 4px}
+    .qa-hook{border-left:2px solid var(--line);padding:2px 0 2px 12px;margin:10px 0}
+    .qa-hook .qa-h{margin:0 0 3px}
+    .qa-why{font-size:13px;color:var(--grey);font-style:italic}
+    .qa-stage{margin:10px 0}
+    .qa-stage .qa-h{margin:0 0 2px}
+  </style>
 
-    <!-- macOS browser chrome mock -->
-    <div class="clshot">
-      <!-- Chrome bar -->
-      <div class="chrome">
-        <div class="dots">
-          <div class="dot r"></div>
-          <div class="dot y"></div>
-          <div class="dot g"></div>
-        </div>
-        <div class="urlbar">
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          claude.ai/chat
-        </div>
-      </div>
-      <!-- Conversation area -->
-      <div class="convo">
-        <!-- App bar -->
-        <div class="appbar">
-          <span class="appname">Claude</span>
-          <span class="ocon">&#x26A1; Orcool connected</span>
-        </div>
-        <!-- User message -->
-        <div class="umsg">
-          <div class="ubub">We&rsquo;re spinning up a new casual puzzle title in the US. Pull the top creative patterns for the casual puzzle category and tell me where the gap is &mdash; what no competitor has claimed yet.</div>
-        </div>
-        <!-- Claude response -->
-        <div class="cmsg">
-          <div class="cav">O</div>
-          <div class="cresp">
-            <!-- Tool call 1 -->
-            <div class="toolcall">
-              <div class="tc-head">
-                <span class="tc-name">Orcool &rsaquo; studio_list_brands &middot; studio_list_pattern_candidates</span>
-                <span class="tc-done">&#x2713; done</span>
-              </div>
-              <div class="tc-params">casual_puzzle &nbsp;&middot;&nbsp; US &nbsp;&middot;&nbsp; 4 competitors &nbsp;&middot;&nbsp; Meta + TikTok &nbsp;&middot;&nbsp; 387 ads ingested</div>
-            </div>
-            <!-- Tool call 2 -->
-            <div class="toolcall">
-              <div class="tc-head">
-                <span class="tc-name">Orcool &rsaquo; studio_list_competitor_references</span>
-                <span class="tc-done">&#x2713; done</span>
-              </div>
-              <div class="tc-params">198 on-category ads &nbsp;&middot;&nbsp; Oct 2025 &ndash; Jun 2026</div>
-            </div>
-            <!-- Prose -->
-            <div class="cprose">
-              <p>Category is crowded into a few moves &mdash; and one is eating everything.</p>
-            </div>
-            <!-- Saturated section -->
-            <div class="csection">Saturated &mdash; red ocean</div>
-            <div class="pcard-row">
-              <span class="pn">Fail-ad / &ldquo;save the king&rdquo; peril</span>
-              <span class="ps">93 of 198 ads</span>
-            </div>
-            <div class="pcard-row">
-              <span class="pn">&ldquo;Satisfying&rdquo; clutter-clear demo</span>
-              <span class="ps">53 ads</span>
-            </div>
-            <div class="pcard-row">
-              <span class="pn">Variety reels / multi-minigame</span>
-              <span class="ps">36 ads</span>
-            </div>
-            <!-- Middle prose -->
-            <div class="cprose" style="margin-top:11px">
-              <p>Everyone is selling <em>match tiles</em> and <em>peril</em>. Almost nobody is selling a feeling or a reason.</p>
-            </div>
-            <!-- Gap callout -->
-            <div class="gapcall">
-              <div class="gt">Gap &mdash; calm / flow-state lane is unclaimed</div>
-              <div class="gx">Zero puzzle ads frame the game as a reset, a decompress, or &ldquo;the calm one.&rdquo; The category is all stress (peril, fail, frustration-bait) and no relief. Strategy-as-the-hero is also near-zero. First mover in the mood lane owns a position no competitor has claimed.</div>
-            </div>
-            <!-- Closing offer -->
-            <div class="coffer">Want a concept batch targeting this white space, or a live watcher for when a competitor starts moving into it?</div>
-          </div>
-        </div>
-      </div>
+  <div class="wrap">
+    <div class="qa-intro">
+      <span class="eyebrow">See the output</span>
+      <h2>Five real questions. Orcool data behind every answer.</h2>
+      <p>Actual Claude sessions with Orcool MCP connected. Brand name redacted &mdash; the answers are not.</p>
     </div>
-    <p class="clshot-aside">Real session. 387 competitor ads ingested off Meta + TikTok (Oct 2025&ndash;Jun 2026), 198 on-category. Brand name redacted; category and market preserved.</p>
+
+    <div class="qa-tabs" role="tablist">
+      <button class="qa-tab active" data-tab="0" role="tab">What&rsquo;s unclaimed</button>
+      <button class="qa-tab" data-tab="1" role="tab">Competitor arc</button>
+      <button class="qa-tab" data-tab="2" role="tab">Character intel</button>
+      <button class="qa-tab" data-tab="3" role="tab">Hook generation</button>
+      <button class="qa-tab" data-tab="4" role="tab">Account state</button>
+    </div>
+
+    <!-- TAB 1 -->
+    <div class="qa-panel active" data-panel="0" role="tabpanel">
+      <div class="clshot">
+        <div class="chrome">
+          <div class="dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
+          <div class="urlbar"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> claude.ai/chat</div>
+        </div>
+        <div class="convo">
+          <div class="appbar"><span class="appname">Claude</span><span class="ocon">&#x26A1; Orcool connected</span></div>
+          <div class="umsg"><div class="ubub">What creative angle is genuinely unclaimed in this category? I want to enter with something that doesn&rsquo;t look like everyone else.</div></div>
+          <div class="toolcall"><div class="tc-head"><span class="tc-name">Orcool &rsaquo; studio_list_competitor_references</span><span class="tc-done">&#x2713; done</span></div><div class="tc-params">387 ads &nbsp;&middot;&nbsp; 4 competitors &nbsp;&middot;&nbsp; Meta + TikTok</div></div>
+          <div class="toolcall"><div class="tc-head"><span class="tc-name">Orcool &rsaquo; studio_list_insights</span><span class="tc-done">&#x2713; done</span></div><div class="tc-params">33 insights &nbsp;&middot;&nbsp; lens:5 signals</div></div>
+          <div class="cmsg"><div class="cav">C</div><div class="cresp"><div class="cprose">
+            <p>I analyzed 387 competitor ads and your brand&rsquo;s 33 insights. Three genuinely unclaimed lanes:</p>
+            <div class="qa-stage"><div class="qa-h">1. Character/mascot persistence <span class="qa-lens">biggest gap</span></div>
+            Zero competitors are building a recurring ad character. Royal Match has a king but uses him in fewer than 5% of creatives. Nobody in casual puzzle is running &ldquo;follow the character&rdquo; style narrative ads.</div>
+            <div class="qa-stage"><div class="qa-h">2. Calm/flow-state &mdash; without showing the board first</div>
+            Every &ldquo;calm&rdquo; competitor ad opens with a puzzle board. Nobody opens on the <em>feeling</em> &mdash; the breath-out, the &ldquo;I needed this&rdquo; moment. Pure emotion-first creative is unclaimed.</div>
+            <div class="qa-stage"><div class="qa-h">3. Honest addictiveness</div>
+            Real player reviews say &ldquo;super addicting&rdquo; unprompted. Nobody runs &ldquo;yes, this is your new habit &mdash; and that&rsquo;s good news&rdquo; as a creative frame. Honest, differentiated, your product truth supports it.</div>
+            <p style="margin-top:12px">I&rsquo;d prioritize <strong>#1</strong> for brand-building longevity and <strong>#2</strong> for near-term CPI performance.</p>
+          </div></div></div>
+        </div>
+      </div>
+      <p class="clshot-aside">Real session. Casual puzzle category, US market. Brand name redacted.</p>
+    </div>
+
+    <!-- TAB 2 -->
+    <div class="qa-panel" data-panel="1" role="tabpanel">
+      <div class="clshot">
+        <div class="chrome">
+          <div class="dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
+          <div class="urlbar"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> claude.ai/chat</div>
+        </div>
+        <div class="convo">
+          <div class="appbar"><span class="appname">Claude</span><span class="ocon">&#x26A1; Orcool connected</span></div>
+          <div class="umsg"><div class="ubub">Walk me through how Royal Match&rsquo;s creative strategy has evolved over the last 6 months. Are they testing anything new?</div></div>
+          <div class="toolcall"><div class="tc-head"><span class="tc-name">Orcool &rsaquo; studio_list_competitor_references</span><span class="tc-done">&#x2713; done</span></div><div class="tc-params">Royal Match &nbsp;&middot;&nbsp; 198 ads &nbsp;&middot;&nbsp; sorted by date</div></div>
+          <div class="cmsg"><div class="cav">C</div><div class="cresp"><div class="cprose">
+            <p>198 Royal Match ads ingested (Oct 2025 &ndash; Jun 2026).</p>
+            <div class="qa-stage"><div class="qa-h">Oct &ndash; Dec 2025</div>Gameplay reveals, 15&ndash;30s, Meta-heavy. Royalty/castle imagery, &ldquo;upgrade your kingdom&rdquo; copy. Testing awareness-phase messaging.</div>
+            <div class="qa-stage"><div class="qa-h">Jan &ndash; Mar 2026</div>Shift to 6s retargeting cuts &mdash; just the satisfying completion moment, no story, no character. They scaled this hard after early signals.</div>
+            <div class="qa-stage"><div class="qa-h">Apr &ndash; Jun 2026 (now)</div>Two new bets:
+            <ul class="qa-list">
+              <li>&ldquo;Challenge&rdquo; format (&ldquo;99% can&rsquo;t complete this level&rdquo;) &mdash; 4 ads, still testing</li>
+              <li>Lifestyle/cozy aesthetic &mdash; 7 ads, warmer color grading, &ldquo;your evening game&rdquo; framing</li>
+            </ul></div>
+            <div class="gapcall"><div class="gt">The signal</div><div class="gx">Royal Match is moving into the cozy lane just as you&rsquo;re entering. Either out-execute them on it, or pivot to the character/mascot angle they&rsquo;re not testing.</div></div>
+          </div></div></div>
+        </div>
+      </div>
+      <p class="clshot-aside">Real session. Casual puzzle category, US market. Brand name redacted.</p>
+    </div>
+
+    <!-- TAB 3 -->
+    <div class="qa-panel" data-panel="2" role="tabpanel">
+      <div class="clshot">
+        <div class="chrome">
+          <div class="dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
+          <div class="urlbar"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> claude.ai/chat</div>
+        </div>
+        <div class="convo">
+          <div class="appbar"><span class="appname">Claude</span><span class="ocon">&#x26A1; Orcool connected</span></div>
+          <div class="umsg"><div class="ubub">Has Royal Match tested character-led creative? I want to know if their king is actually central to their strategy or just decorative.</div></div>
+          <div class="toolcall"><div class="tc-head"><span class="tc-name">Orcool &rsaquo; studio_list_competitor_references</span><span class="tc-done">&#x2713; done</span></div><div class="tc-params">Royal Match &nbsp;&middot;&nbsp; 198 ads &nbsp;&middot;&nbsp; Oct 2025 &ndash; Jun 2026</div></div>
+          <div class="cmsg"><div class="cav">C</div><div class="cresp"><div class="cprose">
+            <p>Looking at the 198 Royal Match ads &mdash; the king character appears in approximately <strong>32 ads (~16%)</strong>.</p>
+            <p>How they use him: usually in the first 2 seconds as a presenter, then the mechanic takes over. He&rsquo;s never used as a narrative protagonist &mdash; no story arc, no emotional journey.</p>
+            <div class="qa-stage"><div class="qa-h">The read</div>Royal Match has a character but isn&rsquo;t exploiting him creatively. The lane &mdash; mascot with personality, mascot that jokes, mascot that reacts to gameplay &mdash; is genuinely open.</div>
+            <div class="gapcall"><div class="gt">The opportunity</div><div class="gx">If your title&rsquo;s character is woven into the actual mechanic (it <em>is</em> the mechanic &mdash; you tap it, it sends balls), you have a stronger creative foundation than Royal Match. Their king is external to the puzzle. Your character IS the puzzle. That&rsquo;s a meaningfully better brief.</div></div>
+          </div></div></div>
+        </div>
+      </div>
+      <p class="clshot-aside">Real session. Casual puzzle category, US market. Brand name redacted.</p>
+    </div>
+
+    <!-- TAB 4 -->
+    <div class="qa-panel" data-panel="3" role="tabpanel">
+      <div class="clshot">
+        <div class="chrome">
+          <div class="dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
+          <div class="urlbar"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> claude.ai/chat</div>
+        </div>
+        <div class="convo">
+          <div class="appbar"><span class="appname">Claude</span><span class="ocon">&#x26A1; Orcool connected</span></div>
+          <div class="umsg"><div class="ubub">Take the top insight about satisfying/ASMR and give me 3 hook variations I can test for Meta next week.</div></div>
+          <div class="toolcall"><div class="tc-head"><span class="tc-name">Orcool &rsaquo; studio_list_insights</span><span class="tc-done">&#x2713; done</span></div><div class="tc-params">top insight: lens:5 &nbsp;&middot;&nbsp; &ldquo;satisfying&rdquo; used unprompted in reviews</div></div>
+          <div class="cmsg"><div class="cav">C</div><div class="cresp"><div class="cprose">
+            <p>Top insight <span class="qa-lens">lens:5</span>: <em>&ldquo;Players literally use the word &lsquo;satisfying&rsquo; unprompted. The ASMR color-flow payoff is real to users, not a marketing frame &mdash; the single strongest scroll-stopper available.&rdquo;</em></p>
+            <div class="qa-hook"><div class="qa-h">Hook A &mdash; Pure visual, no words</div>
+            [Extreme close-up of colors filling perfectly, 2s silence] Text: <em>&ldquo;You know this feeling.&rdquo;</em><br><span class="qa-why">No language barrier. Let the visual do the work.</span></div>
+            <div class="qa-hook"><div class="qa-h">Hook B &mdash; First-person validation</div>
+            VO: <em>&ldquo;This game is so satisfying I had to tell someone.&rdquo;</em><br><span class="qa-why">Mirrors actual review language. Social proof with authentic voice.</span></div>
+            <div class="qa-hook"><div class="qa-h">Hook C &mdash; Tension + release</div>
+            [Puzzle incomplete &rarr; tap &rarr; cascade] VO: <em>&ldquo;That. Right there. That&rsquo;s why I&rsquo;m on level 340.&rdquo;</em><br><span class="qa-why">Micro-tension before the satisfying moment amplifies the payoff.</span></div>
+            <p style="margin-top:12px">Run as 3 DCO variants &mdash; same audience, same budget. The winner tells you whether pure-visual, social-proof, or tension-release is your highest-converting frame.</p>
+          </div></div></div>
+        </div>
+      </div>
+      <p class="clshot-aside">Real session. Casual puzzle category, US market. Brand name redacted.</p>
+    </div>
+
+    <!-- TAB 5 -->
+    <div class="qa-panel" data-panel="4" role="tabpanel">
+      <div class="clshot">
+        <div class="chrome">
+          <div class="dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
+          <div class="urlbar"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> claude.ai/chat</div>
+        </div>
+        <div class="convo">
+          <div class="appbar"><span class="appname">Claude</span><span class="ocon">&#x26A1; Orcool connected</span></div>
+          <div class="umsg"><div class="ubub">Walk me through everything you know about us right now from Orcool. I want to see what the AI actually has access to.</div></div>
+          <div class="toolcall"><div class="tc-head"><span class="tc-name">Orcool &rsaquo; studio_list_brands &middot; studio_list_competitors</span><span class="tc-done">&#x2713; done</span></div></div>
+          <div class="toolcall"><div class="tc-head"><span class="tc-name">Orcool &rsaquo; studio_list_insights &middot; studio_list_target_audiences &middot; studio_list_concepts</span><span class="tc-done">&#x2713; done</span></div></div>
+          <div class="cmsg"><div class="cav">C</div><div class="cresp"><div class="cprose">
+            <div class="qa-stage"><div class="qa-h">Competitors monitored (4)</div>
+            <ul class="qa-list">
+              <li>Royal Match &mdash; Meta (advertiser + keyword) + TikTok</li>
+              <li>Block Blast! &mdash; Meta (advertiser + keyword) + TikTok</li>
+              <li>Match Factory! &mdash; Meta (advertiser) + TikTok</li>
+              <li>Royal Kingdom &mdash; Meta (advertiser) + TikTok</li>
+            </ul></div>
+            <p><strong>Competitor ads ingested:</strong> 387 total &nbsp;&middot;&nbsp; Oct 2025 &ndash; Jun 2026</p>
+            <div class="qa-stage"><div class="qa-h">Brand knowledge</div>
+            <ul class="qa-list">
+              <li>33 player insights (5&times; lens:5, 8&times; lens:4, 10&times; lens:3)</li>
+              <li>3 audience personas (Casual Snacker 25&ndash;45, Hyper-Casual Hopper 18&ndash;30, Lapsed Gamer 35&ndash;55)</li>
+              <li>5 category trend signals &nbsp;&middot;&nbsp; 7 concepts generated</li>
+            </ul></div>
+            <div class="gapcall"><div class="gt">What&rsquo;s missing</div><div class="gx">1. Best Performing References &mdash; your own winning ads. Loading 5&ndash;10 unlocks lens calibration. 2. Inspiring references &mdash; none configured yet. Even 3&ndash;5 examples improve concept variety significantly.</div></div>
+            <div class="coffer">Want a concept batch using what we have, or should we start by uploading your proven winners?</div>
+          </div></div></div>
+        </div>
+      </div>
+      <p class="clshot-aside">Real session. Casual puzzle category, US market. Brand name redacted.</p>
+    </div>
   </div>
+
+  <script>
+  (function(){
+    var root=document.getElementById('output');
+    var tabs=root.querySelectorAll('.qa-tab');
+    var panels=root.querySelectorAll('.qa-panel');
+    tabs.forEach(function(tab){
+      tab.addEventListener('click',function(){
+        var i=tab.getAttribute('data-tab');
+        tabs.forEach(function(t){t.classList.remove('active');});
+        panels.forEach(function(p){p.classList.remove('active');});
+        tab.classList.add('active');
+        var panel=root.querySelector('.qa-panel[data-panel="'+i+'"]');
+        if(panel)panel.classList.add('active');
+      });
+    });
+  })();
+  </script>
 </section>
 
 <!-- CONNECT -->
