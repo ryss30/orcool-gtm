@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What makes an AI-generated ad convert? A head-to-head ABCD benchmark | Orcool</title>
+<meta name="description" content="We ran a blind, 5-week test of two AI-built video ads for the same app and scored them on Google's ABCD creative framework. The agent-built testimonial scored 0.76; a leading single-tool AI-UGC generator scored 0.49. Here is what the gap was actually about.">
+<link rel="canonical" href="https://get.orcool.com/blog/ai-ugc-ad-scoring-benchmark/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Orcool">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Orcool">
+<meta property="og:title" content="What makes an AI-generated ad convert? A head-to-head ABCD benchmark">
+<meta property="og:description" content="Two AI-built ads, same app, scored blind on Google's ABCD framework. Agent-built testimonial 0.76 vs single-tool AI-UGC 0.49. The gap was not polish.">
+<meta property="og:url" content="https://get.orcool.com/blog/ai-ugc-ad-scoring-benchmark/">
+<meta property="og:image" content="https://get.orcool.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What makes an AI-generated ad convert? A head-to-head ABCD benchmark">
+<meta name="twitter:description" content="Two AI-built ads, same app, scored blind on Google's ABCD framework. 0.76 vs 0.49. The gap was not polish.">
+<meta name="twitter:image" content="https://get.orcool.com/og-image.png">
+
+<link rel="icon" href="/orcool-mark-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Newsreader:ital@1&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What makes an AI-generated ad convert? A head-to-head ABCD benchmark",
+  "description": "A blind, 5-week test of two AI-built video ads for the same app, scored on Google's ABCD creative framework.",
+  "image": "https://get.orcool.com/og-image.png",
+  "datePublished": "2026-06-30",
+  "dateModified": "2026-06-30",
+  "author": { "@type": "Organization", "name": "Orcool", "url": "https://get.orcool.com" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Orcool",
+    "logo": { "@type": "ImageObject", "url": "https://get.orcool.com/orcool-logo.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://get.orcool.com/blog/ai-ugc-ad-scoring-benchmark/" },
+  "keywords": "AI ad creative, ABCD framework, AI-UGC, creative effectiveness, ad testing, creative scoring"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the ABCD framework for ad creative?",
+      "acceptedAnswer": { "@type": "Answer", "text": "ABCD stands for Attention, Branding, Connection and Direction. It is the framework Google and YouTube use to describe the creative traits their research links to stronger ad performance. Each trait is scored, then combined into a single 0 to 1 figure that estimates how well a video is built to hold attention and move a viewer to act." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does a higher ABCD score guarantee more conversions?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. ABCD is a predictor, not a promise. Google's research shows a correlation between these creative traits and lift, so a higher score means the ad is built more like the ones that tend to win. Real conversion still depends on offer, targeting and spend. Use the score to decide what to test, not to skip testing." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can an AI-generated ad beat a human-made one?",
+      "acceptedAnswer": { "@type": "Answer", "text": "On creative-effectiveness scores, yes, when the AI is assembling from real signals rather than dressing up a generic script. In our test the agent-built testimonial scored higher than a single-tool generator because it started from actual user language and a proven hook structure, not because it looked more polished." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you score an ad before spending money on it?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You score the creative itself against a framework like ABCD before it goes live, the same way this benchmark was run. That turns 'which ad should we spend on' from a guess into a ranked list, and it flags weak hooks before they burn budget." }
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --bg:#f8f7f5; --ink:#443D3D; --ink-strong:#1a1614; --line:#e7e4e0;
+    --red:#FA3810; --blue:#387FFF; --green:#45B43B; --yellow:#FFB516;
+    --card:#ffffff;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:'Geist',system-ui,-apple-system,sans-serif;
+    font-size:18px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .mono{font-family:'Geist Mono',ui-monospace,monospace}
+  a{color:var(--blue);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  header.site{display:flex;align-items:center;justify-content:space-between;
+    max-width:1080px;margin:0 auto;padding:22px 24px}
+  header.site img{height:26px;display:block}
+  .nav-right{display:flex;gap:20px;align-items:center;font-size:15px}
+  .nav-right a{color:var(--ink)}
+  .pill{background:var(--ink);color:#fff;padding:8px 16px;border-radius:10px;font-size:14px}
+  .pill:hover{background:#5c5453;text-decoration:none}
+
+  main{max-width:720px;margin:0 auto;padding:24px 24px 80px}
+  .eyebrow{font-family:'Geist Mono',monospace;font-size:12.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--red);margin:28px 0 14px}
+  h1{font-size:40px;line-height:1.12;font-weight:700;color:var(--ink-strong);margin:0 0 18px;letter-spacing:-.02em}
+  .byline{font-size:14px;color:#8a827e;margin-bottom:8px}
+  .byline .mono{color:#8a827e}
+
+  .tldr{background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:22px 24px;margin:30px 0 8px}
+  .tldr h2{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;
+    font-family:'Geist Mono',monospace;color:var(--ink);margin:0 0 12px}
+  .tldr ul{margin:0;padding-left:20px}
+  .tldr li{margin:8px 0}
+
+  h2{font-size:26px;line-height:1.2;font-weight:650;color:var(--ink-strong);
+    margin:44px 0 14px;letter-spacing:-.01em}
+  h3{font-size:19px;font-weight:600;color:var(--ink-strong);margin:28px 0 8px}
+  p{margin:16px 0}
+  strong{color:var(--ink-strong);font-weight:600}
+
+  .loop{font-family:'Newsreader',Georgia,serif;font-style:italic;
+    font-size:22px;color:var(--ink-strong);text-align:center;margin:34px 0}
+  .loop b{font-style:normal;font-weight:600}
+  .loop span{color:var(--red);font-size:15px;display:inline-block}
+
+  table{width:100%;border-collapse:collapse;margin:26px 0;font-size:16px}
+  th,td{text-align:left;padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.06em;
+    text-transform:uppercase;color:#8a827e;font-weight:500}
+  td .score{font-family:'Geist Mono',monospace;font-weight:500;color:var(--ink-strong)}
+  .win{color:var(--green);font-weight:600}
+
+  .callout{border-left:3px solid var(--yellow);padding:4px 0 4px 20px;margin:26px 0;
+    color:var(--ink-strong);font-size:19px}
+
+  .faq h3{margin:24px 0 6px}
+  .faq p{margin:6px 0 0;color:var(--ink)}
+
+  .cta{background:#000;color:#fff;border-radius:20px;padding:36px 32px;margin:48px 0 0;text-align:center}
+  .cta h2{color:#fff;margin:0 0 10px}
+  .cta p{color:#c9c4c0;margin:0 auto 22px;max-width:440px}
+  .cta a.book{display:inline-block;background:#fff;color:#000;font-weight:600;
+    padding:13px 26px;border-radius:12px}
+  .cta a.book:hover{background:#eee;text-decoration:none}
+
+  .disclaimer{font-size:13.5px;color:#9a938e;border-top:1px solid var(--line);
+    margin-top:40px;padding-top:18px}
+
+  footer.site{border-top:1px solid var(--line);padding:26px 24px;max-width:1080px;
+    margin:40px auto 0;display:flex;justify-content:space-between;font-size:13px;color:#9a938e;flex-wrap:wrap;gap:10px}
+  footer.site a{color:#9a938e}
+
+  @media(max-width:600px){
+    h1{font-size:31px}
+    main{padding:16px 20px 60px}
+    body{font-size:17px}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <a href="/"><img src="/orcool-logo.png" alt="Orcool"></a>
+  <nav class="nav-right">
+    <a href="/blog/">Blog</a>
+    <a href="/" class="pill">Connect</a>
+  </nav>
+</header>
+
+<main>
+  <article>
+    <p class="eyebrow">Benchmark · Creative effectiveness</p>
+    <h1>What makes an AI-generated ad convert? We scored the formats head to head.</h1>
+    <p class="byline">By <strong>Orcool</strong> <span class="mono">·</span> June 30, 2026 <span class="mono">·</span> 6 min read</p>
+
+    <div class="tldr">
+      <h2>The short version</h2>
+      <ul>
+        <li>We ran a blind, five-week test of two AI-built video ads for the <strong>same voice-to-text app</strong>, scored on Google's <strong>ABCD</strong> creative framework.</li>
+        <li>The <strong>agent-built testimonial</strong> scored <strong>0.76</strong>. A leading <strong>single-tool AI-UGC generator</strong> scored <strong>0.49</strong>.</li>
+        <li>The gap was not production polish. It was <strong>attention in the first three seconds</strong> and a claim a real user would actually say out loud.</li>
+        <li>The practical takeaway: <strong>score creative before you spend</strong>, and treat the hook as the product, not the packaging.</li>
+      </ul>
+    </div>
+
+    <h2>Why we ran this</h2>
+    <p>Making an ad with AI is no longer the hard part. A script goes in, a talking-head video comes out, and you can do it before lunch. The open question, the one that decides whether any of this matters, is whether those ads actually work once real money sits behind them.</p>
+    <p>Volume is cheap now. Winners are still rare. So we stopped arguing about it and put a number on it.</p>
+
+    <h2>The setup</h2>
+    <p>Same app. Same offer. Same audience. Two ways to build the video.</p>
+    <p>The first was a popular AI-UGC tool: paste a script, pick an avatar, get a clean talking-head ad. The second was an agent pipeline that builds the ad from real signals first, actual user reviews, the hooks competitors are running, and the format patterns that have been holding up in the category, then writes the testimonial around those.</p>
+    <p>Both were scored blind on <strong>ABCD</strong>: Attention, Branding, Connection, Direction. It is the framework YouTube's own research ties to creative lift, so it is a fair, neutral referee that neither format was tuned to game.</p>
+
+    <p class="loop">
+      <b>signals</b> <span>what real users say</span> &nbsp;→&nbsp; <b>format</b> <span>what already wins</span> &nbsp;→&nbsp; <b>ad</b> <span>built, not prompted</span>
+    </p>
+
+    <h2>The result</h2>
+    <table>
+      <thead>
+        <tr><th>Format</th><th>ABCD score</th><th>Won on</th><th>Lost on</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Agent-built testimonial</strong></td>
+          <td><span class="score win">0.76</span></td>
+          <td>Attention, Connection</td>
+          <td>None</td>
+        </tr>
+        <tr>
+          <td>Single-tool AI-UGC</td>
+          <td><span class="score">0.49</span></td>
+          <td>Branding</td>
+          <td>Attention, Direction</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Same product, same length, same faces-on-camera premise. A 27-point gap on a framework built to predict whether an ad earns its spend.</p>
+
+    <h2>What the gap was actually about</h2>
+    <p>Here is the part worth keeping. The two ads were close on polish. Lip-sync, resolution, pacing, all fine on both. The difference lived in three places.</p>
+
+    <h3>1. The first three seconds</h3>
+    <p>The single-tool ad opened the way scripts want to open: a friendly greeting, a bit of setup, then the point. The agent-built version opened on the point, a specific frustration pulled straight from a real review. On a feed you get roughly one second to earn the second one. That opening was most of the Attention gap.</p>
+
+    <h3>2. A claim a person would say</h3>
+    <p>Generic praise reads as an ad. A user saying "I stopped typing notes with my thumbs" reads as a person. The agent version scored higher on Connection because it borrowed the actual words users use, not the words a brand wishes they used.</p>
+
+    <h3>3. One clear next step</h3>
+    <p>Direction is the least glamorous letter and the one the single-tool ad dropped. It ended soft. The testimonial ended on a single, concrete action. No menu, no hedge.</p>
+
+    <p class="callout">The winning ad was not better made. It was better <em>informed</em>. It knew what real users said and what the category was already rewarding before a single frame was rendered.</p>
+
+    <h2>What this means if you buy media</h2>
+    <p><strong>Score before you spend.</strong> A creative-effectiveness score turns "which of these six do we run" from a hallway debate into a ranked list. It will not pick your winner for you, but it will tell you which ads are built like winners and which are quietly weak at the hook.</p>
+    <p><strong>The hook is the product.</strong> Most of the gap here was decided in three seconds. If your AI workflow spends its effort on avatars and none on the opening line, you are polishing the part almost nobody watches.</p>
+    <p><strong>Formats beat prompts.</strong> A better prompt gives you a nicer version of the same idea. Building from signals, real reviews and proven structures, gives you a different, stronger idea. That is the lever, and it is the one a single generation step cannot pull.</p>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <h3>What is the ABCD framework for ad creative?</h3>
+      <p>ABCD stands for Attention, Branding, Connection and Direction, the four creative traits Google and YouTube link to stronger ad performance. Each is scored and combined into a single 0 to 1 figure that estimates how well a video is built to hold attention and move a viewer to act.</p>
+
+      <h3>Does a higher ABCD score guarantee more conversions?</h3>
+      <p>No. ABCD is a predictor, not a promise. A higher score means the ad is built more like the ones that tend to win. Real conversion still depends on offer, targeting and spend, so use the score to decide what to test, not to skip testing.</p>
+
+      <h3>Can an AI-generated ad beat a human-made one?</h3>
+      <p>On creative-effectiveness scores, yes, when the AI assembles from real signals instead of dressing up a generic script. In our test the agent-built testimonial won because it started from actual user language and a proven hook, not because it looked more polished.</p>
+
+      <h3>How do you score an ad before spending money on it?</h3>
+      <p>You score the creative against a framework like ABCD before it goes live, exactly as this benchmark was run. That flags weak hooks before they burn budget and ranks a batch of options by how well each is built to perform.</p>
+    </div>
+
+    <p class="disclaimer">Methodology note: this was an internal head-to-head run over five weeks on a single voice-to-text app, scored blind on the ABCD framework. The client is anonymized and the competing tool is described by category. A single test is a signal, not a law. We are publishing the method so you can weigh the result for yourself.</p>
+
+    <div class="cta">
+      <h2>Score your own creative before you spend</h2>
+      <p>Orcool builds ads from real signals and scores them against the frameworks that predict lift. Connect it to your AI client, or see it on a live call.</p>
+      <a class="book" href="https://calendar.app.google/eUAhawSKwhxAT71i7">Book a demo</a>
+    </div>
+  </article>
+</main>
+
+<footer class="site">
+  <span>© 2026 Orcool. Creative intelligence as a tool call.</span>
+  <span><a href="/blog/">Blog</a> &nbsp; <a href="/">Home</a></span>
+</footer>
+
+</body>
+</html>
