@@ -283,8 +283,8 @@
 <section class="dark" id="output" style="padding-top:0">
   <div class="wrap">
     <span class="eyebrow">See the output</span>
-    <h2 style="margin-top:14px">A real session. Redacted for this page.</h2>
-    <p style="margin-top:14px;max-width:600px">A UA lead asks a category question. Claude calls Orcool, reads patterns and alerts, and replies with structured signal. Here is what that looks like.</p>
+    <h2 style="margin-top:14px">A real session. Brand redacted.</h2>
+    <p style="margin-top:14px;max-width:600px">A UA lead asks what&rsquo;s saturating the category and where the gap is. Claude calls Orcool, reads 387 ingested competitor ads, and comes back with a structured answer in under a minute.</p>
 
     <!-- macOS browser chrome mock -->
     <div class="clshot">
@@ -309,51 +309,62 @@
         </div>
         <!-- User message -->
         <div class="umsg">
-          <div class="ubub">We&rsquo;re spinning up a new casual puzzle title in the US. What&rsquo;s actually working in the category right now, and where&rsquo;s the gap we could own?</div>
+          <div class="ubub">We&rsquo;re spinning up a new casual puzzle title in the US. Pull the top creative patterns for the casual puzzle category and tell me where the gap is &mdash; what no competitor has claimed yet.</div>
         </div>
         <!-- Claude response -->
         <div class="cmsg">
           <div class="cav">O</div>
           <div class="cresp">
-            <!-- Tool call -->
+            <!-- Tool call 1 -->
             <div class="toolcall">
               <div class="tc-head">
-                <span class="tc-name">Orcool &rsaquo; list_patterns &middot; list_alerts</span>
+                <span class="tc-name">Orcool &rsaquo; studio_list_brands &middot; studio_list_pattern_candidates</span>
                 <span class="tc-done">&#x2713; done</span>
               </div>
-              <div class="tc-params">category: casual_puzzle &nbsp;&middot;&nbsp; geo: US &nbsp;&middot;&nbsp; 4 competitors &nbsp;&middot;&nbsp; Meta + TikTok</div>
+              <div class="tc-params">casual_puzzle &nbsp;&middot;&nbsp; US &nbsp;&middot;&nbsp; 4 competitors &nbsp;&middot;&nbsp; Meta + TikTok &nbsp;&middot;&nbsp; 387 ads ingested</div>
+            </div>
+            <!-- Tool call 2 -->
+            <div class="toolcall">
+              <div class="tc-head">
+                <span class="tc-name">Orcool &rsaquo; studio_list_competitor_references</span>
+                <span class="tc-done">&#x2713; done</span>
+              </div>
+              <div class="tc-params">198 on-category ads &nbsp;&middot;&nbsp; Oct 2025 &ndash; Jun 2026</div>
             </div>
             <!-- Prose -->
             <div class="cprose">
-              <p>Two patterns are running long enough to trust. One gap nobody in the field has claimed.</p>
+              <p>Category is crowded into a few moves &mdash; and one is eating everything.</p>
             </div>
-            <!-- Patterns section -->
-            <div class="csection">Patterns &mdash; durable, 34+ days running</div>
+            <!-- Saturated section -->
+            <div class="csection">Saturated &mdash; red ocean</div>
             <div class="pcard-row">
-              <span class="pn">Satisfying engine &mdash; pure flow, calm open</span>
-              <span class="ps">score 0.82</span>
+              <span class="pn">Fail-ad / &ldquo;save the king&rdquo; peril</span>
+              <span class="ps">93 of 198 ads</span>
             </div>
             <div class="pcard-row">
-              <span class="pn">Calm body &plus; action headline swap</span>
-              <span class="ps">score 0.66</span>
+              <span class="pn">&ldquo;Satisfying&rdquo; clutter-clear demo</span>
+              <span class="ps">53 ads</span>
             </div>
-            <!-- More prose -->
-            <div class="cprose" style="margin-top:12px">
-              <p>Both are running across all four tracked competitors on Meta. The satisfying-mechanic lane is saturated at the top; joining it means fighting for margin against mature creatives with 34+ days of optimization behind them.</p>
-              <p>One pattern that <em>isn&rsquo;t</em> running: the fake-fail rescue loop is getting installs but bleeding retention. Players churn at the mid-game pay wall. Worth watching as a signal, not a model to copy.</p>
+            <div class="pcard-row">
+              <span class="pn">Variety reels / multi-minigame</span>
+              <span class="ps">36 ads</span>
+            </div>
+            <!-- Middle prose -->
+            <div class="cprose" style="margin-top:11px">
+              <p>Everyone is selling <em>match tiles</em> and <em>peril</em>. Almost nobody is selling a feeling or a reason.</p>
             </div>
             <!-- Gap callout -->
             <div class="gapcall">
-              <div class="gt">Gap &mdash; character lane is wide open</div>
-              <div class="gx">Zero character or mascot creative is live across all four competitors, yet the category leader wins recall on its mascot in brand surveys. The satisfying-mechanic lane is crowded. The character lane is wide open in the US right now.</div>
+              <div class="gt">Gap &mdash; calm / flow-state lane is unclaimed</div>
+              <div class="gx">Zero puzzle ads frame the game as a reset, a decompress, or &ldquo;the calm one.&rdquo; The category is all stress (peril, fail, frustration-bait) and no relief. Strategy-as-the-hero is also near-zero. First mover in the mood lane owns a position no competitor has claimed.</div>
             </div>
             <!-- Closing offer -->
-            <div class="coffer">Want me to draft 3 character-led hook concepts using your brand signals? I can score them against the pattern library before you brief the team.</div>
+            <div class="coffer">Want a concept batch targeting this white space, or a live watcher for when a competitor starts moving into it?</div>
           </div>
         </div>
       </div>
     </div>
-    <p class="clshot-aside">Real session output from a connected brand. Competitor names redacted; category and market preserved.</p>
+    <p class="clshot-aside">Real session. 387 competitor ads ingested off Meta + TikTok (Oct 2025&ndash;Jun 2026), 198 on-category. Brand name redacted; category and market preserved.</p>
   </div>
 </section>
 
