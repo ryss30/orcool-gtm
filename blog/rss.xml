@@ -1,24 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
-  <channel>
-    <title>The Orcool Blog</title>
-    <link>https://get.orcool.com/blog/</link>
-    <description>Data-backed writing on AI ad creative, creative scoring and category signals.</description>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 01 Jul 2026 12:00:00 GMT</lastBuildDate>
-    <item>
-      <title>Your user reviews are the best ad brief you already have</title>
-      <link>https://get.orcool.com/blog/user-reviews-best-ad-brief/</link>
-      <guid>https://get.orcool.com/blog/user-reviews-best-ad-brief/</guid>
-      <pubDate>Wed, 01 Jul 2026 12:00:00 GMT</pubDate>
-      <description>Most ad scripts start from a brand deck. Your customers do not talk like a brand deck. The better brief is already in your reviews. Here is how to use it.</description>
-    </item>
-    <item>
-      <title>What makes an AI-generated ad convert? We scored the formats head to head.</title>
-      <link>https://get.orcool.com/blog/ai-ugc-ad-scoring-benchmark/</link>
-      <guid>https://get.orcool.com/blog/ai-ugc-ad-scoring-benchmark/</guid>
-      <pubDate>Tue, 30 Jun 2026 12:00:00 GMT</pubDate>
-      <description>Two AI-built ads, one app, scored blind on Google's ABCD framework. The agent-built testimonial hit 0.76; a leading single-tool generator hit 0.49. The gap was not polish.</description>
-    </item>
-  </channel>
+<channel>
+  <title>The Orcool Blog</title>
+  <link>https://get.orcool.com/blog/</link>
+  <description>Data-backed writing on AI ad creative, creative scoring and category signals.</description>
+  <language>en</language>
+  <item>
+    <title>Selection is not creation: what per-impression ad pickers can't tell you</title>
+    <link>https://get.orcool.com/blog/selection-is-not-creation/</link>
+    <guid>https://get.orcool.com/blog/selection-is-not-creation/</guid>
+    <pubDate>Thu, 02 Jul 2026 17:00:00 GMT</pubDate>
+    <description>Automated selection ranks the library you already have. It cannot tell you how much life an ad has left, or which angle is missing. Durability data from 1,061 creatives.</description>
+  </item>
+  <item>
+    <title>Your user reviews are the best ad brief you already have</title>
+    <link>https://get.orcool.com/blog/user-reviews-best-ad-brief/</link>
+    <guid>https://get.orcool.com/blog/user-reviews-best-ad-brief/</guid>
+    <pubDate>Wed, 01 Jul 2026 17:00:00 GMT</pubDate>
+    <description>Most ad scripts start from a brand deck. Your customers do not talk like a brand deck. The better brief is already in your reviews.</description>
+  </item>
+  <item>
+    <title>What makes an AI-generated ad convert? We scored the formats head to head.</title>
+    <link>https://get.orcool.com/blog/ai-ugc-ad-scoring-benchmark/</link>
+    <guid>https://get.orcool.com/blog/ai-ugc-ad-scoring-benchmark/</guid>
+    <pubDate>Tue, 30 Jun 2026 17:00:00 GMT</pubDate>
+    <description>Two AI-built ads, one app, scored blind on Google's ABCD framework. 0.76 vs 0.49. The gap was not polish.</description>
+  </item>
+</channel>
 </rss>
