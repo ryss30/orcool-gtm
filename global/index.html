@@ -709,7 +709,7 @@
       <div class="hook-gate" id="hookGate">
         <div class="hook-gate-inner">
           <div class="hook-gate-label">See 2 more hooks + the Orcool counter-hook</div>
-          <div class="hook-gate-sub">We'll also send you our full market teardown.</div>
+          <div class="hook-gate-sub">We'll email you a magic link to your Orcool account.</div>
           <div class="hook-gate-form" id="hookGateForm">
             <input type="email" id="hookEmail" class="hook-email-input" placeholder="Work email" required>
             <button class="hook-gate-btn" onclick="submitHookGate()">Unlock full teardown</button>
@@ -1498,16 +1498,17 @@ function submitHookGate() {
   btn.disabled = true;
   btn.textContent = 'Unlocking...';
 
-  // Reveal content immediately
+  // Reveal content immediately — don't wait for network
   _gateUnlocked = true;
   _applyBlur(false);
   document.getElementById('hookGate').style.display = 'none';
 
-  // Open mailto so Boris receives the lead with full context
-  const subject = encodeURIComponent('Hook teardown request — ' + (document.getElementById('hookCardTag').textContent || cat + ' × ' + mkt));
-  const body = encodeURIComponent('Lead email: ' + email + '\nMarket: ' + mkt + '\nCategory: ' + cat + '\n\nSource: get.orcool.com/global hook widget');
-  const mailto = 'mailto:team@orcool.com?subject=' + subject + '&body=' + body;
-  window.location.href = mailto;
+  // Send magic link so the user can sign in directly
+  fetch('https://app.orcool.com/api/auth/send-magic-link', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email, isBusiness: false, baseUrl: 'https://app.orcool.com' })
+  }).catch(function() {});  // silent — content already unlocked
 }
 
 function toggleAcc(id,btn){
