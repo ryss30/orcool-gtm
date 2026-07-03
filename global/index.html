@@ -1496,19 +1496,30 @@ function submitHookGate() {
   const btn = document.querySelector('.hook-gate-btn');
 
   btn.disabled = true;
-  btn.textContent = 'Unlocking...';
+  btn.textContent = 'Sending...';
 
   // Reveal content immediately — don't wait for network
   _gateUnlocked = true;
   _applyBlur(false);
-  document.getElementById('hookGate').style.display = 'none';
 
-  // Send magic link so the user can sign in directly
+  // Show success message, then fade gate out
+  document.getElementById('hookGateForm').style.display = 'none';
+  var ok = document.getElementById('hookGateSuccess');
+  ok.textContent = 'Check your inbox. Magic link sent to ' + email + '.';
+  ok.style.display = 'block';
+  setTimeout(function() {
+    var gate = document.getElementById('hookGate');
+    gate.style.transition = 'opacity .5s';
+    gate.style.opacity = '0';
+    setTimeout(function() { gate.style.display = 'none'; }, 500);
+  }, 2000);
+
+  // Send magic link
   fetch('https://app.orcool.com/api/auth/send-magic-link', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email: email, isBusiness: false, baseUrl: 'https://app.orcool.com' })
-  }).catch(function() {});  // silent — content already unlocked
+  }).catch(function() {});
 }
 
 function toggleAcc(id,btn){
