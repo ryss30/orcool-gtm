@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CORS Debug — app.orcool.com/api/auth/send-magic-link</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0a0a0a;
+    color: #e8e8e8;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    padding: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+  h1 { font-size: 20px; margin-bottom: 4px; }
+  .endpoint {
+    font-family: "SF Mono", Menlo, Monaco, Consolas, monospace;
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 20px;
+    word-break: break-all;
+  }
+  .env-box {
+    background: #141414;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 20px;
+    font-family: "SF Mono", Menlo, Monaco, Consolas, monospace;
+    font-size: 13px;
+  }
+  .env-box .label { color: #888; }
+  .env-box .value { color: #7dd3fc; }
+  form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+  input[type="email"] {
+    flex: 1;
+    min-width: 240px;
+    background: #141414;
+    border: 1px solid #333;
+    border-radius: 6px;
+    color: #e8e8e8;
+    padding: 10px 14px;
+    font-size: 14px;
+    font-family: "SF Mono", Menlo, Monaco, Consolas, monospace;
+  }
+  input[type="email"]:focus { outline: none; border-color: #666; }
+  button {
+    background: #e8e8e8;
+    color: #0a0a0a;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 22px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  button:hover { background: #fff; }
+  button:disabled { background: #555; color: #999; cursor: wait; }
+  .section {
+    background: #111;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+  .section h2 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #aaa;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #2a2a2a;
+    padding-bottom: 8px;
+  }
+  .status-line {
+    font-family: "SF Mono", Menlo, Monaco, Consolas, monospace;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .status-ok { color: #4ade80; }
+  .status-err { color: #f87171; }
+  .sub-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #777;
+    margin: 12px 0 4px;
+  }
+  pre {
+    background: #0d0d0d;
+    border: 1px solid #222;
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-family: "SF Mono", Menlo, Monaco, Consolas, monospace;
+    font-size: 12.5px;
+    white-space: pre-wrap;
+    word-break: break-all;
+    color: #ccc;
+  }
+  pre.error-box {
+    color: #f87171;
+    border-color: #4a1a1a;
+    background: #1a0d0d;
+  }
+  .pending { color: #888; font-style: italic; font-size: 13px; }
+  .hdr-name { color: #7dd3fc; }
+</style>
+</head>
+<body>
+
+<h1>CORS Debug</h1>
+<div class="endpoint">POST https://app.orcool.com/api/auth/send-magic-link</div>
+
+<div class="env-box" id="envBox">
+  <div><span class="label">window.location.origin: </span><span class="value" id="envOrigin"></span></div>
+  <div><span class="label">document.domain: </span><span class="value" id="envDomain"></span></div>
+</div>
+
+<form id="testForm">
+  <input type="email" id="emailInput" placeholder="email@example.com" required value="boris.ryss@orcool.com">
+  <button type="submit" id="submitBtn">Test CORS</button>
+</form>
+
+<div class="section">
+  <h2>OPTIONS Preflight</h2>
+  <div id="optionsResult"><span class="pending">Not run yet.</span></div>
+</div>
+
+<div class="section">
+  <h2>POST Request</h2>
+  <div id="postResult"><span class="pending">Not run yet.</span></div>
+</div>
+
+<script>
+(function () {
+  // Environment info on load
+  document.getElementById('envOrigin').textContent = window.location.origin;
+  var dd;
+  try { dd = document.domain || '(empty string)'; }
+  catch (e) { dd = 'Error reading document.domain: ' + e.message; }
+  document.getElementById('envDomain').textContent = dd;
+
+  var ENDPOINT = 'https://app.orcool.com/api/auth/send-magic-link';
+
+  function esc(s) {
+    return String(s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
+  }
+
+  function renderResult(container, data) {
+    var html = '';
+    if (data.error) {
+      html += '<div class="status-line status-err">FAILED</div>';
+      html += '<div class="sub-label">Error</div>';
+      html += '<pre class="error-box">' + esc(data.error) + '</pre>';
+    } else {
+      var ok = data.status >= 200 && data.status < 300;
+      html += '<div class="status-line ' + (ok ? 'status-ok' : 'status-err') + '">'
+            + 'Status: ' + esc(data.status) + ' ' + esc(data.statusText || '') + '</div>';
+      html += '<div class="sub-label">Response Headers (' + data.headers.length + ' visible)</div>';
+      if (data.headers.length === 0) {
+        html += '<pre>(no headers visible — CORS may be hiding them)</pre>';
+      } else {
+        var lines = data.headers.map(function (h) {
+          return '<span class="hdr-name">' + esc(h[0]) + '</span>: ' + esc(h[1]);
+        }).join('\n');
+        html += '<pre>' + lines + '</pre>';
+      }
+      html += '<div class="sub-label">Response Body (first 500 chars)</div>';
+      html += '<pre>' + (data.body ? esc(data.body) : '(empty body)') + '</pre>';
+    }
+    container.innerHTML = html;
+  }
+
+  async function runRequest(container, fetchOptions) {
+    container.innerHTML = '<span class="pending">Running…</span>';
+    var data = {};
+    try {
+      var response = await fetch(ENDPOINT, fetchOptions);
+      data.status = response.status;
+      data.statusText = response.statusText;
+      data.headers = [];
+      response.headers.forEach(function (value, key) {
+        data.headers.push([key, value]);
+      });
+      var text = await response.text();
+      data.body = text.slice(0, 500);
+    } catch (err) {
+      data.error = (err.name ? err.name + ': ' : '') + err.message +
+        (err.stack ? '\n\nStack:\n' + err.stack : '');
+    }
+    renderResult(container, data);
+    return data;
+  }
+
+  document.getElementById('testForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    var btn = document.getElementById('submitBtn');
+    var email = document.getElementById('emailInput').value.trim();
+    btn.disabled = true;
+    btn.textContent = 'Testing…';
+
+    // 1. OPTIONS preflight
+    await runRequest(document.getElementById('optionsResult'), {
+      method: 'OPTIONS',
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Request-Method': 'POST',
+        'Access-Control-Request-Headers': 'content-type'
+      }
+    });
+
+    // 2. POST
+    await runRequest(document.getElementById('postResult'), {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: email,
+        isBusiness: false,
+        baseUrl: 'https://app.orcool.com'
+      })
+    });
+
+    btn.disabled = false;
+    btn.textContent = 'Test CORS';
+  });
+})();
+</script>
+
+</body>
+</html>
