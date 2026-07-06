@@ -1,1123 +1,483 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Orcool · Creative intelligence for agencies</title>
-  <link rel="canonical" href="https://get.orcool.com/agency/">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg: #f8f7f5;
-      --dark: #000;
-      --ink: #443d3d;
-      --red: #FA3810;
-      --blue: #387FFF;
-      --green: #45B43B;
-      --yellow: #FFB516;
-      --gradient: linear-gradient(135deg, #FA3810, #FFB516, #45B43B, #387FFF);
-      --pill-bg: #443d3d;
-      --radius: 10px;
-    }
-    body {
-      font-family: 'Geist', -apple-system, sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      line-height: 1.5;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orcool · Creative intelligence for agencies</title>
+<meta name="description" content="See what's winning in each client's category before the brief. Competitive alerts, patterns, and weekly reports. In Slack or as tool calls.">
+<link rel="canonical" href="https://get.orcool.com/agency/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f8f7f5; --ink:#443D3D; --black:#000000;
+    --red:#FA3810; --blue:#387FFF; --green:#45B43B; --yellow:#FFB516;
+    --grey:#6B6E80; --line:#E7E5E1; --panel:#FFFFFF;
+    --sans:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+    --mono:"Geist Mono",ui-monospace,Menlo,Consolas,monospace;
+    --serif:Georgia,"Times New Roman",serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 28px}
+  a{color:inherit}
+  h1{font-weight:800;letter-spacing:-.025em;line-height:1.02;font-size:46px}
+  h2{font-weight:700;letter-spacing:-.015em;line-height:1.12;font-size:30px}
+  h3{font-weight:600;font-size:18px}
+  p{color:var(--ink);font-size:17px}
+  .muted{color:var(--grey)}
 
-    /* ---- HEADER ---- */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 40px;
-      background: var(--bg);
-      border-bottom: 1px solid rgba(68,61,61,0.08);
-    }
-    .logo-text {
-      font-family: 'Geist', sans-serif;
-      font-weight: 800;
-      font-size: 22px;
-      letter-spacing: -0.5px;
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .btn-pill {
-      display: inline-block;
-      background: var(--pill-bg);
-      color: #fff;
-      font-family: 'Geist Mono', monospace;
-      font-size: 13px;
-      font-weight: 500;
-      padding: 8px 18px;
-      border-radius: var(--radius);
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      will-change: transform;
-      transition: background-color 0.15s;
-    }
-    .btn-pill:hover { background: #2a2525; }
-    .btn-ghost {
-      display: inline-block;
-      background: transparent;
-      color: var(--ink);
-      font-family: 'Geist Mono', monospace;
-      font-size: 13px;
-      font-weight: 500;
-      padding: 8px 18px;
-      border-radius: var(--radius);
-      border: 1.5px solid rgba(68,61,61,0.2);
-      text-decoration: none;
-      cursor: pointer;
-      transition: border-color 0.15s;
-    }
-    .btn-ghost:hover { border-color: rgba(68,61,61,0.5); }
+  header{position:sticky;top:0;z-index:50;background:rgba(248,247,245,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .logo{height:22px;width:auto;display:block}
+  .pill{display:inline-block;background:var(--ink);color:#fff;font-weight:600;font-size:14px;text-decoration:none;padding:9px 18px;border-radius:10px;transition:background-color .14s ease}
+  .pill:hover{background:#332e2e}
 
-    /* ---- HERO ---- */
-    .hero {
-      max-width: 820px;
-      margin: 0 auto;
-      padding: 80px 40px 72px;
-      text-align: center;
-    }
-    .eyebrow {
-      font-family: 'Geist Mono', monospace;
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      color: var(--ink);
-      opacity: 0.45;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-    }
-    h1 {
-      font-size: clamp(44px, 6.5vw, 76px);
-      font-weight: 800;
-      line-height: 1.04;
-      color: var(--ink);
-      letter-spacing: -2.5px;
-      margin-bottom: 22px;
-    }
-    .hero-sub {
-      font-size: 18px;
-      color: var(--ink);
-      opacity: 0.65;
-      max-width: 540px;
-      margin: 0 auto 32px;
-      line-height: 1.65;
-    }
-    .hero-ctas {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 12px;
-    }
-    .micro {
-      font-size: 12px;
-      color: var(--ink);
-      opacity: 0.38;
-      margin-bottom: 56px;
-    }
+  .btn{display:inline-block;background:var(--ink);color:#fff;font-weight:600;font-size:16px;text-decoration:none;padding:14px 26px;border-radius:10px;transition:background-color .14s ease,border-color .14s ease}
+  .btn:hover{background:#332e2e}
+  .btn.ghost{background:transparent;color:var(--ink);border:1.5px solid #D8D5D0}
+  .btn.ghost:hover{border-color:var(--ink);background:rgba(68,61,61,.05)}
+  .btn.light{background:#fff;color:#111}
+  .btn.light:hover{background:#ededea}
+  .btn.on-dark{background:#fff;color:#111}
+  .btn.on-dark:hover{background:#ededea}
+  .btn.on-dark.ghost{color:#fff;border:1.5px solid #3a3a3a;background:transparent}
+  .btn.on-dark.ghost:hover{border-color:#5a5a5a;background:rgba(255,255,255,.07)}
+  .btnrow{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .eyebrow{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
 
-    /* Loop device */
-    .loop-device {
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      gap: 0;
-      max-width: 520px;
-      margin: 0 auto;
-    }
-    .loop-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      flex: 1;
-    }
-    .loop-word {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--ink);
-      letter-spacing: -0.3px;
-    }
-    .loop-label {
-      font-style: italic;
-      font-size: 11px;
-      color: var(--red);
-      margin-top: 5px;
-      text-align: center;
-      line-height: 1.4;
-    }
-    .loop-arrow {
-      font-size: 14px;
-      color: var(--ink);
-      opacity: 0.25;
-      padding: 0 10px;
-      margin-top: 1px;
-    }
+  section{padding:72px 0}
 
-    /* ---- SHIFT ---- */
-    .shift {
-      background: var(--dark);
-      color: #fff;
-      padding: 80px 40px;
-      text-align: center;
-    }
-    .tag {
-      font-family: 'Geist Mono', monospace;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      opacity: 0.35;
-      margin-bottom: 22px;
-    }
-    .shift h2 {
-      font-size: clamp(28px, 4vw, 50px);
-      font-weight: 800;
-      letter-spacing: -1.8px;
-      line-height: 1.08;
-      max-width: 680px;
-      margin: 0 auto 22px;
-    }
-    .shift p {
-      font-size: 17px;
-      opacity: 0.55;
-      max-width: 580px;
-      margin: 0 auto;
-      line-height: 1.7;
-    }
+  /* hero */
+  .hero{position:relative;text-align:center;padding:78px 0 96px;overflow:hidden}
+  .hero .eyebrow{display:inline-block;margin-bottom:18px}
+  .hero h1{max-width:760px;margin:0 auto 18px}
+  .hero .sub{font-size:20px;color:var(--ink);max-width:560px;margin:0 auto 30px}
+  .hero .micro{margin-top:18px;color:var(--grey);font-size:15px;line-height:1.7}
+  .hero .micro b{color:var(--ink);font-weight:600}
+  .glow{position:absolute;left:50%;transform:translateX(-50%);bottom:-120px;width:120%;height:320px;
+    background:linear-gradient(135deg,var(--red),var(--yellow),var(--green),var(--blue));
+    filter:blur(90px);opacity:.30;pointer-events:none;border-radius:50%;will-change:transform;backface-visibility:hidden}
 
-    /* ---- SIGNALS ---- */
-    .signals {
-      padding: 80px 40px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .section-intro { margin-bottom: 44px; }
-    .section-tag {
-      font-family: 'Geist Mono', monospace;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      opacity: 0.35;
-      margin-bottom: 8px;
-    }
-    .section-intro h2 {
-      font-size: clamp(26px, 3vw, 42px);
-      font-weight: 800;
-      letter-spacing: -1.2px;
-      color: var(--ink);
-      margin-bottom: 12px;
-    }
-    .section-intro p {
-      font-size: 16px;
-      opacity: 0.58;
-      max-width: 520px;
-      line-height: 1.6;
-    }
-    .panels {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-    .panel {
-      background: #fff;
-      border-radius: 16px;
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      border: 1px solid rgba(68,61,61,0.06);
-    }
-    .panel-tag {
-      font-family: 'Geist Mono', monospace;
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 10px;
-    }
-    .panel h3 {
-      font-size: 19px;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      color: var(--ink);
-      margin-bottom: 10px;
-      min-height: 52px;
-    }
-    .panel p {
-      font-size: 14px;
-      color: var(--ink);
-      opacity: 0.62;
-      line-height: 1.65;
-      flex: 1;
-    }
-    .panel-ship {
-      font-family: 'Geist Mono', monospace;
-      font-size: 11px;
-      color: var(--ink);
-      opacity: 0.38;
-      margin-top: auto;
-      padding-top: 18px;
-      line-height: 1.55;
-    }
+  .loop{max-width:720px;margin:44px auto 0}
+  .loopgrid{display:flex;align-items:flex-start;justify-content:center;gap:16px}
+  .li{display:flex;flex-direction:column;align-items:center}
+  .li .w{font-family:var(--serif);font-size:40px;line-height:1;color:var(--ink)}
+  .li .a{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--red);margin-top:10px}
+  .arr{font-size:30px;line-height:40px;color:var(--blue)}
 
-    /* ---- MULTI-BRAND ---- */
-    .multibrand {
-      background: var(--dark);
-      color: #fff;
-      padding: 80px 40px;
-    }
-    .multibrand-inner { max-width: 900px; margin: 0 auto; }
-    .multibrand .tag { color: rgba(255,255,255,0.35); }
-    .multibrand h2 {
-      font-size: clamp(28px, 4vw, 50px);
-      font-weight: 800;
-      letter-spacing: -1.8px;
-      line-height: 1.08;
-      margin-bottom: 20px;
-    }
-    .multibrand p {
-      font-size: 17px;
-      opacity: 0.55;
-      line-height: 1.7;
-      max-width: 580px;
-      margin-bottom: 14px;
-    }
-    .brand-cards {
-      display: flex;
-      gap: 12px;
-      margin-top: 40px;
-      flex-wrap: wrap;
-    }
-    .brand-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.09);
-      border-radius: 12px;
-      padding: 16px 20px;
-      min-width: 155px;
-    }
-    .bc-name {
-      font-size: 13px;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 4px;
-    }
-    .bc-cat {
-      font-family: 'Geist Mono', monospace;
-      font-size: 10px;
-      color: rgba(255,255,255,0.3);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .bc-status {
-      font-size: 11px;
-      margin-top: 10px;
-      line-height: 1.4;
-    }
+  .dark{background:var(--black);color:#fff}
+  .dark h2,.dark h3{color:#fff}
+  .dark p{color:#C9C7C4}
+  .dark .eyebrow{color:var(--yellow)}
+  .center{text-align:center}
+  .center .sub{max-width:560px;margin:14px auto 0}
 
-    /* ---- OUTPUT DEMO ---- */
-    .output {
-      padding: 80px 40px;
-      max-width: 860px;
-      margin: 0 auto;
-    }
-    .output .section-tag { margin-bottom: 8px; }
-    .output h2 {
-      font-size: clamp(24px, 3vw, 38px);
-      font-weight: 800;
-      letter-spacing: -1px;
-      color: var(--ink);
-      margin-bottom: 12px;
-    }
-    .output > p {
-      font-size: 16px;
-      opacity: 0.58;
-      max-width: 520px;
-      line-height: 1.6;
-      margin-bottom: 32px;
-    }
-    .output-demo {
-      background: #fff;
-      border-radius: 16px;
-      border: 1px solid rgba(68,61,61,0.07);
-      overflow: hidden;
-    }
-    .demo-header {
-      background: var(--dark);
-      padding: 12px 18px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .demo-dots { display: flex; gap: 6px; }
-    .demo-dot { width: 10px; height: 10px; border-radius: 50%; }
-    .demo-dot.r { background: #FF5F57; }
-    .demo-dot.y { background: #FFBD2E; }
-    .demo-dot.g { background: #28CA41; }
-    .demo-label {
-      font-family: 'Geist Mono', monospace;
-      font-size: 11px;
-      color: rgba(255,255,255,0.35);
-    }
-    .demo-body { padding: 28px; }
-    .demo-query {
-      background: var(--bg);
-      border-radius: 8px;
-      padding: 14px 16px;
-      margin-bottom: 22px;
-    }
-    .dq-label {
-      font-family: 'Geist Mono', monospace;
-      font-size: 10px;
-      color: var(--ink);
-      opacity: 0.38;
-      margin-bottom: 7px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-    .dq-text {
-      font-size: 13px;
-      color: var(--ink);
-      line-height: 1.55;
-    }
-    .dr-label {
-      font-family: 'Geist Mono', monospace;
-      font-size: 10px;
-      color: var(--red);
-      opacity: 0.65;
-      margin-bottom: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-    .dr-title {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 8px;
-    }
-    .dr-body {
-      font-size: 13px;
-      color: var(--ink);
-      opacity: 0.62;
-      line-height: 1.65;
-      margin-bottom: 18px;
-    }
-    .dr-hook-label {
-      font-family: 'Geist Mono', monospace;
-      font-size: 10px;
-      color: var(--ink);
-      opacity: 0.38;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 8px;
-    }
-    .dr-hook {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--ink);
-      border-left: 3px solid var(--red);
-      padding-left: 12px;
-      line-height: 1.55;
-    }
+  /* feed panels */
+  .panels{display:grid;grid-template-columns:1fr;gap:18px;margin-top:40px;text-align:left}
+  .panel{background:var(--panel);border-radius:16px;padding:26px;color:var(--ink);box-shadow:0 8px 30px rgba(0,0,0,.18);display:flex;flex-direction:column}
+  .panel .tag{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
+  .panel.blue .tag{color:var(--blue)} .panel.green .tag{color:var(--green)}
+  .panel h3{margin-bottom:8px;color:var(--ink);line-height:1.3;min-height:47px}
+  .panel p{font-size:15px;color:#5a5450}
+  .panel .ship{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink);font-family:var(--mono);line-height:1.7}
+  .panel .ship .m{color:var(--grey)}
 
-    /* ---- CONNECT ---- */
-    .connect {
-      background: var(--dark);
-      color: #fff;
-      padding: 80px 40px;
-    }
-    .connect-inner { max-width: 820px; margin: 0 auto; }
-    .connect .tag { color: rgba(255,255,255,0.35); }
-    .connect h2 {
-      font-size: clamp(26px, 3.5vw, 46px);
-      font-weight: 800;
-      letter-spacing: -1.5px;
-      margin-bottom: 12px;
-    }
-    .connect-sub {
-      font-size: 16px;
-      opacity: 0.45;
-      margin-bottom: 44px;
-      max-width: 480px;
-      line-height: 1.6;
-    }
-    .mcp-url-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.09);
-      border-radius: 14px;
-      padding: 22px;
-      margin-bottom: 28px;
-    }
-    .mcp-url-label {
-      font-family: 'Geist Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      opacity: 0.38;
-      margin-bottom: 12px;
-    }
-    .mcp-url-row {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .mcp-url {
-      font-family: 'Geist Mono', monospace;
-      font-size: 16px;
-      color: #fff;
-      flex: 1;
-    }
-    .copy-btn {
-      background: rgba(255,255,255,0.09);
-      color: #fff;
-      font-family: 'Geist Mono', monospace;
-      font-size: 12px;
-      padding: 7px 14px;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.15s;
-      white-space: nowrap;
-    }
-    .copy-btn:hover { background: rgba(255,255,255,0.16); }
-    .magic-explainer {
-      font-size: 12px;
-      opacity: 0.35;
-      margin-top: 10px;
-      line-height: 1.55;
-    }
+  /* connect: url card + accordions */
+  .urlcard{margin-top:8px;max-width:640px}
+  .urllab{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#8f8d8a;margin-bottom:8px}
+  .urlfield{display:flex;align-items:center;gap:10px}
+  .urlfield .u{flex:1;background:#0c0c0c;border:1px solid #232323;border-radius:10px;padding:14px 16px;font-family:var(--mono);font-size:15px;color:#EDEBE8;overflow-x:auto;white-space:nowrap}
+  .urlfield .ucopy{background:#1d1d1d;border:1px solid #232323;color:#C9C7C4;border-radius:10px;padding:13px 16px;cursor:pointer;font-family:var(--mono);font-size:12px;font-weight:500}
+  .urlfield .ucopy:hover{background:#2a2a2a;color:#fff}
+  .lab{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--yellow);margin:34px 0 12px}
+  .note{font-size:13.5px;color:#8f8d8a;margin-top:16px;max-width:600px;line-height:1.6}
 
-    /* Accordions */
-    .accordions { margin-bottom: 32px; }
-    details { border-bottom: 1px solid rgba(255,255,255,0.07); }
-    details:first-child { border-top: 1px solid rgba(255,255,255,0.07); }
-    summary {
-      font-size: 14px;
-      font-weight: 600;
-      color: #fff;
-      padding: 16px 0;
-      cursor: pointer;
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      user-select: none;
-    }
-    summary::-webkit-details-marker { display: none; }
-    summary::after {
-      content: '+';
-      font-family: 'Geist Mono', monospace;
-      font-size: 18px;
-      opacity: 0.28;
-    }
-    details[open] summary::after { content: '-'; }
-    .accord-body { padding: 0 0 18px; }
-    .accord-body ol {
-      list-style: decimal;
-      padding-left: 18px;
-    }
-    .accord-body li {
-      font-size: 13px;
-      opacity: 0.55;
-      margin-bottom: 6px;
-      line-height: 1.55;
-    }
+  .acc{border:1px solid #232323;border-radius:12px;margin-top:10px;background:#0c0c0c;max-width:760px;overflow:hidden}
+  .acc summary{display:flex;align-items:center;gap:11px;padding:14px 16px;font-weight:600;font-size:15.5px;color:#fff;list-style:none;cursor:pointer}
+  .acc summary::-webkit-details-marker{display:none}
+  .acc summary::after{content:"\25BE";margin-left:auto;color:#8f8d8a;font-size:11px;transition:transform .15s ease}
+  .acc[open] summary::after{transform:rotate(180deg)}
+  .acc .badge{width:24px;height:24px;border-radius:7px;display:flex;align-items:center;justify-content:center;flex:0 0 24px}
+  .acc ol{margin:0;padding:2px 18px 18px 42px;color:#C9C7C4;font-size:14.5px;line-height:1.7;border-top:1px solid #1d1d1d}
+  .acc ol li{margin:9px 0;padding-left:4px}
+  .acc ol b{color:#fff;font-weight:600}
+  .acc .ar{color:#7a7a7a;padding:0 1px}
 
-    /* Onboarding prompt */
-    .onboard-prompt {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 12px;
-      overflow: hidden;
-      margin-bottom: 16px;
-    }
-    .op-header {
-      padding: 12px 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .op-title {
-      font-family: 'Geist Mono', monospace;
-      font-size: 11px;
-      opacity: 0.38;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-    .op-body {
-      padding: 16px 18px;
-      font-size: 12px;
-      opacity: 0.55;
-      line-height: 1.75;
-      font-family: 'Geist Mono', monospace;
-      white-space: pre-wrap;
-    }
+  /* query boxes */
+  .qbox{background:#0c0c0c;border:1px solid #232323;border-left:3px solid var(--green);border-radius:12px;padding:14px 16px;margin-top:10px;position:relative;max-width:760px}
+  .qbox .ql{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--green);margin-bottom:7px}
+  .qbox p{color:#EDEBE8;font-size:15px;margin:0;padding-right:64px;font-family:var(--serif);font-style:italic}
+  .setuppre{background:#0c0c0c;border:1px solid #232323;border-radius:10px;padding:16px 18px;color:#EDEBE8;font-family:var(--mono);font-size:12.5px;line-height:1.6;white-space:pre-wrap;overflow-x:auto;margin:0}
+  .copy{position:absolute;top:10px;right:10px;background:#1d1d1d;color:#C9C7C4;border:none;border-radius:7px;font-family:var(--mono);font-size:11px;font-weight:500;padding:6px 10px;cursor:pointer}
+  .copy:hover{background:#2a2a2a;color:#fff}
 
-    /* ---- FIRST WIN ---- */
-    .firstwin {
-      padding: 80px 40px;
-      max-width: 880px;
-      margin: 0 auto;
-    }
-    .firstwin h2 {
-      font-size: clamp(24px, 3vw, 38px);
-      font-weight: 800;
-      letter-spacing: -1px;
-      color: var(--ink);
-      margin-bottom: 44px;
-    }
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 28px;
-    }
-    .step-tag {
-      font-family: 'Geist Mono', monospace;
-      font-size: 10px;
-      opacity: 0.32;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 8px;
-    }
-    .step-title {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 6px;
-    }
-    .step-body {
-      font-size: 12px;
-      color: var(--ink);
-      opacity: 0.48;
-      line-height: 1.55;
-    }
+  /* steps */
+  .steps{counter-reset:s;margin-top:34px;max-width:720px}
+  .step{display:flex;gap:18px;padding:16px 0;border-bottom:1px solid var(--line);align-items:flex-start}
+  .step:last-child{border-bottom:none}
+  .step .n{counter-increment:s;flex:0 0 34px;height:34px;border-radius:50%;background:var(--ink);color:#fff;font-weight:600;display:flex;align-items:center;justify-content:center;font-size:14px;font-family:var(--mono)}
+  .step .n::before{content:counter(s)}
+  .step .t{font-family:var(--mono);font-size:12px;color:var(--red);letter-spacing:.05em;text-transform:uppercase;margin-bottom:3px}
+  .step h4{font-size:17px;font-weight:600;margin-bottom:3px}
+  .step p{font-size:15px;color:#5a5450}
 
-    /* ---- COMPARE ---- */
-    .compare-wrap {
-      padding: 0 40px 72px;
-    }
-    .compare {
-      background: #fff;
-      border-radius: 20px;
-      overflow: hidden;
-      border: 1px solid rgba(68,61,61,0.06);
-    }
-    .compare-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-    .compare-col { padding: 36px; }
-    .compare-col + .compare-col {
-      border-left: 1px solid rgba(68,61,61,0.06);
-    }
-    .cc-icon { width: 28px; height: 28px; margin-bottom: 14px; display: block; }
-    .compare-col h3 {
-      font-size: 16px;
-      font-weight: 800;
-      color: var(--ink);
-      letter-spacing: -0.3px;
-      margin-bottom: 4px;
-    }
-    .cc-sub {
-      font-family: 'Geist Mono', monospace;
-      font-size: 10px;
-      opacity: 0.32;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 14px;
-    }
-    .compare-col p {
-      font-size: 13px;
-      color: var(--ink);
-      opacity: 0.58;
-      line-height: 1.65;
-      margin-bottom: 8px;
-    }
+  /* compare */
+  .compare{display:grid;grid-template-columns:1fr;gap:18px;margin-top:34px}
+  .cbox{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px}
+  .cbox.lead{border:1.5px solid var(--ink)}
+  .cbox .ct{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--grey);margin-bottom:14px}
+  .cbox.lead .ct{color:var(--red)}
+  .cbox .ct .slack{width:16px;height:16px;display:block}
+  .cbox ul{list-style:none}
+  .cbox li{padding:8px 0 8px 26px;position:relative;font-size:15px;color:#5a5450}
+  .cbox li::before{content:"\2192";position:absolute;left:0;color:var(--blue);font-weight:700}
 
-    /* ---- FAQ ---- */
-    .faq {
-      padding: 0 40px 80px;
-      max-width: 820px;
-      margin: 0 auto;
-    }
-    .faq h2 {
-      font-size: clamp(22px, 2.5vw, 34px);
-      font-weight: 800;
-      letter-spacing: -0.8px;
-      color: var(--ink);
-      margin-bottom: 28px;
-    }
-    .faq details { border-bottom: 1px solid rgba(68,61,61,0.08); }
-    .faq details:first-of-type { border-top: 1px solid rgba(68,61,61,0.08); }
-    .faq summary { color: var(--ink); }
-    .faq .accord-body p {
-      font-size: 13px;
-      color: var(--ink);
-      opacity: 0.58;
-      line-height: 1.65;
-      margin-bottom: 6px;
-    }
+  .faq details{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-top:12px;cursor:pointer}
+  .faq summary{font-weight:600;font-size:17px;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--red);font-weight:600}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq p{margin-top:12px;font-size:15px;color:#5a5450}
 
-    /* ---- FINAL CTA ---- */
-    .final-cta {
-      background: var(--dark);
-      color: #fff;
-      text-align: center;
-      padding: 80px 40px;
-    }
-    .final-cta h2 {
-      font-size: clamp(30px, 4.5vw, 56px);
-      font-weight: 800;
-      letter-spacing: -1.8px;
-      margin-bottom: 12px;
-      line-height: 1.05;
-    }
-    .final-cta .sub {
-      font-size: 16px;
-      opacity: 0.45;
-      margin-bottom: 32px;
-    }
-    .final-cta .micro { color: #fff; margin-top: 14px; }
-    .final-cta .tagline {
-      font-size: 11px;
-      opacity: 0.18;
-      margin-top: 28px;
-      font-style: italic;
-    }
-    .btn-ghost-white {
-      display: inline-block;
-      background: transparent;
-      color: #fff;
-      font-family: 'Geist Mono', monospace;
-      font-size: 13px;
-      font-weight: 500;
-      padding: 8px 18px;
-      border-radius: var(--radius);
-      border: 1.5px solid rgba(255,255,255,0.18);
-      text-decoration: none;
-      cursor: pointer;
-      transition: border-color 0.15s;
-    }
-    .btn-ghost-white:hover { border-color: rgba(255,255,255,0.45); }
+  .final{position:relative;text-align:center;overflow:hidden}
+  .final .glow{opacity:.34;bottom:-150px}
 
-    /* ---- FOOTER ---- */
-    footer {
-      background: var(--dark);
-      border-top: 1px solid rgba(255,255,255,0.05);
-      text-align: center;
-      padding: 18px 40px 28px;
-    }
-    footer p { font-size: 12px; opacity: 0.28; color: #fff; }
-    footer a { color: #fff; text-decoration: none; }
-    footer a:hover { opacity: 0.7; }
+  footer{border-top:1px solid var(--line);padding:34px 0;text-align:center;color:var(--grey);font-size:13px}
+  footer .logo{height:20px;margin:0 auto 14px}
+  footer .who{margin-top:8px;font-family:var(--mono);font-size:12px}
 
-    /* ---- RESPONSIVE ---- */
-    @media (max-width: 768px) {
-      header { padding: 14px 20px; }
-      .hero, .shift, .signals, .multibrand, .output, .connect, .firstwin, .faq { padding-left: 24px; padding-right: 24px; }
-      .compare-wrap { padding: 0 24px 56px; }
-      h1 { letter-spacing: -1.5px; }
-      .panels { grid-template-columns: 1fr; }
-      .steps { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-      .compare-grid { grid-template-columns: 1fr; }
-      .compare-col + .compare-col { border-left: none; border-top: 1px solid rgba(68,61,61,0.06); }
-    }
-  </style>
+  @media(min-width:740px){
+    h1{font-size:62px} h2{font-size:36px}
+    .panels{grid-template-columns:1fr 1fr 1fr}
+    .compare{grid-template-columns:1fr 1fr}
+  }
+</style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
-  <span class="logo-text">Orcool</span>
-  <a href="#connect" class="btn-pill">Connect the MCP</a>
+  <div class="wrap nav">
+    <img class="logo" src="/orcool-logo.png" alt="Orcool">
+    <a class="pill" href="#connect">Connect the MCP</a>
+  </div>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="eyebrow">For Performance Agencies</div>
-  <h1>Creative intelligence.<br>For every brand you run.</h1>
-  <p class="hero-sub">See what's winning in each client's category, the morning it happens. Competitive hooks, patterns that convert, weekly category reports. In Slack or as tool calls.</p>
-  <div class="hero-ctas">
-    <a href="#connect" class="btn-pill">Connect the MCP</a>
-    <a href="#signals" class="btn-ghost">See what you get</a>
-  </div>
-  <p class="micro">Free for two weeks. No card.</p>
-  <div class="loop-device">
-    <div class="loop-item">
-      <span class="loop-word">Intel</span>
-      <span class="loop-label">what's winning<br>in their category</span>
+  <div class="wrap">
+    <span class="eyebrow">For performance agencies</span>
+    <h1>Creative intelligence.<br>For every brand you run.</h1>
+    <p class="sub">See what's winning in each client's category before the brief. Competitive alerts, patterns that convert, weekly category reports. In Slack or as tool calls.</p>
+    <div class="btnrow" style="justify-content:center">
+      <a class="btn" href="#connect">Connect the MCP</a>
+      <a class="btn ghost" href="#feeds">See the three feeds</a>
     </div>
-    <span class="loop-arrow">→</span>
-    <div class="loop-item">
-      <span class="loop-word">Brief</span>
-      <span class="loop-label">the pattern<br>and why it works</span>
-    </div>
-    <span class="loop-arrow">→</span>
-    <div class="loop-item">
-      <span class="loop-word">Winner</span>
-      <span class="loop-label">faster than<br>any other path</span>
+    <p class="micro"><b>One account. Each client is a brand.</b><br>No card. First report free.</p>
+
+    <div class="loop">
+      <div class="loopgrid">
+        <div class="li"><span class="w">Client</span><span class="a">per account</span></div>
+        <span class="arr">&rarr;</span>
+        <div class="li"><span class="w">Signal</span><span class="a">the why</span></div>
+        <span class="arr">&rarr;</span>
+        <div class="li"><span class="w">Winner</span><span class="a">faster</span></div>
+      </div>
     </div>
   </div>
+  <div class="glow"></div>
 </section>
 
 <!-- SHIFT -->
-<section class="shift">
-  <div class="tag">The shift</div>
-  <h2>Your clients need creative that wins.<br>You need to know what's winning.</h2>
-  <p>You run paid media for brands that need creative to work. But knowing what's actually winning meant opening the Meta Ad Library once a week and turning it into a slide. Your team skipped it or guessed. The gap between media spend and a creative that clears your KPI gate isn't a brief problem. It's a signal problem.</p>
-</section>
-
-<!-- THREE SIGNALS -->
-<section class="signals" id="signals">
-  <div class="section-intro">
-    <div class="section-tag">Three signals</div>
-    <h2>One account. Every brand you run.</h2>
-    <p>Add each retainer client as a brand. Separate competitors, separate category intel, separate Slack digests. Clean. Always fresh. Per client, per geo.</p>
-  </div>
-  <div class="panels">
-    <div class="panel">
-      <div class="panel-tag">Brand Intel</div>
-      <h3>The move, the morning it happens</h3>
-      <p>A daily alert when a competitor ships new creative for any brand in your stack. "Competitor X launched 5 new ads in the US this morning." Not a week late. Per client. Per market.</p>
-      <div class="panel-ship">Slack: per-brand channel<br>MCP: watch per competitor and geo</div>
-    </div>
-    <div class="panel">
-      <div class="panel-tag">Pattern Packs</div>
-      <h3>The winning mechanic, plus why it works</h3>
-      <p>The pattern running in a client's category, its format variants, and why it lands. Structured for a brief or a Slack card. Your media leads see it before the weekly call, not after.</p>
-      <div class="panel-ship">Slack: pattern card per brand<br>MCP: top patterns by category</div>
-    </div>
-    <div class="panel">
-      <div class="panel-tag">Weekly Reports</div>
-      <h3>The week in your client's category</h3>
-      <p>What worked for each brand's category this week and why. Drop it into a brief, a client email, or your scoring step. First one ships in five minutes.</p>
-      <div class="panel-ship">Slack: weekly digest per brand<br>MCP: on demand, any category</div>
-    </div>
+<section class="dark">
+  <div class="wrap">
+    <span class="eyebrow">The shift</span>
+    <h2 style="margin-top:14px;max-width:700px">You run paid media for brands that need creative to work. Knowing what's winning was the one thing you couldn't call.</h2>
+    <p style="margin-top:16px;max-width:640px">It meant opening the Meta Ad Library once a week, per client, and turning it into a slide. Your media leads skipped it or guessed. The gap between media spend and a creative that clears a KPI gate isn't a brief problem. It's a signal problem.</p>
+    <p style="margin-top:14px;max-width:640px">The metric is Time-to-Winner: days from start to a creative that clears the client's KPI gate and holds in spend. Signal in the pipeline is how you cut it, across every brand you run.</p>
   </div>
 </section>
 
-<!-- MULTI-BRAND -->
-<section class="multibrand">
-  <div class="multibrand-inner">
-    <div class="tag">Multi-brand</div>
-    <h2>One account.<br>Each client is a brand.</h2>
-    <p>Add a brand for every retainer client. Their competitors, their category, their reports. Separate and clean. You don't manage one stream of noise and guess which client it applies to.</p>
-    <p>When you close a new account, add the brand, drop in their competitors, and the first weekly report runs that night.</p>
-    <div class="brand-cards">
-      <div class="brand-card">
-        <div class="bc-name">Client A</div>
-        <div class="bc-cat">Men's grooming</div>
-        <div class="bc-status" style="color: #45B43B;">&#9679; 3 new competitor ads this week</div>
+<!-- THREE FEEDS -->
+<section class="dark center" id="feeds" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow">Three feeds</span>
+    <h2 style="margin-top:14px">Three things ship today. Per client, in Slack, or as tool calls.</h2>
+    <p class="sub">Same engine behind all three. Read them in a channel, or call them from your stack.</p>
+    <div class="panels">
+      <div class="panel">
+        <div class="tag">Alerts</div>
+        <h3>The move, the morning it breaks</h3>
+        <p>A daily ping when a competitor makes a real move in the market for any brand in your stack. A major launch, a strategic decision, a competitor expanding into new cities or running a sponsorship. Caught from the press, not a week late. Per client. Per market.</p>
+        <div class="ship">Slack: per-brand channel<br><span class="m">MCP: watch per competitor and market</span></div>
       </div>
-      <div class="brand-card">
-        <div class="bc-name">Client B</div>
-        <div class="bc-cat">DTC skincare</div>
-        <div class="bc-status" style="color: #FFB516;">&#9679; Pattern updated · hook ready</div>
+      <div class="panel blue">
+        <div class="tag">Patterns</div>
+        <h3>The winning mechanic, plus why</h3>
+        <p>The pattern running in a client's category, its format variants, and why it lands. Structured for a brief or a Slack card. Your media leads see it before the weekly call, not after.</p>
+        <div class="ship">Slack: pattern card per brand<br><span class="m">MCP: top patterns by category</span></div>
       </div>
-      <div class="brand-card">
-        <div class="bc-name">Client C</div>
-        <div class="bc-cat">Performance apparel</div>
-        <div class="bc-status" style="color: #45B43B;">&#9679; Weekly report ready</div>
-      </div>
-      <div class="brand-card">
-        <div class="bc-name">+ Add brand</div>
-        <div class="bc-cat">New retainer</div>
-        <div class="bc-status" style="color: rgba(255,255,255,0.22);">Set up in 5 min</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- OUTPUT -->
-<section class="output">
-  <div class="section-tag">Concrete, not promises</div>
-  <h2>One query. One pattern. Ready to brief.</h2>
-  <p>A media lead asks. The pattern lands in their Claude session or Slack channel. The mechanic, the format variants, and a hook to test. They make it their own.</p>
-  <div class="output-demo">
-    <div class="demo-header">
-      <div class="demo-dots">
-        <div class="demo-dot r"></div>
-        <div class="demo-dot y"></div>
-        <div class="demo-dot g"></div>
-      </div>
-      <span class="demo-label">Claude · with Orcool</span>
-    </div>
-    <div class="demo-body">
-      <div class="demo-query">
-        <div class="dq-label">Media lead asks</div>
-        <div class="dq-text">Orcool, for our men's grooming client: which hook has run longest and spawned the most variants? Rank the proven winners, then give me the single best hook to test, with two variants and the format it runs in.</div>
-      </div>
-      <div class="demo-response">
-        <div class="dr-label">Orcool pattern</div>
-        <div class="dr-title">Craft credibility first, then the product earns it</div>
-        <div class="dr-body">The structure that's dominated this category for 14 weeks: open with a specific barber ritual or trade detail, earn product authority from that context, close with a matter-of-fact CTA. The category leader has 18 variants of this structure running. The runner-up sits in a quieter lifestyle lane with far fewer iterations, so this angle has real room.</div>
-        <div class="dr-hook-label">Hook to test, word for word</div>
-        <div class="dr-hook">"This is how a barber actually finishes a cut. Most people have never tried it at home."</div>
+      <div class="panel green">
+        <div class="tag">Reports</div>
+        <h3>The week in your client's category</h3>
+        <p>What worked in each brand's category this week and why. Drop it into a brief, a client email, or your scoring step. First one ships in minutes.</p>
+        <div class="ship">Slack: weekly digest per brand<br><span class="m">MCP: on demand, any category</span></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- CONNECT -->
-<section class="connect" id="connect">
-  <div class="connect-inner">
-    <div class="tag">Connect</div>
-    <h2>Add Orcool to your agency stack.</h2>
-    <p class="connect-sub">One MCP server URL. Connect in Claude, Cursor, or ChatGPT. Sign in with your Orcool account. Add each client brand from there.</p>
+<section class="dark" id="connect" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow">Connect</span>
+    <h2 style="margin-top:14px">Add Orcool to your agency stack.</h2>
+    <p style="margin-top:14px;max-width:600px">Paste one URL into Claude, ChatGPT, or Cursor. Sign in with a magic link. Add each client brand from there.</p>
 
-    <div class="mcp-url-card">
-      <div class="mcp-url-label">MCP Server URL</div>
-      <div class="mcp-url-row">
-        <span class="mcp-url">https://mcp.orcool.com</span>
-        <button class="copy-btn" onclick="(function(b){navigator.clipboard.writeText('https://mcp.orcool.com').then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},2000)})})(this)">Copy</button>
+    <div class="urlcard">
+      <div class="urllab">MCP Server URL</div>
+      <div class="urlfield">
+        <div class="u">https://mcp.orcool.com</div>
+        <button class="ucopy" data-c="https://mcp.orcool.com">Copy</button>
       </div>
-      <p class="magic-explainer">Sign-in is a magic link from your email. No password. Use the same Orcool account across every client you connect.</p>
-    <div style="margin-top:20px">
-  <form id="ml-form" onsubmit="submitMagicLink(event)" style="display:flex;flex-wrap:wrap;gap:12px;align-items:stretch;max-width:520px">
-    <input id="ml-email" type="email" required autocomplete="email" placeholder="you@company.com"
-      style="flex:1 1 240px;min-width:0;background:#0c0c0c;border:1px solid #2e2e2e;border-radius:10px;padding:14px 18px;font-size:16px;color:#e8e8e8;font-family:var(--sans);outline:none">
-    <button id="ml-btn" type="submit" class="btn on-dark" style="cursor:pointer;border:none;font-family:var(--sans);font-size:16px;white-space:nowrap">Get magic link</button>
-  </form>
-  <p id="ml-success" style="display:none;font-size:15px;color:#4ade80;margin-top:12px"></p>
-  <p id="ml-error" style="display:none;font-size:14px;color:var(--red);margin-top:10px">Something went wrong. Try again.</p>
-  <p style="font-size:14px;color:#555;margin-top:10px">We email you a magic link to sign in. No card.</p>
-</div>
     </div>
+    <p class="note">When your client connects, a browser tab opens. Enter your work email, click the link we send, and you're signed in. No password. One account covers every brand you add.</p>
 
-    <div class="accordions">
-      <details open>
-        <summary>Claude</summary>
-        <div class="accord-body">
-          <ol>
-            <li>Copy the MCP server URL above.</li>
-            <li>Open Claude, go to Settings, then Connectors, then Add custom connector. Paste the URL and click Add.</li>
-            <li>Sign in with the magic link that arrives in your email.</li>
-            <li>Enable the Orcool connector in your chat (the tools menu), then paste the onboarding prompt below to set up your first client brand.</li>
-          </ol>
-        </div>
-      </details>
-      <details>
-        <summary>ChatGPT</summary>
-        <div class="accord-body">
-          <ol>
-            <li>Custom MCP in ChatGPT requires Developer mode, which is plan-gated. If you don't have it, Claude or Cursor is faster.</li>
-            <li>In Settings, go to Connectors and add a custom MCP server. Paste the URL.</li>
-            <li>Sign in with the magic link. Same Orcool account as everywhere else.</li>
-          </ol>
-        </div>
-      </details>
-      <details>
-        <summary>Cursor and other clients</summary>
-        <div class="accord-body">
-          <ol>
-            <li>Open Cursor, go to Settings, then MCP, then Add.</li>
-            <li>Paste the MCP server URL and save.</li>
-            <li>Sign in with the magic link. Orcool works in any client that supports MCP.</li>
-          </ol>
-        </div>
-      </details>
-    </div>
+    <div class="lab">Setup instructions</div>
 
-    <div class="onboard-prompt">
-      <div class="op-header">
-        <span class="op-title">Set up your first client brand in one paste</span>
-        <button class="copy-btn" onclick="(function(b){var t=b.closest('.onboard-prompt').querySelector('.op-body').textContent;navigator.clipboard.writeText(t).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},2000)})})(this)">Copy</button>
+    <details class="acc" open>
+      <summary><span class="badge" style="background:#D97757"><svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><g stroke="#fff" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="5.6" y1="5.6" x2="18.4" y2="18.4"/><line x1="18.4" y1="5.6" x2="5.6" y2="18.4"/></g></svg></span> Claude</summary>
+      <ol>
+        <li>Copy the MCP server URL above.</li>
+        <li>Open <b>Claude</b> <span class="ar">&rarr;</span> Settings <span class="ar">&rarr;</span> Connectors <span class="ar">&rarr;</span> <b>Add custom connector</b> <span class="ar">&rarr;</span> paste the URL <span class="ar">&rarr;</span> Add.</li>
+        <li>Sign in when prompted (magic link from your email).</li>
+        <li><b>Turn Orcool on in your chat</b> (the tools menu), then paste the setup prompt below to add your first client brand.</li>
+      </ol>
+    </details>
+
+    <details class="acc">
+      <summary><span class="badge" style="background:#000;border:1px solid #333"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M22.282 9.821a5.985 5.985 0 0 0-.516-4.91 6.046 6.046 0 0 0-6.51-2.9A6.065 6.065 0 0 0 4.981 4.18a5.985 5.985 0 0 0-3.998 2.9 6.046 6.046 0 0 0 .743 7.097 5.98 5.98 0 0 0 .51 4.911 6.051 6.051 0 0 0 6.515 2.9A5.985 5.985 0 0 0 13.26 24a6.056 6.056 0 0 0 5.772-4.206 5.99 5.99 0 0 0 3.997-2.9 6.056 6.056 0 0 0-.747-7.073zM13.26 22.43a4.476 4.476 0 0 1-2.876-1.04l.141-.081 4.779-2.758a.795.795 0 0 0 .392-.681v-6.737l2.02 1.168a.071.071 0 0 1 .038.052v5.583a4.504 4.504 0 0 1-4.494 4.494zM3.6 18.304a4.47 4.47 0 0 1-.535-3.014l.142.085 4.783 2.759a.771.771 0 0 0 .78 0l5.843-3.369v2.332a.08.08 0 0 1-.033.062L9.74 19.95a4.5 4.5 0 0 1-6.14-1.646zM2.34 7.896a4.485 4.485 0 0 1 2.366-1.973V11.6a.766.766 0 0 0 .388.676l5.815 3.355-2.02 1.168a.076.076 0 0 1-.071 0l-4.83-2.786A4.504 4.504 0 0 1 2.34 7.872zm16.597 3.855l-5.833-3.387L15.119 7.2a.076.076 0 0 1 .071 0l4.83 2.791a4.494 4.494 0 0 1-.676 8.105v-5.678a.79.79 0 0 0-.407-.667zm2.01-3.023l-.141-.085-4.774-2.782a.776.776 0 0 0-.785 0L9.409 9.23V6.897a.066.066 0 0 1 .028-.061l4.83-2.787a4.5 4.5 0 0 1 6.68 4.66zm-12.64 4.135l-2.02-1.164a.08.08 0 0 1-.038-.057V6.075a4.5 4.5 0 0 1 7.375-3.453l-.142.08L8.704 5.46a.795.795 0 0 0-.393.681zm1.097-2.365l2.602-1.5 2.607 1.5v3l-2.597 1.5-2.607-1.5z"/></svg></span> ChatGPT</summary>
+      <ol>
+        <li>Copy the MCP server URL above.</li>
+        <li>Open <b>ChatGPT</b> <span class="ar">&rarr;</span> Settings <span class="ar">&rarr;</span> Apps <span class="ar">&rarr;</span> Advanced settings <span class="ar">&rarr;</span> <b>Create app</b> <span class="ar">&rarr;</span> paste the URL <span class="ar">&rarr;</span> confirm.</li>
+        <li>Sign in when prompted. Orcool appears under <b>+ &rarr; More</b> in any chat.</li>
+      </ol>
+    </details>
+
+    <details class="acc">
+      <summary><span class="badge" style="background:#2a2a2a"><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l15 8.5-6.5 1.6L9.5 21z" fill="#fff"/></svg></span> Cursor &amp; other clients</summary>
+      <ol>
+        <li>Copy the MCP server URL above.</li>
+        <li>In Cursor: <b>Settings</b> <span class="ar">&rarr;</span> MCP <span class="ar">&rarr;</span> <b>Add new server</b> <span class="ar">&rarr;</span> paste the URL.</li>
+        <li>Sign in when prompted. Orcool works in any client that supports MCP.</li>
+      </ol>
+    </details>
+
+    <p class="note">ChatGPT's custom-MCP path needs Developer mode, which depends on your plan. If you don't see it, Claude or Cursor connect in under a minute.</p>
+
+    <div class="lab">Set up your first client brand in one paste</div>
+    <details class="acc">
+      <summary><span class="badge" style="background:#FA3810"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="4.5" y="3" width="13" height="18" rx="2"/><path d="M8.5 8h7M8.5 12h7M8.5 16h4"/></svg></span> Agency onboarding prompt</summary>
+      <div style="padding:6px 16px 18px">
+        <p class="note" style="margin:8px 0 12px">Fill the brackets and paste this once. It sets up the client brand, pulls their competitors, and returns what's winning in their category.</p>
+        <div style="position:relative">
+          <button class="copy" data-target="#setupPrompt">Copy</button>
+          <pre id="setupPrompt" class="setuppre">You have the Orcool MCP connected. Set up one of my agency's client brands.
+
+Client brand
+- Name: [client brand name]
+- Website: [https://clientwebsite.com]
+- Market / country: [US]
+- Category: [mobile_app / ecommerce / fintech / etc.]
+- Competitors (2-3): [Competitor A, Competitor B, Competitor C]
+- Inspiration (handle or hashtag): [#category or @handle]
+- Reviews: pasted below, or pull from [App Store / Trustpilot URL]
+
+Steps
+1. Brand: studio_list_brands; if missing, studio_create_brand (name, websiteUrl, countries, productCategory).
+2. Competitors: for each, search_advertisers on meta_ad_library, pick the verified match, then studio_create_competitor + studio_create_competitor_source (meta_ad_library_advertiser, advertiserId, country). Trial allows 3 reference sources total.
+3. Inspiration: within remaining quota, studio_create_inspiring_reference_source.
+4. Reviews: if pasted, studio_create_review for each; otherwise fetch ~10-15 from the URL above, then studio_analyze_reviews.
+5. Trends: studio_list_global_trends, summarize top 5 for this market.
+6. Read back: studio_list_competitor_references, studio_list_insights. Ingestion takes ~1 min; if empty, wait and re-check once.
+
+Then give me: 3 strongest competitor hooks, 2 inspiration angles, top review insight.
+Tell me what's populated and what's still loading.
+After that, tell me what to paste to add the next client brand.
+
+Reviews:
+[Paste 5-15 reviews here, or leave a URL above]</pre>
+        </div>
       </div>
-      <div class="op-body">I want to set up Orcool for my agency. Let's start with one client brand.
+    </details>
 
-Brand name: [client name]
-What they sell: [product / category]
-Main competitors: [list 3 to 5 competitor brand names]
-Target market: [geo and audience]
-
-Once I give you this, set up the brand in Orcool, add their competitors, pull their most recent ads, and give me the first read on what's winning in this category right now.
-
-After that, tell me what to paste to add the next client brand.</div>
+    <div class="qbox">
+      <button class="copy" data-c="For [client brand]: which hook has run longest and spawned the most variants this month? Give me the top 3 proven hooks, then recommend one to test with two format variants.">Copy</button>
+      <div class="ql">Then, recurring · weekly</div>
+      <p>For [client brand]: which hook has run longest and spawned the most variants this month? Give me the top 3 proven hooks, then recommend one to test with two format variants.</p>
     </div>
-
-    <p style="font-size:12px;opacity:0.3;margin-top:10px;line-height:1.55;">First time? Give it a couple of minutes. The onboarding prompt sets up the brand, pulls competitor ads, and returns your first category read in the same session. Trial cap: 3 reference sources per brand.</p>
+    <p class="note">First time? The paste sets up the brand and returns the first competitor read right away. Ingested references (hooks, formats, the why) land in about a minute.</p>
   </div>
 </section>
 
-<!-- FIRST WIN STEPS -->
-<section class="firstwin">
-  <h2>From paste to a real answer, same session.</h2>
-  <div class="steps">
-    <div class="step">
-      <div class="step-tag">T+0</div>
-      <div class="step-title">Connect the MCP</div>
-      <div class="step-body">Paste the URL into Claude, ChatGPT, or Cursor. One click to add.</div>
-    </div>
-    <div class="step">
-      <div class="step-tag">Magic link</div>
-      <div class="step-title">Sign in by email</div>
-      <div class="step-body">A browser tab opens. Enter your email, click the link, you're in. No password.</div>
-    </div>
-    <div class="step">
-      <div class="step-tag">T+2 min</div>
-      <div class="step-title">First brand live</div>
-      <div class="step-body">Paste the onboarding prompt. Orcool sets up your first client brand and returns the first category read.</div>
-    </div>
-    <div class="step">
-      <div class="step-tag">Ongoing</div>
-      <div class="step-title">Cut Time-to-Winner</div>
-      <div class="step-body">From brief to a creative that clears the KPI gate, on a clock your client can track.</div>
+<!-- FIRST WIN -->
+<section id="firstwin">
+  <div class="wrap">
+    <span class="eyebrow">First win</span>
+    <h2 style="margin-top:14px">From paste to a real answer for your first client, same session.</h2>
+    <div class="steps">
+      <div class="step"><div class="n"></div><div><div class="t">T+0</div><h4>Add the MCP</h4><p>Paste the URL into Claude, ChatGPT, or Cursor. Takes under a minute.</p></div></div>
+      <div class="step"><div class="n"></div><div><div class="t">Magic link</div><h4>Sign in by email</h4><p>A browser tab opens. Enter your email, click the link, you're in. No password. One account for all client brands.</p></div></div>
+      <div class="step"><div class="n"></div><div><div class="t">T+2 min</div><h4>Add your first client brand</h4><p>Paste the setup prompt above with one client's details. Competitors, patterns, and hooks come back as data.</p></div></div>
+      <div class="step"><div class="n"></div><div><div class="t">Ongoing</div><h4>Add each retainer client</h4><p>One brand per client. Separate intel, separate digests. When you close a new account, add the brand and the first weekly report runs that night.</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- SLACK VS MCP -->
-<div class="compare-wrap">
-  <div class="compare">
-    <div class="compare-grid">
-      <div class="compare-col">
-        <!-- Slack SVG -->
-        <svg class="cc-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M5.042 15.165a2.528 2.528 0 01-2.52 2.523A2.528 2.528 0 010 15.165a2.527 2.527 0 012.522-2.52h2.52v2.52zm1.271 0a2.527 2.527 0 012.521-2.52 2.527 2.527 0 012.521 2.52v6.313A2.528 2.528 0 018.834 24a2.528 2.528 0 01-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 01-2.521-2.52A2.528 2.528 0 018.834 0a2.527 2.527 0 012.521 2.522v2.52H8.834zm0 1.271a2.527 2.527 0 012.521 2.521 2.527 2.527 0 01-2.521 2.521H2.522A2.528 2.528 0 010 8.834a2.528 2.528 0 012.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 012.522-2.521A2.528 2.528 0 0124 8.834a2.527 2.527 0 01-2.522 2.521h-2.522V8.834zm-1.27 0a2.527 2.527 0 01-2.523 2.521 2.527 2.527 0 01-2.52-2.521V2.522A2.528 2.528 0 0115.165 0a2.528 2.528 0 012.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 012.523 2.522A2.528 2.528 0 0115.165 24a2.527 2.527 0 01-2.52-2.522v-2.522h2.52zm0-1.27a2.527 2.527 0 01-2.52-2.523 2.527 2.527 0 012.52-2.52h6.313A2.528 2.528 0 0124 15.165a2.528 2.528 0 01-2.522 2.523h-6.313z" fill="#E01E5A"/>
-        </svg>
-        <h3>Slack</h3>
-        <div class="cc-sub">The no-code path</div>
-        <p>Three signals land in a channel per brand, on your cadence. Zero setup beyond connecting once.</p>
-        <p>For the people on your team who want the read without building anything around it.</p>
+<!-- MCP vs SLACK -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow">MCP vs Slack</span>
+    <h2 style="margin-top:14px">Slack reads it to you. The MCP lets you build on it.</h2>
+    <p class="muted" style="margin-top:14px;max-width:600px">Same three feeds per client brand. The difference is what you do next.</p>
+    <div class="compare">
+      <div class="cbox">
+        <div class="ct">
+          <svg class="slack" viewBox="0 0 122.8 122.8" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M25.8 77.6c0 7.1-5.8 12.9-12.9 12.9S0 84.7 0 77.6s5.8-12.9 12.9-12.9h12.9v12.9zm6.5 0c0-7.1 5.8-12.9 12.9-12.9s12.9 5.8 12.9 12.9v32.3c0 7.1-5.8 12.9-12.9 12.9s-12.9-5.8-12.9-12.9V77.6z" fill="#E01E5A"/><path d="M45.2 25.8c-7.1 0-12.9-5.8-12.9-12.9S38.1 0 45.2 0s12.9 5.8 12.9 12.9v12.9H45.2zm0 6.5c7.1 0 12.9 5.8 12.9 12.9s-5.8 12.9-12.9 12.9H12.9C5.8 58.1 0 52.3 0 45.2s5.8-12.9 12.9-12.9h32.3z" fill="#36C5F0"/><path d="M97 45.2c0-7.1 5.8-12.9 12.9-12.9s12.9 5.8 12.9 12.9-5.8 12.9-12.9 12.9H97V45.2zm-6.5 0c0 7.1-5.8 12.9-12.9 12.9s-12.9-5.8-12.9-12.9V12.9C64.7 5.8 70.5 0 77.6 0s12.9 5.8 12.9 12.9v32.3z" fill="#2EB67D"/><path d="M77.6 97c7.1 0 12.9 5.8 12.9 12.9s-5.8 12.9-12.9 12.9-12.9-5.8-12.9-12.9V97h12.9zm0-6.5c-7.1 0-12.9-5.8-12.9-12.9s5.8-12.9 12.9-12.9h32.3c7.1 0 12.9 5.8 12.9 12.9s-5.8 12.9-12.9 12.9H77.6z" fill="#ECB22E"/></svg>
+          Slack · the no-code path
+        </div>
+        <ul>
+          <li>Three feeds per client, landing in separate channels.</li>
+          <li>Zero setup beyond connecting once per brand.</li>
+          <li>For account managers and media leads who just want to read it.</li>
+        </ul>
       </div>
-      <div class="compare-col">
-        <!-- MCP / agent icon -->
-        <svg class="cc-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <rect x="2" y="2" width="9" height="9" rx="2" fill="#443d3d" opacity="0.8"/>
-          <rect x="13" y="2" width="9" height="9" rx="2" fill="#443d3d" opacity="0.45"/>
-          <rect x="2" y="13" width="9" height="9" rx="2" fill="#443d3d" opacity="0.45"/>
-          <rect x="13" y="13" width="9" height="9" rx="2" fill="#443d3d" opacity="0.22"/>
-        </svg>
-        <h3>MCP</h3>
-        <div class="cc-sub">The builder's path</div>
-        <p>Every feed is a tool call. Trigger on your own events, join to your client's data, drop it into your scoring step or brief flow.</p>
-        <p>For the engineers on your team who want to compose this signal with everything else they're building.</p>
+      <div class="cbox lead">
+        <div class="ct">MCP · the builder's path</div>
+        <ul>
+          <li>Every feed is a tool call your agent can compose.</li>
+          <li>Wire alerts into your pacing dashboard or brief template.</li>
+          <li>Drop patterns straight into your scoring or briefing step.</li>
+          <li>Read-only to start. Brand-write when you run a full cycle.</li>
+        </ul>
       </div>
     </div>
   </div>
-</div>
+</section>
 
 <!-- FAQ -->
-<div class="faq">
-  <h2>The honest answers.</h2>
-  <details>
-    <summary>Does it produce actual creatives, or just the intel?</summary>
-    <div class="accord-body">
-      <p>The MCP is the intel layer: what's winning in a category, why it works, and what to build. It gives your team the pattern and the hook to brief against.</p>
-      <p>Creative production (AI video and static) is a separate Orcool offering. The intel layer ships first, because that's where most teams stall.</p>
-    </div>
-  </details>
-  <details>
-    <summary>How does multi-brand work? Do I pay per client?</summary>
-    <div class="accord-body">
-      <p>One Orcool account. You add each client as a brand inside the platform. Each brand has its own competitor set, category signals, and Slack channel.</p>
-      <p>Pricing covers your agency seat, not individual brands. Talk to us about what that looks like at your scale.</p>
-    </div>
-  </details>
-  <details>
-    <summary>Can concept cards stream to Slack on a daily cadence?</summary>
-    <div class="accord-body">
-      <p>Yes. The Slack integration delivers daily brand alerts, pattern cards, and weekly reports per brand. You set the cadence and the channel.</p>
-      <p>A structured concept stream (three ideas per day per client) is part of the production offering, not the free trial. Start with the intel layer first and see what the signal looks like.</p>
-    </div>
-  </details>
-  <details>
-    <summary>What do I get in the first five minutes?</summary>
-    <div class="accord-body">
-      <p>Set up your first brand, paste in three to five competitors, and Orcool pulls their recent ads and returns the first category read: what's running, what structure is working, and a hook to brief against.</p>
-      <p>From there you can add more brands or ask follow-on questions in the same session.</p>
-    </div>
-  </details>
-  <details>
-    <summary>Where does the data come from? How fresh is it?</summary>
-    <div class="accord-body">
-      <p>Competitor ads are pulled from Meta Ad Library and refreshed continuously. Pattern data updates daily. You're seeing what's actually running, not a snapshot from last quarter.</p>
-    </div>
-  </details>
-  <details>
-    <summary>Do I need to install anything?</summary>
-    <div class="accord-body">
-      <p>No. Paste the MCP URL into Claude, ChatGPT, or Cursor. Sign in with the magic link. That's it.</p>
-    </div>
-  </details>
-  <details>
-    <summary>Why not just ask Claude or ChatGPT without Orcool?</summary>
-    <div class="accord-body">
-      <p>Claude on its own knows nothing about what's actually running in your client's category right now. It reasons from training data, which lags months. Orcool pulls live competitor ads and surfaces patterns from what's actually in market today. The signal is real, not inferred.</p>
-    </div>
-  </details>
-</div>
-
-<!-- FINAL CTA -->
-<section class="final-cta">
-  <h2>Connect once.<br>Get your first client answer today.</h2>
-  <p class="sub">Free for two weeks. No card. Add brands, cancel anytime.</p>
-  <div class="hero-ctas" style="justify-content:center;">
-    <a href="#connect" class="btn-pill" style="font-size:14px;padding:11px 26px;">Connect the MCP</a>
-    <a href="#signals" class="btn-ghost-white">See what you get</a>
+<section class="faq" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow">Questions</span>
+    <h2 style="margin-top:14px">The honest answers.</h2>
+    <details><summary>How does multi-brand work?</summary>
+      <p>One Orcool account covers every client you run. You add each retainer as a separate brand with its own competitors, category, and Slack digest. They don't bleed into each other. When you close a new account, add the brand and the first weekly report runs that night.</p></details>
+    <details><summary>How does sign-in work?</summary>
+      <p>Paste the MCP URL into your client. It opens a browser tab, you enter your email, and we send a one-click magic link. No password, no separate account. After that the tools are live in every conversation, across all your client brands.</p></details>
+    <details><summary>What exactly are Alerts?</summary>
+      <p>Alerts are press and media moves: a competitor launching in a new market, making a strategic acquisition, running a major sponsorship or event. They are not ad-creative reports. They come from monitoring the press, not the ad library.</p></details>
+    <details><summary>Is the data real, or model guesswork?</summary>
+      <p>Real. Live competitor creative across 40+ markets, structured and scored. The why on a pattern is grounded in what's actually running and holding in spend, not what a model thinks sounds plausible.</p></details>
+    <details><summary>What does it cost?</summary>
+      <p>Connecting is free, first report is free. All three feeds run about $250/mo per brand, on a card, cancel anytime. The full loop with finished creative starts at $3K/mo plus a media share. We don't sell concepts on their own.</p></details>
   </div>
-  <p class="micro">No card. No bullshit. Just start.</p>
-  <p class="tagline">© 2026 Orcool Inc. Creative intelligence for the agentic era.</p>
 </section>
 
-<!-- FOOTER -->
+<!-- FINAL CTA -->
+<section class="dark final">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--red)">Start</span>
+    <h2 style="margin-top:14px">Connect once. Every client brand from there.</h2>
+    <p style="margin-top:14px;color:#C9C7C4;max-width:500px;margin-left:auto;margin-right:auto">First report free. No card.</p>
+    <div style="margin-top:32px;max-width:520px;margin-left:auto;margin-right:auto">
+      <form id="ml-form" onsubmit="submitMagicLink(event)"
+        style="display:flex;flex-wrap:wrap;gap:12px;align-items:stretch">
+        <input id="ml-email" type="email" required autocomplete="email"
+          placeholder="you@agency.com"
+          style="flex:1 1 240px;min-width:0;background:#111;border:1px solid #2a2a2a;
+                 border-radius:10px;padding:14px 18px;font-size:16px;color:#e8e8e8;
+                 font-family:var(--sans);outline:none">
+        <button id="ml-btn" type="submit" class="btn on-dark"
+          style="cursor:pointer;border:none;font-family:var(--sans);font-size:16px;
+                 white-space:nowrap">Get magic link</button>
+      </form>
+      <p id="ml-success"
+         style="display:none;font-size:15px;color:#4ade80;margin-top:12px;text-align:center"></p>
+      <p id="ml-error"
+         style="display:none;font-size:14px;color:#f87171;margin-top:10px;text-align:center">
+         Something went wrong. Try again.</p>
+      <p style="font-size:14px;color:#555;margin-top:10px;text-align:center">
+        We email you a magic link to sign in. No card.</p>
+    </div>
+  </div>
+  <div class="glow"></div>
+</section>
+
 <footer>
-  <p><a href="mailto:team@orcool.com">team@orcool.com</a> &middot; San Francisco, CA</p>
+  <div class="wrap">
+    <img class="logo" src="/orcool-logo.png" alt="Orcool">
+    <div>© 2026 Orcool Inc. Creative intelligence for the agentic era.</div>
+    <div class="who">team@orcool.com · San Francisco, CA</div>
+  </div>
 </footer>
 
 <script>
-function submitMagicLink(e) {
-  e.preventDefault();
-  var form = document.getElementById('ml-form');
-  var btn = document.getElementById('ml-btn');
-  var errEl = document.getElementById('ml-error');
-  var email = document.getElementById('ml-email').value.trim();
-  if (!email) return;
-  btn.disabled = true;
-  btn.textContent = 'Sending...';
-  errEl.style.display = 'none';
-  fetch('https://app.orcool.com/api/auth/send-magic-link', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email: email, isBusiness: false, baseUrl: 'https://app.orcool.com' })
-  }).then(function(r) {
-    if (!r.ok) throw new Error('failed');
-    form.style.display = 'none';
-    var ok = document.getElementById('ml-success');
-    ok.textContent = 'Check your inbox. Magic link sent to ' + email + '.';
-    ok.style.display = 'block';
-    var toast = document.getElementById('mlToast');
-    if (!toast) {
-      toast = document.createElement('div');
-      toast.id = 'mlToast';
-      toast.style.cssText = 'position:fixed;bottom:28px;left:50%;transform:translateX(-50%);background:#111;color:#fff;padding:14px 22px;border-radius:10px;font-size:14px;font-weight:600;z-index:9999;box-shadow:0 4px 24px rgba(0,0,0,.35);white-space:nowrap;transition:opacity .4s';
-      document.body.appendChild(toast);
-    }
-    toast.innerHTML = '\u2713 Check your inbox. Magic link sent to <span style="color:#4ade80">' + email + '</span>.';
-    toast.style.opacity = '1';
-    toast.style.display = 'block';
-    setTimeout(function() { toast.style.opacity = '0'; setTimeout(function() { toast.style.display = 'none'; }, 400); }, 4000);
-  }).catch(function() {
-    errEl.style.display = 'block';
-    btn.disabled = false;
-    btn.textContent = 'Get magic link';
+  document.querySelectorAll('.copy,.ucopy').forEach(function(b){
+    b.addEventListener('click',function(){
+      var t=b.getAttribute('data-c');
+      if(!t){var sel=b.getAttribute('data-target');var el=sel&&document.querySelector(sel);t=el?el.textContent:'';}
+      navigator.clipboard&&navigator.clipboard.writeText(t).then(function(){
+        var o=b.textContent;b.textContent='Copied';setTimeout(function(){b.textContent=o;},1400);
+      });
+    });
   });
-}
+
+  function submitMagicLink(e) {
+    e.preventDefault();
+    var form = document.getElementById('ml-form');
+    var btn  = document.getElementById('ml-btn');
+    var errEl = document.getElementById('ml-error');
+    var okEl  = document.getElementById('ml-success');
+    var email = document.getElementById('ml-email').value.trim();
+    if (!email) return;
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    errEl.style.display = 'none';
+    fetch('https://app.orcool.com/api/auth/send-magic-link', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email, isBusiness: false, baseUrl: 'https://app.orcool.com' })
+    }).then(function(r) {
+      if (!r.ok) throw new Error('failed');
+      form.style.display = 'none';
+      okEl.textContent = 'Check your inbox. Magic link sent to ' + email + '.';
+      okEl.style.display = 'block';
+      var toast = document.getElementById('mlToast');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'mlToast';
+        toast.style.cssText = 'position:fixed;bottom:28px;left:50%;transform:translateX(-50%);' +
+          'background:#111;color:#fff;padding:14px 22px;border-radius:10px;font-size:14px;' +
+          'font-weight:600;z-index:9999;box-shadow:0 4px 24px rgba(0,0,0,.35);' +
+          'white-space:nowrap;transition:opacity .4s';
+        document.body.appendChild(toast);
+      }
+      toast.innerHTML = '✓ Check your inbox. Magic link sent to <span style="color:#4ade80">'
+        + email + '</span>.';
+      toast.style.opacity = '1';
+      toast.style.display = 'block';
+      setTimeout(function() {
+        toast.style.opacity = '0';
+        setTimeout(function() { toast.style.display = 'none'; }, 400);
+      }, 4000);
+    }).catch(function() {
+      errEl.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Get magic link';
+    });
+  }
 </script>
 </body>
 </html>
