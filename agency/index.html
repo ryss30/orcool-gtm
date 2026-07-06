@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Orcool · Creative intelligence for agencies</title>
-<meta name="description" content="See what's winning in each client's category before the brief. Competitive alerts, patterns that convert, weekly category reports. In Slack or as tool calls.">
+<meta name="description" content="See what's winning in each client's category before the brief. Competitive alerts, patterns, and weekly reports. In Slack or as tool calls.">
 <link rel="canonical" href="https://get.orcool.com/agency/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -756,6 +756,14 @@ function submitAgencyHookGate() {
     body: JSON.stringify({ email: email, isBusiness: false, baseUrl: 'https://app.orcool.com' })
   }).then(function(r) {
     if (!r.ok) throw new Error('failed');
+    // Reveal all blurred elements immediately
+    document.querySelectorAll('.hook-item.gated').forEach(function(el) {
+      el.classList.remove('gated');
+    });
+    document.querySelectorAll('.blurred').forEach(function(el) {
+      el.classList.remove('blurred');
+    });
+    document.getElementById('hookGate').style.display = 'none';
     document.getElementById('hookGateForm').style.display = 'none';
     document.getElementById('hookGateSuccess').style.display = 'block';
     document.getElementById('hookGateError').style.display = 'none';
