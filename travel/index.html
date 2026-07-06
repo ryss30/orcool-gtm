@@ -719,10 +719,16 @@ Reviews:
     <span class="eyebrow" style="color:var(--red)">Start where it matters</span>
     <h2 style="margin-top:14px">Name one market. We'll find the winner in it.</h2>
     <p class="sub" style="margin-top:14px">Pick the storefront that's underperforming its potential, set the KPI gate, and let the loop prove itself on one market before you bet the map. Time-to-Winner is the number we're both watching.</p>
-    <div class="btnrow" style="justify-content:center;margin-top:24px">
-      <a class="btn light" href="mailto:team@orcool.com?subject=Start%20a%20pilot%3A%20travel%20marketplace">Start a pilot</a>
-      <a class="btn on-dark ghost" href="#work">See how the loop finds a local winner</a>
-    </div>
+<div style="margin-top:32px">
+  <form id="ml-form" onsubmit="submitMagicLink(event)" style="display:flex;flex-wrap:wrap;gap:12px;align-items:stretch;max-width:520px;margin:0 auto">
+    <input id="ml-email" type="email" required autocomplete="email" placeholder="you@company.com"
+      style="flex:1 1 240px;min-width:0;background:#111;border:1px solid #2a2a2a;border-radius:10px;padding:14px 18px;font-size:16px;color:#e8e8e8;font-family:var(--sans);outline:none">
+    <button id="ml-btn" type="submit" class="btn on-dark" style="cursor:pointer;border:none;font-family:var(--sans);font-size:16px;white-space:nowrap">Get magic link</button>
+  </form>
+  <p id="ml-success" style="display:none;font-size:15px;color:#4ade80;margin-top:12px;text-align:center"></p>
+  <p id="ml-error" style="display:none;font-size:14px;color:var(--red);margin-top:10px;text-align:center">Something went wrong. Try again.</p>
+  <p style="font-size:14px;color:#555;margin-top:10px;text-align:center">We email you a magic link to sign in. No card.</p>
+</div>
     <p class="note" style="margin-top:18px;text-align:center">One market, one gate, one winner. Then we scale the proof.</p>
   </div>
   <div class="glow"></div>
@@ -777,6 +783,45 @@ Reviews:
       });
     });
   });
+</script>
+<script>
+function submitMagicLink(e) {
+  e.preventDefault();
+  var form = document.getElementById('ml-form');
+  var btn = document.getElementById('ml-btn');
+  var errEl = document.getElementById('ml-error');
+  var email = document.getElementById('ml-email').value.trim();
+  if (!email) return;
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+  errEl.style.display = 'none';
+  fetch('https://app.orcool.com/api/auth/send-magic-link', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email, isBusiness: false, baseUrl: 'https://app.orcool.com' })
+  }).then(function(r) {
+    if (!r.ok) throw new Error('failed');
+    form.style.display = 'none';
+    var ok = document.getElementById('ml-success');
+    ok.textContent = 'Check your inbox. Magic link sent to ' + email + '.';
+    ok.style.display = 'block';
+    var toast = document.getElementById('mlToast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'mlToast';
+      toast.style.cssText = 'position:fixed;bottom:28px;left:50%;transform:translateX(-50%);background:#111;color:#fff;padding:14px 22px;border-radius:10px;font-size:14px;font-weight:600;z-index:9999;box-shadow:0 4px 24px rgba(0,0,0,.35);white-space:nowrap;transition:opacity .4s';
+      document.body.appendChild(toast);
+    }
+    toast.innerHTML = '\u2713 Check your inbox. Magic link sent to <span style="color:#4ade80">' + email + '</span>.';
+    toast.style.opacity = '1';
+    toast.style.display = 'block';
+    setTimeout(function() { toast.style.opacity = '0'; setTimeout(function() { toast.style.display = 'none'; }, 400); }, 4000);
+  }).catch(function() {
+    errEl.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = 'Get magic link';
+  });
+}
 </script>
 </body>
 </html>
