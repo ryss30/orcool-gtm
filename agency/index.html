@@ -174,6 +174,7 @@
     <div class="btnrow" style="justify-content:center">
       <a class="btn" href="#connect">Connect the MCP</a>
       <a class="btn ghost" href="#feeds">See the three feeds</a>
+      <a class="btn ghost" href="#live-signal" style="border-color:var(--red);color:var(--red)">See what's winning now &rarr;</a>
     </div>
     <p class="micro"><b>One account. Each client is a brand.</b><br>No card. First report free.</p>
 
@@ -228,6 +229,13 @@
     </div>
   </div>
 </section>
+
+<!-- FEEDS → SIGNAL TEASER -->
+<div style="background:var(--black);padding:0 0 48px;text-align:center">
+  <a href="#live-signal" style="display:inline-flex;align-items:center;gap:8px;color:var(--red);font-size:15px;font-weight:600;text-decoration:none;font-family:var(--sans);border:1.5px solid var(--red);border-radius:10px;padding:11px 20px;transition:background .14s" onmouseover="this.style.background='rgba(250,56,16,.08)'" onmouseout="this.style.background='transparent'">
+    See what's actually winning in your client's market &darr;
+  </a>
+</div>
 
 <!-- CONNECT -->
 <section class="dark" id="connect" style="padding-top:0">
@@ -379,7 +387,7 @@ Reviews:
     <details><summary>What exactly are Alerts?</summary>
       <p>Alerts are press and media moves: a competitor launching in a new market, making a strategic acquisition, running a major sponsorship or event. They are not ad-creative reports. They come from monitoring the press, not the ad library.</p></details>
     <details><summary>Is the data real, or model guesswork?</summary>
-      <p>Real. Live competitor creative across 40+ markets, structured and scored. The why on a pattern is grounded in what's actually running and holding in spend, not what a model thinks sounds plausible.</p></details>
+      <p>Real. Live competitor creative across 40+ markets, structured and scored. The why on a pattern is grounded in what's actually running and holding in spend, not what a model thinks sounds plausible. <a href="#live-signal" style="color:var(--red);font-weight:600">Try it below — pick a category and market.</a></p></details>
     <details><summary>What does it cost?</summary>
       <p>Connecting is free, first report is free. All three feeds run about $250/mo per brand, on a card, cancel anytime. The full loop with finished creative starts at $3K/mo plus a media share. We don't sell concepts on their own.</p></details>
   </div>
@@ -447,7 +455,7 @@ Reviews:
           <option value="">Choose category</option>
           <option value="fintech">Fintech</option>
           <option value="ecom">E-com</option>
-          <option value="health">Health & Fitness</option>
+          <option value="health">Health &amp; Fitness</option>
           <option value="gaming">Gaming</option>
           <option value="subscription">Subscription App</option>
           <option value="saas">B2B SaaS</option>
