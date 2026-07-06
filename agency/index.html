@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Orcool · Creative intelligence for agencies</title>
-<meta name="description" content="See what's winning in each client's category before the brief. Competitive alerts, patterns, and weekly reports. In Slack or as tool calls.">
+<meta name="description" content="See what's winning in each client's category before the brief. Competitive alerts, patterns that convert, weekly category reports. In Slack or as tool calls.">
 <link rel="canonical" href="https://get.orcool.com/agency/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -384,6 +384,391 @@ Reviews:
       <p>Connecting is free, first report is free. All three feeds run about $250/mo per brand, on a card, cancel anytime. The full loop with finished creative starts at $3K/mo plus a media share. We don't sell concepts on their own.</p></details>
   </div>
 </section>
+
+
+<!-- LIVE SIGNAL -->
+<style>
+.hook-selectors{display:flex;gap:16px;justify-content:center;margin-top:36px;flex-wrap:wrap}
+.hook-select-wrap{display:flex;flex-direction:column;gap:6px;min-width:190px}
+.hook-label{font-size:12px;font-weight:600;letter-spacing:.07em;color:#9b9893;text-transform:uppercase}
+.hook-select{appearance:none;background:#1a1a1a url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B6E80' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 14px center;border:1.5px solid #2e2e2e;color:#f0efed;font-size:15px;font-weight:500;padding:12px 40px 12px 16px;border-radius:10px;cursor:pointer;font-family:var(--sans);transition:border-color .15s}
+.hook-select:focus{outline:none;border-color:#FA3810}
+.hook-select option{background:#1a1a1a;color:#f0efed}
+.hook-card{margin-top:36px;background:#fff;border-radius:16px;overflow:hidden;text-align:left;position:relative;max-width:700px;margin-left:auto;margin-right:auto}
+.hook-card-header{display:flex;align-items:center;justify-content:space-between;padding:16px 22px;border-bottom:1px solid #F0EFED}
+.hook-card-tag{font-size:13px;font-weight:700;letter-spacing:.04em;color:#443D3D;text-transform:uppercase}
+.hook-card-fresh{font-size:12px;color:#9b9893;font-weight:500}
+.hook-block{padding:20px 22px}
+.hook-section-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9b9893;margin-bottom:14px}
+.hook-item{background:#fafaf9;border:1px solid #eeede9;border-radius:10px;padding:16px 18px;margin-bottom:10px;position:relative}
+.hook-item.gated{overflow:hidden}
+.hook-platform{display:inline-flex;gap:6px;align-items:center;margin-bottom:8px}
+.hook-platform-tag{font-size:11px;font-weight:600;letter-spacing:.04em;padding:3px 8px;border-radius:6px;background:#f0efed;color:#443D3D}
+.hook-platform-tag.format{background:#e8f0fe;color:#1a56db}
+.hook-competitor{font-size:11px;font-weight:700;color:#9b9893;letter-spacing:.05em;text-transform:uppercase;margin-bottom:6px}
+.hook-text{font-size:16px;font-weight:600;color:#1a1a1a;line-height:1.45;margin-bottom:8px}
+.hook-why{font-size:13px;color:#5a5450;line-height:1.5}
+.hook-divider{height:1px;background:#F0EFED;margin:4px 0}
+.blurred{filter:blur(6px);user-select:none;pointer-events:none}
+.hook-gate{background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,#fff 50%);position:relative;padding:32px 22px 28px;text-align:center;margin-top:-60px}
+.hook-gate-inner{position:relative;z-index:2}
+.hook-gate-label{font-size:16px;font-weight:700;color:#1a1a1a;margin-bottom:6px}
+.hook-gate-sub{font-size:14px;color:#6e6c69;margin-bottom:18px}
+.hook-gate-form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.hook-email-input{flex:1 1 220px;min-width:0;max-width:280px;border:1.5px solid #ddd;border-radius:10px;padding:12px 16px;font-size:15px;font-family:var(--sans);color:#1a1a1a;outline:none}
+.hook-email-input:focus{border-color:#FA3810}
+.hook-gate-btn{background:#FA3810;color:#fff;border:none;border-radius:10px;padding:12px 22px;font-size:15px;font-weight:700;cursor:pointer;font-family:var(--sans);white-space:nowrap}
+.hook-gate-btn:hover{background:#d42f0d}
+.hook-empty{text-align:center;padding:56px 0}
+.hook-empty-dots{display:flex;gap:10px;justify-content:center;align-items:center}
+.hook-empty-dots span{width:8px;height:8px;border-radius:50%;background:#2e2e2e}
+.hook-empty-dots span:nth-child(1){background:#FA3810}
+.hook-empty-dots span:nth-child(2){background:#FFB516}
+.hook-empty-dots span:nth-child(3){background:#45B43B}
+.hook-empty-dots span:nth-child(4){background:#387FFF}
+.hook-empty-dots span:nth-child(5){background:#FA3810;opacity:.3}
+@media(max-width:600px){
+  .hook-selectors{flex-direction:column;align-items:stretch;padding:0 4px}
+  .hook-gate-form{flex-direction:column}
+  .hook-email-input,.hook-gate-btn{width:100%;min-width:0}
+}
+</style>
+
+<section class="dark" style="padding:80px 0" id="live-signal">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--red)">Live signal</span>
+    <h2 style="margin-top:14px">What's winning in your market right now.</h2>
+    <p class="sub" style="max-width:580px;margin:14px auto 0">Pick a category and a market. We show you the hooks that are actually running — platform, format, and why they hold in spend.</p>
+
+    <div class="hook-selectors" id="hookSelectors">
+      <div class="hook-select-wrap">
+        <label class="hook-label">Category</label>
+        <select id="catSelect" class="hook-select" onchange="renderAgencyHookCard()">
+          <option value="">Choose category</option>
+          <option value="fintech">Fintech</option>
+          <option value="ecom">E-com</option>
+          <option value="health">Health & Fitness</option>
+          <option value="gaming">Gaming</option>
+          <option value="subscription">Subscription App</option>
+          <option value="saas">B2B SaaS</option>
+        </select>
+      </div>
+      <div class="hook-select-wrap">
+        <label class="hook-label">Market</label>
+        <select id="mktSelect" class="hook-select" onchange="renderAgencyHookCard()">
+          <option value="">Choose market</option>
+          <option value="us">United States</option>
+          <option value="uk">United Kingdom</option>
+          <option value="germany">Germany</option>
+          <option value="uae">UAE</option>
+          <option value="india">India</option>
+          <option value="australia">Australia</option>
+          <option value="brazil">Brazil</option>
+          <option value="indonesia">Indonesia</option>
+          <option value="mexico">Mexico</option>
+          <option value="saudiarabia">Saudi Arabia</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="hookCard" class="hook-card" style="display:none">
+      <div class="hook-card-header">
+        <span class="hook-card-tag" id="hookCardTag"></span>
+        <span class="hook-card-fresh">Updated monthly</span>
+      </div>
+      <div class="hook-block">
+        <div class="hook-section-label">What's working now</div>
+        <div class="hook-item free" id="hook1">
+          <div class="hook-platform" id="hook1platform"></div>
+          <div class="hook-competitor" id="hook1comp"></div>
+          <div class="hook-text" id="hook1text"></div>
+          <div class="hook-why" id="hook1why"></div>
+        </div>
+        <div class="hook-item gated" id="hook2">
+          <div class="hook-platform" id="hook2platform"></div>
+          <div class="hook-competitor" id="hook2comp"></div>
+          <div class="hook-text blurred" id="hook2text"></div>
+          <div class="hook-why blurred" id="hook2why"></div>
+        </div>
+        <div class="hook-item gated" id="hook3">
+          <div class="hook-platform" id="hook3platform"></div>
+          <div class="hook-competitor" id="hook3comp"></div>
+          <div class="hook-text blurred" id="hook3text"></div>
+          <div class="hook-why blurred" id="hook3why"></div>
+        </div>
+      </div>
+      <div class="hook-divider"></div>
+      <div class="hook-block">
+        <div class="hook-section-label" style="color:#FA3810">What Orcool would write for your client</div>
+        <div class="hook-item gated" id="hookCounter">
+          <div class="hook-text blurred" id="hookCounterText"></div>
+          <div class="hook-why blurred" id="hookCounterNote"></div>
+        </div>
+      </div>
+      <div class="hook-gate" id="hookGate">
+        <div class="hook-gate-inner">
+          <div class="hook-gate-label">See 2 more hooks + the Orcool brief hook</div>
+          <div class="hook-gate-sub">We'll email you a magic link. No card.</div>
+          <div class="hook-gate-form" id="hookGateForm">
+            <input type="email" id="hookEmail" class="hook-email-input" placeholder="Agency email" required>
+            <button class="hook-gate-btn" onclick="submitAgencyHookGate()">Unlock full teardown</button>
+          </div>
+          <div id="hookGateSuccess" style="display:none;color:#45B43B;font-size:14px;font-weight:600;text-align:center">Sent. Check your inbox — full teardown on its way.</div>
+          <div id="hookGateError" style="display:none;color:#FA3810;font-size:13px;text-align:center">Something went wrong. Try again or email team@orcool.com</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="hookEmpty" class="hook-empty">
+      <div class="hook-empty-dots">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <p style="color:#6e6c69;font-size:15px;margin-top:16px">Select a category and market above.</p>
+    </div>
+    <div id="hookNoData" style="display:none;text-align:center;padding:40px 0">
+      <p style="color:#6e6c69;font-size:15px">This combination is coming soon. <a href="mailto:team@orcool.com?subject=Hook+teardown+request" style="color:var(--red);text-decoration:underline">Ask us directly.</a></p>
+    </div>
+  </div>
+</section>
+
+<script>
+const AGENCY_HOOK_DATA = {
+  us_fintech: {
+    label: "United States · Fintech",
+    hooks: [
+      { platform: "Meta", format: "UGC", competitor: "Chime", text: "Your bank just charged you $35 for having $34.", why: "Overdraft fee as the inciting incident. The specific numbers make it feel like they read your bank statement." },
+      { platform: "TikTok", format: "Comparison", competitor: "PayPal", text: "Sent $500. They got $483. I'm done explaining that to people.", why: "Fee visibility framing. P2P transfer loss triggers switching intent at the exact moment of frustration." },
+      { platform: "Meta", format: "Testimonial", competitor: "Chase", text: "I earned more in interest this month than I did in two years at Chase.", why: "HYSA jealousy hook. 'Two years at Chase' is a relatable yardstick most US adults can test against their own account." }
+    ],
+    counter: { text: "Your bank is very proud of the app they redesigned in 2019.", note: "Product age as deadpan villain. Specific year triggers the memory of when banking apps were genuinely terrible — implies yours still is." }
+  },
+  us_ecom: {
+    label: "United States · E-com",
+    hooks: [
+      { platform: "Meta", format: "Product Demo", competitor: "Amazon", text: "Ordered at 11pm. At my door at 8am. Amazon still says Tuesday.", why: "Same-day delivery as direct Prime counter. Exact timestamps feel credible and personal, not brand copy." },
+      { platform: "TikTok", format: "UGC", competitor: "Temu", text: "I thought I was saving money on Temu. Then I added up what I threw out.", why: "TCO reframe. 'Added up what I threw out' triggers recognition guilt without attacking the brand directly." },
+      { platform: "YouTube", format: "Comparison", competitor: "SHEIN", text: "This shirt is from six years ago. Still wearing it. Explain.", why: "Durability as eco-flex. 'Explain' creates a rhetorical challenge that plays on in the viewer's head after the ad ends." }
+    ],
+    counter: { text: "Your cart from Tuesday called. It says you deserve it.", note: "Abandoned cart as cosmic nudge. 'You deserve it' sidesteps discount framing entirely — converts on self-permission rather than price." }
+  },
+  us_health: {
+    label: "United States · Health & Fitness",
+    hooks: [
+      { platform: "Meta", format: "Testimonial", competitor: "Noom", text: "I've been on every app. This is the first one that didn't make me feel like a failure after one cheeseburger.", why: "Anti-perfection positioning. Targets diet-app fatigue, which is extremely high among 30–45 US women." },
+      { platform: "TikTok", format: "UGC", competitor: "MyFitnessPal", text: "Tracking calories made me obsessed. Tracking habits changed how I live.", why: "Behavior vs. metric reframe. Lands with people who've hit the MFP obsession ceiling and want off it." },
+      { platform: "Meta", format: "Problem→Solution", competitor: "Peloton", text: "I don't have a Peloton. I have 22 minutes before the kids wake up.", why: "Time constraint plus household reality. '22 minutes' is specific enough to feel researched, not made up." }
+    ],
+    counter: { text: "The app didn't fail you. The one that made you log everything in grams failed you.", note: "Direct indictment of calorie-counting culture. Names the mechanism (logging in grams) not the brand — harder to defend against." }
+  },
+  us_subscription: {
+    label: "United States · Subscription App",
+    hooks: [
+      { platform: "Meta", format: "UGC", competitor: "Netflix", text: "I canceled Netflix in March. Still thinking about it in July.", why: "Content regret arc. FOMO framing without direct mention triggers attribution without liability." },
+      { platform: "TikTok", format: "Testimonial", competitor: "Spotify", text: "Six years of Spotify data and I still get recommended the same 40 songs.", why: "Algorithm disappointment. Specificity ('six years', '40 songs') signals real person, not brand copy." },
+      { platform: "Meta", format: "Comparison", competitor: "Gyms", text: "$180 a month for a gym I went to once in February.", why: "Subscription guilt is universal. 'Once in February' is a cultural shorthand — resonates with every January-resolution joiner." }
+    ],
+    counter: { text: "You're not paying for access. You're paying for not having to decide.", note: "Convenience as the real product truth. Reframes subscription value from content to cognitive relief — harder to cancel." }
+  },
+  us_gaming: {
+    label: "United States · Gaming",
+    hooks: [
+      { platform: "TikTok", format: "UGC", competitor: "Console gaming", text: "Console was $500. Controller broke in 8 months. PC was $1200. Still going after four years.", why: "TCO math over time. Gaming hardware longevity is a conversion argument that resonates with parents and older demographics." },
+      { platform: "Meta", format: "Testimonial", competitor: "EA Sports", text: "Paid $70 for the game. $20 for the season pass. $15 for the roster update I needed to play ranked.", why: "DLC fee stacking as audience-validated frustration. The cumulative number lands because the audience has lived it." },
+      { platform: "YouTube", format: "Comparison", competitor: "Mobile gacha", text: "I spent $300 on a gacha banner. Got the character. Then the meta changed.", why: "Gacha sunk cost humor. Extremely high recognition among mobile-to-PC conversion audience." }
+    ],
+    counter: { text: "The new season dropped. Your squad moved on. The game still charged for the battle pass.", note: "Squad churn plus continued billing. Two independent frustrations in one line — each one enough alone, together they close the argument." }
+  },
+  us_saas: {
+    label: "United States · B2B SaaS",
+    hooks: [
+      { platform: "LinkedIn", format: "Comparison", competitor: "Salesforce", text: "Your Salesforce license is more expensive per seat than your last two junior hires combined.", why: "License cost as headcount comparison. Finance and ops leads think in headcount costs — this lands as a provable, checkable claim." },
+      { platform: "Meta", format: "Problem→Solution", competitor: "Microsoft Teams", text: "The meeting about the meeting is on Thursday. In Teams. Again.", why: "Meeting culture satire. Self-aware enough not to feel like an attack — the 'again' is what makes it land." },
+      { platform: "LinkedIn", format: "Testimonial", competitor: "Legacy ERPs", text: "We migrated 18 months of data in a weekend. Our old system would have needed a project.", why: "'Would have needed a project' is the enterprise procurement nightmare. Exact framing that converts ops and IT decision-makers." }
+    ],
+    counter: { text: "The compliance audit found seven tools doing the same thing. None of them talking to each other.", note: "Tool sprawl as the real villain. Compliance framing resonates strongly in enterprise — audits make sprawl visible in the worst possible moment." }
+  },
+  uk_fintech: {
+    label: "United Kingdom · Fintech",
+    hooks: [
+      { platform: "Meta", format: "UGC", competitor: "Barclays", text: "My bank app loaded. Only took four taps and a card reader I can't find.", why: "'Card reader' is hyperlocal UK. Barclays users know exactly what this means. The four-tap count is earned frustration." },
+      { platform: "TikTok", format: "Comparison", competitor: "Monzo", text: "Monzo told me I spent £14 on coffee this week. I needed an intervention, not a notification.", why: "Notification fatigue reframe. Guilt-shaming spend trackers are a departure point for the next wave of fintech." },
+      { platform: "Meta", format: "Problem→Solution", competitor: "Traditional banks", text: "Direct debit rejected. Bank phone line: 35 minutes. App: 2 seconds.", why: "'35 minutes' references famously awful UK bank hold times. The asymmetry is the product proof." }
+    ],
+    counter: { text: "You can do it in the app. Unless it's Tuesday, or your account is over three months old, or you need to verify via post.", note: "Legacy banking bureaucracy list. Comic accumulation of conditions — every UK adult has hit at least one of them." }
+  },
+  uk_ecom: {
+    label: "United Kingdom · E-com",
+    hooks: [
+      { platform: "Meta", format: "Product Demo", competitor: "Amazon", text: "Next-day delivery. Which day is next? Amazon would like to discuss.", why: "Amazon UK delivery promise vs. reality. High-engagement topic in UK comment sections — collective frustration already primed." },
+      { platform: "TikTok", format: "UGC", competitor: "ASOS", text: "ASOS said it was my style. It was not.", why: "Personalization failure humor. ASOS recommendation failures are a shared UK cultural experience with high recognition." },
+      { platform: "Meta", format: "Testimonial", competitor: "Primark", text: "I stopped buying five £6 shirts a year. One shirt. Still wearing it three years later.", why: "Slow fashion ROI framing. Primark quality is understood but rarely quantified — the year count turns it into math." }
+    ],
+    counter: { text: "It's £4 shipping or collect in-store, which is in Slough.", note: "'Slough' is UK cultural shorthand for inconvenient geography. An instant joke that lands nationwide." }
+  },
+  germany_saas: {
+    label: "Germany · B2B SaaS",
+    hooks: [
+      { platform: "LinkedIn", format: "Comparison", competitor: "SAP", text: "Your SAP license costs more than your last three developer hires combined.", why: "German Mittelstand CFOs track headcount cost obsessively. Framed as a provable claim, not an attack." },
+      { platform: "Meta", format: "Problem→Solution", competitor: "Teams", text: "The meeting about the meeting is scheduled for Thursday. In Teams. Again.", why: "German corporate meeting culture is a recognized pain point. 'Again' signals insider knowledge, not outsider critique." },
+      { platform: "LinkedIn", format: "Testimonial", competitor: "Legacy ERPs", text: "We migrated 18 months of procurement data in a weekend. Our old system would have needed a project.", why: "Migration speed as enterprise proof. 'Would have needed a project' is the exact phrase that resonates with German procurement leads." }
+    ],
+    counter: { text: "The compliance audit found seven tools doing the same thing. None of them talking to each other.", note: "Tool sprawl as audit risk. Compliance framing hits specifically in Germany where audits carry genuine legal weight." }
+  },
+  germany_fintech: {
+    label: "Germany · Fintech",
+    hooks: [
+      { platform: "Meta", format: "Comparison", competitor: "Deutsche Bank", text: "Deutsche Bank: 8.90€ account fee, 90-minute branch wait. N26: 0€, 3 minutes.", why: "Fee plus time combined. German consumers are extremely fee-sensitive and the €8.90 line is verifiable — builds credibility." },
+      { platform: "TikTok", format: "UGC", competitor: "Traditional transfers", text: "IBAN, BIC, Verwendungszweck, two days, and I still typed it wrong.", why: "Traditional transfer complexity in German. The Verwendungszweck (payment reference) field is a shared nightmare for every German who's used it." },
+      { platform: "Meta", format: "Testimonial", competitor: "Sparkasse", text: "Sparkasse told me my overdraft wasn't covered until Tuesday. My rent was due Monday.", why: "Overdraft timing mismatch. Sparkasse is Germany's most-used bank — naming it is a specificity signal that converts." }
+    ],
+    counter: { text: "Ihr Konto hat eine Benachrichtigung. Es gibt keine Benachrichtigung. Bitte besuchen Sie Ihre Filiale.", note: "Bank notification absurdity in German. The call-to-visit-branch punchline lands because every German has received this exact non-information." }
+  },
+  uae_fintech: {
+    label: "UAE · Fintech",
+    hooks: [
+      { platform: "Meta", format: "UGC", competitor: "Exchange desks", text: "Sending money home used to cost me AED 45 and two days. Now it's 3 minutes.", why: "UAE has the highest per-capita outbound remittance volume globally. This is the daily reality for 9 out of 10 residents." },
+      { platform: "TikTok", format: "Testimonial", competitor: "Exchange houses", text: "The exchange desk in my building charges 3.2%. I found 0.4%. Nobody told me.", why: "'Nobody told me' triggers information injustice. Works strongly with UAE's expat demographic who rely on word-of-mouth for financial products." },
+      { platform: "Meta", format: "Comparison", competitor: "Emirates NBD", text: "Emirates NBD told me to come to the branch. I was in London.", why: "Remote banking friction. UAE's expat workforce travels constantly — branch-only requirements are an acute recurring pain." }
+    ],
+    counter: { text: "Your salary hits on the 25th. The exchange rate on the 26th is not the exchange rate today.", note: "Rate timing education as value prop. Payday plus immediate transfer is a behavioral pattern — this hook catches at the moment of maximum intent." }
+  },
+  india_ecom: {
+    label: "India · E-com",
+    hooks: [
+      { platform: "Meta", format: "UGC", competitor: "Flipkart", text: "Sale at 12. Site down at 12:01. Yeh toh har baar hota hai.", why: "Flash sale server crash in mixed Hindi-English. 'This happens every time' signals authentic voice, not brand copy." },
+      { platform: "TikTok", format: "Testimonial", competitor: "Meesho", text: "Meesho price, Amazon delivery speed, quality check before it ships. I thought I had to choose two.", why: "Three-way value stack. India e-com buyers know you pick two of: cheap, fast, quality. Claiming all three is a bold hook." },
+      { platform: "Meta", format: "Problem→Solution", competitor: "Local retail", text: "Main road shopkeeper said exchange in 2 days. Online was 30 seconds.", why: "Return speed is a tier-1 India e-com pain point. '2 days vs 30 seconds' is the exact comparison that converts." }
+    ],
+    counter: { text: "Order Monday. Delivery attempted Saturday when you're visiting your parents. Reschedule? That's a new order.", note: "Delivery rescheduling loop frustration. This is the most-complained-about India last-mile issue — nearly universal experience." }
+  },
+  india_fintech: {
+    label: "India · Fintech",
+    hooks: [
+      { platform: "Meta", format: "UGC", competitor: "HDFC", text: "HDFC gave me 3.5% on savings. Found 7.1% on the same phone, same minute.", why: "Rate comparison without switching friction. 'Same phone, same minute' removes the effort objection before it can form." },
+      { platform: "TikTok", format: "Testimonial", competitor: "Moneylenders", text: "My cousin borrowed from a lender. I borrowed from an app. He's still paying.", why: "Informal vs. formal credit comparison. Moneylender vs. BNPL is a real and emotionally charged financial choice in tier-2 India." },
+      { platform: "Meta", format: "Comparison", competitor: "Paytm", text: "UPI is instant. Your CIBIL score took four years to come back from that one late payment.", why: "UPI fluency plus credit score anxiety. The four-year recovery timeline is painfully specific and widely recognized." }
+    ],
+    counter: { text: "The SIP was set up in January. You checked it in March. It's still loading.", note: "Wealth app UX frustration during high-intent check moments. March is post-bonus season in India — peak investment review behavior." }
+  },
+  australia_health: {
+    label: "Australia · Health & Fitness",
+    hooks: [
+      { platform: "Meta", format: "UGC", competitor: "F45", text: "$75 a week, 5am, car park in Marrickville. I did it for eight months. I own headphones now.", why: "F45 specificity (suburb, cost, time) signals authenticity. 'I own headphones now' is deadpan Aussie humor for 'that's what I have to show for it.'" },
+      { platform: "TikTok", format: "Testimonial", competitor: "Gym culture", text: "First time back in four years. Nobody looked at me. Nobody cared. I think that's the point.", why: "Return-to-fitness anxiety relief. Australian directness in 'nobody cared' outperforms 'welcoming environment' marketing copy." },
+      { platform: "Meta", format: "Comparison", competitor: "Private health", text: "My private health covers physio twice a year. This app gives me 12 minutes a day, every day.", why: "Frequency of access comparison. Australian private health frustration is high — underutilization of physio benefits is endemic." }
+    ],
+    counter: { text: "The gym membership started in January. By March it was a tax-deductible monthly reminder of ambition.", note: "'Tax-deductible' is the Aussie self-justification move. Extremely local humor that signals real understanding of the market." }
+  },
+  brazil_ecom: {
+    label: "Brazil · E-com",
+    hooks: [
+      { platform: "Meta", format: "UGC", competitor: "Mercado Livre", text: "Enviou na segunda. Chegou sábado. O prazo dizia quarta. Mercado Livre sendo Mercado Livre.", why: "'Being Mercado Livre' is a known cultural phrase. Self-aware delivery-delay humor that validates the audience's frustration." },
+      { platform: "TikTok", format: "Testimonial", competitor: "Shopee", text: "Shopee sale, 80% off, frete 65 reais. Fiz as contas.", why: "Shopee Brazil's high shipping costs on discounted items is a meme. 'I did the math' is the punchline that everyone reaches." },
+      { platform: "Meta", format: "Comparison", competitor: "Parcelamento", text: "12x sem juros parece ótimo até você somar.", why: "Installment credit math realization. Brazil's parcelamento culture is ubiquitous — 'until you add it up' is a known consumer epiphany." }
+    ],
+    counter: { text: "O produto chegou. A nota fiscal vai chegar em algum momento do próximo mês.", note: "Invoice delivery delay as comic footnote. NF-e bureaucracy is a shared frustration — landing the joke in Portuguese signals market fluency." }
+  },
+  indonesia_gaming: {
+    label: "Indonesia · Gaming",
+    hooks: [
+      { platform: "TikTok", format: "UGC", competitor: "Mobile Legends", text: "Ranked solo di MLBB itu bukan game, itu latihan mental.", why: "'Latihan mental' (mental training) is the shared toxic positivity reframe every MLBB player uses. Pure cultural insider signal." },
+      { platform: "Meta", format: "Testimonial", competitor: "Top-up agents", text: "Top up diamond lewat agen, kena rate aneh. Langsung dari aplikasinya, harga resmi.", why: "Diamond top-up via unofficial agents is rampant. Direct app pricing as the legitimate alternative — a trust hook." },
+      { platform: "TikTok", format: "Comparison", competitor: "PC gaming", text: "PC gaming butuh budget 15 juta. HP gaming butuh skill 10 tahun.", why: "Mobile mastery as earned status, not a compromise. Powerful in Indonesia's mobile-first gaming culture." }
+    ],
+    counter: { text: "Ping 120ms. Teammate AFK. Jungle di-steal. Gak ada yang bisa dilakuin selain buka app lain.", note: "Gaming frustration escape valve. Specificity of each element (ping, AFK, jungle steal) signals authentic player voice, not marketing." }
+  },
+  mexico_fintech: {
+    label: "Mexico · Fintech",
+    hooks: [
+      { platform: "Meta", format: "UGC", competitor: "BBVA Mexico", text: "Fui al banco a las 10am. La fila decía 11:45. En 2024.", why: "Bank queue absurdity with the year as the punchline. '2024' signals that this is still happening, which is what makes it hit." },
+      { platform: "TikTok", format: "Testimonial", competitor: "Cash economy", text: "Mi negocio solo aceptaba efectivo. Empecé a aceptar transferencias. Mis ventas subieron 40%.", why: "SMB cashless conversion with a specific lift. Mexico's informal economy transition to digital payments is a live story." },
+      { platform: "Meta", format: "Comparison", competitor: "Western Union", text: "Western Union cobra $18 y tarda un día. Esto tarda 3 minutos y cobra $2.", why: "Mexico is the top remittance recipient globally. This hook has the largest addressable audience of any category in the market." }
+    ],
+    counter: { text: "Tu comisión por retiro en cajero ajeno: $35 pesos. Tu cara cuando lees el ticket: no tiene precio.", note: "ATM fee shock plus the Mastercard punchline structure. Familiar enough to be funny, specific enough to feel local." }
+  },
+  saudiarabia_ecom: {
+    label: "Saudi Arabia · E-com",
+    hooks: [
+      { platform: "Meta", format: "UGC", competitor: "Noon", text: "Noon Express said same day. Same day was four days ago.", why: "Noon Express same-day failures are a prominent complaint in Saudi social media. Audience frustration is already primed." },
+      { platform: "TikTok", format: "Testimonial", competitor: "Malls", text: "كنت أقضي كل جمعة في المول. الآن أقضيها مع أهلي.", why: "Friday is family day in KSA. Shopping app as 'time given back to family' is a value reframe that lands culturally." },
+      { platform: "Meta", format: "Product Demo", competitor: "International shipping", text: "Used to wait 3 weeks for a product from the US. Local warehouse. Two days. Same product.", why: "KSA e-com growth is driven by local warehouse expansion. The US-vs-local comparison tells the infrastructure story in one line." }
+    ],
+    counter: { text: "Free shipping on orders over SAR 200. Your order is SAR 187. The shipping is SAR 25.", note: "Free shipping threshold friction — the universal e-com frustration. Specific SAR amounts make it feel researched rather than generic." }
+  }
+};
+
+function renderAgencyHookCard() {
+  var cat = document.getElementById('catSelect').value;
+  var mkt = document.getElementById('mktSelect').value;
+  if (!cat || !mkt) { 
+    document.getElementById('hookCard').style.display = 'none';
+    document.getElementById('hookEmpty').style.display = 'block';
+    document.getElementById('hookNoData').style.display = 'none';
+    return; 
+  }
+  var key = mkt + '_' + cat;
+  var data = AGENCY_HOOK_DATA[key];
+  if (!data) {
+    document.getElementById('hookCard').style.display = 'none';
+    document.getElementById('hookEmpty').style.display = 'none';
+    document.getElementById('hookNoData').style.display = 'block';
+    return;
+  }
+  document.getElementById('hookCardTag').textContent = data.label;
+  var hooks = data.hooks;
+  for (var i = 0; i < 3; i++) {
+    var h = hooks[i] || { platform: '', format: '', competitor: '', text: '', why: '' };
+    var n = i + 1;
+    document.getElementById('hook' + n + 'platform').innerHTML =
+      '<span class="hook-platform-tag">' + h.platform + '</span>' +
+      '<span class="hook-platform-tag format">' + h.format + '</span>';
+    document.getElementById('hook' + n + 'comp').textContent = h.competitor ? h.competitor.toUpperCase() : '';
+    document.getElementById('hook' + n + 'text').textContent = h.text;
+    document.getElementById('hook' + n + 'why').textContent = h.why;
+  }
+  document.getElementById('hookCounterText').textContent = data.counter.text;
+  document.getElementById('hookCounterNote').textContent = data.counter.note;
+  document.getElementById('hookGateForm').style.display = 'flex';
+  document.getElementById('hookGateSuccess').style.display = 'none';
+  document.getElementById('hookGateError').style.display = 'none';
+  document.getElementById('hookEmpty').style.display = 'none';
+  document.getElementById('hookNoData').style.display = 'none';
+  document.getElementById('hookCard').style.display = 'block';
+}
+
+function submitAgencyHookGate() {
+  var email = document.getElementById('hookEmail').value.trim();
+  if (!email) return;
+  var btn = document.querySelector('.hook-gate-btn');
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+  fetch('https://app.orcool.com/api/auth/send-magic-link', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email, isBusiness: false, baseUrl: 'https://app.orcool.com' })
+  }).then(function(r) {
+    if (!r.ok) throw new Error('failed');
+    document.getElementById('hookGateForm').style.display = 'none';
+    document.getElementById('hookGateSuccess').style.display = 'block';
+    document.getElementById('hookGateError').style.display = 'none';
+    var toast = document.getElementById('mlToast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'mlToast';
+      toast.style.cssText = 'position:fixed;bottom:28px;left:50%;transform:translateX(-50%);background:#111;color:#fff;padding:14px 22px;border-radius:10px;font-size:14px;font-weight:600;z-index:9999;box-shadow:0 4px 24px rgba(0,0,0,.35);white-space:nowrap;transition:opacity .4s';
+      document.body.appendChild(toast);
+    }
+    toast.innerHTML = '✓ Magic link sent to <span style="color:#4ade80">' + email + '</span>.';
+    toast.style.opacity = '1';
+    toast.style.display = 'block';
+    setTimeout(function() { toast.style.opacity = '0'; setTimeout(function() { toast.style.display = 'none'; }, 400); }, 4000);
+  }).catch(function() {
+    document.getElementById('hookGateError').style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = 'Unlock full teardown';
+  });
+}
+</script>
 
 <!-- FINAL CTA -->
 <section class="dark final">
