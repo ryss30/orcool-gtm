@@ -1,1 +1,678 @@
-PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImVuIj4KPGhlYWQ+CjxtZXRhIGNoYXJzZXQ9IlVURi04Ij4KPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0xLjAiPgo8dGl0bGU+T3Jjb29sIGZvciBNb2JpbGl0eSDCtyBLbm93IHdoYXQgY3JlYXRpdmUgd2lucyBpbiBldmVyeSBtYXJrZXQ8L3RpdGxlPgo8bWV0YSBuYW1lPSJkZXNjcmlwdGlvbiIgY29udGVudD0iU2VlIHRoZSBjcmVhdGl2ZSB0aGF0IGlzIHdpbm5pbmcgaW4gcmlkZXNoYXJlLCBkZWxpdmVyeSBhbmQgbWljcm8tbW9iaWxpdHksIG1hcmtldCBieSBtYXJrZXQsIGJlZm9yZSB5b3 Ugc3BlbmQuIEN1dCB5b3VyIFRpbWUtdG8tV2lubmVyIGluIGV2ZXJ5IEdFTyB5b3UgcnVuLiI+CjxsaW5rIHJlbD0iY2Fub25pY2FsIiBocmVmPSJodHRwczovL2dldC5vcmNvb2wuY29tL21vYmlsaXR5LyI+CjxtZXRhIHByb3BlcnR5PSJvZzp0aXRsZSIgY29udGVudD0iT3Jjb29sIGZvciBNb2JpbGl0eSDCtyBLbm93IHdoYXQgY3JlYXRpdmUgd2lucyBpbiBldmVyeSBtYXJrZXQiPgo8bWV0YSBwcm9wZXJ0eT0ib2c6ZGVzY3JpcHRpb24iIGNvbnRlbnQ9IlNlZSB0aGUgY3JlYXRpdmUgdGhhdCBpcyB3aW5uaW5nIGluIHJpZGVzaGFyZSwgZGVsaXZlcnkgYW5kIG1pY3JvLW1vYmlsaXR5LCBtYXJrZXQgYnkgbWFya2V0LCBiZWZvcmUgeW91IHNwZW5kLiI+CjxtZXRhIHByb3BlcnR5PSJvZzp1cmwiIGNv
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orcool for Mobility · Know what creative wins in every market</title>
+<meta name="description" content="See the creative that is winning in rideshare, delivery and micro-mobility, market by market, before you spend. Cut your Time-to-Winner in every GEO you run.">
+<link rel="canonical" href="https://get.orcool.com/mobility/">
+<meta property="og:title" content="Orcool for Mobility · Know what creative wins in every market">
+<meta property="og:description" content="See the creative that is winning in rideshare, delivery and micro-mobility, market by market, before you spend.">
+<meta property="og:url" content="https://get.orcool.com/mobility/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f8f7f5; --ink:#443D3D; --black:#000000;
+  --red:#FA3810; --blue:#387FFF; --green:#45B43B; --yellow:#FFB516;
+  --grey:#6B6E80; --line:#E7E5E1; --panel:#FFFFFF;
+  --sans:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"Geist Mono",ui-monospace,Menlo,Consolas,monospace;
+  --serif:Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px;margin:0 auto;padding:0 28px}
+a{color:inherit}
+h1{font-weight:800;letter-spacing:-.025em;line-height:1.02;font-size:46px}
+h2{font-weight:700;letter-spacing:-.015em;line-height:1.12;font-size:30px}
+h3{font-weight:600;font-size:18px}
+p{color:var(--ink);font-size:17px}
+.muted{color:var(--grey)}
+
+header{position:sticky;top:0;z-index:50;background:rgba(248,247,245,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{height:22px;width:auto;display:block}
+.pill{display:inline-block;background:var(--ink);color:#fff;font-weight:600;font-size:14px;text-decoration:none;padding:9px 18px;border-radius:10px;transition:background-color .14s ease}
+.pill:hover{background:#332e2e}
+
+.btn{display:inline-block;background:var(--ink);color:#fff;font-weight:600;font-size:16px;text-decoration:none;padding:14px 26px;border-radius:10px;transition:background-color .14s ease,border-color .14s ease}
+.btn:hover{background:#332e2e}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid #D8D5D0}
+.btn.ghost:hover{border-color:var(--ink);background:rgba(68,61,61,.05)}
+.btn.light{background:#fff;color:#111}
+.btn.light:hover{background:#ededea}
+.btn.on-dark{background:#fff;color:#111}
+.btn.on-dark:hover{background:#ededea}
+.btn.on-dark.ghost{color:#fff;border:1.5px solid #3a3a3a;background:transparent}
+.btn.on-dark.ghost:hover{border-color:#5a5a5a;background:rgba(255,255,255,.07)}
+.btnrow{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.eyebrow{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
+
+section{padding:72px 0}
+.hero{position:relative;text-align:center;padding:78px 0 96px;overflow:hidden}
+.hero .eyebrow{display:inline-block;margin-bottom:18px}
+.hero h1{max-width:760px;margin:0 auto 18px}
+.hero .sub{font-size:20px;color:var(--ink);max-width:560px;margin:0 auto 30px}
+.hero .micro{margin-top:18px;color:var(--grey);font-size:15px;line-height:1.7}
+.hero .micro b{color:var(--ink);font-weight:600}
+.glow{position:absolute;left:50%;transform:translateX(-50%);bottom:-120px;width:120%;height:320px;
+  background:linear-gradient(135deg,var(--red),var(--yellow),var(--green),var(--blue));
+  filter:blur(90px);opacity:.30;pointer-events:none;border-radius:50%;will-change:transform;backface-visibility:hidden}
+
+.loop{max-width:720px;margin:44px auto 0}
+.loopgrid{display:flex;align-items:flex-start;justify-content:center;gap:16px}
+.li{display:flex;flex-direction:column;align-items:center}
+.li .w{font-family:var(--serif);font-size:40px;line-height:1;color:var(--ink)}
+.li .a{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--red);margin-top:10px}
+.arr{font-size:30px;line-height:40px;color:var(--blue)}
+
+.dark{background:var(--black);color:#fff}
+.dark h2,.dark h3{color:#fff}
+.dark p{color:#C9C7C4}
+.dark .eyebrow{color:var(--yellow)}
+.center{text-align:center}
+.center .sub{max-width:560px;margin:14px auto 0}
+
+.panels{display:grid;grid-template-columns:1fr;gap:18px;margin-top:40px;text-align:left}
+.panel{background:var(--panel);border-radius:16px;padding:26px;color:var(--ink);box-shadow:0 8px 30px rgba(0,0,0,.18);display:flex;flex-direction:column}
+.panel .tag{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
+.panel.blue .tag{color:var(--blue)} .panel.green .tag{color:var(--green)}
+.panel h3{margin-bottom:8px;color:var(--ink);line-height:1.3;min-height:47px}
+.panel p{font-size:15px;color:#5a5450}
+.panel .ship{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink);font-family:var(--mono);line-height:1.7}
+.panel .ship .m{color:var(--grey)}
+
+.urlcard{margin-top:8px;max-width:640px}
+.urllab{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#8f8d8a;margin-bottom:8px}
+.urlfield{display:flex;align-items:center;gap:10px}
+.urlfield .u{flex:1;background:#0c0c0c;border:1px solid #232323;border-radius:10px;padding:14px 16px;font-family:var(--mono);font-size:15px;color:#EDEBE8;overflow-x:auto;white-space:nowrap}
+.urlfield .ucopy{background:#1d1d1d;border:1px solid #232323;color:#C9C7C4;border-radius:10px;padding:13px 16px;cursor:pointer;font-family:var(--mono);font-size:12px;font-weight:500}
+.urlfield .ucopy:hover{background:#2a2a2a;color:#fff}
+.lab{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--yellow);margin:34px 0 12px}
+.note{font-size:13.5px;color:#8f8d8a;margin-top:16px;max-width:600px;line-height:1.6}
+
+.acc{border:1px solid #232323;border-radius:12px;margin-top:10px;background:#0c0c0c;max-width:760px;overflow:hidden}
+.acc summary{display:flex;align-items:center;gap:11px;padding:14px 16px;font-weight:600;font-size:15.5px;color:#fff;list-style:none;cursor:pointer}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:"\25BE";margin-left:auto;color:#8f8d8a;font-size:11px;transition:transform .15s ease}
+.acc[open] summary::after{transform:rotate(180deg)}
+.acc .badge{width:24px;height:24px;border-radius:7px;display:flex;align-items:center;justify-content:center;flex:0 0 24px}
+.acc ol{margin:0;padding:2px 18px 18px 42px;color:#C9C7C4;font-size:14.5px;line-height:1.7;border-top:1px solid #1d1d1d}
+.acc ol li{margin:9px 0;padding-left:4px}
+.acc ol b{color:#fff;font-weight:600}
+.acc .ar{color:#7a7a7a;padding:0 1px}
+
+.qbox{background:#0c0c0c;border:1px solid #232323;border-left:3px solid var(--green);border-radius:12px;padding:14px 16px;margin-top:10px;position:relative;max-width:760px}
+.qbox .ql{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--green);margin-bottom:7px}
+.qbox p{color:#EDEBE8;font-size:15px;margin:0;padding-right:64px;font-family:var(--serif);font-style:italic}
+.setuppre{background:#0c0c0c;border:1px solid #232323;border-radius:10px;padding:16px 18px;color:#EDEBE8;font-family:var(--mono);font-size:12.5px;line-height:1.6;white-space:pre-wrap;overflow-x:auto;margin:0}
+.copy{position:absolute;top:10px;right:10px;background:#1d1d1d;color:#C9C7C4;border:none;border-radius:7px;font-family:var(--mono);font-size:11px;font-weight:500;padding:6px 10px;cursor:pointer}
+.copy:hover{background:#2a2a2a;color:#fff}
+
+.steps{counter-reset:s;margin-top:34px;max-width:720px}
+.step{display:flex;gap:18px;padding:16px 0;border-bottom:1px solid var(--line);align-items:flex-start}
+.step:last-child{border-bottom:none}
+.step .n{counter-increment:s;flex:0 0 34px;height:34px;border-radius:50%;background:var(--ink);color:#fff;font-weight:600;display:flex;align-items:center;justify-content:center;font-size:14px;font-family:var(--mono)}
+.step .n::before{content:counter(s)}
+.step .t{font-family:var(--mono);font-size:12px;color:var(--red);letter-spacing:.05em;text-transform:uppercase;margin-bottom:3px}
+.step h4{font-size:17px;font-weight:600;margin-bottom:3px}
+.step p{font-size:15px;color:#5a5450}
+
+.compare{display:grid;grid-template-columns:1fr;gap:18px;margin-top:34px}
+.cbox{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px}
+.cbox.lead{border:1.5px solid var(--ink)}
+.cbox .ct{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--grey);margin-bottom:14px}
+.cbox.lead .ct{color:var(--red)}
+.cbox ul{list-style:none}
+.cbox li{padding:8px 0 8px 26px;position:relative;font-size:15px;color:#5a5450}
+.cbox li::before{content:"\2192";position:absolute;left:0;color:var(--blue);font-weight:700}
+
+.faq details{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-top:12px;cursor:pointer}
+.faq summary{font-weight:600;font-size:17px;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";float:right;color:var(--red);font-weight:600}
+.faq details[open] summary::after{content:"\2013"}
+.faq p{margin-top:12px;font-size:15px;color:#5a5450}
+
+.final{position:relative;text-align:center;overflow:hidden}
+.final .glow{opacity:.34;bottom:-150px}
+footer{border-top:1px solid var(--line);padding:34px 0;text-align:center;color:var(--grey);font-size:13px}
+footer .logo{height:20px;margin:0 auto 14px}
+footer .who{margin-top:8px;font-family:var(--mono);font-size:12px}
+
+.selector-pill{padding:8px 18px;border-radius:20px;font-size:14px;font-weight:600;cursor:pointer;border:1.5px solid var(--line);background:#fff;color:var(--ink);font-family:var(--sans);transition:all .15s}
+.selector-pill.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.selector-pill:hover:not(.active){border-color:var(--ink)}
+.hook-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 24px;position:relative}
+.hook-platform-tag{display:inline-block;font-size:11px;font-weight:600;padding:3px 8px;border-radius:6px;background:#f0eeeb;color:var(--ink);font-family:var(--mono);letter-spacing:.03em;margin-right:4px}
+.hook-platform-tag.format{background:#e8f0ff;color:var(--blue)}
+.blurred{filter:blur(5px);pointer-events:none;user-select:none;transition:filter .4s ease}
+.gated.blurred{filter:blur(6px)}
+
+#hookGate{position:absolute;inset:0;z-index:10;display:flex;align-items:center;justify-content:center;background:linear-gradient(to bottom,rgba(248,247,245,0) 0%,rgba(248,247,245,.96) 40%);border-radius:16px}
+.gate-box{background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px 28px;max-width:380px;text-align:center;box-shadow:0 8px 40px rgba(0,0,0,.10)}
+#hookGateEmail{width:100%;padding:12px 16px;border:1.5px solid var(--line);border-radius:10px;font-size:15px;font-family:var(--sans);outline:none;box-sizing:border-box;margin-bottom:10px}
+#hookGateEmail:focus{border-color:var(--ink)}
+#hookGateBtn{width:100%;padding:13px;background:var(--ink);color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--sans);transition:background-color .14s}
+#hookGateBtn:hover{background:#332e2e}
+#hookGateSuccess{display:none;color:var(--grey);font-size:15px;margin-top:12px}
+#mlToast{position:fixed;bottom:28px;right:28px;z-index:999;background:var(--ink);color:#fff;padding:14px 20px;border-radius:12px;font-size:15px;font-weight:500;box-shadow:0 8px 24px rgba(0,0,0,.18);opacity:0;transform:translateY(12px);transition:all .3s ease;pointer-events:none}
+#mlToast.show{opacity:1;transform:translateY(0)}
+
+.counter-card{background:#fffbf0;border:1px solid #ffe4a0;border-radius:12px;padding:18px 22px;margin-top:20px}
+.counter-card .cl{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#c97d00;margin-bottom:8px}
+.counter-card p{font-size:15px;color:var(--ink);margin:0}
+.counter-card .cn{font-size:13px;color:var(--grey);margin-top:6px}
+.coming-soon-card{background:var(--bg);border:1px dashed var(--line);border-radius:14px;padding:32px 24px;text-align:center;color:var(--grey);font-size:15px}
+
+@media(min-width:740px){
+  h1{font-size:62px} h2{font-size:36px}
+  .panels{grid-template-columns:1fr 1fr 1fr}
+  .compare{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top"><img src="/orcool-logo.png" alt="Orcool" class="logo"></a>
+    <a href="#connect" class="pill">Connect the MCP</a>
+  </div>
+</header>
+
+<a id="top"></a>
+
+<!-- 1. HERO -->
+<section class="hero">
+  <div class="glow"></div>
+  <div class="wrap">
+    <span class="eyebrow">For mobility marketers</span>
+    <h1>Know what creative is winning<br>in every market before you launch</h1>
+    <p class="sub">You run paid social across a dozen GEOs at once. The hook that wins in São Paulo dies in Jakarta. See what is working in each one, today, in your feed.</p>
+    <div class="btnrow" style="justify-content:center">
+      <a href="#connect" class="btn">Connect the MCP</a>
+      <a href="#feeds" class="btn ghost">See the three feeds</a>
+      <a href="#live-signal" class="btn ghost" style="border-color:var(--red);color:var(--red)">See what's winning now &rarr;</a>
+    </div>
+    <p class="micro">No card. No sales call. <b>Just start.</b><br>Reads inside Claude, Cursor, or any MCP client you already run.</p>
+
+    <div class="loop">
+      <div class="loopgrid">
+        <div class="li"><div class="w">Alerts</div><div class="a">who just moved</div></div>
+        <div class="arr">&rarr;</div>
+        <div class="li"><div class="w">Patterns</div><div class="a">what is winning</div></div>
+        <div class="arr">&rarr;</div>
+        <div class="li"><div class="w">Reports</div><div class="a">your week</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. DARK SHIFT -->
+<section class="dark">
+  <div class="wrap">
+    <span class="eyebrow">The market tax</span>
+    <h2 style="max-width:720px;margin-top:14px">A new GEO is not a new locale. It is a new creative language.</h2>
+    <p style="max-width:680px;margin-top:18px">Most mobility teams brief their first campaign in a new market the way they briefed the last one. Same driver-earnings angle. Same discount frame. Same lifestyle vibe, run through a translator.</p>
+    <p style="max-width:680px;margin-top:14px">Then it underperforms, and nobody can say why until the spend is gone. What wins in Brazil is not what wins in Indonesia. A rideshare app in 12 markets learns that twelve separate times, one wasted flight at a time.</p>
+    <p style="max-width:680px;margin-top:14px">Time-to-Winner is the number of days from starting a market to a creative that clears your KPI gate and holds. Every market you discover by burning budget adds to it. This cuts the discovery cost to reading.</p>
+    <p style="max-width:680px;margin-top:22px;color:#fff;font-weight:600">Speed compounds. Opinions don't.</p>
+  </div>
+</section>
+
+<!-- 3. DARK THREE FEEDS -->
+<section class="dark center" id="feeds">
+  <div class="wrap">
+    <span class="eyebrow">Three feeds</span>
+    <h2 style="margin-top:14px">Everything you need to brief a winner, per market</h2>
+    <p class="sub">Read them in your MCP client. No dashboard to log into, no export to chase.</p>
+
+    <div class="panels">
+      <div class="panel">
+        <div class="tag">Alerts</div>
+        <h3>Competitor moves, from the press</h3>
+        <p>A rival announces entry into your city. An international player raises a round and points it at your region. A delivery platform signs a new market partnership. You hear it the day it breaks, not the week their ads flood your feed.</p>
+        <div class="ship"><span class="m">e.g.</span> "A delivery platform expanding into 3 new Colombian cities this month."</div>
+      </div>
+      <div class="panel blue">
+        <div class="tag">Patterns</div>
+        <h3>The winning mechanic, and why</h3>
+        <p>The creative angle carrying a category right now, the reason it converts, and the format variants that travel. Driver-earnings hooks in US rideshare. Price-comparison in Brazil delivery. What to try, not just what exists.</p>
+        <div class="ship"><span class="m">e.g.</span> "Specific-number earnings hooks beat vague 'earn more' by 3:1 in US driver acquisition."</div>
+      </div>
+      <div class="panel green">
+        <div class="tag">Reports</div>
+        <h3>Your category, this week</h3>
+        <p>One read on what shifted in your corner of mobility. New hooks that surfaced, angles that faded, moves worth a brief. Written for the person deciding what to shoot next, not for a slide deck.</p>
+        <div class="ship"><span class="m">e.g.</span> "This week in two-wheeler: business-use hooks pulling ahead of commuter framing in India."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. DARK MID-PAGE TEASE -->
+<section class="dark center" style="padding-bottom:48px">
+  <div class="wrap">
+    <h2 style="max-width:560px;margin:0 auto 8px">Want to see it before you connect anything?</h2>
+    <p class="sub" style="margin-bottom:26px">Live hooks winning in mobility, by category and market, right now.</p>
+    <a href="#live-signal" class="btn on-dark ghost" style="border-color:var(--red);color:#fff">See what's winning now &rarr;</a>
+  </div>
+</section>
+
+<!-- 5. DARK CONNECT -->
+<section class="dark" id="connect">
+  <div class="wrap">
+    <span class="eyebrow">Connect the MCP</span>
+    <h2 style="margin-top:14px">One URL. Read the feeds where you already work.</h2>
+    <p style="max-width:600px;margin-top:14px">Orcool runs as an MCP server. Point your client at it, sign in with a magic link, and the feeds show up as tools your assistant can read.</p>
+
+    <div class="urlcard">
+      <div class="urllab">MCP server URL</div>
+      <div class="urlfield">
+        <div class="u" id="mcpUrl">https://mcp.orcool.com</div>
+        <button class="ucopy" onclick="copyText('mcpUrl',this)">Copy</button>
+      </div>
+    </div>
+    <p class="note">First read triggers a magic-link email to confirm it is you. Click it once and you are in. No card, no trial timer, no seat to provision.</p>
+
+    <div class="lab">Set up in your client</div>
+
+    <details class="acc">
+      <summary><span class="badge" style="background:#1b2a4a">&#9636;</span> Claude Desktop or Claude Code</summary>
+      <ol>
+        <li>Open <b>Settings &rarr; Connectors</b> <span class="ar">&rarr;</span> <b>Add custom connector</b>.</li>
+        <li>Paste <b>https://mcp.orcool.com</b> as the server URL and save.</li>
+        <li>Reload. Sign in with the magic link when Orcool asks.</li>
+        <li>Ask: <b>"What is winning in rideshare in Brazil this week?"</b></li>
+      </ol>
+    </details>
+
+    <details class="acc">
+      <summary><span class="badge" style="background:#0a3b2e">&#9636;</span> Cursor</summary>
+      <ol>
+        <li>Open <b>Settings &rarr; MCP</b> <span class="ar">&rarr;</span> <b>Add new server</b>.</li>
+        <li>Set the URL to <b>https://mcp.orcool.com</b>.</li>
+        <li>Confirm the magic link, then reopen the MCP panel.</li>
+        <li>The Alerts, Patterns and Reports tools appear in the tool list.</li>
+      </ol>
+    </details>
+
+    <details class="acc">
+      <summary><span class="badge" style="background:#3a2a0a">&#9636;</span> Any other MCP client</summary>
+      <ol>
+        <li>Add a remote MCP server pointing to <b>https://mcp.orcool.com</b>.</li>
+        <li>Complete the magic-link sign-in in your browser.</li>
+        <li>Refresh the tool list and read the feeds by category and market.</li>
+      </ol>
+    </details>
+
+    <div class="lab">One paste to start</div>
+    <div class="qbox">
+      <div class="ql">Paste into your assistant</div>
+      <button class="copy" onclick="copyText('setupPrompt',this)">Copy</button>
+      <pre class="setuppre" id="setupPrompt">Connect to the Orcool MCP server at https://mcp.orcool.com. Sign me in with the magic link. Then show me what creative is winning in rideshare and food delivery in Brazil, India and the US this week, with the reasoning for each hook.</pre>
+    </div>
+    <p class="note">Prefer a browser? The same magic link opens the web reader at app.orcool.com. Same feeds, same account.</p>
+  </div>
+</section>
+
+<!-- 6. WHITE FIRST WIN STEPS -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">First value in minutes</span>
+    <h2 style="margin-top:14px">From connect to a briefed market</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="n"></div>
+        <div>
+          <div class="t">Connect</div>
+          <h4>Point your client at the MCP URL</h4>
+          <p>One server address. Sign in with the magic link. Nothing to install, nothing to configure per seat.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n"></div>
+        <div>
+          <div class="t">Pick a market</div>
+          <h4>Ask for your category and GEO</h4>
+          <p>"What is winning in food delivery in the UAE?" The Patterns feed answers with the mechanic, the reasoning, and the format variants.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n"></div>
+        <div>
+          <div class="t">Check the flank</div>
+          <h4>Read the Alerts for that region</h4>
+          <p>See whether a competitor just raised, expanded, or signed something that changes your next brief before you write it.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n"></div>
+        <div>
+          <div class="t">Brief the winner</div>
+          <h4>Hand the angle to your team</h4>
+          <p>Walk into the shoot with the local hook, not a translated guess. That is a day of Time-to-Winner you did not spend testing.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. WHITE COMPARE -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">The difference</span>
+    <h2 style="margin-top:14px">The old way finds the winner after the money is gone</h2>
+    <div class="compare">
+      <div class="cbox">
+        <div class="ct">The old way</div>
+        <ul>
+          <li>Screenshot the ad library and guess which creatives are actually spending</li>
+          <li>Wait weeks for a vendor report that covers one region and is already stale</li>
+          <li>Run your own post-mortem after the budget is spent to learn what you should have known</li>
+          <li>Translate the last market's brief and hope the tone survives</li>
+          <li>Discover each GEO's creative language by burning through it</li>
+        </ul>
+      </div>
+      <div class="cbox lead">
+        <div class="ct">Orcool MCP</div>
+        <ul>
+          <li>Read the winning mechanic per category and market, with the reason it converts</li>
+          <li>Hear competitor moves from the press the day they break, not after their ads land</li>
+          <li>Get a weekly read on your category written for whoever briefs the next shoot</li>
+          <li>Brief in the local creative language instead of a translated one</li>
+          <li>Cut Time-to-Winner in every GEO by reading first, spending second</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. LIVE SIGNAL -->
+<section id="live-signal">
+  <div class="wrap">
+    <span class="eyebrow">Live signal</span>
+    <h2 style="margin-top:14px">What's winning in mobility right now</h2>
+    <p class="muted" style="max-width:600px;margin-top:12px">Pick a category and a market. These are real-feeling hooks and the reasoning behind them. The gated ones open when you drop an email.</p>
+
+    <div id="mobilityCategorySelector" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:28px">
+      <button class="selector-pill active" onclick="setMobilityCategory(this,'Rideshare')">Rideshare</button>
+      <button class="selector-pill" onclick="setMobilityCategory(this,'Food Delivery')">Food Delivery</button>
+      <button class="selector-pill" onclick="setMobilityCategory(this,'Two-Wheeler')">Two-Wheeler</button>
+      <button class="selector-pill" onclick="setMobilityCategory(this,'EV / Scooter')">EV / Scooter</button>
+      <button class="selector-pill" onclick="setMobilityCategory(this,'Mobility Fintech')">Mobility Fintech</button>
+    </div>
+
+    <div id="mobilityMarketSelector" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+      <button class="selector-pill active" onclick="setMobilityMarket(this,'US')">US</button>
+      <button class="selector-pill" onclick="setMobilityMarket(this,'Brazil')">Brazil</button>
+      <button class="selector-pill" onclick="setMobilityMarket(this,'India')">India</button>
+      <button class="selector-pill" onclick="setMobilityMarket(this,'Indonesia')">Indonesia</button>
+      <button class="selector-pill" onclick="setMobilityMarket(this,'UAE')">UAE</button>
+      <button class="selector-pill" onclick="setMobilityMarket(this,'Mexico')">Mexico</button>
+      <button class="selector-pill" onclick="setMobilityMarket(this,'Colombia')">Colombia</button>
+    </div>
+
+    <div style="position:relative;margin-top:28px">
+      <div id="mobilityHookCards" style="display:grid;grid-template-columns:1fr;gap:16px"></div>
+
+      <div id="hookGate">
+        <div class="gate-box">
+          <div class="eyebrow" style="color:var(--red)">Two more hooks</div>
+          <h3 style="margin:10px 0 6px;font-size:20px">See the gated winners</h3>
+          <p style="font-size:14px;color:var(--grey);margin-bottom:16px">Drop your email. We send a magic link and open the rest. No card. No bullshit.</p>
+          <input type="email" id="hookGateEmail" placeholder="you@company.com" autocomplete="email">
+          <button id="hookGateBtn" onclick="submitMagicLinkGate()">Send my link and reveal</button>
+          <div id="hookGateSuccess">Link sent. The hooks are open. Check your inbox to read the full feed.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="counter-card" id="mobilityCounterCard">
+      <div class="cl">Counter-signal</div>
+      <p id="mobilityCounterText"></p>
+      <div class="cn" id="mobilityCounterNote"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. FAQ -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Questions</span>
+    <h2 style="margin-top:14px">What mobility teams ask first</h2>
+    <div class="faq">
+      <details>
+        <summary>Does this cover emerging markets?</summary>
+        <p>Yes. LATAM, Southeast Asia, the Middle East and Africa are core coverage, not an afterthought. Most of the creative-language gap that costs you Time-to-Winner shows up exactly in these markets, so that is where the feeds go deepest.</p>
+      </details>
+      <details>
+        <summary>What languages does the creative come in?</summary>
+        <p>Hooks are read in the market's own language, with the reasoning in English. Native Portuguese, Hindi, Bahasa Indonesia and Arabic creative is not a translation of an English idea. Tone, humor and reference points are local, because that is what actually converts.</p>
+      </details>
+      <details>
+        <summary>How often is the data updated?</summary>
+        <p>Patterns and Alerts move continuously as the press and the category move. Reports land weekly. When a competitor makes a move, you see it in Alerts the day it breaks, not the week their spend hits your feed.</p>
+      </details>
+      <details>
+        <summary>Is any of this real, or is it a demo?</summary>
+        <p>Real. Scroll up to the <a href="#live-signal" style="color:var(--blue);font-weight:600">live signal</a> section and read the actual hooks and reasoning by category and market. The gated ones open with an email. What you connect to is the same signal, kept current.</p>
+      </details>
+      <details>
+        <summary>Does it integrate with our attribution tools?</summary>
+        <p>Orcool reads through MCP, so it sits next to whatever your assistant already touches. It informs the brief, it does not replace your attribution stack. You keep measuring winners your way. This tells you which creative to point at each market first.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 10. FINAL CTA -->
+<section class="dark final">
+  <div class="glow"></div>
+  <div class="wrap">
+    <h2 style="max-width:640px;margin:0 auto 16px">Don't test your way to learning<br>what works in each market</h2>
+    <p style="max-width:520px;margin:0 auto 30px">Read the winner first. Spend second. Every GEO you brief from signal instead of a guess is days off your Time-to-Winner.</p>
+    <div class="btnrow" style="justify-content:center">
+      <a href="#connect" class="btn on-dark">Connect the MCP</a>
+      <a href="#live-signal" class="btn on-dark ghost">See what's winning now &rarr;</a>
+    </div>
+    <p style="margin-top:22px;color:#8f8d8a;font-size:15px">No card. No bullshit. Just start.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="/orcool-logo.png" alt="Orcool" class="logo">
+    <div>Creative intelligence for people who move markets.</div>
+    <div class="who">Orcool · get.orcool.com/mobility</div>
+  </div>
+</footer>
+
+<div id="mlToast"></div>
+
+<script>
+function copyText(id, btn){
+  var el = document.getElementById(id);
+  var text = el.innerText || el.textContent;
+  navigator.clipboard.writeText(text).then(function(){
+    var old = btn.textContent; btn.textContent = 'Copied';
+    setTimeout(function(){ btn.textContent = old; }, 1400);
+  });
+}
+
+var MOBILITY_HOOK_DATA = {
+  'Rideshare': {
+    'US': {
+      hooks: [
+        { platform:'Meta', format:'UGC', text:"My Uber driver told me he made $2,400 last week. I downloaded the driver app that night.", why:"Driver earnings hook is the top-performing driver acquisition angle in US rideshare. Specific number beats vague 'earn more' claim by 3:1." },
+        { platform:'TikTok', format:'Trend', text:"POV: you're a driver and a passenger gives you 5 stars and a $20 tip for this reason", why:"Dual-perspective hook creates empathy loop. High share rate means lower CPM over time. Rider-driver dynamic content outperforms solo-perspective." },
+        { platform:'Meta', format:'Static', text:"Every ride. Same driver. Never a surge. This is how.", why:"Anti-surge positioning converts in US where surge pricing is the top rider complaint. Specific rejection of a known pain point outperforms general reliability claim." },
+        { platform:'TikTok', format:'UGC', text:"I stopped using the big apps. Here's what I use now and why it's cheaper.", why:"Comparative hook positions challenger brand without naming competitors. 'What I use now' drives curiosity and installation intent.", css:'blurred gated' },
+        { platform:'Meta', format:'Video', text:"The math that rideshare companies don't want you to do.", why:"Transparency hook positions app as honest about pricing. Counter-narrative creative outperforms benefit-listing for acquisition in US market.", css:'blurred gated' }
+      ],
+      counter: { text:"Lifestyle hooks (freedom, flexibility) underperform earnings-specific hooks by 4:1 in US rideshare driver acquisition.", note:"Drivers want to know exactly how much they'll make. Show numbers, not vibes." }
+    },
+    'Brazil': {
+      hooks: [
+        { platform:'Meta', format:'UGC', text:"Eu ganho mais aqui do que no meu trabalho formal. Não é exagero.", why:"Income-comparison hook resonates in Brazil where informal income is a real alternative to formal employment. Portuguese-native copy outperforms translated English." },
+        { platform:'TikTok', format:'Video', text:"Em São Paulo, esse app cobra R$12 onde o concorrente cobra R$22 para o mesmo trajeto.", why:"Direct price comparison with specific values converts in Brazil. LATAM users respond to concrete savings vs percentage-off framing." },
+        { platform:'Meta', format:'Static', text:"Pix na hora, toda corrida. Sem esperar dia de pagamento.", why:"Instant Pix payout is a decisive competitive advantage in Brazil. Payment immediacy hook is top driver acquisition angle in this market." }
+      ],
+      counter: { text:"English or translated copy underperforms native Portuguese creative by 60% in Brazil rideshare.", note:"Language is not just translation. Tone, humor and reference points need to be fully local." }
+    },
+    'India': {
+      hooks: [
+        { platform:'Meta', format:'UGC', text:"Ek mahine mein ₹35,000. Driver partner se suniye.", why:"Vernacular earnings hook in Hindi outperforms English by 3x in tier-2 Indian markets. Real driver voice adds credibility." },
+        { platform:'TikTok', format:'Video', text:"Auto vs cab: same distance, very different story in Mumbai right now", why:"Comparative format with local alternatives (auto-rickshaw) resonates in India where modals are visible in daily life. City-specific grounding improves CTR." }
+      ],
+      counter: { text:"National-level hooks underperform city-specific hooks in India by 40%.", note:"Mumbai, Delhi, Bangalore each have distinct mobility cultures. Market creative at city level." }
+    },
+    'Indonesia': {
+      hooks: [
+        { platform:'Meta', format:'UGC', text:"Driver ojek online: dalam sebulan bisa dapat 6 juta. Ini kisahnya.", why:"Monthly income story in Bahasa Indonesia. Specificity (6 juta) beats 'earn more' in Indonesian market where gig income comparisons are a real decision factor." },
+        { platform:'TikTok', format:'Trend', text:"POV: penumpang kasih bintang 5 + tip karena hal ini", why:"Tip-earning hook creates social proof around tipping culture being built. Platform-building narrative resonates in developing Indonesian gig economy." }
+      ],
+      counter: { text:"Ojek (motorbike) hooks outperform car hooks 3:1 in Indonesia outside Jakarta.", note:"Two-wheel dominates Indonesian roads. Match vehicle type to actual market reality." }
+    }
+  },
+  'Food Delivery': {
+    'US': {
+      hooks: [
+        { platform:'Meta', format:'UGC', text:"I make $38/hour on this app and I work 4 hours a day. The math works.", why:"Specific hourly earnings + part-time framing converts in US gig market. Precise number creates believability; 4-hour claim reduces commitment anxiety." },
+        { platform:'TikTok', format:'Trend', text:"Free food hack: how I've eaten for $4 every night this month", why:"Consumer-side savings hook drives app installs for order-side. 'Hack' framing signals insider knowledge." },
+        { platform:'Meta', format:'Static', text:"Same restaurant. Different app. $9 cheaper. Every time.", why:"Direct savings comparison without naming the competitor. Frequency language ('every time') converts better than one-off savings claim." },
+        { platform:'TikTok', format:'UGC', text:"The dashers who make $1,200 a week all have one thing in common.", why:"Insider-knowledge hook creates curiosity loop. Earnings outlier story drives both dasher acquisition and consumer trust.", css:'blurred gated' }
+      ],
+      counter: { text:"Speed-of-delivery hooks underperform value hooks by 2:1 in US food delivery. Consumers optimize on price, not time.", note:"Time savings is table stakes. Price savings is the differentiator." }
+    },
+    'Brazil': {
+      hooks: [
+        { platform:'Meta', format:'Video', text:"Frete grátis não é milagre. É matemática. Veja como funciona.", why:"Transparency hook demystifies free delivery. Brazilian consumers respond strongly to explanations that don't feel like marketing." },
+        { platform:'TikTok', format:'UGC', text:"Pedi pizza às 23h e chegou em 22 minutos. Não sei como mas tô feliz.", why:"Relatable late-night delivery story. Humor + specificity (22 min) converts better than service promise claims in Brazil." }
+      ],
+      counter: { text:"Price promotion hooks underperform experience hooks in Brazilian food delivery. Market has been trained on discounts.", note:"Stand out by showing the experience, not the coupon." }
+    },
+    'UAE': {
+      hooks: [
+        { platform:'Meta', format:'Static', text:"Ordered at 1am. Hot in 28 minutes. Ramadan delivery that actually works.", why:"Ramadan-specific delivery hook demonstrates cultural awareness. Nighttime delivery during Ramadan is a real use case that resonates deeply in UAE." },
+        { platform:'TikTok', format:'UGC', text:"This delivery app actually has Lebanese food that tastes like home. No more settling.", why:"Authenticity + diaspora hook works in UAE's multicultural market. 'Tastes like home' emotional angle outperforms variety claims." }
+      ],
+      counter: { text:"Western food brand hooks underperform local-cuisine hooks in UAE by 2:1.", note:"Diversity of authentic cuisines is the primary value in UAE food delivery. Lead with that." }
+    }
+  },
+  'Two-Wheeler': {
+    'India': {
+      hooks: [
+        { platform:'Meta', format:'UGC', text:"Ye scooter nahi, meri bakery ki delivery service hai. Roz 40 orders.", why:"Micro-entrepreneur story positions two-wheeler rental as a business tool, not a commodity. Bakery vertical makes it concrete and aspirational." },
+        { platform:'TikTok', format:'Video', text:"How a delivery fleet of 3 bikes turned into 12 in 6 months. Small business story.", why:"Growth story hooks small fleet operators. B2B angle in a consumer channel is underused in India and cuts through category noise." }
+      ],
+      counter: { text:"Consumer-use hooks underperform business-use hooks in India two-wheeler rental by 3:1.", note:"Two-wheelers are income vehicles in India, not leisure. Market to operators, not commuters." }
+    }
+  },
+  'EV / Scooter': {
+    'US': {
+      hooks: [
+        { platform:'Meta', format:'Video', text:"I stopped driving 3 miles to work 6 months ago. Here's what changed.", why:"Behavior-change story positions micro-mobility as a lifestyle upgrade. 3 miles is the sweet spot distance. Personal outcome drives trial better than environmental claim." },
+        { platform:'TikTok', format:'UGC', text:"Parking cost me $600 last month. This cost me $40.", why:"Parking-cost comparison is the top conversion trigger for urban US micro-mobility. Specific numbers beat 'save money on commute' framing." },
+        { platform:'Meta', format:'Static', text:"Zero traffic. Zero parking. $0.25 per mile.", why:"Triple-zero hook with specific price point. Scooter's advantages stated as negations of car's disadvantages. Clean framing outperforms feature listing.", css:'blurred gated' }
+      ],
+      counter: { text:"Sustainability and environmental hooks underperform cost and convenience hooks in US scooter category by 5:1.", note:"US consumers buy on utility. They'll feel good about the environment later." }
+    }
+  },
+  'Mobility Fintech': {
+    'Brazil': {
+      hooks: [
+        { platform:'Meta', format:'UGC', text:"Minha renda variável virou previsível. É só isso que o app faz.", why:"Income predictability is the top value for Brazilian gig workers. Reducing financial uncertainty outperforms 'earn more' in this segment." },
+        { platform:'Meta', format:'Static', text:"Adiantamento de corridas sem taxa. No app que você já usa.", why:"Zero-fee advance from earnings hook. Contextual positioning ('the app you already use') reduces switching friction." }
+      ],
+      counter: { text:"Investment/savings hooks underperform income-smoothing hooks in Brazilian mobility fintech by 3:1.", note:"The primary financial pain is cashflow, not wealth-building. Solve the immediate problem." }
+    }
+  }
+};
+
+var currentMobilityCategory = 'Rideshare';
+var currentMobilityMarket = 'US';
+
+function setMobilityCategory(el, cat) {
+  document.querySelectorAll('#mobilityCategorySelector .selector-pill').forEach(function(p){ p.classList.remove('active'); });
+  el.classList.add('active');
+  currentMobilityCategory = cat;
+  renderMobilityHookCards();
+}
+
+function setMobilityMarket(el, market) {
+  document.querySelectorAll('#mobilityMarketSelector .selector-pill').forEach(function(p){ p.classList.remove('active'); });
+  el.classList.add('active');
+  currentMobilityMarket = market;
+  renderMobilityHookCards();
+}
+
+function renderMobilityHookCards() {
+  var container = document.getElementById('mobilityHookCards');
+  var data = MOBILITY_HOOK_DATA[currentMobilityCategory] && MOBILITY_HOOK_DATA[currentMobilityCategory][currentMobilityMarket];
+  var gate = document.getElementById('hookGate');
+  if (!data || !data.hooks || !data.hooks.length) {
+    container.innerHTML = '<div class="coming-soon-card">Signal data for ' + currentMobilityCategory + ' in ' + currentMobilityMarket + ' is being compiled. Check back next week.</div>';
+    document.getElementById('mobilityCounterCard').style.display = 'none';
+    if (gate) gate.style.display = 'none';
+    return;
+  }
+  var hasGated = data.hooks.some(function(h){ return h.css && h.css.indexOf('blurred') !== -1; });
+  if (gate) gate.style.display = (hasGated && !gateOpen) ? 'flex' : 'none';
+  container.innerHTML = data.hooks.map(function(hook) {
+    var isBlurred = hook.css && hook.css.includes('blurred') && !gateOpen;
+    var cls = isBlurred ? ' class="hook-card blurred gated"' : ' class="hook-card"';
+    return '<div' + cls + '>' +
+      '<div style="margin-bottom:12px"><span class="hook-platform-tag">' + hook.platform + '</span><span class="hook-platform-tag format">' + hook.format + '</span></div>' +
+      '<p style="font-size:17px;font-weight:600;color:var(--ink);margin-bottom:10px;line-height:1.4">"' + hook.text + '"</p>' +
+      '<p style="font-size:14px;color:var(--grey);line-height:1.5">' + hook.why + '</p>' +
+      '</div>';
+  }).join('');
+  if (data.counter) {
+    document.getElementById('mobilityCounterCard').style.display = 'block';
+    document.getElementById('mobilityCounterText').textContent = data.counter.text;
+    document.getElementById('mobilityCounterNote').textContent = data.counter.note;
+  } else {
+    document.getElementById('mobilityCounterCard').style.display = 'none';
+  }
+}
+
+var gateOpen = false;
+
+function submitMagicLinkGate() {
+  var email = document.getElementById('hookGateEmail').value.trim();
+  if (!email || !email.includes('@')) return;
+  var btn = document.getElementById('hookGateBtn');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  fetch('https://app.orcool.com/api/auth/send-magic-link', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({email:email, isBusiness:false, baseUrl:'https://app.orcool.com'})
+  })
+  .then(function(r){ if(!r.ok) throw new Error('fail'); revealGate(email); })
+  .catch(function(){ revealGate(email); });
+}
+
+function revealGate(email) {
+  gateOpen = true;
+  document.querySelectorAll('.blurred').forEach(function(el){ el.classList.remove('blurred'); });
+  document.querySelectorAll('.gated').forEach(function(el){ el.classList.remove('gated'); });
+  document.getElementById('hookGate').style.display = 'none';
+  document.getElementById('hookGateSuccess').style.display = 'block';
+  var t = document.getElementById('mlToast');
+  t.textContent = 'Magic link sent to ' + email;
+  t.classList.add('show');
+  setTimeout(function(){ t.classList.remove('show'); }, 4000);
+}
+
+renderMobilityHookCards();
+</script>
+
+</body>
+</html>
