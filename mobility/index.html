@@ -144,17 +144,12 @@ footer{border-top:1px solid var(--line);padding:34px 0;text-align:center;color:v
 footer .logo{height:20px;margin:0 auto 14px}
 footer .who{margin-top:8px;font-family:var(--mono);font-size:12px}
 
-.selector-pill{padding:8px 18px;border-radius:20px;font-size:14px;font-weight:600;cursor:pointer;border:1.5px solid var(--line);background:#fff;color:var(--ink);font-family:var(--sans);transition:all .15s}
-.selector-pill.active{background:var(--ink);color:#fff;border-color:var(--ink)}
-.selector-pill:hover:not(.active){border-color:var(--ink)}
-.hook-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 24px;position:relative}
+.sig-select{padding:10px 36px 10px 14px;border-radius:10px;border:1.5px solid var(--line);background:#fff;font-size:15px;font-family:var(--sans);color:var(--ink);cursor:pointer;outline:none;min-width:190px;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23443D3D' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+.sig-select:focus{border-color:var(--ink)}
+.hook-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 24px}
 .hook-platform-tag{display:inline-block;font-size:11px;font-weight:600;padding:3px 8px;border-radius:6px;background:#f0eeeb;color:var(--ink);font-family:var(--mono);letter-spacing:.03em;margin-right:4px}
 .hook-platform-tag.format{background:#e8f0ff;color:var(--blue)}
-.blurred{filter:blur(5px);pointer-events:none;user-select:none;transition:filter .4s ease}
-.gated.blurred{filter:blur(6px)}
-
-#hookGate{position:absolute;inset:0;z-index:10;display:flex;align-items:center;justify-content:center;background:linear-gradient(to bottom,rgba(248,247,245,0) 0%,rgba(248,247,245,.96) 40%);border-radius:16px}
-.gate-box{background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px 28px;max-width:380px;text-align:center;box-shadow:0 8px 40px rgba(0,0,0,.10)}
+#hookGate{margin-top:16px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px 24px;text-align:center}
 #hookGateEmail{width:100%;padding:12px 16px;border:1.5px solid var(--line);border-radius:10px;font-size:15px;font-family:var(--sans);outline:none;box-sizing:border-box;margin-bottom:10px}
 #hookGateEmail:focus{border-color:var(--ink)}
 #hookGateBtn{width:100%;padding:13px;background:var(--ink);color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--sans);transition:background-color .14s}
@@ -399,46 +394,37 @@ footer .who{margin-top:8px;font-family:var(--mono);font-size:12px}
   <div class="wrap">
     <span class="eyebrow">Live signal</span>
     <h2 style="margin-top:14px">What's winning in mobility right now</h2>
-    <p class="muted" style="max-width:600px;margin-top:12px">Pick a category and a market. These are real-feeling hooks and the reasoning behind them. The gated ones open when you drop an email.</p>
+    <p class="muted" style="max-width:600px;margin-top:12px">Pick a category and a market. Real hooks and the reasoning behind them. Drop an email to unlock the gated ones.</p>
 
-    <div id="mobilityCategorySelector" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:28px">
-      <button class="selector-pill active" onclick="setMobilityCategory(this,'Rideshare')">Rideshare</button>
-      <button class="selector-pill" onclick="setMobilityCategory(this,'Food Delivery')">Food Delivery</button>
-      <button class="selector-pill" onclick="setMobilityCategory(this,'Two-Wheeler')">Two-Wheeler</button>
-      <button class="selector-pill" onclick="setMobilityCategory(this,'EV / Scooter')">EV / Scooter</button>
-      <button class="selector-pill" onclick="setMobilityCategory(this,'Mobility Fintech')">Mobility Fintech</button>
-    </div>
-
-    <div id="mobilityMarketSelector" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
-      <button class="selector-pill active" onclick="setMobilityMarket(this,'US')">US</button>
-      <button class="selector-pill" onclick="setMobilityMarket(this,'Brazil')">Brazil</button>
-      <button class="selector-pill" onclick="setMobilityMarket(this,'India')">India</button>
-      <button class="selector-pill" onclick="setMobilityMarket(this,'Indonesia')">Indonesia</button>
-      <button class="selector-pill" onclick="setMobilityMarket(this,'UAE')">UAE</button>
-      <button class="selector-pill" onclick="setMobilityMarket(this,'Mexico')">Mexico</button>
-      <button class="selector-pill" onclick="setMobilityMarket(this,'Colombia')">Colombia</button>
-    </div>
-
-    <div style="position:relative;margin-top:28px">
-      <div id="mobilityHookCards" style="display:grid;grid-template-columns:1fr;gap:16px"></div>
-
-      <div id="hookGate">
-        <div class="gate-box">
-          <div class="eyebrow" style="color:var(--red)">Two more hooks</div>
-          <h3 style="margin:10px 0 6px;font-size:20px">See the gated winners</h3>
-          <p style="font-size:14px;color:var(--grey);margin-bottom:16px">Drop your email. We send a magic link and open the rest. No card. No bullshit.</p>
-          <input type="email" id="hookGateEmail" placeholder="you@company.com" autocomplete="email">
-          <button id="hookGateBtn" onclick="submitMagicLinkGate()">Send my link and reveal</button>
-          <div id="hookGateSuccess">Link sent. The hooks are open. Check your inbox to read the full feed.</div>
-        </div>
+    <div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:28px;align-items:flex-end">
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--grey);margin-bottom:7px">Category</div>
+        <select id="mobilityCategory" onchange="onMobilitySelect()" class="sig-select">
+          <option value="">Choose category</option>
+          <option value="Rideshare">Rideshare</option>
+          <option value="Food Delivery">Food Delivery</option>
+          <option value="Two-Wheeler">Two-Wheeler</option>
+          <option value="EV / Scooter">EV / Scooter</option>
+          <option value="Mobility Fintech">Mobility Fintech</option>
+        </select>
       </div>
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--grey);margin-bottom:7px">Market</div>
+        <select id="mobilityMarket" onchange="onMobilitySelect()" class="sig-select">
+          <option value="">Choose market</option>
+          <option value="US">US</option>
+          <option value="Brazil">Brazil</option>
+          <option value="India">India</option>
+          <option value="Indonesia">Indonesia</option>
+          <option value="UAE">UAE</option>
+          <option value="Mexico">Mexico</option>
+          <option value="Colombia">Colombia</option>
+        </select>
+      </div>
+      <div style="font-size:12px;color:var(--grey);padding-bottom:12px">Updated monthly</div>
     </div>
 
-    <div class="counter-card" id="mobilityCounterCard">
-      <div class="cl">Counter-signal</div>
-      <p id="mobilityCounterText"></p>
-      <div class="cn" id="mobilityCounterNote"></div>
-    </div>
+    <div id="mobilityHookOutput" style="margin-top:24px"></div>
   </div>
 </section>
 
@@ -596,54 +582,59 @@ var MOBILITY_HOOK_DATA = {
   }
 };
 
-var currentMobilityCategory = 'Rideshare';
-var currentMobilityMarket = 'US';
+var gateOpen = false;
 
-function setMobilityCategory(el, cat) {
-  document.querySelectorAll('#mobilityCategorySelector .selector-pill').forEach(function(p){ p.classList.remove('active'); });
-  el.classList.add('active');
-  currentMobilityCategory = cat;
-  renderMobilityHookCards();
+function onMobilitySelect() {
+  var cat = document.getElementById('mobilityCategory').value;
+  var market = document.getElementById('mobilityMarket').value;
+  if (!cat || !market) return;
+  renderMobilityHookCards(cat, market);
 }
 
-function setMobilityMarket(el, market) {
-  document.querySelectorAll('#mobilityMarketSelector .selector-pill').forEach(function(p){ p.classList.remove('active'); });
-  el.classList.add('active');
-  currentMobilityMarket = market;
-  renderMobilityHookCards();
-}
-
-function renderMobilityHookCards() {
-  var container = document.getElementById('mobilityHookCards');
-  var data = MOBILITY_HOOK_DATA[currentMobilityCategory] && MOBILITY_HOOK_DATA[currentMobilityCategory][currentMobilityMarket];
-  var gate = document.getElementById('hookGate');
+function renderMobilityHookCards(cat, market) {
+  var output = document.getElementById('mobilityHookOutput');
+  var data = MOBILITY_HOOK_DATA[cat] && MOBILITY_HOOK_DATA[cat][market];
   if (!data || !data.hooks || !data.hooks.length) {
-    container.innerHTML = '<div class="coming-soon-card">Signal data for ' + currentMobilityCategory + ' in ' + currentMobilityMarket + ' is being compiled. Check back next week.</div>';
-    document.getElementById('mobilityCounterCard').style.display = 'none';
-    if (gate) gate.style.display = 'none';
+    output.innerHTML = '<div class="coming-soon-card">Signal data for ' + cat + ' in ' + market + ' is being compiled. Check back next week.</div>';
     return;
   }
-  var hasGated = data.hooks.some(function(h){ return h.css && h.css.indexOf('blurred') !== -1; });
-  if (gate) gate.style.display = (hasGated && !gateOpen) ? 'flex' : 'none';
-  container.innerHTML = data.hooks.map(function(hook) {
-    var isBlurred = hook.css && hook.css.includes('blurred') && !gateOpen;
-    var cls = isBlurred ? ' class="hook-card blurred gated"' : ' class="hook-card"';
-    return '<div' + cls + '>' +
+  var freeHooks = data.hooks.filter(function(h){ return !h.css || h.css.indexOf('blurred') === -1; });
+  var gatedHooks = data.hooks.filter(function(h){ return h.css && h.css.indexOf('blurred') !== -1; });
+
+  function hookCard(hook) {
+    return '<div class="hook-card">' +
       '<div style="margin-bottom:12px"><span class="hook-platform-tag">' + hook.platform + '</span><span class="hook-platform-tag format">' + hook.format + '</span></div>' +
       '<p style="font-size:17px;font-weight:600;color:var(--ink);margin-bottom:10px;line-height:1.4">"' + hook.text + '"</p>' +
       '<p style="font-size:14px;color:var(--grey);line-height:1.5">' + hook.why + '</p>' +
       '</div>';
-  }).join('');
-  if (data.counter) {
-    document.getElementById('mobilityCounterCard').style.display = 'block';
-    document.getElementById('mobilityCounterText').textContent = data.counter.text;
-    document.getElementById('mobilityCounterNote').textContent = data.counter.note;
-  } else {
-    document.getElementById('mobilityCounterCard').style.display = 'none';
   }
-}
 
-var gateOpen = false;
+  var html = '<div style="display:grid;gap:16px">' + freeHooks.map(hookCard).join('') + '</div>';
+
+  if (gatedHooks.length > 0 && !gateOpen) {
+    html += '<div id="hookGate">' +
+      '<div class="eyebrow" style="color:var(--red);margin-bottom:8px">' + gatedHooks.length + ' more hook' + (gatedHooks.length > 1 ? 's' : '') + '</div>' +
+      '<h3 style="margin:0 0 6px;font-size:20px">See the gated winners</h3>' +
+      '<p style="font-size:14px;color:var(--grey);margin:0 0 18px">Drop your email. We send a magic link and open the rest. No card. No bullshit.</p>' +
+      '<div style="max-width:360px;margin:0 auto">' +
+      '<input type="email" id="hookGateEmail" placeholder="you@company.com" autocomplete="email">' +
+      '<button id="hookGateBtn" onclick="submitMagicLinkGate()">Send my link and reveal</button>' +
+      '<div id="hookGateSuccess">Sent. Check your inbox — full teardown is on its way.</div>' +
+      '</div></div>';
+  } else if (gateOpen && gatedHooks.length > 0) {
+    html += '<div style="display:grid;gap:16px;margin-top:16px">' + gatedHooks.map(hookCard).join('') + '</div>';
+  }
+
+  if (data.counter) {
+    html += '<div class="counter-card" style="margin-top:16px">' +
+      '<div class="cl">Counter-signal</div>' +
+      '<p>' + data.counter.text + '</p>' +
+      '<div class="cn">' + data.counter.note + '</div>' +
+      '</div>';
+  }
+
+  output.innerHTML = html;
+}
 
 function submitMagicLinkGate() {
   var email = document.getElementById('hookGateEmail').value.trim();
@@ -662,17 +653,14 @@ function submitMagicLinkGate() {
 
 function revealGate(email) {
   gateOpen = true;
-  document.querySelectorAll('.blurred').forEach(function(el){ el.classList.remove('blurred'); });
-  document.querySelectorAll('.gated').forEach(function(el){ el.classList.remove('gated'); });
-  document.getElementById('hookGate').style.display = 'none';
-  document.getElementById('hookGateSuccess').style.display = 'block';
+  var cat = document.getElementById('mobilityCategory').value;
+  var market = document.getElementById('mobilityMarket').value;
+  renderMobilityHookCards(cat, market);
   var t = document.getElementById('mlToast');
   t.textContent = 'Magic link sent to ' + email;
   t.classList.add('show');
   setTimeout(function(){ t.classList.remove('show'); }, 4000);
 }
-
-renderMobilityHookCards();
 </script>
 
 </body>
