@@ -146,6 +146,23 @@ footer .who{margin-top:8px;font-family:var(--mono);font-size:12px}
 
 .sig-select{padding:10px 36px 10px 14px;border-radius:10px;border:1.5px solid var(--line);background:#fff;font-size:15px;font-family:var(--sans);color:var(--ink);cursor:pointer;outline:none;min-width:190px;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23443D3D' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
 .sig-select:focus{border-color:var(--ink)}
+section.signal-dark{background:#1a1816}
+section.signal-dark h2,section.signal-dark p,section.signal-dark .muted{color:#f0eee9}
+section.signal-dark .eyebrow{color:var(--red)}
+section.signal-dark .sig-select{background:#282422;border-color:#3a3632;color:#f0eee9;background-image:url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23f0eee9' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")}
+section.signal-dark .sig-select:focus{border-color:#f0eee9}
+section.signal-dark .hook-card{background:#242220;border-color:#353230;color:#f0eee9}
+section.signal-dark .hook-card p{color:#f0eee9}
+section.signal-dark .hook-card>p:last-child{color:#a09e9b}
+section.signal-dark .hook-platform-tag{background:#353230;color:#c8c6c2}
+section.signal-dark .hook-platform-tag.format{background:#1a2840;color:#7ab3f0}
+section.signal-dark #hookGate{background:#242220;border-color:#353230}
+section.signal-dark #hookGate h3,section.signal-dark #hookGate p{color:#f0eee9}
+section.signal-dark #hookGateEmail{background:#1a1816;border-color:#3a3632;color:#f0eee9}
+section.signal-dark #hookGateEmail::placeholder{color:#6b6866}
+section.signal-dark .counter-card{background:#242220;border-color:#353230}
+section.signal-dark .counter-card p,section.signal-dark .counter-card .cn{color:#a09e9b}
+section.signal-dark .coming-soon-card{background:#242220;border:1px solid #353230;border-radius:14px;padding:22px 24px;color:#a09e9b;font-size:15px}
 .hook-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 24px}
 .hook-platform-tag{display:inline-block;font-size:11px;font-weight:600;padding:3px 8px;border-radius:6px;background:#f0eeeb;color:var(--ink);font-family:var(--mono);letter-spacing:.03em;margin-right:4px}
 .hook-platform-tag.format{background:#e8f0ff;color:var(--blue)}
@@ -390,7 +407,7 @@ footer .who{margin-top:8px;font-family:var(--mono);font-size:12px}
 </section>
 
 <!-- 8. LIVE SIGNAL -->
-<section id="live-signal">
+<section id="live-signal" class="signal-dark">
   <div class="wrap">
     <span class="eyebrow">Live signal</span>
     <h2 style="margin-top:14px">What's winning in mobility right now</h2>
@@ -525,6 +542,27 @@ var MOBILITY_HOOK_DATA = {
         { platform:'TikTok', format:'Trend', text:"POV: penumpang kasih bintang 5 + tip karena hal ini", why:"Tip-earning hook creates social proof around tipping culture being built. Platform-building narrative resonates in developing Indonesian gig economy." }
       ],
       counter: { text:"Ojek (motorbike) hooks outperform car hooks 3:1 in Indonesia outside Jakarta.", note:"Two-wheel dominates Indonesian roads. Match vehicle type to actual market reality." }
+    },
+    'UAE': {
+      hooks: [
+        { platform:'Meta', format:'UGC', text:"Dubai drivers are switching apps. I made AED 16,000 last month. Here's why.", why:"High-income market where earnings in AED resonate. Competitive framing ('switching apps') signals quality without naming competitors. Premium positioning fits UAE driver expectations." },
+        { platform:'TikTok', format:'Video', text:"Peak hours in Dubai pay 3x. I mapped every single one.", why:"Operational insider knowledge hook. UAE drivers are sophisticated, want strategy not just opportunity. Route and timing data outperforms vague earnings claims." }
+      ],
+      counter: { text:"Generic earnings hooks underperform route-intelligence hooks in UAE rideshare by 3:1.", note:"UAE drivers want to know peak zones and surge patterns, not just how much someone else made." }
+    },
+    'Mexico': {
+      hooks: [
+        { platform:'Meta', format:'UGC', text:"Gano más con esta app que en un trabajo de oficina. Aquí los números reales.", why:"Income comparison with formal employment resonates in Mexico where the informal/formal wage gap is visible. Spanish-native copy is non-negotiable. 'Números reales' signals transparency." },
+        { platform:'TikTok', format:'Video', text:"CDMX de noche: así es cómo saco $2,000 pesos en 4 horas sin estrés.", why:"Night-shift earnings in Mexico City. Specific peso amount + specific hours + 'sin estrés' (no stress) reduces commitment anxiety. CDMX specificity beats national-level hooks." }
+      ],
+      counter: { text:"Night safety hooks convert 4x better than earnings hooks for rider acquisition in Mexico.", note:"Driver acquisition and rider acquisition require completely different angles in Mexico. Don't conflate them." }
+    },
+    'Colombia': {
+      hooks: [
+        { platform:'Meta', format:'UGC', text:"En Bogotá cobré tres carreras mientras esperaba el trancón. Así funciona.", why:"Traffic congestion angle (trancón is Bogotá slang for gridlock) is hyper-local. Shows idle-time earning opportunity unique to Colombian market. Authentic local vocabulary signals insider status." },
+        { platform:'TikTok', format:'Trend', text:"POV: cliente te pone 5 estrellas y te dice el motivo. Esto pasa más de lo que crees.", why:"Social proof through positive rider interaction. Dual-perspective hook creates empathy between drivers and riders. Colombian market responds strongly to community/connection framing." }
+      ],
+      counter: { text:"Surge pricing hooks underperform safety and reliability hooks in Colombia for rider acquisition.", note:"Colombian riders prioritize knowing their driver will show up over getting the cheapest price." }
     }
   },
   'Food Delivery': {
@@ -544,21 +582,88 @@ var MOBILITY_HOOK_DATA = {
       ],
       counter: { text:"Price promotion hooks underperform experience hooks in Brazilian food delivery. Market has been trained on discounts.", note:"Stand out by showing the experience, not the coupon." }
     },
+    'India': {
+      hooks: [
+        { platform:'Meta', format:'UGC', text:"Same biryani, half the price. The restaurant was hiding in plain sight.", why:"Restaurant discovery framing resonates in India where food-app users are actively hunting for value. Biryani specificity signals local knowledge. Discovery angle outperforms speed claim." },
+        { platform:'TikTok', format:'Video', text:"Mumbai street food delivered in 18 minutes. My office lunch game changed forever.", why:"Hyper-local (Mumbai) + specific time + outcome framing. Office lunch is a massive use case in Indian metros. Street food reference signals authenticity over chain restaurant focus." }
+      ],
+      counter: { text:"Speed-of-delivery hooks underperform discovery and value hooks in India by 2:1.", note:"Indian food delivery users optimize on finding the right restaurant, not just the fastest one." }
+    },
+    'Indonesia': {
+      hooks: [
+        { platform:'Meta', format:'UGC', text:"Nasi goreng jam 2 pagi, sampai dalam 19 menit. Ini baru namanya midnight munchies.", why:"Late-night food delivery hook in Bahasa Indonesia. Midnight eating culture is real. Specific time (19 min) creates believability without overpromising. Colloquial English loan phrase 'midnight munchies' lands naturally." },
+        { platform:'TikTok', format:'Trend', text:"POV: kamu pesan makanan jam 11 malam dan tibanya masih anget", why:"Relatable late-night craving moment. 'Masih anget' (still warm) is the functional proof that matters. Short TikTok format matches how Indonesians discover food apps." }
+      ],
+      counter: { text:"Discount and voucher hooks underperform experience hooks in Indonesian food delivery.", note:"Market has been trained on promo codes. Stand out by showing the experience, not the coupon." }
+    },
     'UAE': {
       hooks: [
         { platform:'Meta', format:'Static', text:"Ordered at 1am. Hot in 28 minutes. Ramadan delivery that actually works.", why:"Ramadan-specific delivery hook demonstrates cultural awareness. Nighttime delivery during Ramadan is a real use case that resonates deeply in UAE." },
         { platform:'TikTok', format:'UGC', text:"This delivery app actually has Lebanese food that tastes like home. No more settling.", why:"Authenticity + diaspora hook works in UAE's multicultural market. 'Tastes like home' emotional angle outperforms variety claims." }
       ],
       counter: { text:"Western food brand hooks underperform local-cuisine hooks in UAE by 2:1.", note:"Diversity of authentic cuisines is the primary value in UAE food delivery. Lead with that." }
+    },
+    'Mexico': {
+      hooks: [
+        { platform:'Meta', format:'UGC', text:"Pedí tacos a las 11 de la noche y llegaron calientes. Ya no salgo los viernes.", why:"Late-night taco delivery in colloquial Mexican Spanish. 'Ya no salgo' (don't go out anymore) is genuine lifestyle change framing. Tacos signal local food knowledge. Relatable, not aspirational." },
+        { platform:'TikTok', format:'Video', text:"El mismo restaurante. En esta app, $85. En la otra, $130. Cada semana.", why:"Direct price comparison with specific peso amounts. 'Cada semana' (every week) makes savings feel recurring and substantial. Price transparency resonates in Mexican market." }
+      ],
+      counter: { text:"Same-day grocery hooks outperform restaurant delivery hooks in Mexico City 2:1.", note:"Convenience shopping is the faster-growing use case. Restaurant delivery is table stakes; grocery delivery is the differentiator." }
+    },
+    'Colombia': {
+      hooks: [
+        { platform:'Meta', format:'UGC', text:"Bandeja paisa sin salir de casa. Eso sí que es comodidad colombiana.", why:"National dish reference (bandeja paisa) signals deep cultural fluency. Pride framing over price converts better in Colombia. 'Comodidad colombiana' positions delivery as a natural extension of national identity." },
+        { platform:'TikTok', format:'Trend', text:"POV: son las 9pm, no quieres cocinar, y en 25 minutos tienes comida caliente en tu puerta", why:"Relatable evening scenario in Colombia. Evening hours are the peak delivery window. Specific time creates expectation. No cooking angle reduces dinner anxiety." }
+      ],
+      counter: { text:"International chain restaurant hooks underperform local cuisine hooks in Colombia by 3:1.", note:"Colombian food delivery users want access to local restaurants, not McDonald's. Lead with what they can't easily find elsewhere." }
     }
   },
   'Two-Wheeler': {
+    'US': {
+      hooks: [
+        { platform:'Meta', format:'Video', text:"I replaced my car for 3 months. Here's what actually happened to my bank account.", why:"Car-replacement challenge format works in US where car costs are visible and painful. 3 months feels credible. Bank account angle is outcome-focused, not feature-focused." },
+        { platform:'TikTok', format:'UGC', text:"My $28 commute is now $3. Same distance. Different vehicle. No, I don't miss it.", why:"Direct cost comparison with confident tone. 'No, I don't miss it' preempts the objection. US urban commuters respond to concrete dollar savings over lifestyle claims." }
+      ],
+      counter: { text:"Eco and sustainability hooks underperform cost and freedom hooks in US two-wheeler market 6:1.", note:"US buyers justify with logic and feel good about environment later. Lead with the math." }
+    },
+    'Brazil': {
+      hooks: [
+        { platform:'Meta', format:'UGC', text:"Com a moto, entrego 60 pedidos por dia. Sem a moto, entregava 20. A conta é simples.", why:"Productivity comparison for mototaxi and delivery riders. Specific numbers (60 vs 20) create immediate impact. Brazil has the largest moto delivery workforce in LATAM. Income tool framing is the right angle." },
+        { platform:'TikTok', format:'Video', text:"São Paulo sem moto é São Paulo no modo difícil. Eu escolhi o modo fácil.", why:"City-specific framing (São Paulo traffic is legendary). 'Modo difícil vs modo fácil' (hard mode vs easy mode) uses gaming language that lands on TikTok demographics." }
+      ],
+      counter: { text:"Leisure and lifestyle hooks underperform income and delivery efficiency hooks in Brazil two-wheeler by 5:1.", note:"In Brazil, the two-wheeler is primarily an income tool. Market to that first." }
+    },
     'India': {
       hooks: [
         { platform:'Meta', format:'UGC', text:"Ye scooter nahi, meri bakery ki delivery service hai. Roz 40 orders.", why:"Micro-entrepreneur story positions two-wheeler rental as a business tool, not a commodity. Bakery vertical makes it concrete and aspirational." },
         { platform:'TikTok', format:'Video', text:"How a delivery fleet of 3 bikes turned into 12 in 6 months. Small business story.", why:"Growth story hooks small fleet operators. B2B angle in a consumer channel is underused in India and cuts through category noise." }
       ],
       counter: { text:"Consumer-use hooks underperform business-use hooks in India two-wheeler rental by 3:1.", note:"Two-wheelers are income vehicles in India, not leisure. Market to operators, not commuters." }
+    },
+    'Indonesia': {
+      hooks: [
+        { platform:'Meta', format:'UGC', text:"Ojek saya, bisnis saya. Dalam 6 bulan sudah beli motor kedua.", why:"Business ownership narrative for Indonesian ojek drivers. Second motorcycle = aspirational growth signal. Resonates in Indonesia's gig economy where two-wheelers are the primary income vehicle." },
+        { platform:'TikTok', format:'Video', text:"Jakarta tanpa motor: dua jam di jalan. Jakarta dengan motor: 25 menit. Pilihan ada di kamu.", why:"Time comparison in Jakarta's notorious traffic. Bahasa Indonesia. Binary choice framing at the end drives decision. Commute time is a real and visceral pain point in Jakarta." }
+      ],
+      counter: { text:"City-commuter hooks outperform income-building hooks in Jakarta, but reverse outside Jakarta.", note:"Segment your creative by city. Jakarta is commuter-first. Rest of Indonesia is income-first." }
+    },
+    'UAE': {
+      hooks: [
+        { platform:'Meta', format:'UGC', text:"Delivering 80 orders a day across Dubai. Here's how I structured my route.", why:"High-volume delivery story. Dubai's density makes 80 daily orders achievable. Operational, strategic framing appeals to professional-minded UAE gig workers." }
+      ],
+      counter: { text:"Personal transport hooks underperform commercial delivery hooks in UAE two-wheeler market 4:1.", note:"UAE two-wheeler market is driven by delivery workers, not commuters. Match the audience." }
+    },
+    'Mexico': {
+      hooks: [
+        { platform:'Meta', format:'UGC', text:"Con la moto evito el tráfico y gano el triple que haciendo entregas en camión. Así lo hago.", why:"Traffic avoidance + 3x income comparison. Mexico City traffic is a daily crisis. Triple income vs van/truck delivery is credible and motivating for the target audience." }
+      ],
+      counter: { text:"Safety and insurance hooks convert better for retention than acquisition in Mexico two-wheeler.", note:"Acquisition needs income angle. Safety is a mid-funnel and retention argument." }
+    },
+    'Colombia': {
+      hooks: [
+        { platform:'Meta', format:'UGC', text:"Mensajería en Medellín: con moto y esta app, cubrí toda la ciudad en un día.", why:"Coverage story for Medellín, a city known for its terrain and traffic. Full-city coverage in a day signals operational power. Medellín specificity signals market knowledge." }
+      ],
+      counter: { text:"Leisure ride hooks underperform delivery income hooks in Colombia two-wheeler by 3:1.", note:"Colombian two-wheeler market is income-driven. Leisure is a secondary use case for most users." }
     }
   },
   'EV / Scooter': {
@@ -569,15 +674,98 @@ var MOBILITY_HOOK_DATA = {
         { platform:'Meta', format:'Static', text:"Zero traffic. Zero parking. $0.25 per mile.", why:"Triple-zero hook with specific price point. Scooter's advantages stated as negations of car's disadvantages. Clean framing outperforms feature listing.", css:'blurred gated' }
       ],
       counter: { text:"Sustainability and environmental hooks underperform cost and convenience hooks in US scooter category by 5:1.", note:"US consumers buy on utility. They'll feel good about the environment later." }
+    },
+    'Brazil': {
+      hooks: [
+        { platform:'Meta', format:'Video', text:"R$0,18 por km versus R$1,20 de gasolina. A matemática fala por si só.", why:"Direct cost-per-km comparison with specific numbers. Brazil's recurring fuel price hikes make this immediately resonant. Math-based hook converts for cost-conscious Brazilian urban market." },
+        { platform:'TikTok', format:'UGC', text:"Carrego a scooter no carro? Não. Deixo no trabalho. Tem tomada lá.", why:"Relatable everyday logistics of EV ownership in Brazil. 'Tem tomada lá' (there's an outlet there) normalizes charging. Humor in the self-answering question format." }
+      ],
+      counter: { text:"Green and environmental messaging underperforms cost savings messaging in Brazilian EV market 8:1.", note:"Sell the money saved on fuel. Environment is a bonus, not a purchase trigger." }
+    },
+    'India': {
+      hooks: [
+        { platform:'Meta', format:'Video', text:"Delhi to Gurgaon: ₹8. Same distance on petrol used to cost ₹85.", why:"Iconic Indian commuter route + 10x cost difference. Delhi-Gurgaon is the most-referenced urban commute in India. Specific number creates instant mental math." },
+        { platform:'TikTok', format:'UGC', text:"Mujhe petrol pump dhundhna bhi yaad nahi. Raat ko plug in, subah full battery.", why:"Liberation from petrol station anxiety in Hindi. Overnight charging framing removes cognitive load. 'Full battery' in the morning is a satisfying daily ritual hook." }
+      ],
+      counter: { text:"Range anxiety content hurts conversion in India. Avoid mentioning range at all in top-of-funnel creative.", note:"Lead with cost savings. Let riders discover range is sufficient after trying. Mentioning it preemptively raises the objection." }
+    },
+    'Indonesia': {
+      hooks: [
+        { platform:'Meta', format:'UGC', text:"Isi daya semalam, pakai seharian. BBM sudah tidak relevan buat saya.", why:"Overnight charge + full day use is the simple value proposition. 'BBM sudah tidak relevan' (fuel no longer relevant to me) is a confident, declarative hook that works in Bahasa Indonesia's direct register." },
+        { platform:'TikTok', format:'Video', text:"Ojek listrik: murah, senyap, dan pelanggan lebih suka. Data dari 3 bulan operasional.", why:"Data-backed testimonial from an electric ojek operator. Three months of data signals real commitment. 'Pelanggan lebih suka' (customers prefer it) adds social proof." }
+      ],
+      counter: { text:"Government subsidy hooks underperform personal savings hooks in Indonesian EV market 3:1.", note:"Don't lead with policy or incentives. Lead with what the rider saves each month." }
+    },
+    'UAE': {
+      hooks: [
+        { platform:'Meta', format:'Static', text:"No fuel stops. No parking stress. AED 200 less per month. Same commute.", why:"Triple benefit with specific monthly saving in AED. UAE's high fuel and parking costs make this tangible. English copy works for UAE's majority-expat workforce." },
+        { platform:'TikTok', format:'UGC', text:"I used to spend 20 minutes finding parking in Marina. Now I just park at the door.", why:"Dubai Marina parking is universally understood as a pain. Specific location + specific outcome (park at the door) is concrete and shareable." }
+      ],
+      counter: { text:"Eco-credentials hooks underperform cost and convenience hooks in UAE EV market 5:1.", note:"UAE consumers care about practicality first. Green positioning lands better in second-stage marketing, not acquisition." }
+    },
+    'Mexico': {
+      hooks: [
+        { platform:'Meta', format:'UGC', text:"La gasolina subió otra vez. Yo ya ni lo noto. Cambié hace cuatro meses.", why:"Fuel price volatility in Mexico is a constant anxiety. 'Ya ni lo noto' (don't even notice it anymore) signals liberation. Four months signals enough time to be credible." },
+        { platform:'TikTok', format:'Video', text:"CDMX en scooter eléctrica: sin hoy no circula, sin tenencia, sin gasolina. Solo vas.", why:"Three Mexico-specific friction points removed (hoy no circula is the driving restriction, tenencia is the vehicle tax, fuel). 'Solo vas' (you just go) is a clean, confident payoff." }
+      ],
+      counter: { text:"Top speed and performance hooks underperform friction-removal hooks in Mexico EV/scooter market.", note:"Mexican urban riders want to eliminate bureaucratic and cost friction. Sell freedom from hassle, not speed specs." }
+    },
+    'Colombia': {
+      hooks: [
+        { platform:'Meta', format:'UGC', text:"En Bogotá con pico y placa, la scooter eléctrica no tiene restricciones. Eso solo ya vale.", why:"Pico y placa is Bogotá's traffic restriction by license plate. EV scooters are typically exempt. This single benefit is the dominant purchase driver in Colombia's capital. No setup needed — every Bogotano knows pico y placa." }
+      ],
+      counter: { text:"Performance and speed hooks underperform restriction-avoidance hooks in Colombia EV market.", note:"In Bogotá, being allowed to drive every day is more valuable than going faster. Sell the freedom from pico y placa." }
     }
   },
   'Mobility Fintech': {
+    'US': {
+      hooks: [
+        { platform:'Meta', format:'UGC', text:"I drive four apps. This is the only one that pays out the same day I ask.", why:"Multi-platform gig driver is US reality. Instant payout vs end-of-week wait is a clear, provable differentiator. Practical framing beats aspirational framing for US gig worker acquisition." },
+        { platform:'TikTok', format:'Video', text:"My gig income used to feel random. Now I know exactly what I made this week across everything.", why:"Income clarity across multiple platforms is the unmet need. 'Across everything' signals comprehensiveness. Moving from 'random' to 'know exactly' is a status upgrade that resonates." }
+      ],
+      counter: { text:"Investment and savings features underperform instant payout for US gig driver acquisition.", note:"Solve the immediate cashflow problem first. Upsell savings later once they trust the product." }
+    },
     'Brazil': {
       hooks: [
         { platform:'Meta', format:'UGC', text:"Minha renda variável virou previsível. É só isso que o app faz.", why:"Income predictability is the top value for Brazilian gig workers. Reducing financial uncertainty outperforms 'earn more' in this segment." },
         { platform:'Meta', format:'Static', text:"Adiantamento de corridas sem taxa. No app que você já usa.", why:"Zero-fee advance from earnings hook. Contextual positioning ('the app you already use') reduces switching friction." }
       ],
       counter: { text:"Investment/savings hooks underperform income-smoothing hooks in Brazilian mobility fintech by 3:1.", note:"The primary financial pain is cashflow, not wealth-building. Solve the immediate problem." }
+    },
+    'India': {
+      hooks: [
+        { platform:'Meta', format:'UGC', text:"Mera kamana kal milta tha. Ab usi din mil jaata hai. Ek app ki wajah se.", why:"Same-day earnings access in Hindi. 'Ek app ki wajah se' (because of one app) positions the product as the clear enabler. Earnings delay is a real and felt pain for Indian gig workers." },
+        { platform:'TikTok', format:'Video', text:"Driver earnings, rider refunds, insurance — everything in one UPI-linked wallet.", why:"UPI integration is non-negotiable for Indian fintech. Listing three specific use cases in one line signals comprehensiveness. 'Everything' reassures without over-promising." }
+      ],
+      counter: { text:"UPI integration hooks convert better than savings features for Indian mobility fintech acquisition.", note:"UPI is the expectation. Lead with it. Everything else is secondary for acquisition." }
+    },
+    'Indonesia': {
+      hooks: [
+        { platform:'Meta', format:'UGC', text:"Penghasilan hari ini, bisa diambil hari ini. Tidak perlu tunggu transfer mingguan lagi.", why:"Bahasa Indonesia. Daily earnings access is the exact pain point for Indonesian ojek and delivery drivers. 'Tidak perlu tunggu' (no need to wait) removes a real frustration with simple language." },
+        { platform:'TikTok', format:'Video', text:"Tiga aplikasi ojek, satu dompet. Saldo selalu update real-time.", why:"Multi-app consolidation into one wallet. Real-time balance update signals control. Indonesian gig workers typically use multiple platforms simultaneously." }
+      ],
+      counter: { text:"Investment product hooks underperform daily cashflow features in Indonesian mobility fintech 4:1.", note:"Indonesian gig workers need daily cash access, not long-term investment. Build trust first, upsell savings later." }
+    },
+    'UAE': {
+      hooks: [
+        { platform:'Meta', format:'Static', text:"Three delivery apps. One dashboard. Daily earnings. One tap to bank.", why:"UAE has high multi-platform delivery workers. Consolidated earnings dashboard solves a real operational pain. 'One tap to bank' is a clean outcome statement. Short, functional copy works in UAE market." },
+        { platform:'TikTok', format:'UGC', text:"I used to track my gig earnings in a notes app. This replaced that and does ten things more.", why:"Relatable low-tech workaround (notes app) creates instant connection. 'Ten things more' suggests depth without listing features." }
+      ],
+      counter: { text:"Credit and loan features underperform earnings management features in UAE mobility fintech acquisition.", note:"UAE gig workers prioritize earnings visibility and access over credit products for acquisition." }
+    },
+    'Mexico': {
+      hooks: [
+        { platform:'Meta', format:'UGC', text:"Con los aumentos de gasolina, necesito saber exactamente cuánto gané hoy. Esta app me lo dice.", why:"Fuel price volatility makes daily earnings tracking existential in Mexico. Positioning the fintech as a response to macro anxiety (gasolina) makes it feel essential, not optional." },
+        { platform:'TikTok', format:'Video', text:"Tres apps de delivery. Un solo retiro. El mismo día que lo pido.", why:"Multi-platform consolidation + same-day withdrawal. Short, stacked benefit format works on TikTok. Mexican gig workers relate immediately." }
+      ],
+      counter: { text:"Credit and advance features underperform earnings visibility for Mexican gig worker acquisition.", note:"Show them what they earn first. Offer credit later. The sequence matters." }
+    },
+    'Colombia': {
+      hooks: [
+        { platform:'Meta', format:'UGC', text:"Tres aplicaciones, una sola vista de mis ingresos. Por fin sé cuánto gano en un día.", why:"Multi-app income consolidation is the top unmet need in Colombian gig market. 'Por fin' (finally) signals relief and builds emotional connection with the pain that's been present too long." },
+        { platform:'Meta', format:'Static', text:"Retiro mis ganancias el mismo día. Sin esperar el viernes. Sin comisión.", why:"Three specific advantages in three short lines. Same-day withdrawal + no waiting + no fee. Colombian market responds to direct, no-BS value stacking." }
+      ],
+      counter: { text:"Savings and wealth-building hooks underperform income visibility hooks in Colombian mobility fintech by 3:1.", note:"Solve the cashflow problem first. Colombian gig workers need daily income clarity before they can think about saving." }
     }
   }
 };
