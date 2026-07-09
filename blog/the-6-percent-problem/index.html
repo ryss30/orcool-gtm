@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The 6% problem: why a handful of creatives eat the whole ad budget | Orcool</title>
+<meta name="description" content="Motion's 2026 benchmark found that roughly 6% of creatives capture most enterprise ad spend. We pulled 1,061 live Meta ads ourselves and found the mechanism: the format teams ship most dies fastest.">
+<link rel="canonical" href="https://get.orcool.com/blog/the-6-percent-problem/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Orcool">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Orcool">
+<meta property="og:title" content="The 6% problem: why a handful of creatives eat the whole ad budget">
+<meta property="og:description" content="Motion found ~6% of creatives capture most enterprise spend. Our own 1,061-ad panel shows why: the format teams ship most has the shortest lifespan.">
+<meta property="og:url" content="https://get.orcool.com/blog/the-6-percent-problem/">
+<meta property="og:image" content="https://get.orcool.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The 6% problem: why a handful of creatives eat the whole ad budget">
+<meta name="twitter:description" content="Motion found ~6% of creatives capture most enterprise spend. Our own 1,061-ad panel shows why: the format teams ship most has the shortest lifespan.">
+<meta name="twitter:image" content="https://get.orcool.com/og-image.png">
+
+<link rel="icon" href="/orcool-mark-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Newsreader:ital@1&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The 6% problem: why a handful of creatives eat the whole ad budget",
+  "description": "Motion's 2026 benchmark found that roughly 6% of creatives capture most enterprise ad spend. We pulled our own 1,061-ad Meta panel and found the mechanism behind the concentration.",
+  "image": "https://get.orcool.com/og-image.png",
+  "datePublished": "2026-07-09",
+  "dateModified": "2026-07-09",
+  "author": { "@type": "Organization", "name": "Orcool", "url": "https://get.orcool.com" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Orcool",
+    "logo": { "@type": "ImageObject", "url": "https://get.orcool.com/orcool-logo.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://get.orcool.com/blog/the-6-percent-problem/" },
+  "keywords": "ad spend concentration, creative durability, time to winner, DCO fatigue, dynamic creative optimization, Meta ad library benchmark"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why does most ad spend concentrate on so few creatives?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Because most of the creative fleet a team ships stops running quickly, so budget keeps flowing to the small number that are still alive and still converting. Concentration looks like a picking problem but it starts as a survival problem: if most of what you ship dies within a month, spend has nowhere else to go but the survivors." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is dynamic creative optimization (DCO) and why does it fatigue fast?",
+      "acceptedAnswer": { "@type": "Answer", "text": "DCO auto-assembles ad variants from a library of headlines, images and copy blocks, which is why teams lean on it for volume. In our own panel of 1,061 live Meta creatives, dynamic and DCO ads made up 57% of everything running but had a median lifespan of just 33 days, the shortest of any format measured, versus 101 days for plain static images." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does more creative volume fix the concentration problem?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, and the data points the other way. The format teams already ship the most of is the one with the shortest legs, so adding more volume in the same format mostly adds more short-lived creative to the pile. The lever that actually widens the base of long-running winners is picking formats and angles built to hold, not shipping more of the same kind." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you measure creative durability before spend decides it for you?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Track days-live per creative the same way you would track CTR or CPA, sliced by format and vertical, and treat early death as a signal about the format or angle, not just the individual ad. That turns 'why did spend concentrate on three ads out of fifty' from a mystery into a measurable, format-level pattern you can plan around." }
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --bg:#f8f7f5; --ink:#443D3D; --ink-strong:#1a1614; --line:#e7e4e0;
+    --red:#FA3810; --blue:#387FFF; --green:#45B43B; --yellow:#FFB516;
+    --card:#ffffff;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:'Geist',system-ui,-apple-system,sans-serif;
+    font-size:18px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .mono{font-family:'Geist Mono',ui-monospace,monospace}
+  a{color:var(--blue);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  header.site{display:flex;align-items:center;justify-content:space-between;
+    max-width:1080px;margin:0 auto;padding:22px 24px}
+  header.site img{height:26px;display:block}
+  .nav-right{display:flex;gap:20px;align-items:center;font-size:15px}
+  .nav-right a{color:var(--ink)}
+  .nav-right a.pill{background:var(--ink);color:#fff;padding:8px 16px;border-radius:10px;font-size:14px}
+  .nav-right a.pill:hover{background:#5c5453;text-decoration:none}
+
+  main{max-width:720px;margin:0 auto;padding:24px 24px 80px}
+  .eyebrow{font-family:'Geist Mono',monospace;font-size:12.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--red);margin:28px 0 14px}
+  h1{font-size:40px;line-height:1.12;font-weight:700;color:var(--ink-strong);margin:0 0 18px;letter-spacing:-.02em}
+  .byline{font-size:14px;color:#8a827e;margin-bottom:8px}
+  .byline .mono{color:#8a827e}
+
+  .tldr{background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:22px 24px;margin:30px 0 8px}
+  .tldr h2{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;
+    font-family:'Geist Mono',monospace;color:var(--ink);margin:0 0 12px}
+  .tldr ul{margin:0;padding-left:20px}
+  .tldr li{margin:8px 0}
+
+  h2{font-size:26px;line-height:1.2;font-weight:650;color:var(--ink-strong);
+    margin:44px 0 14px;letter-spacing:-.01em}
+  h3{font-size:19px;font-weight:600;color:var(--ink-strong);margin:28px 0 8px}
+  p{margin:16px 0}
+  strong{color:var(--ink-strong);font-weight:600}
+
+  .loop{font-family:'Newsreader',Georgia,serif;font-style:italic;
+    font-size:22px;color:var(--ink-strong);text-align:center;margin:34px 0}
+  .loop b{font-style:normal;font-weight:600}
+  .loop span{color:var(--red);font-size:15px;display:inline-block}
+
+  table{width:100%;border-collapse:collapse;margin:26px 0;font-size:16px}
+  th,td{text-align:left;padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.06em;
+    text-transform:uppercase;color:#8a827e;font-weight:500}
+  td .score{font-family:'Geist Mono',monospace;font-weight:500;color:var(--ink-strong)}
+  .win{color:var(--green);font-weight:600}
+  .lose{color:var(--red);font-weight:600}
+
+  .callout{border-left:3px solid var(--yellow);padding:4px 0 4px 20px;margin:26px 0;
+    color:var(--ink-strong);font-size:19px}
+
+  .faq h3{margin:24px 0 6px}
+  .faq p{margin:6px 0 0;color:var(--ink)}
+
+  .cta{background:#000;color:#fff;border-radius:20px;padding:36px 32px;margin:48px 0 0;text-align:center}
+  .cta h2{color:#fff;margin:0 0 10px}
+  .cta p{color:#c9c4c0;margin:0 auto 22px;max-width:440px}
+  .cta a.book{display:inline-block;background:#fff;color:#000;font-weight:600;
+    padding:13px 26px;border-radius:12px}
+  .cta a.book:hover{background:#eee;text-decoration:none}
+
+  .disclaimer{font-size:13.5px;color:#9a938e;border-top:1px solid var(--line);
+    margin-top:40px;padding-top:18px}
+
+  footer.site{border-top:1px solid var(--line);padding:26px 24px;max-width:1080px;
+    margin:40px auto 0;display:flex;justify-content:space-between;font-size:13px;color:#9a938e;flex-wrap:wrap;gap:10px}
+  footer.site a{color:#9a938e}
+
+  @media(max-width:600px){
+    h1{font-size:31px}
+    main{padding:16px 20px 60px}
+    body{font-size:17px}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <a href="/"><img src="/orcool-logo.png" alt="Orcool"></a>
+  <nav class="nav-right">
+    <a href="/blog/">Blog</a>
+    <a href="/" class="pill">Connect</a>
+  </nav>
+</header>
+
+<main>
+  <article>
+    <p class="eyebrow">Data · Creative durability</p>
+    <h1>The 6% problem: why a handful of creatives eat the whole ad budget</h1>
+    <p class="byline">By <strong>Orcool</strong> <span class="mono">·</span> July 9, 2026 <span class="mono">·</span> 6 min read</p>
+
+    <div class="tldr">
+      <h2>The short version</h2>
+      <ul>
+        <li>Motion's 2026 creative benchmark found that roughly <strong>6% of creatives capture most enterprise ad spend</strong>. The usual explanation is that teams are bad at picking winners.</li>
+        <li>We pulled our own panel of <strong>1,061 live Meta ad creatives</strong> and found a simpler mechanism: the format teams ship the most of, dynamic and DCO, is also the one with the shortest legs.</li>
+        <li><strong>Dynamic/DCO is 57% of everything live</strong> in our panel but has a median lifespan of just <strong>33 days</strong>, versus <strong>101 days</strong> for plain static images.</li>
+        <li>Spend does not concentrate because a handful of creatives are chosen well. It concentrates because <strong>most of the fleet dies young</strong>, leaving budget nowhere else to go.</li>
+      </ul>
+    </div>
+
+    <h2>The number everyone is repeating</h2>
+    <p>Motion's 2026 creative benchmark report put a figure on something media buyers already feel: at enterprise scale, a small sliver of the creative library, roughly 6%, ends up carrying most of the working budget. Framed that way, it reads like a targeting or picking problem. Somewhere in the review process, the theory goes, a handful of creatives get chosen well and everything else gets starved.</p>
+    <p>We wanted to know what was actually driving that number, so we went and measured our own panel instead of arguing about someone else's.</p>
+
+    <h2>What we measured</h2>
+    <p>We pulled every currently active ad creative for a fixed 36-keyword panel from the Meta Ad Library, US market, fully anonymous: <strong>1,061 live creatives across 394 distinct advertisers</strong>. For each one we recorded how long it has already been running, then split the panel by creative format.</p>
+
+    <table>
+      <thead>
+        <tr><th>Format</th><th>Share of panel</th><th>Median days live</th><th>p75 days live</th><th>Live past 30 days</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Image (static)</strong></td>
+          <td>15%</td>
+          <td><span class="score win">101</span></td>
+          <td>231</td>
+          <td>70%</td>
+        </tr>
+        <tr>
+          <td>Video</td>
+          <td>28%</td>
+          <td><span class="score">66</span></td>
+          <td>231</td>
+          <td>71%</td>
+        </tr>
+        <tr>
+          <td>Dynamic / DCO</td>
+          <td><strong>57%</strong></td>
+          <td><span class="score lose">33</span></td>
+          <td>66</td>
+          <td>55%</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Dynamic and DCO creative is the format teams lean on hardest for volume, more than half of everything live in the panel. It is also the format with the shortest median run and the lowest share still alive past the 30-day mark.</p>
+
+    <p class="loop">
+      <b>ship volume</b> <span>mostly in the fastest-churning format</span> &nbsp;→&nbsp; <b>most of it dies young</b> <span>inside a month</span> &nbsp;→&nbsp; <b>spend concentrates</b> <span>on whatever is still standing</span>
+    </p>
+
+    <h2>Why this explains the 6% number better than a picking story</h2>
+    <p>If well over half of what a team ships is built in a format with a 33-day median lifespan, the math does the rest. Most of the fleet is gone within a month by construction, not by a review committee's judgment. Whatever survives past that point, largely the static and video minority in our panel, is what keeps absorbing budget simply because it is still there to absorb it.</p>
+    <p>That reframes the 6% finding. It is not mainly evidence of sharp picking. It is closer to a survival curve wearing a spend chart's clothing: a small share of creatives were never going to compete for long-term budget, because most of the fleet was never built to last long enough to compete at all.</p>
+
+    <p class="callout">The concentration is not proof that a few creatives were chosen well. It is proof that most creatives were built in a format that was never going to survive long enough to be chosen from.</p>
+
+    <h2>What this means if you plan a testing calendar</h2>
+    <p><strong>Volume in the wrong format does not widen your winner pool.</strong> Shipping more dynamic/DCO variants adds more short-lived creative to a pile that is already 57% short-lived creative. It raises the count of things you tried, not the count of things that survive long enough to earn real budget.</p>
+    <p><strong>Durability is a format property, not just a creative property.</strong> Our panel shows format alone moves median lifespan by a factor of three, from 33 days to 101. That is a bigger lever than most individual creative decisions, and it is measurable before a single test even runs.</p>
+    <p><strong>Track days-live by format, the same way you track CPA.</strong> A concentration number like Motion's 6% tells you the outcome. A durability breakdown like ours tells you the mechanism, and a mechanism is something you can plan a format mix around instead of just reacting to after budget has already piled up on the same three ads again.</p>
+
+    <p>This is the same pattern we have written about from the other direction, in <a href="/blog/selection-is-not-creation/">what per-impression pickers can and cannot tell you</a>: a system that selects well among what exists still cannot fix a fleet where most of what exists was never going to last. The fix sits earlier, at the format and angle stage, which is increasingly the actual job description behind <a href="/blog/creative-producer-gtm-engineer/">the creative producer becoming a GTM engineer</a>.</p>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <h3>Why does most ad spend concentrate on so few creatives?</h3>
+      <p>Because most of the creative fleet a team ships stops running quickly, so budget keeps flowing to the small number that are still alive and still converting. Concentration looks like a picking problem but it starts as a survival problem: if most of what you ship dies inside a month, spend has nowhere else to go but the survivors.</p>
+
+      <h3>What is dynamic creative optimization (DCO) and why does it fatigue fast?</h3>
+      <p>DCO auto-assembles ad variants from a library of headlines, images and copy blocks, which is why teams lean on it for volume. In our own panel of 1,061 live Meta creatives, dynamic and DCO ads made up 57% of everything running but had a median lifespan of just 33 days, the shortest of any format measured, versus 101 days for plain static images.</p>
+
+      <h3>Does more creative volume fix the concentration problem?</h3>
+      <p>No, and the data points the other way. The format teams already ship the most of is the one with the shortest legs, so adding more volume in the same format mostly adds more short-lived creative to the pile. The lever that actually widens the base of long-running winners is picking formats and angles built to hold, not shipping more of the same kind.</p>
+
+      <h3>How do you measure creative durability before spend decides it for you?</h3>
+      <p>Track days-live per creative the same way you would track CTR or CPA, sliced by format and vertical, and treat early death as a signal about the format or angle, not just the individual ad. That turns "why did spend concentrate on three ads out of fifty" from a mystery into a measurable, format-level pattern you can plan around.</p>
+    </div>
+
+    <p class="disclaimer">Methodology note: this panel is a single snapshot of currently active creatives pulled from the Meta Ad Library across a fixed 36-keyword set, US market, fully anonymous and sliced by format only, no advertiser named. Days-live means how long a still-running creative has already been live, a durability floor rather than a completed lifespan, since we do not yet observe creatives after they drop off. The 6% concentration figure is Motion's published 2026 benchmark, cited as external validation, not our own claim. Read both as a signal about format-level durability, not a guarantee for any single campaign.</p>
+
+    <div class="cta">
+      <h2>See what's winning in your market, in your chat</h2>
+      <p>Add Orcool to Claude, ChatGPT, or Cursor. Paste one URL, sign in with a magic link, and your competitor hooks, category patterns and your own reviews come back as a tool call. Free for two weeks, no card.</p>
+      <a class="book" href="https://get.orcool.com/#connect">Connect the MCP</a>
+    </div>
+  </article>
+</main>
+
+<footer class="site">
+  <span>© 2026 Orcool. Creative intelligence as a tool call.</span>
+  <span><a href="/blog/">Blog</a> &nbsp; <a href="/">Home</a></span>
+</footer>
+
+</body>
+</html>
