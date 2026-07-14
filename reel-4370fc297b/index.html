@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orcool · Selected Work</title>
+<meta name="description" content="Selected video work by Orcool. AI-crafted UGC and brand video for mobile apps.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1F2238;
+    --navy-deep: #181B2D;
+    --card: #262A44;
+    --accent-red: #FA3810;
+    --accent-blue: #387FFF;
+    --accent-green: #45B43B;
+    --accent-yellow: #FFBD16;
+    --white: #FFFFFF;
+    --muted: #A0A3B0;
+    --grey: #6B6E80;
+    --line: rgba(255, 255, 255, 0.08);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--navy);
+    background-image: radial-gradient(1200px 600px at 50% -10%, rgba(56, 127, 255, 0.10), transparent 60%),
+                      radial-gradient(900px 500px at 85% 110%, rgba(250, 56, 16, 0.06), transparent 55%);
+    color: var(--white);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+
+  .wrap {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- Hero ---------- */
+  header.hero {
+    padding: 72px 0 56px;
+    text-align: center;
+  }
+
+  .logo {
+    display: inline-block;
+    width: 180px;
+    max-width: 60vw;
+  }
+  .logo svg { display: block; width: 100%; height: auto; }
+
+  .eyebrow {
+    margin-top: 48px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-red);
+  }
+
+  h1 {
+    margin-top: 14px;
+    font-size: clamp(34px, 6vw, 56px);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+  }
+
+  .lede {
+    margin: 18px auto 0;
+    max-width: 560px;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  /* ---------- Gallery ---------- */
+  main { padding: 8px 0 32px; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px 40px;
+    max-width: 880px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 720px) {
+    .grid { grid-template-columns: 1fr; gap: 44px; max-width: 420px; }
+    header.hero { padding: 56px 0 40px; }
+  }
+
+  .card { display: flex; flex-direction: column; }
+
+  .frame {
+    position: relative;
+    aspect-ratio: 9 / 16;
+    border-radius: 20px;
+    overflow: hidden;
+    background: var(--navy-deep);
+    border: 1px solid var(--line);
+    box-shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.55);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  }
+
+  .card:hover .frame {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.16);
+    box-shadow: 0 32px 72px -24px rgba(0, 0, 0, 0.65);
+  }
+
+  .frame video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    background: var(--navy-deep);
+  }
+
+  .meta { padding: 18px 6px 0; }
+
+  .meta h2 {
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.35;
+  }
+
+  .meta p {
+    margin-top: 4px;
+    font-size: 13.5px;
+    font-weight: 400;
+    color: var(--muted);
+  }
+
+  .tick {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    margin-right: 9px;
+    vertical-align: 2px;
+  }
+  .tick.red    { background: var(--accent-red); }
+  .tick.blue   { background: var(--accent-blue); }
+  .tick.green  { background: var(--accent-green); }
+  .tick.yellow { background: var(--accent-yellow); }
+
+  /* ---------- Footer ---------- */
+  footer {
+    margin-top: 72px;
+    padding: 36px 0 48px;
+    border-top: 1px solid var(--line);
+    text-align: center;
+    font-size: 13.5px;
+    color: var(--muted);
+  }
+
+  footer a {
+    color: var(--white);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    padding-bottom: 1px;
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+
+  footer a:hover { border-color: var(--accent-red); color: var(--white); }
+
+  footer .sep { margin: 0 10px; color: var(--grey); }
+
+  video:focus-visible {
+    outline: 2px solid var(--accent-blue);
+    outline-offset: 2px;
+  }
+
+  /* ---------- Access gate ---------- */
+  #gate {
+    position: fixed; inset: 0; z-index: 50;
+    display: flex; align-items: center; justify-content: center; padding: 24px;
+    background: var(--navy);
+    background-image: radial-gradient(1000px 500px at 50% -10%, rgba(56, 127, 255, 0.10), transparent 60%);
+  }
+  .gatebox { width: 100%; max-width: 360px; text-align: center; }
+  .gatebox .glogo { width: 150px; max-width: 55vw; height: auto; margin-bottom: 30px; }
+  .gtitle { font-size: 15px; color: var(--muted); margin-bottom: 18px; }
+  #gatePass {
+    width: 100%; padding: 13px 16px; border-radius: 12px;
+    border: 1px solid var(--line); background: var(--navy-deep);
+    color: var(--white); font-size: 15px; font-family: inherit; outline: none;
+  }
+  #gatePass:focus { border-color: var(--accent-blue); }
+  .gatebox button {
+    width: 100%; margin-top: 12px; padding: 13px 16px; border-radius: 12px;
+    border: none; background: var(--accent-red); color: #fff;
+    font-size: 15px; font-weight: 600; font-family: inherit; cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  .gatebox button:hover { background: #E0310E; }
+  .gerr { margin-top: 14px; font-size: 13px; color: var(--accent-red); }
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <form id="gateForm" class="gatebox">
+    <img class="glogo" src="/orcool-logo.png" alt="Orcool">
+    <p class="gtitle">This showreel is private. Enter the password to view.</p>
+    <input type="password" id="gatePass" placeholder="Password" autocomplete="off" autofocus>
+    <button type="submit">View work</button>
+    <p class="gerr" id="gateErr" hidden>That password is not right.</p>
+  </form>
+</div>
+
+<div class="wrap" style="display:none">
+
+  <header class="hero">
+    <img class="logo" src="/orcool-logo.png" alt="Orcool" width="180" height="auto">
+
+    <p class="eyebrow">AI Creative Studio</p>
+    <h1>Selected work</h1>
+    <p class="lede">Four recent pieces of UGC and brand video for mobile apps, produced end-to-end by Orcool.</p>
+  </header>
+
+  <main>
+    <section class="grid" aria-label="Video showreel">
+
+      <article class="card">
+        <div class="frame">
+          <video controls preload="metadata" playsinline
+                 src="indrive-more-than-a-ride.mp4"
+                 aria-label="inDrive · More Than a Ride, narrative brand spot, vertical video">
+            Your browser does not support embedded video.
+          </video>
+        </div>
+        <div class="meta">
+          <h2><span class="tick red" aria-hidden="true"></span>inDrive &middot; &lsquo;More Than a Ride&rsquo;</h2>
+          <p>Narrative brand spot</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="frame">
+          <video controls preload="metadata" playsinline
+                 src="indrive-south-africa.mp4"
+                 aria-label="inDrive · South Africa, localized demo, vertical video">
+            Your browser does not support embedded video.
+          </video>
+        </div>
+        <div class="meta">
+          <h2><span class="tick blue" aria-hidden="true"></span>inDrive &middot; South Africa</h2>
+          <p>Localized demo</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="frame">
+          <video controls preload="metadata" playsinline
+                 src="geniokid-facetime.mp4"
+                 aria-label="GenioKid, FaceTime-style UGC, vertical video">
+            Your browser does not support embedded video.
+          </video>
+        </div>
+        <div class="meta">
+          <h2><span class="tick yellow" aria-hidden="true"></span>GenioKid</h2>
+          <p>FaceTime-style UGC</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="frame">
+          <video controls preload="metadata" playsinline
+                 src="yesim-australia.mp4"
+                 aria-label="Yesim · Australia, UGC testimonial, vertical video">
+            Your browser does not support embedded video.
+          </video>
+        </div>
+        <div class="meta">
+          <h2><span class="tick green" aria-hidden="true"></span>Yesim &middot; Australia</h2>
+          <p>UGC testimonial</p>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      Orcool &middot; AI creative studio for mobile apps
+      <span class="sep" aria-hidden="true">&middot;</span>
+      <a href="https://orcool.com">orcool.com</a>
+      <span class="sep" aria-hidden="true">&middot;</span>
+      <a href="mailto:boris.ryss@orcool.com">boris.ryss@orcool.com</a>
+    </p>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  var HASH = "8ff67a1e6bcd47a71c677708c27f4e203be91ecf5b17452fef1a23252fc3e018";
+  var gate = document.getElementById('gate');
+  var wrap = document.querySelector('.wrap');
+  var form = document.getElementById('gateForm');
+  var inp = document.getElementById('gatePass');
+  var err = document.getElementById('gateErr');
+  function unlock() {
+    gate.style.display = 'none';
+    wrap.style.display = 'block';
+    try { sessionStorage.setItem('orcool_reel_ok', '1'); } catch (e) {}
+  }
+  async function sha256(t) {
+    var buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(t));
+    return Array.from(new Uint8Array(buf)).map(function (b) { return b.toString(16).padStart(2, '0'); }).join('');
+  }
+  try { if (sessionStorage.getItem('orcool_reel_ok') === '1') unlock(); } catch (e) {}
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    var h = await sha256(inp.value.trim());
+    if (h === HASH) { unlock(); }
+    else { err.hidden = false; inp.value = ''; inp.focus(); }
+  });
+})();
+</script>
+
+</body>
+</html>
