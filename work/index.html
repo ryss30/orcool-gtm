@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orcool — Selected Work</title>
+<meta name="description" content="Selected video work by Orcool — AI-crafted UGC and brand video for mobile apps.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1F2238;
+    --navy-deep: #181B2D;
+    --card: #262A44;
+    --accent-red: #FA3810;
+    --accent-blue: #387FFF;
+    --accent-green: #45B43B;
+    --accent-yellow: #FFBD16;
+    --white: #FFFFFF;
+    --muted: #A0A3B0;
+    --grey: #6B6E80;
+    --line: rgba(255, 255, 255, 0.08);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--navy);
+    background-image: radial-gradient(1200px 600px at 50% -10%, rgba(56, 127, 255, 0.10), transparent 60%),
+                      radial-gradient(900px 500px at 85% 110%, rgba(250, 56, 16, 0.06), transparent 55%);
+    color: var(--white);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+
+  .wrap {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- Hero ---------- */
+  header.hero {
+    padding: 72px 0 56px;
+    text-align: center;
+  }
+
+  .logo {
+    display: inline-block;
+    width: 180px;
+    max-width: 60vw;
+  }
+  .logo svg { display: block; width: 100%; height: auto; }
+
+  .eyebrow {
+    margin-top: 48px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-red);
+  }
+
+  h1 {
+    margin-top: 14px;
+    font-size: clamp(34px, 6vw, 56px);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+  }
+
+  .lede {
+    margin: 18px auto 0;
+    max-width: 560px;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  /* ---------- Gallery ---------- */
+  main { padding: 8px 0 32px; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px 40px;
+    max-width: 880px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 720px) {
+    .grid { grid-template-columns: 1fr; gap: 44px; max-width: 420px; }
+    header.hero { padding: 56px 0 40px; }
+  }
+
+  .card { display: flex; flex-direction: column; }
+
+  .frame {
+    position: relative;
+    aspect-ratio: 9 / 16;
+    border-radius: 20px;
+    overflow: hidden;
+    background: var(--navy-deep);
+    border: 1px solid var(--line);
+    box-shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.55);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  }
+
+  .card:hover .frame {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.16);
+    box-shadow: 0 32px 72px -24px rgba(0, 0, 0, 0.65);
+  }
+
+  .frame video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    background: var(--navy-deep);
+  }
+
+  .meta { padding: 18px 6px 0; }
+
+  .meta h2 {
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.35;
+  }
+
+  .meta p {
+    margin-top: 4px;
+    font-size: 13.5px;
+    font-weight: 400;
+    color: var(--muted);
+  }
+
+  .tick {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    margin-right: 9px;
+    vertical-align: 2px;
+  }
+  .tick.red    { background: var(--accent-red); }
+  .tick.blue   { background: var(--accent-blue); }
+  .tick.green  { background: var(--accent-green); }
+  .tick.yellow { background: var(--accent-yellow); }
+
+  /* ---------- Footer ---------- */
+  footer {
+    margin-top: 72px;
+    padding: 36px 0 48px;
+    border-top: 1px solid var(--line);
+    text-align: center;
+    font-size: 13.5px;
+    color: var(--muted);
+  }
+
+  footer a {
+    color: var(--white);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    padding-bottom: 1px;
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+
+  footer a:hover { border-color: var(--accent-red); color: var(--white); }
+
+  footer .sep { margin: 0 10px; color: var(--grey); }
+
+  video:focus-visible {
+    outline: 2px solid var(--accent-blue);
+    outline-offset: 2px;
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="hero">
+    <span class="logo" role="img" aria-label="Orcool">
+      <!-- Orcool wordmark (brand kit vector, inlined) -->
+      <svg viewBox="0 0 858 169" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M145.05 19.6541V149.654H272.8L145.05 19.6541Z" fill="#45B43B"/>
+        <path d="M273.9 63.5618C273.9 87.8016 253.9 107.469 229.25 107.469L145 107.469V19.704L229.3 19.704C253.95 19.704 273.95 39.3712 273.95 63.6109L273.9 63.5618Z" fill="#5B5B5B"/>
+        <path d="M67.5 152.001C104.779 152.001 135 121.78 135 84.5013C135 47.2221 104.779 17.0013 67.5 17.0013C30.2208 17.0013 0 47.2221 0 84.5013C0 121.78 30.2208 152.001 67.5 152.001Z" fill="#FA3810"/>
+        <path d="M503.5 152.001C540.779 152.001 571 121.781 571 84.5013C571 47.2221 540.779 17.0013 503.5 17.0013C466.221 17.0013 436 47.2221 436 84.5013C436 121.781 466.221 152.001 503.5 152.001Z" fill="#387FFF"/>
+        <path d="M648.5 152.001C685.779 152.001 716 121.781 716 84.5013C716 47.2221 685.779 17.0013 648.5 17.0013C611.221 17.0013 581 47.2221 581 84.5013C581 121.781 611.221 152.001 648.5 152.001Z" fill="#45B43B"/>
+        <path d="M792.05 149.654V19.6541H727.05V149.654" fill="#5B5B5B"/>
+        <path d="M727.05 104.654H857.05V149.654H727.05" fill="#FFBD16"/>
+        <path d="M311.625 145.982L432.829 23.3466C417.02 8.91891 395.599 0 372.056 0C323.328 0 283.839 37.8398 283.839 84.5329C283.839 108.798 294.584 130.636 311.625 146.047V145.982Z" fill="#FFBD16"/>
+        <path d="M311.556 23.0844C294.515 38.4957 283.839 60.2684 283.839 84.4675C283.839 131.161 323.328 169 372.056 169C396.215 169 418.115 159.688 434.061 144.539L311.556 23.0844Z" fill="#45B43B"/>
+      </svg>
+    </span>
+
+    <p class="eyebrow">AI Creative Studio</p>
+    <h1>Selected work</h1>
+    <p class="lede">Four recent pieces — UGC and brand video for mobile apps, produced end-to-end by Orcool.</p>
+  </header>
+
+  <main>
+    <section class="grid" aria-label="Video showreel">
+
+      <article class="card">
+        <div class="frame">
+          <video controls preload="metadata" playsinline
+                 src="indrive-more-than-a-ride.mp4"
+                 aria-label="inDrive — More Than a Ride, narrative brand spot, vertical video">
+            Your browser does not support embedded video.
+          </video>
+        </div>
+        <div class="meta">
+          <h2><span class="tick red" aria-hidden="true"></span>inDrive &mdash; &lsquo;More Than a Ride&rsquo;</h2>
+          <p>Narrative brand spot</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="frame">
+          <video controls preload="metadata" playsinline
+                 src="indrive-south-africa.mp4"
+                 aria-label="inDrive — South Africa, localized demo, vertical video">
+            Your browser does not support embedded video.
+          </video>
+        </div>
+        <div class="meta">
+          <h2><span class="tick blue" aria-hidden="true"></span>inDrive &mdash; South Africa</h2>
+          <p>Localized demo</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="frame">
+          <video controls preload="metadata" playsinline
+                 src="geniokid-facetime.mp4"
+                 aria-label="GenioKid, FaceTime-style UGC, vertical video">
+            Your browser does not support embedded video.
+          </video>
+        </div>
+        <div class="meta">
+          <h2><span class="tick yellow" aria-hidden="true"></span>GenioKid</h2>
+          <p>FaceTime-style UGC</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="frame">
+          <video controls preload="metadata" playsinline
+                 src="yesim-thailand.mp4"
+                 aria-label="Yesim — Thailand, UGC testimonial, vertical video">
+            Your browser does not support embedded video.
+          </video>
+        </div>
+        <div class="meta">
+          <h2><span class="tick green" aria-hidden="true"></span>Yesim &mdash; Thailand</h2>
+          <p>UGC testimonial</p>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      Orcool &mdash; AI creative studio for mobile apps
+      <span class="sep" aria-hidden="true">&middot;</span>
+      <a href="https://orcool.com">orcool.com</a>
+      <span class="sep" aria-hidden="true">&middot;</span>
+      <a href="mailto:boris.ryss@orcool.com">boris.ryss@orcool.com</a>
+    </p>
+  </footer>
+
+</div>
+
+</body>
+</html>
