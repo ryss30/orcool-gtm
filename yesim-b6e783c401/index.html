@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yesim · Orcool hub</title>
+<meta name="description" content="Private Yesim video hub by Orcool. Conversion-optimized cuts, full quality, always current.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1F2238; --navy-deep: #181B2D; --card: #262A44;
+    --accent-red: #FA3810; --accent-blue: #387FFF; --accent-green: #45B43B; --accent-yellow: #FFBD16;
+    --white: #FFFFFF; --muted: #A0A3B0; --grey: #6B6E80; --line: rgba(255,255,255,0.08);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--navy);
+    background-image: radial-gradient(1200px 600px at 50% -10%, rgba(56,127,255,0.10), transparent 60%),
+                      radial-gradient(900px 500px at 85% 110%, rgba(250,56,16,0.06), transparent 55%);
+    color: var(--white); -webkit-font-smoothing: antialiased; min-height: 100vh;
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+  header.hero { padding: 72px 0 40px; text-align: center; }
+  .logo { display: inline-block; width: 170px; max-width: 60vw; height: auto; }
+  .eyebrow { margin-top: 44px; font-size: 13px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent-red); }
+  h1 { margin-top: 14px; font-size: clamp(32px, 6vw, 52px); font-weight: 700; line-height: 1.08; letter-spacing: -0.02em; }
+  .lede { margin: 16px auto 0; max-width: 560px; font-size: 16px; line-height: 1.65; color: var(--muted); font-weight: 400; }
+  .updated { margin-top: 14px; font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey); }
+  main { padding: 8px 0 32px; }
+  .section-label { max-width: 880px; margin: 34px auto 18px; display: flex; align-items: center; gap: 12px; }
+  .section-label h2 { font-size: 15px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--white); }
+  .section-label .rule { flex: 1; height: 1px; background: var(--line); }
+  .section-label .count { font-size: 12.5px; color: var(--muted); }
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 44px 40px; max-width: 880px; margin: 0 auto; }
+  @media (max-width: 720px) { .grid { grid-template-columns: 1fr; gap: 40px; max-width: 420px; } header.hero { padding: 56px 0 32px; } }
+  .card { display: flex; flex-direction: column; }
+  .frame { position: relative; aspect-ratio: 9/16; border-radius: 20px; overflow: hidden; background: var(--navy-deep); border: 1px solid var(--line); box-shadow: 0 24px 60px -24px rgba(0,0,0,0.55); transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease; }
+  .card:hover .frame { transform: translateY(-4px); border-color: rgba(255,255,255,0.16); box-shadow: 0 32px 72px -24px rgba(0,0,0,0.65); }
+  .frame video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; background: var(--navy-deep); }
+  .meta { padding: 16px 6px 0; }
+  .meta h3 { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.35; }
+  .meta p { margin-top: 4px; font-size: 13.5px; font-weight: 400; color: var(--muted); }
+  .tick { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 9px; vertical-align: 2px; }
+  .tick.red { background: var(--accent-red); } .tick.blue { background: var(--accent-blue); }
+  .tick.green { background: var(--accent-green); } .tick.yellow { background: var(--accent-yellow); }
+  footer { margin-top: 68px; padding: 34px 0 48px; border-top: 1px solid var(--line); text-align: center; font-size: 13.5px; color: var(--muted); }
+  footer a { color: var(--white); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.25); padding-bottom: 1px; }
+  footer a:hover { border-color: var(--accent-red); }
+  footer .sep { margin: 0 10px; color: var(--grey); }
+  video:focus-visible { outline: 2px solid var(--accent-blue); outline-offset: 2px; }
+  #gate { position: fixed; inset: 0; z-index: 50; display: flex; align-items: center; justify-content: center; padding: 24px; background: var(--navy); background-image: radial-gradient(1000px 500px at 50% -10%, rgba(56,127,255,0.10), transparent 60%); }
+  .gatebox { width: 100%; max-width: 360px; text-align: center; }
+  .gatebox .glogo { width: 150px; max-width: 55vw; height: auto; margin-bottom: 30px; }
+  .gtitle { font-size: 15px; color: var(--muted); margin-bottom: 18px; }
+  #gatePass { width: 100%; padding: 13px 16px; border-radius: 12px; border: 1px solid var(--line); background: var(--navy-deep); color: var(--white); font-size: 15px; font-family: inherit; outline: none; }
+  #gatePass:focus { border-color: var(--accent-blue); }
+  .gatebox button { width: 100%; margin-top: 12px; padding: 13px 16px; border-radius: 12px; border: none; background: var(--accent-red); color: #fff; font-size: 15px; font-weight: 600; font-family: inherit; cursor: pointer; transition: background .2s ease; }
+  .gatebox button:hover { background: #E0310E; }
+  .gerr { margin-top: 14px; font-size: 13px; color: var(--accent-red); }
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <form id="gateForm" class="gatebox">
+    <img class="glogo" src="/orcool-logo.png" alt="Orcool">
+    <p class="gtitle">Private Yesim hub. Enter the password to view.</p>
+    <input type="password" id="gatePass" placeholder="Password" autocomplete="off" autofocus>
+    <button type="submit">Open hub</button>
+    <p class="gerr" id="gateErr" hidden>That password is not right.</p>
+  </form>
+</div>
+
+<div class="wrap" style="display:none">
+
+  <header class="hero">
+    <img class="logo" src="/orcool-logo.png" alt="Orcool">
+    <p class="eyebrow">Yesim &times; Orcool</p>
+    <h1>Client hub</h1>
+    <p class="lede">Conversion-optimized versions of your top-CTR cuts. Full quality, one stable link, always current.</p>
+    <p class="updated">Updated 14 Jul 2026</p>
+  </header>
+
+  <main>
+    <div class="section-label">
+      <h2>Latest</h2>
+      <span class="rule"></span>
+      <span class="count">4 cuts &middot; in test</span>
+    </div>
+    <section class="grid" aria-label="Latest cuts">
+
+      <article class="card">
+        <div class="frame">
+          <video controls preload="metadata" playsinline src="yesim-c01-thailand.mp4" aria-label="Yesim C01 Thailand, conversion-optimized cut, vertical video">Your browser does not support embedded video.</video>
+        </div>
+        <div class="meta"><h3><span class="tick red" aria-hidden="true"></span>Yesim &middot; Thailand</h3><p>C01 &middot; conversion cut</p></div>
+      </article>
+
+      <article class="card">
+        <div class="frame">
+          <video controls preload="metadata" playsinline src="yesim-c03-japan.mp4" aria-label="Yesim C03 Japan, conversion-optimized cut, vertical video">Your browser does not support embedded video.</video>
+        </div>
+        <div class="meta"><h3><span class="tick blue" aria-hidden="true"></span>Yesim &middot; Japan</h3><p>C03 &middot; conversion cut</p></div>
+      </article>
+
+      <article class="card">
+        <div class="frame">
+          <video controls preload="metadata" playsinline src="yesim-c05-paris.mp4" aria-label="Yesim C05 Paris, conversion-optimized cut, vertical video">Your browser does not support embedded video.</video>
+        </div>
+        <div class="meta"><h3><span class="tick green" aria-hidden="true"></span>Yesim &middot; Paris</h3><p>C05 &middot; conversion cut</p></div>
+      </article>
+
+      <article class="card">
+        <div class="frame">
+          <video controls preload="metadata" playsinline src="yesim-c07-bali.mp4" aria-label="Yesim C07 Bali, conversion-optimized cut, vertical video">Your browser does not support embedded video.</video>
+        </div>
+        <div class="meta"><h3><span class="tick yellow" aria-hidden="true"></span>Yesim &middot; Bali</h3><p>C07 &middot; conversion cut</p></div>
+      </article>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>Orcool &middot; AI creative studio for mobile apps
+      <span class="sep" aria-hidden="true">&middot;</span>
+      <a href="https://orcool.com">orcool.com</a>
+      <span class="sep" aria-hidden="true">&middot;</span>
+      <a href="mailto:boris.ryss@orcool.com">boris.ryss@orcool.com</a>
+    </p>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  var HASH = "63c6271dcc34971d7c2747834db1b44501559dcc07ca9dc6850c3c212ea13b3d";
+  var gate = document.getElementById('gate');
+  var wrap = document.querySelector('.wrap');
+  var form = document.getElementById('gateForm');
+  var inp = document.getElementById('gatePass');
+  var err = document.getElementById('gateErr');
+  function unlock() { gate.style.display = 'none'; wrap.style.display = 'block'; try { sessionStorage.setItem('yesim_hub_ok', '1'); } catch (e) {} }
+  async function sha256(t) { var b = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(t)); return Array.from(new Uint8Array(b)).map(function (x) { return x.toString(16).padStart(2, '0'); }).join(''); }
+  try { if (sessionStorage.getItem('yesim_hub_ok') === '1') unlock(); } catch (e) {}
+  form.addEventListener('submit', async function (e) { e.preventDefault(); var h = await sha256(inp.value.trim()); if (h === HASH) { unlock(); } else { err.hidden = false; inp.value = ''; inp.focus(); } });
+})();
+</script>
+
+</body>
+</html>

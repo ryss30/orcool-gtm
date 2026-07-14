@@ -1,0 +1,17 @@
+{
+  "client": "Yesim",
+  "slug": "yesim-b6e783c401",
+  "passwordHash": "63c6271dcc34971d7c2747834db1b44501559dcc07ca9dc6850c3c212ea13b3d",
+  "updated": "2026-07-14",
+  "source": "Telegram chat 'Orcool / Yesim' (3955007769), messages 216-219",
+  "sections": {
+    "latest": [
+      { "file": "yesim-c01-thailand.mp4", "title": "Yesim · Thailand", "subtitle": "C01 · conversion cut", "added": "2026-07-14", "status": "in-test" },
+      { "file": "yesim-c03-japan.mp4",    "title": "Yesim · Japan",    "subtitle": "C03 · conversion cut", "added": "2026-07-14", "status": "in-test" },
+      { "file": "yesim-c05-paris.mp4",    "title": "Yesim · Paris",    "subtitle": "C05 · conversion cut", "added": "2026-07-14", "status": "in-test" },
+      { "file": "yesim-c07-bali.mp4",     "title": "Yesim · Bali",     "subtitle": "C07 · conversion cut", "added": "2026-07-14", "status": "in-test" }
+    ],
+    "approved": [],
+    "archive": []
+  }
+}
