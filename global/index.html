@@ -37,13 +37,11 @@
   h3{font-weight:600;font-size:18px}
   p{color:var(--ink);font-size:17px}
   .muted{color:var(--grey)}
-
   header{position:sticky;top:0;z-index:50;background:rgba(248,247,245,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   .nav{display:flex;align-items:center;justify-content:space-between;height:62px}
   .logo{height:22px;width:auto;display:block}
   .pill{display:inline-block;background:var(--ink);color:#fff;font-weight:600;font-size:14px;text-decoration:none;padding:9px 18px;border-radius:10px;transition:background-color .14s ease}
   .pill:hover{background:#332e2e}
-
   .btn{display:inline-block;background:var(--ink);color:#fff;font-weight:600;font-size:16px;text-decoration:none;padding:14px 26px;border-radius:10px;transition:background-color .14s ease,border-color .14s ease}
   .btn:hover{background:#332e2e}
   .btn.ghost{background:transparent;color:var(--ink);border:1.5px solid #D8D5D0}
@@ -56,35 +54,26 @@
   .btn.on-dark.ghost:hover{border-color:#5a5a5a;background:rgba(255,255,255,.07)}
   .btnrow{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
   .eyebrow{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
-
   section{padding:72px 0}
-
-  /* hero */
   .hero{position:relative;text-align:center;padding:80px 0 100px;overflow:hidden}
   .hero .eyebrow{display:inline-block;margin-bottom:18px}
   .hero h1{max-width:800px;margin:0 auto 18px}
   .hero .sub{font-size:20px;color:var(--ink);max-width:580px;margin:0 auto 30px;line-height:1.55}
   .hero .micro{margin-top:18px;color:var(--grey);font-size:15px;line-height:1.7}
   .hero .micro b{color:var(--ink);font-weight:600}
-  .glow{position:absolute;left:50%;transform:translateX(-50%);bottom:-120px;width:120%;height:320px;
-    background:linear-gradient(135deg,var(--red),var(--yellow),var(--green),var(--blue));
-    filter:blur(90px);opacity:.28;pointer-events:none;border-radius:50%;will-change:transform;backface-visibility:hidden}
-
+  .glow{position:absolute;left:50%;transform:translateX(-50%);bottom:-120px;width:120%;height:320px;background:linear-gradient(135deg,var(--red),var(--yellow),var(--green),var(--blue));filter:blur(90px);opacity:.28;pointer-events:none;border-radius:50%;will-change:transform;backface-visibility:hidden}
   .loop{max-width:760px;margin:48px auto 0}
   .loopgrid{display:flex;align-items:flex-start;justify-content:center;gap:14px;flex-wrap:wrap}
   .li{display:flex;flex-direction:column;align-items:center;min-width:160px}
   .li .w{font-family:var(--serif);font-size:38px;line-height:1;color:var(--ink)}
   .li .a{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--red);margin-top:10px;text-align:center;max-width:160px;line-height:1.45}
   .arr{font-size:28px;line-height:40px;color:var(--blue);padding-top:4px}
-
   .dark{background:var(--black);color:#fff}
   .dark h2,.dark h3{color:#fff}
   .dark p{color:#C9C7C4}
   .dark .eyebrow{color:var(--yellow)}
   .center{text-align:center}
   .center .sub{max-width:560px;margin:14px auto 0}
-
-  /* panels */
   .panels{display:grid;grid-template-columns:1fr;gap:18px;margin-top:40px;text-align:left}
   .panel{background:var(--panel);border-radius:16px;padding:26px;color:var(--ink);box-shadow:0 8px 30px rgba(0,0,0,.18);display:flex;flex-direction:column}
   .panel .tag{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
@@ -93,13 +82,9 @@
   .panel h3{margin-bottom:8px;color:var(--ink);line-height:1.3;min-height:47px}
   .panel p{font-size:15px;color:#5a5450}
   .panel .ship{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);font-size:12px;color:var(--grey);font-family:var(--mono);letter-spacing:.04em;text-transform:uppercase}
-
-  /* voice section */
   .pullquote{background:rgba(255,255,255,.05);border-left:3px solid var(--red);border-radius:0 10px 10px 0;padding:18px 22px;margin-top:28px;max-width:660px}
   .pullquote p{color:#fff;font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.55}
   .subnote{font-size:14px;color:#6e6c69;margin-top:12px;max-width:660px;line-height:1.6}
-
-  /* voice ladder */
   .ladder-label{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--yellow);margin:36px 0 16px}
   .ladder{max-width:660px}
   .rung{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08);align-items:flex-start}
@@ -109,8 +94,6 @@
   .rung-body h4{font-size:16px;font-weight:600;color:#fff;margin-bottom:3px}
   .rung-body p{font-size:14px;color:#C9C7C4}
   .ladder-note{font-size:14px;color:#6e6c69;margin-top:20px;max-width:660px;line-height:1.6}
-
-  /* how we work steps */
   .steps{counter-reset:s;margin-top:34px;max-width:700px}
   .step{display:flex;gap:18px;padding:16px 0;border-bottom:1px solid var(--line);align-items:flex-start}
   .step:last-child{border-bottom:none}
@@ -119,8 +102,6 @@
   .step .t{font-family:var(--mono);font-size:11px;color:var(--red);letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px}
   .step h4{font-size:17px;font-weight:600;margin-bottom:3px;color:var(--ink)}
   .step p{font-size:15px;color:#5a5450}
-
-  /* compare boxes */
   .compare{display:grid;grid-template-columns:1fr;gap:16px;margin-top:34px}
   .cbox{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px}
   .cbox.lead{border:1.5px solid var(--ink)}
@@ -130,24 +111,18 @@
   .cbox li{padding:8px 0 8px 24px;position:relative;font-size:15px;color:#5a5450}
   .cbox li::before{content:"\2192";position:absolute;left:0;color:var(--blue);font-weight:700}
   .cbox.lead li::before{color:var(--green)}
-
-  /* faq */
   .faq details{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-top:12px;cursor:pointer}
   .faq summary{font-weight:600;font-size:17px;list-style:none;padding-right:28px;position:relative}
   .faq summary::-webkit-details-marker{display:none}
   .faq summary::after{content:"+";position:absolute;right:0;top:0;color:var(--red);font-weight:600}
   .faq details[open] summary::after{content:"\2013"}
   .faq p{margin-top:12px;font-size:15px;color:#5a5450;line-height:1.6}
-
-  /* final */
   .final{position:relative;text-align:center;overflow:hidden}
   .final .glow{opacity:.32;bottom:-150px}
   .final .sub{max-width:560px;margin:14px auto 0;color:#C9C7C4;font-size:18px}
-
   footer{border-top:1px solid var(--line);padding:34px 0;text-align:center;color:var(--grey);font-size:13px}
   footer .logo{height:20px;margin:0 auto 14px}
   footer .who{margin-top:8px;font-family:var(--mono);font-size:12px}
-
   @media(min-width:740px){
     h1{font-size:60px} h2{font-size:36px}
     .panels{grid-template-columns:1fr 1fr 1fr}
@@ -156,12 +131,183 @@
 </style>
 </head>
 <body>
-
 <header>
   <div class="wrap nav">
     <img class="logo" src="/orcool-logo.png" alt="Orcool">
     <a class="pill" href="#pilot">Start a pilot</a>
   </div>
 </header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Global expansion, local signal</span>
+    <h1>Local signals in. Local winners out.</h1>
+    <p class="sub">You have a creative team for the markets you know. For the other thirty, you have guesses. Orcool sources local signals, runs them through your brand taste, and finds the creative that holds.</p>
+    <div class="btnrow" style="justify-content:center">
+      <a class="btn" href="#pilot">Start a pilot</a>
+      <a class="btn ghost" href="#howitworks">See how it works</a>
+    </div>
+  </div>
+  <div class="glow"></div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <span class="eyebrow">The asymmetry</span>
+    <h2 style="margin-top:14px;max-width:720px">Creative talent doesn't travel. Your expansion plan assumes it does.</h2>
+    <p style="margin-top:18px;max-width:660px">Your in-house team owns the brand. They also have zero feel for Lagos, Jakarta, or Bogotá, and no honest way to get it from a desk. So you hire local agencies instead. Now you have thirty of them, thirty interpretations of who you are, thirty invoices, and no one holding the line on what the brand sounds like. Both roads dead-end in the tail.</p>
+    <p style="margin-top:16px;max-width:660px">The thing slowing you down isn't production. It's knowing what will land before you spend. That's a local signal problem. Time-to-Winner, the days between entering a market and having a creative that clears your KPI gate and stays in spend, is where every expansion quietly stalls. We attack that number directly.</p>
+  </div>
+</section>
+
+<section class="dark" id="localvoice" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--red)">Local Voice</span>
+    <h2 style="margin-top:14px;max-width:680px">Spoken like a local, not translated to one.</h2>
+    <p style="margin-top:18px;max-width:660px">Finding the right angle is half the job. The other half is rendering it so nobody in that market feels it was made somewhere else. Auto-translation gives that away in a sentence. It flattens idiom, ignores dialect, lands on the wrong register, and a viewer clocks it instantly as outsider content. Once that happens, the angle doesn't matter anymore.</p>
+    <p style="margin-top:16px;max-width:660px">So the last mile is human. A native speaker adapts the script, fixes the idiom, picks the right dialect, and stands behind the pronunciation. Not a reviewer signing off after the fact. Someone from that market shaping how the line actually sounds before it ships.</p>
+    <div class="pullquote">
+      <p>Take Africa. Hausa, Yoruba, Igbo. There is no AI dubbing tool that covers them properly today, so a real voice isn't a nice-to-have, it's the only way in.</p>
+    </div>
+    <p class="subnote">Hausa runs near 70M speakers, Yoruba around 50M, Igbo about 44M. This is depth of market, not just depth of language. Markets too big to fake your way into.</p>
+    <div class="ladder-label">Voice fidelity &middot; pick by what's at stake</div>
+    <div class="ladder">
+      <div class="rung">
+        <div class="rung-num">1</div>
+        <div class="rung-body">
+          <div class="rt">Baseline &middot; fast</div>
+          <h4>Synthesis voice in-language</h4>
+          <p>A fast synthetic baseline. Good enough to test the angle cheaply and find out if it moves.</p>
+        </div>
+      </div>
+      <div class="rung">
+        <div class="rung-num">2</div>
+        <div class="rung-body">
+          <div class="rt">Native feel &middot; licensed</div>
+          <h4>Licensed creator voice</h4>
+          <p>A licensed local creator's voice. Native feel, ready for real spend.</p>
+        </div>
+      </div>
+      <div class="rung">
+        <div class="rung-num">3</div>
+        <div class="rung-body">
+          <div class="rt">Top fidelity &middot; durable</div>
+          <h4>Live native recording</h4>
+          <p>A live recording with a native speaker. Top fidelity, reserved for the winner you're going to run hard.</p>
+        </div>
+      </div>
+    </div>
+    <p class="ladder-note">Test fast at rung one. Move the winner up to two or three once the numbers say it earned it. The engine underneath is agnostic, so whatever wins, you're never locked to one vendor.</p>
+  </div>
+</section>
+
+<section class="dark center" id="pillars" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow">Why it works</span>
+    <h2 style="margin-top:14px">Three things in-house and local agencies can't do at once.</h2>
+    <p class="sub muted">You need all three. That's why neither existing option works in the tail.</p>
+    <div class="panels">
+      <div class="panel">
+        <div class="tag">Brand Lens</div>
+        <h3>Your brand taste, in every market</h3>
+        <p>One team can't feel thirty markets, and thirty agencies can't agree on who you are. The Brand Lens is how we carry a single brand taste across all of them. Your standards travel with the work, applied the same way in market one and market thirty, so local never means off-brand.</p>
+        <div class="ship">The asymmetry, closed</div>
+      </div>
+      <div class="panel blue">
+        <div class="tag">Local signals</div>
+        <h3>The winner is found, not guessed</h3>
+        <p>We don't start from your home creative and adapt down. We start from each market itself, what's already pulling attention there, and build from local evidence. Per-market sourcing means the angle is grounded in that place before a single frame gets made. Less guessing, fewer dead launches.</p>
+        <div class="ship">Entry, de-risked</div>
+      </div>
+      <div class="panel green">
+        <div class="tag">Proof of scale</div>
+        <h3>One of the world's largest consumer apps, across 40+ markets</h3>
+        <p>One of the most demanding creative operations in performance marketing runs this exact pipeline across more than forty active markets at once. One brand taste, local signals per market, native verification in each. The model holds when you push it wide. We know because it already is.</p>
+        <div class="ship">40+ markets, still running</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="howitworks">
+  <div class="wrap">
+    <span class="eyebrow">The work</span>
+    <h2 style="margin-top:14px">Pilot one market. Expand on proof.</h2>
+    <p class="muted" style="margin-top:14px;max-width:600px">Five steps from a market we both pick to a creative that's earning in spend. No big-bang rollout, no faith required.</p>
+    <div class="steps">
+      <div class="step"><div class="n"></div><div>
+        <div class="t">Market brief</div>
+        <h4>We pick the first market together</h4>
+        <p>You name a market that matters, we agree on the KPI gate the winner has to clear, and we scope the pilot to that one place.</p>
+      </div></div>
+      <div class="step"><div class="n"></div><div>
+        <div class="t">Signal sourcing</div>
+        <h4>We source the local signals</h4>
+        <p>We pull what's actually working in that market right now, the angles already earning attention, as raw material instead of a blank page.</p>
+      </div></div>
+      <div class="step"><div class="n"></div><div>
+        <div class="t">Lens filter</div>
+        <h4>We run it through your Brand Lens</h4>
+        <p>Every candidate gets filtered through your taste, so what survives is both local and unmistakably yours.</p>
+      </div></div>
+      <div class="step"><div class="n"></div><div>
+        <div class="t">Native verification</div>
+        <h4>A native speaker verifies it</h4>
+        <p>Someone from the market adapts the script, locks dialect and idiom, and stands behind how it sounds before anything ships.</p>
+      </div></div>
+      <div class="step"><div class="n"></div><div>
+        <div class="t">Winner enters spend</div>
+        <h4>The creative that clears your gate goes live</h4>
+        <p>Time-to-Winner is the only score that counts. When the pilot holds, we move to the next market on the same pipeline.</p>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow">The alternatives</span>
+    <h2 style="margin-top:14px">Your three options, and where two of them break.</h2>
+    <p class="muted" style="margin-top:14px;max-width:600px">Honest breakdown, not a sales slide.</p>
+    <div class="compare">
+      <div class="cbox">
+        <div class="ct">In-house team</div>
+        <ul>
+          <li>Owns the brand cold. Nobody protects your voice better.</li>
+          <li>Zero feel for markets they've never lived in, and no honest fix from a desk.</li>
+          <li>Doesn't get to market thirty. Talent doesn't clone across borders.</li>
+        </ul>
+      </div>
+      <div class="cbox">
+        <div class="ct">Thirty local agencies</div>
+        <ul>
+          <li>Real local feel, market by market.</li>
+          <li>Thirty versions of your brand, none of them talking to each other.</li>
+          <li>Chaos to manage, slow to move, nobody owns the through-line.</li>
+        </ul>
+      </div>
+      <div class="cbox lead">
+        <div class="ct">Orcool</div>
+        <ul>
+          <li>One brand taste, carried across every market by the Brand Lens.</li>
+          <li>Each market grounded in its own local signals, verified by its own native speakers.</li>
+          <li>Pointed at one number: Time-to-Winner. Local feel and brand control, without picking one.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img class="logo" src="/orcool-logo.png" alt="Orcool">
+    <div>&copy; 2026 Orcool Inc. Speed compounds. Opinions don't.</div>
+    <div class="who">team@orcool.com &middot; San Francisco, CA</div>
+      <a href="https://elevenlabs.io/startup-grants" target="_blank" rel="noopener" style="display:inline-block;margin-top:18px" aria-label="Backed by ElevenLabs Grants">
+      <img src="https://eleven-public-cdn.elevenlabs.io/payloadcms/pwsc4vchsqt-ElevenLabsGrants.webp" alt="Backed by ElevenLabs Grants" style="width:150px;height:auto;display:block;margin:0 auto">
+    </a>
+</div>
+</footer>
+
 </body>
 </html>
