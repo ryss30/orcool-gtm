@@ -37,11 +37,13 @@
   h3{font-weight:600;font-size:18px}
   p{color:var(--ink);font-size:17px}
   .muted{color:var(--grey)}
+
   header{position:sticky;top:0;z-index:50;background:rgba(248,247,245,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   .nav{display:flex;align-items:center;justify-content:space-between;height:62px}
   .logo{height:22px;width:auto;display:block}
   .pill{display:inline-block;background:var(--ink);color:#fff;font-weight:600;font-size:14px;text-decoration:none;padding:9px 18px;border-radius:10px;transition:background-color .14s ease}
   .pill:hover{background:#332e2e}
+
   .btn{display:inline-block;background:var(--ink);color:#fff;font-weight:600;font-size:16px;text-decoration:none;padding:14px 26px;border-radius:10px;transition:background-color .14s ease,border-color .14s ease}
   .btn:hover{background:#332e2e}
   .btn.ghost{background:transparent;color:var(--ink);border:1.5px solid #D8D5D0}
@@ -54,26 +56,35 @@
   .btn.on-dark.ghost:hover{border-color:#5a5a5a;background:rgba(255,255,255,.07)}
   .btnrow{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
   .eyebrow{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
+
   section{padding:72px 0}
+
+  /* hero */
   .hero{position:relative;text-align:center;padding:80px 0 100px;overflow:hidden}
   .hero .eyebrow{display:inline-block;margin-bottom:18px}
   .hero h1{max-width:800px;margin:0 auto 18px}
   .hero .sub{font-size:20px;color:var(--ink);max-width:580px;margin:0 auto 30px;line-height:1.55}
   .hero .micro{margin-top:18px;color:var(--grey);font-size:15px;line-height:1.7}
   .hero .micro b{color:var(--ink);font-weight:600}
-  .glow{position:absolute;left:50%;transform:translateX(-50%);bottom:-120px;width:120%;height:320px;background:linear-gradient(135deg,var(--red),var(--yellow),var(--green),var(--blue));filter:blur(90px);opacity:.28;pointer-events:none;border-radius:50%;will-change:transform;backface-visibility:hidden}
+  .glow{position:absolute;left:50%;transform:translateX(-50%);bottom:-120px;width:120%;height:320px;
+    background:linear-gradient(135deg,var(--red),var(--yellow),var(--green),var(--blue));
+    filter:blur(90px);opacity:.28;pointer-events:none;border-radius:50%;will-change:transform;backface-visibility:hidden}
+
   .loop{max-width:760px;margin:48px auto 0}
   .loopgrid{display:flex;align-items:flex-start;justify-content:center;gap:14px;flex-wrap:wrap}
   .li{display:flex;flex-direction:column;align-items:center;min-width:160px}
   .li .w{font-family:var(--serif);font-size:38px;line-height:1;color:var(--ink)}
   .li .a{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--red);margin-top:10px;text-align:center;max-width:160px;line-height:1.45}
   .arr{font-size:28px;line-height:40px;color:var(--blue);padding-top:4px}
+
   .dark{background:var(--black);color:#fff}
   .dark h2,.dark h3{color:#fff}
   .dark p{color:#C9C7C4}
   .dark .eyebrow{color:var(--yellow)}
   .center{text-align:center}
   .center .sub{max-width:560px;margin:14px auto 0}
+
+  /* panels */
   .panels{display:grid;grid-template-columns:1fr;gap:18px;margin-top:40px;text-align:left}
   .panel{background:var(--panel);border-radius:16px;padding:26px;color:var(--ink);box-shadow:0 8px 30px rgba(0,0,0,.18);display:flex;flex-direction:column}
   .panel .tag{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
@@ -82,9 +93,13 @@
   .panel h3{margin-bottom:8px;color:var(--ink);line-height:1.3;min-height:47px}
   .panel p{font-size:15px;color:#5a5450}
   .panel .ship{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);font-size:12px;color:var(--grey);font-family:var(--mono);letter-spacing:.04em;text-transform:uppercase}
+
+  /* voice section */
   .pullquote{background:rgba(255,255,255,.05);border-left:3px solid var(--red);border-radius:0 10px 10px 0;padding:18px 22px;margin-top:28px;max-width:660px}
   .pullquote p{color:#fff;font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.55}
   .subnote{font-size:14px;color:#6e6c69;margin-top:12px;max-width:660px;line-height:1.6}
+
+  /* voice ladder */
   .ladder-label{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--yellow);margin:36px 0 16px}
   .ladder{max-width:660px}
   .rung{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08);align-items:flex-start}
@@ -94,6 +109,8 @@
   .rung-body h4{font-size:16px;font-weight:600;color:#fff;margin-bottom:3px}
   .rung-body p{font-size:14px;color:#C9C7C4}
   .ladder-note{font-size:14px;color:#6e6c69;margin-top:20px;max-width:660px;line-height:1.6}
+
+  /* how we work steps */
   .steps{counter-reset:s;margin-top:34px;max-width:700px}
   .step{display:flex;gap:18px;padding:16px 0;border-bottom:1px solid var(--line);align-items:flex-start}
   .step:last-child{border-bottom:none}
@@ -102,6 +119,8 @@
   .step .t{font-family:var(--mono);font-size:11px;color:var(--red);letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px}
   .step h4{font-size:17px;font-weight:600;margin-bottom:3px;color:var(--ink)}
   .step p{font-size:15px;color:#5a5450}
+
+  /* compare boxes */
   .compare{display:grid;grid-template-columns:1fr;gap:16px;margin-top:34px}
   .cbox{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px}
   .cbox.lead{border:1.5px solid var(--ink)}
@@ -111,18 +130,24 @@
   .cbox li{padding:8px 0 8px 24px;position:relative;font-size:15px;color:#5a5450}
   .cbox li::before{content:"\2192";position:absolute;left:0;color:var(--blue);font-weight:700}
   .cbox.lead li::before{color:var(--green)}
+
+  /* faq */
   .faq details{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-top:12px;cursor:pointer}
   .faq summary{font-weight:600;font-size:17px;list-style:none;padding-right:28px;position:relative}
   .faq summary::-webkit-details-marker{display:none}
   .faq summary::after{content:"+";position:absolute;right:0;top:0;color:var(--red);font-weight:600}
   .faq details[open] summary::after{content:"\2013"}
   .faq p{margin-top:12px;font-size:15px;color:#5a5450;line-height:1.6}
+
+  /* final */
   .final{position:relative;text-align:center;overflow:hidden}
   .final .glow{opacity:.32;bottom:-150px}
   .final .sub{max-width:560px;margin:14px auto 0;color:#C9C7C4;font-size:18px}
+
   footer{border-top:1px solid var(--line);padding:34px 0;text-align:center;color:var(--grey);font-size:13px}
   footer .logo{height:20px;margin:0 auto 14px}
   footer .who{margin-top:8px;font-family:var(--mono);font-size:12px}
+
   @media(min-width:740px){
     h1{font-size:60px} h2{font-size:36px}
     .panels{grid-template-columns:1fr 1fr 1fr}
@@ -131,6 +156,7 @@
 </style>
 </head>
 <body>
+
 <header>
   <div class="wrap nav">
     <img class="logo" src="/orcool-logo.png" alt="Orcool">
@@ -138,19 +164,168 @@
   </div>
 </header>
 
-<section class="hero">
-  <div class="wrap">
-    <span class="eyebrow">Global expansion, local signal</span>
-    <h1>Local signals in. Local winners out.</h1>
-    <p class="sub">You have a creative team for the markets you know. For the other thirty, you have guesses. Orcool sources local signals, runs them through your brand taste, and finds the creative that holds.</p>
-    <div class="btnrow" style="justify-content:center">
-      <a class="btn" href="#pilot">Start a pilot</a>
-      <a class="btn ghost" href="#howitworks">See how it works</a>
-    </div>
+<!-- HERO — Court Portrait gallery (Kehinde Wiley × El Anatsui × Basquiat) -->
+<style>
+  .cp-hero{position:relative;width:100%;height:440px;background:#1a1a1a;overflow:hidden}
+  .cp-wall{position:absolute;top:0;left:0;right:0;height:385px;background:linear-gradient(180deg,#2a2018 0%,#1e170f 60%,#140e08 100%)}
+  .cp-baseboard{position:absolute;bottom:0;left:0;right:0;height:60px;overflow:hidden}
+  .cp-track{position:absolute;top:30px;left:0;display:flex;gap:28px;padding:0 40px;animation:cp-pan 30s linear infinite;will-change:transform}
+  @keyframes cp-pan{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+  .cp-frame{flex-shrink:0;width:160px;height:220px;position:relative}
+  .cp-fo{position:absolute;inset:0;border:3px solid #c98a2b;box-shadow:0 0 0 1px #8a5e1a,inset 0 0 0 1px #8a5e1a,inset 0 0 0 5px #1a1209}
+  .cp-fi{position:absolute;inset:8px;overflow:hidden}
+  .cp-fi svg{width:100%;height:100%}
+  .cp-vignette{position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 65% 50%,transparent 40%,rgba(0,0,0,.72) 100%);pointer-events:none;z-index:10}
+  .cp-scrim{position:absolute;top:0;left:0;bottom:0;width:48%;background:linear-gradient(90deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,.55) 60%,transparent 100%);pointer-events:none;z-index:11}
+  .cp-text{position:absolute;top:50%;left:48px;transform:translateY(-50%);z-index:20;max-width:340px}
+  .cp-label{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:#c98a2b;margin-bottom:14px;font-weight:500;font-family:var(--mono)}
+  .cp-h1{font-size:38px;font-weight:800;color:#f8f7f5;line-height:1.06;margin-bottom:16px;letter-spacing:-.5px;font-family:var(--sans)}
+  .cp-sub{font-size:13px;color:#b8a89a;line-height:1.6;margin-bottom:26px;font-weight:400;max-width:300px}
+  .cp-cta{display:inline-block;background:#FA3810;color:#fff;font-size:11px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;padding:12px 24px;text-decoration:none;font-family:var(--sans)}
+  .cp-cta:hover{background:#d42e0b}
+  .cp-city{position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);font-size:7px;letter-spacing:2px;text-transform:uppercase;color:#6a5a48;white-space:nowrap;font-family:var(--mono)}
+</style>
+<section class="cp-hero">
+  <div class="cp-wall"></div>
+  <div class="cp-track">
+    <!-- Lagos · Nigeria -->
+    <div class="cp-frame"><div class="cp-fo"></div><div class="cp-fi">
+      <svg viewBox="0 0 144 204" xmlns="http://www.w3.org/2000/svg">
+        <rect width="144" height="204" fill="#0f3d28"/>
+        <g opacity=".9"><ellipse cx="20" cy="30" rx="14" ry="6" fill="#0a5c38" transform="rotate(-35,20,30)"/><ellipse cx="120" cy="20" rx="16" ry="5" fill="#0a5c38" transform="rotate(25,120,20)"/><ellipse cx="70" cy="10" rx="18" ry="5" fill="#0c6640" transform="rotate(5,70,10)"/><ellipse cx="10" cy="90" rx="12" ry="5" fill="#0a5c38" transform="rotate(-55,10,90)"/><ellipse cx="130" cy="80" rx="14" ry="5" fill="#0c6640" transform="rotate(40,130,80)"/><ellipse cx="15" cy="160" rx="13" ry="5" fill="#0a5c38" transform="rotate(-30,15,160)"/><ellipse cx="125" cy="155" rx="15" ry="5" fill="#0c6640" transform="rotate(50,125,155)"/><circle cx="25" cy="55" r="4" fill="#e8612d" opacity=".8"/><circle cx="115" cy="45" r="3" fill="#d23b6e" opacity=".7"/><circle cx="8" cy="130" r="3" fill="#e8612d" opacity=".6"/><circle cx="136" cy="120" r="4" fill="#d23b6e" opacity=".8"/><path d="M0,40 Q30,60 15,100 Q5,130 20,160" stroke="#165c30" stroke-width="1.5" fill="none"/><path d="M144,50 Q110,80 125,120 Q140,150 120,185" stroke="#165c30" stroke-width="1.5" fill="none"/></g>
+        <polygon points="52,170 92,170 98,204 46,204" fill="#3d2418"/><polygon points="30,195 114,195 114,204 30,204" fill="#1a3a6e"/>
+        <path d="M42,100 Q40,140 44,158 Q60,175 84,175 Q108,158 106,140 L104,100 Q96,78 72,76 Q48,78 42,100Z" fill="#4a2f1e"/>
+        <path d="M42,100 Q40,125 44,158 Q52,170 68,172 L66,96 Q54,88 42,100Z" fill="#2d1a0e"/>
+        <path d="M72,100 Q88,105 96,120 Q100,135 96,150 Q90,162 80,168 Q90,158 98,140 L104,100 Q96,80 72,78Z" fill="#5a3826"/>
+        <path d="M48,96 Q56,78 72,76 Q88,78 98,96 L92,108 Q80,98 72,96 Q62,98 52,106Z" fill="#3a2214"/>
+        <ellipse cx="62" cy="118" rx="7" ry="4.5" fill="#0a0604"/><ellipse cx="84" cy="118" rx="7" ry="4.5" fill="#0a0604"/>
+        <path d="M70,122 L74,122 L76,138 L74,142 L70,138Z" fill="#2d1a0e"/>
+        <path d="M62,150 Q72,156 82,150" stroke="#1a0c06" stroke-width="2.5" fill="none"/>
+        <ellipse cx="42" cy="130" rx="5" ry="8" fill="#3a2010"/><ellipse cx="106" cy="130" rx="5" ry="8" fill="#3a2010"/>
+        <path d="M42,102 Q44,80 56,72 Q72,64 88,72 Q104,80 106,102 Q96,88 72,86 Q48,88 42,102Z" fill="#0a0604"/>
+        <g fill="none" stroke="#f4c430" stroke-width="2.5" stroke-linejoin="round"><path d="M52,72 L56,52 L58,68"/><path d="M56,52 L72,40 L88,52"/><path d="M88,52 L90,68 L94,72"/><line x1="72" y1="40" x2="72" y2="56"/><line x1="50" y1="72" x2="96" y2="74"/></g>
+      </svg>
+    </div><span class="cp-city">Lagos · Nigeria</span></div>
+    <!-- Jakarta · Indonesia -->
+    <div class="cp-frame"><div class="cp-fo"></div><div class="cp-fi">
+      <svg viewBox="0 0 144 204" xmlns="http://www.w3.org/2000/svg">
+        <rect width="144" height="204" fill="#0d2e1a"/>
+        <g opacity=".85"><path d="M0,0 L144,0 L144,80 Q100,50 72,70 Q44,90 0,60Z" fill="#1a4a28"/><circle cx="30" cy="30" r="8" fill="#2d6e3e" opacity=".6"/><circle cx="90" cy="15" r="6" fill="#2d6e3e" opacity=".6"/><path d="M10,100 Q35,85 60,100 Q85,115 110,100 Q130,88 144,100 L144,140 Q120,125 90,140 Q60,155 30,140 Q10,128 0,140 L0,100Z" fill="#154020" opacity=".7"/><circle cx="50" cy="170" r="5" fill="#d23b6e" opacity=".8"/><circle cx="100" cy="180" r="4" fill="#e8612d" opacity=".7"/><polygon points="72,5 80,15 72,25 64,15" fill="#f4c430" opacity=".3"/></g>
+        <path d="M44,104 Q42,140 46,158 Q62,176 82,176 Q104,158 106,140 L104,104 Q96,82 74,80 Q50,82 44,104Z" fill="#c8855a"/>
+        <path d="M44,104 Q42,132 46,158 Q54,172 66,174 L64,100 Q54,90 44,104Z" fill="#9e6040"/>
+        <path d="M80,100 Q96,108 100,128 Q104,148 96,162 Q90,168 82,174 Q94,162 100,140 L104,104 Q96,82 74,80Z" fill="#d4906a"/>
+        <path d="M44,106 Q46,82 58,74 Q74,66 90,74 Q106,82 108,106 Q96,90 74,88 Q50,90 44,106Z" fill="#1a0a04"/>
+        <ellipse cx="64" cy="122" rx="7" ry="4" fill="#1a0a04"/><ellipse cx="86" cy="122" rx="7" ry="4" fill="#1a0a04"/>
+        <path d="M72,126 L76,126 L78,140 L74,144 L70,140Z" fill="#9e6040"/>
+        <path d="M64,154 Q74,160 84,154" stroke="#7a4028" stroke-width="2.5" fill="none"/>
+        <ellipse cx="44" cy="132" rx="5" ry="8" fill="#b87050"/><ellipse cx="108" cy="132" rx="5" ry="8" fill="#b87050"/>
+        <polygon points="56,174 92,174 96,204 52,204" fill="#b07050"/><polygon points="28,196 116,196 116,204 28,204" fill="#8b0000"/>
+        <g fill="none" stroke="#f4c430" stroke-width="2.5" stroke-linejoin="round"><path d="M54,74 L58,54 L60,70"/><path d="M58,54 L74,42 L90,54"/><path d="M90,54 L92,70 L96,74"/><line x1="74" y1="42" x2="74" y2="58"/><line x1="52" y1="76" x2="98" y2="76"/></g>
+      </svg>
+    </div><span class="cp-city">Jakarta · Indonesia</span></div>
+    <!-- Bogotá · Colombia -->
+    <div class="cp-frame"><div class="cp-fo"></div><div class="cp-fi">
+      <svg viewBox="0 0 144 204" xmlns="http://www.w3.org/2000/svg">
+        <rect width="144" height="204" fill="#1a0f2e"/>
+        <g opacity=".8"><path d="M0,0 L144,0 L144,60 Q72,40 0,60Z" fill="#2d1a5c"/><path d="M144,144 L144,204 L0,204 L0,144 Q72,164 144,144Z" fill="#2d1a5c"/><circle cx="20" cy="50" r="5" fill="#e8612d" opacity=".7"/><circle cx="124" cy="50" r="5" fill="#e8612d" opacity=".7"/><ellipse cx="40" cy="190" rx="15" ry="5" fill="#2d6e3e" opacity=".5" transform="rotate(-20,40,190)"/><ellipse cx="104" cy="192" rx="14" ry="5" fill="#2d6e3e" opacity=".5" transform="rotate(20,104,192)"/></g>
+        <path d="M42,102 Q40,140 44,158 Q60,177 82,177 Q106,158 108,140 L106,102 Q98,78 74,76 Q48,78 42,102Z" fill="#b87855"/>
+        <path d="M42,102 Q40,132 44,158 Q52,172 66,175 L64,98 Q54,88 42,102Z" fill="#8a5c38"/>
+        <path d="M80,98 Q96,106 102,128 Q106,148 98,162 Q94,170 82,175 Q94,162 100,140 L106,102 Q98,80 74,76Z" fill="#c88860"/>
+        <path d="M42,104 Q44,78 58,70 Q74,62 90,70 Q108,78 110,104 Q98,86 74,84 Q50,86 42,104Z" fill="#0f0804"/>
+        <ellipse cx="63" cy="120" rx="7" ry="4.5" fill="#0a0604"/><ellipse cx="86" cy="120" rx="7" ry="4.5" fill="#0a0604"/>
+        <path d="M72,124 L76,124 L78,139 L74,143 L70,139Z" fill="#8a5c38"/>
+        <path d="M63,152 Q74,158 85,152" stroke="#6a3a20" stroke-width="2.5" fill="none"/>
+        <ellipse cx="43" cy="130" rx="5" ry="8" fill="#a86840"/><ellipse cx="109" cy="130" rx="5" ry="8" fill="#a86840"/>
+        <polygon points="54,175 94,175 98,204 50,204" fill="#a86840"/><polygon points="28,196 116,196 116,204 28,204" fill="#d4a017"/>
+        <g fill="none" stroke="#f4c430" stroke-width="2.5" stroke-linejoin="round"><path d="M50,74 L54,52 L57,70"/><path d="M54,52 L74,38 L94,52"/><path d="M94,52 L97,70 L100,74"/><line x1="74" y1="38" x2="74" y2="56"/><line x1="48" y1="76" x2="102" y2="76"/></g>
+      </svg>
+    </div><span class="cp-city">Bogotá · Colombia</span></div>
+    <!-- Cairo · Egypt -->
+    <div class="cp-frame"><div class="cp-fo"></div><div class="cp-fi">
+      <svg viewBox="0 0 144 204" xmlns="http://www.w3.org/2000/svg">
+        <rect width="144" height="204" fill="#1a1206"/>
+        <g opacity=".75"><path d="M0,0 L144,0 L144,50 Q120,30 72,40 Q24,50 0,30Z" fill="#3d2a10"/><path d="M0,155 Q40,145 72,155 Q104,165 144,155 L144,204 L0,204Z" fill="#3d2a10"/><polygon points="72,5 82,20 72,35 62,20" fill="#c98a2b" opacity=".35"/><line x1="8" y1="80" x2="8" y2="140" stroke="#c98a2b" stroke-width="1" opacity=".25"/><line x1="136" y1="80" x2="136" y2="140" stroke="#c98a2b" stroke-width="1" opacity=".25"/></g>
+        <path d="M44,102 Q42,140 46,158 Q62,177 82,177 Q106,158 108,140 L106,102 Q98,78 74,76 Q48,78 44,102Z" fill="#a87848"/>
+        <path d="M44,102 Q42,132 46,158 Q54,172 66,175 L64,98 Q54,88 44,102Z" fill="#7a5430"/>
+        <path d="M80,98 Q96,106 102,128 Q106,148 98,162 Q94,170 82,175 Q94,162 100,140 L106,102 Q98,80 74,76Z" fill="#b88858"/>
+        <path d="M44,104 Q46,68 74,64 Q102,68 108,104 Q96,82 74,80 Q52,82 44,104Z" fill="#0c0806"/>
+        <path d="M36,110 Q30,130 36,155 L44,158 Q42,140 44,104Z" fill="#0c0806"/><path d="M108,104 Q112,130 106,158 L108,140 Q110,130 108,104Z" fill="#0c0806"/>
+        <ellipse cx="63" cy="120" rx="8" ry="5" fill="#0a0604"/><ellipse cx="85" cy="120" rx="8" ry="5" fill="#0a0604"/>
+        <path d="M72,124 L76,124 L78,138 L74,143 L70,138Z" fill="#7a5430"/>
+        <path d="M64,152 Q74,158 84,152" stroke="#5a3520" stroke-width="2.5" fill="none"/>
+        <polygon points="58,175 90,175 94,204 54,204" fill="#a07048"/><polygon points="30,196 114,196 114,204 30,204" fill="#1a3060"/>
+        <g fill="none" stroke="#f4c430" stroke-width="2.5" stroke-linejoin="round"><path d="M52,76 L56,56 L58,72"/><path d="M56,56 L72,44 L88,56"/><path d="M88,56 L90,72 L94,76"/><line x1="72" y1="44" x2="72" y2="60"/><line x1="50" y1="78" x2="96" y2="78"/></g>
+      </svg>
+    </div><span class="cp-city">Cairo · Egypt</span></div>
+    <!-- São Paulo · Brazil -->
+    <div class="cp-frame"><div class="cp-fo"></div><div class="cp-fi">
+      <svg viewBox="0 0 144 204" xmlns="http://www.w3.org/2000/svg">
+        <rect width="144" height="204" fill="#0c1e0a"/>
+        <g opacity=".85"><ellipse cx="15" cy="40" rx="20" ry="7" fill="#1a5c20" transform="rotate(-40,15,40)"/><ellipse cx="130" cy="30" rx="22" ry="7" fill="#1a5c20" transform="rotate(30,130,30)"/><ellipse cx="8" cy="130" rx="18" ry="6" fill="#1a5c20" transform="rotate(-50,8,130)"/><ellipse cx="136" cy="140" rx="20" ry="7" fill="#1a5c20" transform="rotate(45,136,140)"/><circle cx="28" cy="60" r="5" fill="#ff6b35" opacity=".9"/><circle cx="116" cy="55" r="5" fill="#ff6b35" opacity=".9"/><circle cx="12" cy="170" r="4" fill="#ffd700" opacity=".8"/><circle cx="132" cy="165" r="4" fill="#ffd700" opacity=".8"/></g>
+        <path d="M42,102 Q40,140 44,158 Q62,178 84,178 Q108,158 110,140 L108,102 Q100,76 74,74 Q46,76 42,102Z" fill="#6b3820"/>
+        <path d="M42,102 Q40,132 44,158 Q52,174 66,176 L64,98 Q52,88 42,102Z" fill="#4a2212"/>
+        <path d="M82,98 Q100,108 104,130 Q108,150 100,164 Q96,172 84,176 Q96,162 102,140 L108,102 Q100,78 74,74Z" fill="#7a4428"/>
+        <ellipse cx="74" cy="76" rx="38" ry="28" fill="#0f0806"/><ellipse cx="50" cy="90" rx="14" ry="12" fill="#0f0806"/><ellipse cx="100" cy="88" rx="14" ry="12" fill="#0f0806"/>
+        <ellipse cx="63" cy="118" rx="7" ry="4.5" fill="#0a0604"/><ellipse cx="87" cy="118" rx="7" ry="4.5" fill="#0a0604"/>
+        <path d="M70,122 Q74,122 78,138 Q74,145 70,138Z" fill="#4a2212"/>
+        <path d="M62,152 Q66,148 74,150 Q82,148 86,152 Q80,158 74,156 Q68,158 62,152Z" fill="#3a1a0a"/>
+        <ellipse cx="42" cy="130" rx="5" ry="8" fill="#5a3018"/><ellipse cx="110" cy="130" rx="5" ry="8" fill="#5a3018"/>
+        <polygon points="52,176 96,176 100,204 48,204" fill="#5a3018"/><polygon points="26,196 122,196 122,204 26,204" fill="#006400"/>
+        <g fill="none" stroke="#f4c430" stroke-width="2.8" stroke-linejoin="round"><path d="M48,74 L52,50 L55,68"/><path d="M52,50 L74,36 L96,50"/><path d="M96,50 L99,68 L102,74"/><line x1="74" y1="36" x2="74" y2="55"/><line x1="46" y1="76" x2="104" y2="76"/></g>
+      </svg>
+    </div><span class="cp-city">São Paulo · Brazil</span></div>
+    <!-- Manila · Philippines -->
+    <div class="cp-frame"><div class="cp-fo"></div><div class="cp-fi">
+      <svg viewBox="0 0 144 204" xmlns="http://www.w3.org/2000/svg">
+        <rect width="144" height="204" fill="#0a1828"/>
+        <g opacity=".8"><path d="M0,0 L144,0 L144,70 Q100,55 72,65 Q44,75 0,60Z" fill="#0f2a40"/><path d="M0,135 Q40,150 72,140 Q104,130 144,145 L144,204 L0,204Z" fill="#0f2a40"/><circle cx="120" cy="18" r="10" fill="#f4c430" opacity=".2"/><circle cx="20" cy="45" r="4" fill="#e8612d" opacity=".7"/><circle cx="125" cy="40" r="4" fill="#d23b6e" opacity=".7"/></g>
+        <path d="M44,102 Q42,140 46,158 Q62,177 82,177 Q106,158 108,140 L106,102 Q98,78 74,76 Q48,78 44,102Z" fill="#c8905a"/>
+        <path d="M44,102 Q42,132 46,158 Q54,172 66,175 L64,98 Q54,88 44,102Z" fill="#9a6840"/>
+        <path d="M80,98 Q96,106 102,128 Q106,148 98,162 Q94,170 82,175 Q94,162 100,140 L106,102 Q98,80 74,76Z" fill="#d49a68"/>
+        <path d="M44,104 Q46,76 60,68 Q74,60 88,68 Q106,76 108,104 Q96,86 74,84 Q52,86 44,104Z" fill="#0a0604"/>
+        <path d="M36,108 L44,108 Q42,120 40,140 Q40,158 44,158 L40,158 Q32,140 36,120Z" fill="#0a0604"/>
+        <path d="M56,118 Q63,113 70,118 Q63,124 56,118Z" fill="#0a0604"/><path d="M78,118 Q85,113 92,118 Q85,124 78,118Z" fill="#0a0604"/>
+        <path d="M72,124 L76,124 L77,137 L74,141 L71,137Z" fill="#9a6840"/>
+        <path d="M64,150 Q74,156 84,150" stroke="#7a4828" stroke-width="2.5" fill="none"/>
+        <ellipse cx="44" cy="130" rx="5" ry="8" fill="#b87850"/><ellipse cx="108" cy="130" rx="5" ry="8" fill="#b87850"/>
+        <polygon points="56,175 92,175 96,204 52,204" fill="#b87850"/><polygon points="30,196 114,196 114,204 30,204" fill="#800000"/>
+        <g fill="none" stroke="#f4c430" stroke-width="2.5" stroke-linejoin="round"><path d="M52,76 L56,55 L58,72"/><path d="M56,55 L74,42 L90,55"/><path d="M90,55 L92,72 L96,76"/><line x1="74" y1="42" x2="74" y2="58"/><line x1="50" y1="78" x2="98" y2="78"/></g>
+      </svg>
+    </div><span class="cp-city">Manila · Philippines</span></div>
+    <!-- LOOP DUPLICATES (seamless) -->
+    <div class="cp-frame"><div class="cp-fo"></div><div class="cp-fi">
+      <svg viewBox="0 0 144 204" xmlns="http://www.w3.org/2000/svg"><rect width="144" height="204" fill="#0f3d28"/><g opacity=".9"><ellipse cx="20" cy="30" rx="14" ry="6" fill="#0a5c38" transform="rotate(-35,20,30)"/><ellipse cx="120" cy="20" rx="16" ry="5" fill="#0a5c38" transform="rotate(25,120,20)"/><ellipse cx="70" cy="10" rx="18" ry="5" fill="#0c6640" transform="rotate(5,70,10)"/><circle cx="25" cy="55" r="4" fill="#e8612d" opacity=".8"/><circle cx="115" cy="45" r="3" fill="#d23b6e" opacity=".7"/><path d="M0,40 Q30,60 15,100 Q5,130 20,160" stroke="#165c30" stroke-width="1.5" fill="none"/></g><polygon points="52,170 92,170 98,204 46,204" fill="#3d2418"/><polygon points="30,195 114,195 114,204 30,204" fill="#1a3a6e"/><path d="M42,100 Q40,140 44,158 Q60,175 84,175 Q108,158 106,140 L104,100 Q96,78 72,76 Q48,78 42,100Z" fill="#4a2f1e"/><path d="M42,100 Q40,125 44,158 Q52,170 68,172 L66,96 Q54,88 42,100Z" fill="#2d1a0e"/><ellipse cx="62" cy="118" rx="7" ry="4.5" fill="#0a0604"/><ellipse cx="84" cy="118" rx="7" ry="4.5" fill="#0a0604"/><path d="M62,150 Q72,156 82,150" stroke="#1a0c06" stroke-width="2.5" fill="none"/><path d="M42,102 Q44,80 56,72 Q72,64 88,72 Q104,80 106,102 Q96,88 72,86 Q48,88 42,102Z" fill="#0a0604"/><g fill="none" stroke="#f4c430" stroke-width="2.5" stroke-linejoin="round"><path d="M52,72 L56,52 L58,68"/><path d="M56,52 L72,40 L88,52"/><path d="M88,52 L90,68 L94,72"/><line x1="72" y1="40" x2="72" y2="56"/><line x1="50" y1="72" x2="96" y2="74"/></g></svg>
+    </div><span class="cp-city">Lagos · Nigeria</span></div>
+    <div class="cp-frame"><div class="cp-fo"></div><div class="cp-fi">
+      <svg viewBox="0 0 144 204" xmlns="http://www.w3.org/2000/svg"><rect width="144" height="204" fill="#0d2e1a"/><g opacity=".85"><path d="M0,0 L144,0 L144,80 Q100,50 72,70 Q44,90 0,60Z" fill="#1a4a28"/><circle cx="50" cy="170" r="5" fill="#d23b6e" opacity=".8"/><circle cx="100" cy="180" r="4" fill="#e8612d" opacity=".7"/></g><path d="M44,104 Q42,140 46,158 Q62,176 82,176 Q104,158 106,140 L104,104 Q96,82 74,80 Q50,82 44,104Z" fill="#c8855a"/><path d="M44,104 Q42,132 46,158 Q54,172 66,174 L64,100 Q54,90 44,104Z" fill="#9e6040"/><path d="M44,106 Q46,82 58,74 Q74,66 90,74 Q106,82 108,106 Q96,90 74,88 Q50,90 44,106Z" fill="#1a0a04"/><ellipse cx="64" cy="122" rx="7" ry="4" fill="#1a0a04"/><ellipse cx="86" cy="122" rx="7" ry="4" fill="#1a0a04"/><path d="M64,154 Q74,160 84,154" stroke="#7a4028" stroke-width="2.5" fill="none"/><polygon points="56,174 92,174 96,204 52,204" fill="#b07050"/><polygon points="28,196 116,196 116,204 28,204" fill="#8b0000"/><g fill="none" stroke="#f4c430" stroke-width="2.5" stroke-linejoin="round"><path d="M54,74 L58,54 L60,70"/><path d="M58,54 L74,42 L90,54"/><path d="M90,54 L92,70 L96,74"/><line x1="74" y1="42" x2="74" y2="58"/><line x1="52" y1="76" x2="98" y2="76"/></g></svg>
+    </div><span class="cp-city">Jakarta · Indonesia</span></div>
+    <div class="cp-frame"><div class="cp-fo"></div><div class="cp-fi">
+      <svg viewBox="0 0 144 204" xmlns="http://www.w3.org/2000/svg"><rect width="144" height="204" fill="#0c1e0a"/><g opacity=".85"><ellipse cx="15" cy="40" rx="20" ry="7" fill="#1a5c20" transform="rotate(-40,15,40)"/><ellipse cx="130" cy="30" rx="22" ry="7" fill="#1a5c20" transform="rotate(30,130,30)"/><circle cx="28" cy="60" r="5" fill="#ff6b35" opacity=".9"/></g><path d="M42,102 Q40,140 44,158 Q62,178 84,178 Q108,158 110,140 L108,102 Q100,76 74,74 Q46,76 42,102Z" fill="#6b3820"/><path d="M42,102 Q40,132 44,158 Q52,174 66,176 L64,98 Q52,88 42,102Z" fill="#4a2212"/><ellipse cx="74" cy="76" rx="38" ry="28" fill="#0f0806"/><ellipse cx="50" cy="90" rx="14" ry="12" fill="#0f0806"/><ellipse cx="100" cy="88" rx="14" ry="12" fill="#0f0806"/><ellipse cx="63" cy="118" rx="7" ry="4.5" fill="#0a0604"/><ellipse cx="87" cy="118" rx="7" ry="4.5" fill="#0a0604"/><path d="M62,152 Q66,148 74,150 Q82,148 86,152 Q80,158 74,156 Q68,158 62,152Z" fill="#3a1a0a"/><polygon points="52,176 96,176 100,204 48,204" fill="#5a3018"/><polygon points="26,196 122,196 122,204 26,204" fill="#006400"/><g fill="none" stroke="#f4c430" stroke-width="2.8" stroke-linejoin="round"><path d="M48,74 L52,50 L55,68"/><path d="M52,50 L74,36 L96,50"/><path d="M96,50 L99,68 L102,74"/><line x1="74" y1="36" x2="74" y2="55"/><line x1="46" y1="76" x2="104" y2="76"/></g></svg>
+    </div><span class="cp-city">São Paulo · Brazil</span></div>
   </div>
-  <div class="glow"></div>
+
+  <!-- El Anatsui baseboard -->
+  <svg class="cp-baseboard" viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="ana1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#c98a2b"/><stop offset="50%" stop-color="#8a5e1a"/><stop offset="100%" stop-color="#5a3e0e"/></linearGradient>
+      <linearGradient id="ana2" x1="100%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#a07828"/><stop offset="50%" stop-color="#d4a840"/><stop offset="100%" stop-color="#7a5c18"/></linearGradient>
+      <linearGradient id="ana3" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#4a3008"/><stop offset="50%" stop-color="#8a6820"/><stop offset="100%" stop-color="#c09030"/></linearGradient>
+    </defs>
+    <polygon points="0,0 45,0 50,20 38,40 12,60 0,60" fill="url(#ana1)"/><polygon points="45,0 90,0 95,15 82,35 50,20" fill="url(#ana2)"/><polygon points="82,35 95,15 140,0 145,25 120,50 90,60 38,40 50,20" fill="url(#ana3)"/><polygon points="140,0 200,0 210,18 195,42 165,60 120,50 145,25" fill="url(#ana1)"/><polygon points="195,42 210,18 265,0 275,22 255,48 220,60 165,60" fill="url(#ana2)"/><polygon points="265,0 330,0 340,16 318,38 290,60 255,48 275,22" fill="url(#ana3)"/><polygon points="330,0 400,0 408,20 388,44 358,60 318,38 340,16" fill="url(#ana1)"/><polygon points="388,44 408,20 460,0 472,18 448,42 415,60 358,60" fill="url(#ana2)"/><polygon points="460,0 525,0 535,22 512,46 480,60 448,42 472,18" fill="url(#ana3)"/><polygon points="512,46 535,22 590,0 602,20 578,44 545,60 480,60" fill="url(#ana1)"/><polygon points="590,0 655,0 665,16 640,40 610,60 578,44 602,20" fill="url(#ana2)"/><polygon points="640,40 665,16 720,0 730,24 705,48 670,60 610,60" fill="url(#ana3)"/><polygon points="720,0 785,0 795,18 770,42 738,60 705,48 730,24" fill="url(#ana1)"/><polygon points="770,42 795,18 850,0 862,22 835,46 800,60 738,60" fill="url(#ana2)"/><polygon points="850,0 915,0 925,16 900,40 865,60 835,46 862,22" fill="url(#ana3)"/><polygon points="900,40 925,16 980,0 992,20 968,44 932,60 865,60" fill="url(#ana1)"/><polygon points="980,0 1050,0 1060,18 1035,42 1000,60 968,44 992,20" fill="url(#ana2)"/><polygon points="1035,42 1060,18 1120,0 1135,24 1108,48 1075,60 1000,60" fill="url(#ana3)"/><polygon points="1120,0 1200,0 1200,60 1108,48 1135,24" fill="url(#ana1)"/>
+    <g stroke="#0a0804" stroke-width=".8" fill="none" opacity=".9"><line x1="45" y1="0" x2="50" y2="20"/><line x1="50" y1="20" x2="38" y2="40"/><line x1="90" y1="0" x2="82" y2="35"/><line x1="140" y1="0" x2="145" y2="25"/><line x1="200" y1="0" x2="210" y2="18"/><line x1="265" y1="0" x2="275" y2="22"/><line x1="330" y1="0" x2="340" y2="16"/><line x1="400" y1="0" x2="408" y2="20"/><line x1="460" y1="0" x2="472" y2="18"/><line x1="525" y1="0" x2="535" y2="22"/></g>
+  </svg>
+
+  <div class="cp-vignette"></div>
+  <div class="cp-scrim"></div>
+  <div class="cp-text">
+    <div class="cp-label">Local Signals · Local Winners · Orcool</div>
+    <div class="cp-h1">Local signals in.<br>Local winners out.</div>
+    <p class="cp-sub">Every market speaks its own language, and we read it before you spend. Feed in what's working in Lagos, Jakarta, Bogotá — get your first winning creative in 7 days.</p>
+    <a class="cp-cta" href="#pilot">Find your winner &rarr;</a>
+  </div>
 </section>
 
+<!-- PROBLEM / SHIFT -->
 <section class="dark">
   <div class="wrap">
     <span class="eyebrow">The asymmetry</span>
@@ -160,16 +335,19 @@
   </div>
 </section>
 
+<!-- LOCAL VOICE -->
 <section class="dark" id="localvoice" style="padding-top:0">
   <div class="wrap">
     <span class="eyebrow" style="color:var(--red)">Local Voice</span>
     <h2 style="margin-top:14px;max-width:680px">Spoken like a local, not translated to one.</h2>
     <p style="margin-top:18px;max-width:660px">Finding the right angle is half the job. The other half is rendering it so nobody in that market feels it was made somewhere else. Auto-translation gives that away in a sentence. It flattens idiom, ignores dialect, lands on the wrong register, and a viewer clocks it instantly as outsider content. Once that happens, the angle doesn't matter anymore.</p>
     <p style="margin-top:16px;max-width:660px">So the last mile is human. A native speaker adapts the script, fixes the idiom, picks the right dialect, and stands behind the pronunciation. Not a reviewer signing off after the fact. Someone from that market shaping how the line actually sounds before it ships.</p>
+
     <div class="pullquote">
       <p>Take Africa. Hausa, Yoruba, Igbo. There is no AI dubbing tool that covers them properly today, so a real voice isn't a nice-to-have, it's the only way in.</p>
     </div>
     <p class="subnote">Hausa runs near 70M speakers, Yoruba around 50M, Igbo about 44M. This is depth of market, not just depth of language. Markets too big to fake your way into.</p>
+
     <div class="ladder-label">Voice fidelity &middot; pick by what's at stake</div>
     <div class="ladder">
       <div class="rung">
@@ -201,6 +379,7 @@
   </div>
 </section>
 
+<!-- THREE PILLARS -->
 <section class="dark center" id="pillars" style="padding-top:0">
   <div class="wrap">
     <span class="eyebrow">Why it works</span>
@@ -229,6 +408,7 @@
   </div>
 </section>
 
+<!-- HOW WE WORK -->
 <section id="howitworks">
   <div class="wrap">
     <span class="eyebrow">The work</span>
@@ -264,6 +444,7 @@
   </div>
 </section>
 
+<!-- POSITIONING COMPARE -->
 <section style="padding-top:0">
   <div class="wrap">
     <span class="eyebrow">The alternatives</span>
@@ -298,21 +479,145 @@
   </div>
 </section>
 
+<!-- THREE SIGNALS -->
+<section class="dark center" style="padding-top:0;border-top:1px solid rgba(255,255,255,.08)" id="signals">
+  <div class="wrap">
+    <span class="eyebrow">Three signals</span>
+    <h2 style="margin-top:14px">Three things ship today. In Slack, or as tool calls.</h2>
+    <p class="sub" style="margin-top:14px;color:#888">Same engine. Read them in a channel, or call them from your agent.</p>
+    <div class="panels" style="margin-top:40px;text-align:left">
+      <div class="panel" style="background:#141414;border-color:#2a2a2a">
+        <div class="tag">Alerts</div>
+        <h3 style="color:#fff;min-height:0">The move, the morning it breaks</h3>
+        <p style="color:#C9C7C4;flex:1">A daily ping when a competitor makes a real move. A launch, a city expansion, a campaign going wide — caught from the press, not a week late.</p>
+        <div class="ship" style="color:#666"><strong style="color:#aaa">Slack:</strong> your channel &nbsp;<strong style="color:#aaa">MCP:</strong> watch per competitor and market</div>
+      </div>
+      <div class="panel" style="background:#141414;border-color:#2a2a2a">
+        <div class="tag" style="color:var(--blue)">Patterns</div>
+        <h3 style="color:#fff;min-height:0">The winning move, plus why</h3>
+        <p style="color:#C9C7C4;flex:1">The creative mechanic working in your category right now, its format variants, and why it holds in spend. Structured so your agent can use it.</p>
+        <div class="ship" style="color:#666"><strong style="color:#aaa">Slack:</strong> pattern card &nbsp;<strong style="color:#aaa">MCP:</strong> top patterns by category</div>
+      </div>
+      <div class="panel" style="background:#141414;border-color:#2a2a2a">
+        <div class="tag" style="color:var(--green)">Reports</div>
+        <h3 style="color:#fff;min-height:0">The week in your category</h3>
+        <p style="color:#C9C7C4;flex:1">What worked in your category this week, and why. Drop it into a brief or your scoring step. First one's free.</p>
+        <div class="ship" style="color:#666"><strong style="color:#aaa">Slack:</strong> weekly digest &nbsp;<strong style="color:#aaa">MCP:</strong> on demand, any category</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONNECT -->
 <section class="dark" id="connect" style="padding-top:0;border-top:1px solid rgba(255,255,255,.05)">
   <div class="wrap">
     <span class="eyebrow">Connect</span>
     <h2 style="margin-top:14px">Add Orcool to your agent.</h2>
     <p style="margin-top:14px;max-width:600px;color:#C9C7C4">Add Orcool in Claude, Cursor, or ChatGPT. Paste a URL, sign in with a magic link. From there it's a tool call in whatever you're already building.</p>
-    <div style="margin-top:32px;max-width:640px">
+    <div style="margin-top:32px">
+      <form id="ml-form" onsubmit="submitMagicLink(event)" style="display:flex;flex-wrap:wrap;gap:12px;align-items:stretch;max-width:520px">
+        <input id="ml-email" type="email" required autocomplete="email" placeholder="you@company.com"
+          style="flex:1 1 240px;min-width:0;background:#111;border:1px solid #2a2a2a;border-radius:10px;padding:14px 18px;font-size:16px;color:#e8e8e8;font-family:var(--sans);outline:none">
+        <button id="ml-btn" type="submit" class="btn on-dark" style="cursor:pointer;border:none;font-family:var(--sans);font-size:16px;white-space:nowrap">Get magic link</button>
+      </form>
+      <p id="ml-success" style="display:none;font-size:15px;color:#4ade80;margin-top:12px"></p>
+      <p id="ml-error" style="display:none;font-size:14px;color:var(--red);margin-top:10px"></p>
+      <p style="font-size:14px;color:#555;margin-top:10px">We email you a magic link to sign in. No card.</p>
+      <script>
+        function submitMagicLink(e) {
+          e.preventDefault();
+          var form = document.getElementById('ml-form');
+          var btn = document.getElementById('ml-btn');
+          var errEl = document.getElementById('ml-error');
+          var okEl = document.getElementById('ml-success');
+          var email = document.getElementById('ml-email').value.trim();
+          if (!email) return;
+          btn.disabled = true;
+          btn.textContent = 'Sending...';
+          errEl.style.display = 'none';
+          fetch('https://app.orcool.com/api/auth/send-magic-link', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: email, isBusiness: false, baseUrl: 'https://app.orcool.com' })
+          }).then(function (r) {
+            if (!r.ok) throw new Error('Request failed (' + r.status + ')');
+            form.style.display = 'none';
+            okEl.textContent = 'Check your inbox. Magic link sent to ' + email + '.';
+            okEl.style.display = 'block';
+          }).catch(function (err) {
+            errEl.textContent = 'Something went wrong. Please try again.';
+            errEl.style.display = 'block';
+            btn.disabled = false;
+            btn.textContent = 'Get magic link';
+          });
+        }
+      </script>
+    </div>
+    <div style="margin-top:36px;max-width:640px">
       <div style="font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#555;margin-bottom:10px">MCP Server URL</div>
       <div style="display:flex;border-radius:10px;overflow:hidden;border:1px solid #2a2a2a">
         <div style="flex:1;padding:14px 18px;font-family:var(--mono);font-size:15px;color:#e8e8e8;background:#0c0c0c;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">https://mcp.orcool.com</div>
+        <button onclick="navigator.clipboard.writeText('https://mcp.orcool.com').then(()=>{this.textContent='Copied';setTimeout(()=>{this.textContent='Copy'},2000)})" style="padding:14px 22px;background:#222;color:#fff;font-weight:600;font-size:14px;border:none;cursor:pointer;font-family:var(--sans);white-space:nowrap;border-left:1px solid #2a2a2a" onmouseover="this.style.background='#2e2e2e'" onmouseout="this.style.background='#222'">Copy</button>
       </div>
       <p style="font-size:14px;color:#555;margin-top:10px">Sign-in is a single click from your email. Same Orcool account in every client you connect.</p>
+    </div>
+    <div style="margin-top:28px;max-width:640px;display:flex;flex-direction:column;gap:3px">
+      <div style="border-radius:10px;overflow:hidden;border:1px solid #222">
+        <button onclick="toggleAcc('acc-claude',this)" style="width:100%;background:#181818;border:none;cursor:pointer;padding:16px 20px;display:flex;align-items:center;gap:14px;text-align:left" onmouseover="this.style.background='#1d1d1d'" onmouseout="this.style.background='#181818'">
+          <span style="width:32px;height:32px;border-radius:8px;background:#e8602d;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><line x1="8" y1="1.5" x2="8" y2="14.5" stroke="white" stroke-width="2.2" stroke-linecap="round"/><line x1="2" y1="4.75" x2="14" y2="11.25" stroke="white" stroke-width="2.2" stroke-linecap="round"/><line x1="14" y1="4.75" x2="2" y2="11.25" stroke="white" stroke-width="2.2" stroke-linecap="round"/></svg>
+          </span>
+          <span style="font-weight:600;font-size:16px;color:#fff;flex:1">Claude</span>
+          <span class="acc-chev" style="color:#555;font-size:11px;transition:transform .22s">&#9660;</span>
+        </button>
+        <div id="acc-claude" style="background:#111;overflow:hidden;max-height:0;transition:max-height .35s ease">
+          <ol style="padding:16px 20px 20px;color:#C9C7C4;font-size:15px;line-height:1.65;display:flex;flex-direction:column;gap:8px;list-style:none">
+            <li><span style="font-family:var(--mono);font-size:12px;color:#555;margin-right:10px">1.</span>Copy the MCP server URL above.</li>
+            <li><span style="font-family:var(--mono);font-size:12px;color:#555;margin-right:10px">2.</span>Open <strong style="color:#fff">Claude</strong> &rarr; Settings &rarr; Connectors &rarr; <strong style="color:#fff">Add custom connector</strong> &rarr; paste the URL &rarr; Add.</li>
+            <li><span style="font-family:var(--mono);font-size:12px;color:#555;margin-right:10px">3.</span>Sign in with the magic link (same Orcool account everywhere).</li>
+            <li><span style="font-family:var(--mono);font-size:12px;color:#555;margin-right:10px">4.</span><strong style="color:#fff">Turn Orcool on in your chat</strong> (the tools menu), then run your prompt.</li>
+          </ol>
+        </div>
+      </div>
+      <div style="border-radius:10px;overflow:hidden;border:1px solid #222">
+        <button onclick="toggleAcc('acc-chatgpt',this)" style="width:100%;background:#181818;border:none;cursor:pointer;padding:16px 20px;display:flex;align-items:center;gap:14px;text-align:left" onmouseover="this.style.background='#1d1d1d'" onmouseout="this.style.background='#181818'">
+          <span style="width:32px;height:32px;border-radius:8px;background:#0a0a0a;border:1px solid #333;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">
+            <svg width="18" height="18" viewBox="0 0 41 41" fill="white"><path d="M37.532 16.87a9.963 9.963 0 0 0-.856-8.184 10.078 10.078 0 0 0-10.855-4.835 9.964 9.964 0 0 0-6.131-3.034 10.079 10.079 0 0 0-9.618 6.979 9.967 9.967 0 0 0-6.664 4.834 10.08 10.08 0 0 0 1.24 11.817 9.965 9.965 0 0 0 .856 8.185 10.079 10.079 0 0 0 10.855 4.835 9.965 9.965 0 0 0 6.131 3.034 10.078 10.078 0 0 0 9.619-6.98 9.967 9.967 0 0 0 6.663-4.834 10.079 10.079 0 0 0-1.24-11.817zm-9.019 12.886a4.475 4.475 0 0 1-2.876-1.04l.141-.08 4.779-2.758a.795.795 0 0 0 .392-.681V19.04l2.02 1.168a.07.07 0 0 1 .038.052v5.583a4.504 4.504 0 0 1-4.494 4.494zm-9.661-4.126a4.47 4.47 0 0 1-.535-3.014l.142.085 4.783 2.759a.771.771 0 0 0 .78 0l5.843-3.369v2.332a.08.08 0 0 1-.033.062L24.78 19.98a4.5 4.5 0 0 1-6.927 5.65zm-1.3-11.71a4.484 4.484 0 0 1 2.366-1.973v11.579a.766.766 0 0 0 .388.677l5.814 3.354-2.02 1.169a.076.076 0 0 1-.071 0L9.999 19.25a4.504 4.504 0 0 1-.447-5.327zm16.596 3.855l-5.815-3.354 2.021-1.168a.076.076 0 0 1 .071 0l4.83 2.791a4.494 4.494 0 0 1-.678 8.104v-5.677a.79.79 0 0 0-.429-.696zm2.01-3.023l-.141-.085-4.774-2.782a.775.775 0 0 0-.785 0L9.413 15.14V12.81a.07.07 0 0 1 .028-.061l4.83-2.787a4.5 4.5 0 0 1 6.68 4.66zm-12.64 2.365l-2.02-1.163a.08.08 0 0 1-.038-.057V8.534a4.5 4.5 0 0 1 7.375-3.453l-.142.08-4.778 2.758a.795.795 0 0 0-.392.681zm1.097-2.365l2.602-1.5 2.607 1.5v2.999l-2.597 1.5-2.607-1.5z"/></svg>
+          </span>
+          <span style="font-weight:600;font-size:16px;color:#fff;flex:1">ChatGPT</span>
+          <span class="acc-chev" style="color:#555;font-size:11px;transition:transform .22s">&#9660;</span>
+        </button>
+        <div id="acc-chatgpt" style="background:#111;overflow:hidden;max-height:0;transition:max-height .35s ease">
+          <ol style="padding:16px 20px 20px;color:#C9C7C4;font-size:15px;line-height:1.65;display:flex;flex-direction:column;gap:8px;list-style:none">
+            <li><span style="font-family:var(--mono);font-size:12px;color:#555;margin-right:10px">1.</span>Copy the MCP server URL above.</li>
+            <li><span style="font-family:var(--mono);font-size:12px;color:#555;margin-right:10px">2.</span>Open <strong style="color:#fff">ChatGPT</strong> &rarr; Settings &rarr; Apps &rarr; Advanced settings &rarr; <strong style="color:#fff">Create app</strong> &rarr; paste the URL.</li>
+            <li><span style="font-family:var(--mono);font-size:12px;color:#555;margin-right:10px">3.</span>Sign in with the magic link (same Orcool account).</li>
+            <li><span style="font-family:var(--mono);font-size:12px;color:#555;margin-right:10px">4.</span>Ask it anything about your category and it will call Orcool automatically.</li>
+          </ol>
+        </div>
+      </div>
+      <div style="border-radius:10px;overflow:hidden;border:1px solid #222">
+        <button onclick="toggleAcc('acc-slack',this)" style="width:100%;background:#181818;border:none;cursor:pointer;padding:16px 20px;display:flex;align-items:center;gap:14px;text-align:left" onmouseover="this.style.background='#1d1d1d'" onmouseout="this.style.background='#181818'">
+          <span style="width:32px;height:32px;border-radius:8px;background:#4A154B;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">
+            <svg width="16" height="16" viewBox="0 0 54 54" fill="none"><path d="M19.712.133a5.381 5.381 0 0 0-5.376 5.387 5.381 5.381 0 0 0 5.376 5.386h5.376V5.52A5.381 5.381 0 0 0 19.712.133m0 14.365H5.376A5.381 5.381 0 0 0 0 19.884a5.381 5.381 0 0 0 5.376 5.387h14.336a5.381 5.381 0 0 0 5.376-5.387 5.381 5.381 0 0 0-5.376-5.386" fill="#36C5F0"/><path d="M53.76 19.884a5.381 5.381 0 0 0-5.376-5.386 5.381 5.381 0 0 0-5.376 5.386v5.387h5.376a5.381 5.381 0 0 0 5.376-5.387m-14.336 0V5.52A5.381 5.381 0 0 0 34.048.133a5.381 5.381 0 0 0-5.376 5.387v14.364a5.381 5.381 0 0 0 5.376 5.387 5.381 5.381 0 0 0 5.376-5.387" fill="#2EB67D"/><path d="M34.048 54a5.381 5.381 0 0 0 5.376-5.387 5.381 5.381 0 0 0-5.376-5.386h-5.376v5.386A5.381 5.381 0 0 0 34.048 54m0-14.365h14.336a5.381 5.381 0 0 0 5.376-5.386 5.381 5.381 0 0 0-5.376-5.387H34.048a5.381 5.381 0 0 0-5.376 5.387 5.381 5.381 0 0 0 5.376 5.386" fill="#ECB22E"/><path d="M0 34.249a5.381 5.381 0 0 0 5.376 5.386 5.381 5.381 0 0 0 5.376-5.386v-5.387H5.376A5.381 5.381 0 0 0 0 34.249m14.336 0v14.364A5.381 5.381 0 0 0 19.712 54a5.381 5.381 0 0 0 5.376-5.387V34.249a5.381 5.381 0 0 0-5.376-5.387 5.381 5.381 0 0 0-5.376 5.387" fill="#E01E5A"/></svg>
+          </span>
+          <span style="font-weight:600;font-size:16px;color:#fff;flex:1">Slack</span>
+          <span class="acc-chev" style="color:#555;font-size:11px;transition:transform .22s">&#9660;</span>
+        </button>
+        <div id="acc-slack" style="background:#111;overflow:hidden;max-height:0;transition:max-height .35s ease">
+          <ol style="padding:16px 20px 20px;color:#C9C7C4;font-size:15px;line-height:1.65;display:flex;flex-direction:column;gap:8px;list-style:none">
+            <li><span style="font-family:var(--mono);font-size:12px;color:#555;margin-right:10px">1.</span>Hit <strong style="color:#fff">Start free trial</strong> and sign in from the magic link we email you.</li>
+            <li><span style="font-family:var(--mono);font-size:12px;color:#555;margin-right:10px">2.</span>Answer a few onboarding questions about your category, market, and competitors.</li>
+            <li><span style="font-family:var(--mono);font-size:12px;color:#555;margin-right:10px">3.</span>Open your brand page, go to <strong style="color:#fff">Integrations</strong>, and connect Slack.</li>
+            <li><span style="font-family:var(--mono);font-size:12px;color:#555;margin-right:10px">4.</span>Pick a channel, authorize the bot, and signals start landing there.</li>
+          </ol>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- FAQ -->
 <section class="faq" style="padding-top:0">
   <div class="wrap">
     <span class="eyebrow">Questions</span>
@@ -330,27 +635,923 @@
   </div>
 </section>
 
+<!-- INTERACTIVE HOOK EXPLORER -->
 <section class="dark final" id="pilot">
   <div class="wrap">
-    <span class="eyebrow" style="color:var(--red)">Start</span>
-    <h2 style="margin-top:14px">Pilot one market. See the winner before you commit.</h2>
-    <p class="sub">No card. No bullshit. Just start.</p>
-    <div class="btnrow" style="justify-content:center;margin-top:24px">
-      <a class="btn light" href="mailto:team@orcool.com?subject=Global%20pilot">Start a pilot</a>
+    <span class="eyebrow" style="color:var(--red)">Live signal</span>
+    <h2 style="margin-top:14px">What's winning in your market right now.</h2>
+    <p class="sub" style="max-width:560px;margin:14px auto 0">Pick a category and a market. We show you the hooks that are actually working there — and one Orcool would write instead.</p>
+
+    <!-- Selectors -->
+    <div class="hook-selectors" id="hookSelectors">
+      <div class="hook-select-wrap">
+        <label class="hook-label">Category</label>
+        <select id="catSelect" class="hook-select" onchange="renderHookCard()">
+          <option value="">Choose category</option>
+          <option value="fintech">Fintech</option>
+          <option value="mobility">Mobility</option>
+          <option value="health">Health</option>
+          <option value="ecom">E-com</option>
+          <option value="dating">Dating</option>
+          <option value="saas">SaaS</option>
+          <option value="ai_first">AI First Service</option>
+          <option value="subscription">Subscription App</option>
+        </select>
+      </div>
+      <div class="hook-select-wrap">
+        <label class="hook-label">Market</label>
+        <select id="mktSelect" class="hook-select" onchange="renderHookCard()">
+          <option value="">Choose market</option>
+          <option value="nigeria">Nigeria</option>
+          <option value="indonesia">Indonesia</option>
+          <option value="colombia">Colombia</option>
+          <option value="egypt">Egypt</option>
+          <option value="brazil">Brazil</option>
+          <option value="southafrica">South Africa</option>
+          <option value="mexico">Mexico</option>
+          <option value="vietnam">Vietnam</option>
+          <option value="kenya">Kenya</option>
+          <option value="philippines">Philippines</option>
+        </select>
+      </div>
     </div>
+
+    <!-- Card output -->
+    <div id="hookCard" class="hook-card" style="display:none">
+      <div class="hook-card-header">
+        <span class="hook-card-tag" id="hookCardTag"></span>
+        <span class="hook-card-fresh">Updated monthly</span>
+      </div>
+
+      <div class="hook-block">
+        <div class="hook-section-label">What's working now</div>
+        <div class="hook-item free" id="hook1">
+          <div class="hook-competitor" id="hook1comp"></div>
+          <div class="hook-text" id="hook1text"></div>
+          <div class="hook-why" id="hook1why"></div>
+        </div>
+        <div class="hook-item gated" id="hook2">
+          <div class="hook-competitor" id="hook2comp"></div>
+          <div class="hook-text blurred" id="hook2text"></div>
+          <div class="hook-why blurred" id="hook2why"></div>
+        </div>
+        <div class="hook-item gated" id="hook3">
+          <div class="hook-competitor" id="hook3comp"></div>
+          <div class="hook-text blurred" id="hook3text"></div>
+          <div class="hook-why blurred" id="hook3why"></div>
+        </div>
+      </div>
+
+      <div class="hook-divider"></div>
+
+      <div class="hook-block">
+        <div class="hook-section-label" style="color:#FA3810">What Orcool would write instead</div>
+        <div class="hook-item gated" id="hookCounter">
+          <div class="hook-text blurred" id="hookCounterText"></div>
+          <div class="hook-why blurred" id="hookCounterNote"></div>
+        </div>
+      </div>
+
+      <!-- Gate -->
+      <div class="hook-gate" id="hookGate">
+        <div class="hook-gate-inner">
+          <div class="hook-gate-label">See 2 more hooks + the Orcool counter-hook</div>
+          <div class="hook-gate-sub">We'll email you a magic link to your Orcool account.</div>
+          <div class="hook-gate-form" id="hookGateForm">
+            <input type="email" id="hookEmail" class="hook-email-input" placeholder="Work email" required>
+            <button class="hook-gate-btn" onclick="submitHookGate()">Unlock full teardown</button>
+          </div>
+          <div id="hookGateSuccess" style="display:none;color:#45B43B;font-size:14px;font-weight:600;text-align:center">Sent. Check your inbox — full teardown is on its way.</div>
+          <div id="hookGateError" style="display:none;color:#FA3810;font-size:13px;text-align:center">Something went wrong. Try again or email us at team@orcool.com</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Empty state -->
+    <div id="hookEmpty" class="hook-empty">
+      <div class="hook-empty-dots">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <p style="color:#6e6c69;font-size:15px;margin-top:16px">Select a category and market above.</p>
+    </div>
+
+    <!-- No data state -->
+    <div id="hookNoData" style="display:none;text-align:center;padding:40px 0">
+      <p style="color:#6e6c69;font-size:15px">This combination is coming soon. <a href="mailto:team@orcool.com?subject=Hook+teardown+request" style="color:var(--red);text-decoration:underline">Ask us directly.</a></p>
+    </div>
+
   </div>
   <div class="glow"></div>
 </section>
+
+<style>
+.hook-selectors{display:flex;gap:16px;justify-content:center;margin-top:36px;flex-wrap:wrap}
+.hook-select-wrap{display:flex;flex-direction:column;gap:6px;min-width:200px}
+.hook-label{font-size:12px;font-weight:600;letter-spacing:.07em;color:#9b9893;text-transform:uppercase}
+.hook-select{appearance:none;background:#1a1a1a url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B6E80' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 14px center;border:1.5px solid #2e2e2e;color:#f0efed;font-size:15px;font-weight:500;padding:12px 40px 12px 16px;border-radius:10px;cursor:pointer;font-family:var(--sans);transition:border-color .15s}
+.hook-select:focus{outline:none;border-color:#FA3810}
+.hook-select option{background:#1a1a1a;color:#f0efed}
+
+.hook-card{margin-top:36px;background:#fff;border-radius:16px;overflow:hidden;text-align:left;position:relative;max-width:680px;margin-left:auto;margin-right:auto}
+.hook-card-header{display:flex;align-items:center;justify-content:space-between;padding:16px 22px;border-bottom:1px solid #F0EFED}
+.hook-card-tag{font-size:13px;font-weight:700;color:#443D3D;letter-spacing:.03em}
+.hook-card-fresh{font-size:12px;color:#9b9893;font-family:var(--mono)}
+
+.hook-block{padding:20px 22px}
+.hook-section-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9b9893;margin-bottom:14px}
+
+.hook-item{padding:14px 16px;border-radius:10px;background:#F8F7F5;margin-bottom:10px}
+.hook-item:last-child{margin-bottom:0}
+.hook-competitor{font-size:11px;font-weight:600;letter-spacing:.06em;color:#9b9893;text-transform:uppercase;margin-bottom:5px}
+.hook-text{font-size:15px;font-weight:600;color:#1a1a1a;line-height:1.4}
+.hook-why{font-size:13px;color:#6B6E80;margin-top:5px;line-height:1.4}
+
+.blurred{filter:blur(5px);user-select:none;pointer-events:none;transition:filter .3s}
+.blurred.revealed{filter:none;user-select:auto}
+
+.hook-divider{height:1px;background:#F0EFED;margin:0 22px}
+
+.hook-gate{background:linear-gradient(to bottom,rgba(248,247,245,0),#F8F7F5 40%);padding:20px 22px 24px;margin-top:-20px;position:relative;z-index:2}
+.hook-gate-inner{background:#fff;border:1.5px solid #E7E5E1;border-radius:12px;padding:20px;text-align:center}
+.hook-gate-label{font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:4px}
+.hook-gate-sub{font-size:13px;color:#6B6E80;margin-bottom:16px}
+.hook-gate-form{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.hook-email-input{flex:1;min-width:220px;padding:11px 14px;border:1.5px solid #E7E5E1;border-radius:8px;font-size:14px;font-family:var(--sans);color:#1a1a1a;background:#fff;transition:border-color .15s}
+.hook-email-input:focus{outline:none;border-color:#FA3810}
+.hook-gate-btn{background:#FA3810;color:#fff;border:none;padding:11px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:var(--sans);white-space:nowrap;transition:background .14s}
+.hook-gate-btn:hover{background:#d42e0b}
+.hook-gate-btn:disabled{opacity:.5;cursor:not-allowed}
+
+.hook-empty{text-align:center;padding:48px 0;display:block}
+.hook-empty-dots{display:flex;gap:10px;justify-content:center;align-items:center}
+.hook-empty-dots span{width:8px;height:8px;border-radius:50%;background:#2e2e2e}
+.hook-empty-dots span:nth-child(1){background:#FA3810}
+.hook-empty-dots span:nth-child(2){background:#FFB516}
+.hook-empty-dots span:nth-child(3){background:#45B43B}
+.hook-empty-dots span:nth-child(4){background:#387FFF}
+.hook-empty-dots span:nth-child(5){background:#FA3810;opacity:.3}
+
+@media(max-width:600px){
+  .hook-selectors{flex-direction:column;align-items:stretch;padding:0 4px}
+  .hook-gate-form{flex-direction:column}
+  .hook-email-input,.hook-gate-btn{width:100%;min-width:0}
+}
+</style>
+
+<script>
+const HOOK_DATA = {
+  nigeria_fintech: {
+    label: "Nigeria · Fintech",
+    hooks: [
+      { competitor: "Palmpay", text: "Your mum has been waiting three days. Send money in 10 seconds. No bank needed.", why: "Family remittance + urgency + guilt reframe. Everyone in Lagos has a mum waiting for money." },
+      { competitor: "Moniepoint", text: "Open a bank account before the queue does.", why: "Banking access framing. 'Queue' triggers both waiting lines and mobile USSD data cost — double meaning local audiences catch instantly." },
+      { competitor: "Opay", text: "Withdraw at any agent. Not just at the bank that's 40 minutes away.", why: "Agent banking network as proximity advantage. Physical distance to formal banks is a real daily pain point in non-Lagos markets." }
+    ],
+    counter: { text: "The bank told you to come back Monday. Your airtime didn't.", note: "Reframes the competitor (traditional banking) failure into product promise. 'Airtime' is hyperlocal — data/airtime top-up is the universal mobile behavior." }
+  },
+  nigeria_ecom: {
+    label: "Nigeria · E-com",
+    hooks: [
+      { competitor: "Jumia", text: "Delivered before your neighbor borrows it.", why: "Peer-borrowing humor is deeply local. Nigerians immediately recognize the 'neighbor who borrows and forgets' trope — turns delivery speed into a social win." },
+      { competitor: "Jiji", text: "Pay on delivery. Check it first. Like it. Keep it.", why: "Trust gap is the #1 barrier in Nigerian e-com. Explicit 'check before you pay' removes friction without discounting price." },
+      { competitor: "Konga", text: "Order at 8am. Delivered to Surulere by 3pm. Real.", why: "Specific Lagos neighborhood name (Surulere) signals genuine local knowledge. Vague city-level promises don't convert — specificity does." }
+    ],
+    counter: { text: "We don't deliver to your state. We deliver to your street.", note: "Flips the typical 'nationwide delivery' claim on its head. Granularity = credibility. Works best with geo-targeted ads showing the specific LGA." }
+  },
+  nigeria_mobility: {
+    label: "Nigeria · Mobility",
+    hooks: [
+      { competitor: "Bolt", text: "Driver in 3 minutes. Agege to VI in 45. Not 'estimate'.", why: "Lagosians are deeply skeptical of ETA estimates. Naming specific routes (Agege to Victoria Island) signals you actually know Lagos traffic." },
+      { competitor: "inDrive", text: "Name your price. Driver agrees. You move.", why: "Price negotiation is culturally native — marketplace framing resonates stronger than fixed-price apps in a negotiation-first culture." },
+      { competitor: "Gokada", text: "Okada is back. Legal. Tracked. Safe.", why: "After Lagos okada ban chaos, safety + legality are primary trust signals. Historical context gives this hook enormous relevance." }
+    ],
+    counter: { text: "You negotiate your salary. Why not your ride?", note: "Frames price flexibility as a natural extension of Nigerian negotiation culture. Elevates the behavior from 'haggling' to empowerment." }
+  },
+  indonesia_fintech: {
+    label: "Indonesia · Fintech",
+    hooks: [
+      { competitor: "GoPay", text: "Bayar bulan depan, happy sekarang.", why: "PayLater is fully normalized in Indonesia. Present-pleasure framing in Bahasa Indonesia. 'Happy sekarang' is conversational and TikTok-native." },
+      { competitor: "Flip", text: "Transfer ke semua bank, gratis, 24 jam.", why: "Bank-to-bank transfer fees are a genuine daily pain. 'Gratis' (free) + 'semua bank' (all banks) answers the two most common complaints in one line." },
+      { competitor: "SeaBank", text: "Bunga tabungan sampai 7%. Bukan promo. Selamanya.", why: "High savings interest + explicitly NOT a promo. Indonesian consumers are deeply skeptical of 'promo' rates that expire — 'selamanya' (forever) is the counter-signal." }
+    ],
+    counter: { text: "Kamu nggak bayar untuk nunggu transfernya.", note: "Real-time transfer as time-value claim. 'Nggak bayar untuk nunggu' (you don't pay to wait) — reframes the value proposition as time, not just money. Casual Bahasa tone lands on Reels." }
+  },
+  indonesia_mobility: {
+    label: "Indonesia · Mobility",
+    hooks: [
+      { competitor: "Gojek", text: "Hujan deras? Ojek-mu sudah otw.", why: "Rain = massive demand spike for ojek in Jakarta. Proactive 'sudah otw' (already on the way) framing makes the app feel like it reads your mind." },
+      { competitor: "Grab", text: "Driver terdekat. 3 menit. Dijamin.", why: "ETA certainty in a traffic-chaotic market. 'Dijamin' (guaranteed) is a strong commitment word that differentiates from vague ETAs." },
+      { competitor: "Maxim", text: "Tarif lebih murah dari Gojek. Lihat sendiri.", why: "Direct price comparison is common and accepted in Indonesia. 'Lihat sendiri' (see for yourself) invites action and signals confidence." }
+    ],
+    counter: { text: "Macet di mana-mana. Driver-mu nggak terjebak.", note: "Traffic (macet) is Jakarta's defining shared experience. Positioning the driver as someone who navigates macet — not trapped by it — creates an aspirational frame." }
+  },
+  indonesia_health: {
+    label: "Indonesia · Health",
+    hooks: [
+      { competitor: "Halodoc", text: "Dokter online dalam 5 menit. Nggak perlu ke klinik.", why: "Clinic queue times in Indonesia average 2-3 hours. '5 menit' vs implied hours of waiting — the comparison is implicit and powerful." },
+      { competitor: "Alodokter", text: "Konsultasi dokter spesialis dari rumah. Langsung besok.", why: "Specialist access is the real bottleneck. 'Langsung besok' (right tomorrow) vs months-long specialist wait — resolves the highest anxiety." },
+      { competitor: "Good Doctor", text: "Resep langsung dikirim ke apotek terdekat.", why: "Prescription-to-pharmacy loop closes the healthcare journey. Convenience chain completion is the unlock for mobile-health adoption in tier 2/3 cities." }
+    ],
+    counter: { text: "Sakit nggak harus nunggu sampai parah baru ke dokter.", note: "Preventive care reframe. 'Nggak harus nunggu sampai parah' (don't have to wait until it's serious) challenges the cultural norm of enduring illness before seeking care." }
+  },
+  indonesia_ecom: {
+    label: "Indonesia · E-com",
+    hooks: [
+      { competitor: "Shopee", text: "Flash sale. 30 menit doang. Jam 12 siang.", why: "Time-bounded urgency with specific clock time creates calendar-like behavior. Indonesian consumers plan their days around Shopee flash sales." },
+      { competitor: "Tokopedia", text: "Gratis ongkir ke seluruh Indonesia. Termasuk Papua.", why: "'Including Papua' signals genuine nationwide reach. Calling out the most remote area proves the 'nationwide' promise isn't Jakarta-centric." },
+      { competitor: "Lazada", text: "COD tersedia. Bayar pas barang sampai.", why: "COD remains king in Indonesia. Explicit affirmation removes the #1 purchase objection — trust that the product will actually arrive." }
+    ],
+    counter: { text: "Produk lokal. Kualitas ekspor. Harga pasar.", note: "National pride + quality signal + accessibility. 'Ekspor' (export-quality) is aspirational for Indonesian consumers who associate export = global standard." }
+  },
+  colombia_fintech: {
+    label: "Colombia · Fintech",
+    hooks: [
+      { competitor: "Nequi", text: "Sin banco, sin cola. Con plata.", why: "Unbanked + bureaucracy pain in one line. 'Cola' (queue) is universal Colombian banking frustration. 'Con plata' (with money) flips the negative to a positive outcome." },
+      { competitor: "Bancolombia A La Mano", text: "Hoy cobras, hoy mandas la plata.", why: "Same-day pay-to-transfer. Payday-linked transfers home are a massive use case in Colombia. Immediacy is the entire value prop." },
+      { competitor: "Daviplata", text: "Recarga, paga y transfiere sin salir de tu barrio.", why: "'Tu barrio' (your neighborhood) signals hyper-local access. Colombians outside major cities are deeply underserved — neighborhood-level framing converts." }
+    ],
+    counter: { text: "El banco te dice que no. Nosotros te decimos cuándo.", note: "Rejection vs timeline reframe. Banks' credit denials are emotionally charged. Flipping from binary 'no' to future 'when' is optimism that resonates in striving-class Colombia." }
+  },
+  colombia_mobility: {
+    label: "Colombia · Mobility",
+    hooks: [
+      { competitor: "inDrive", text: "Tú pones el precio. El conductor acepta. O no.", why: "Negotiation framing. The 'or not' at the end signals fairness and driver respect — both increasingly important differentiators in Colombia post-Uber controversy." },
+      { competitor: "Cabify", text: "Conductor verificado. Viaje guardado. Llegás seguro.", why: "Safety is the primary ride-hail concern for Colombian women (majority of urban trips). 'Guardado' (saved) = accountability trail." },
+      { competitor: "Picap", text: "Mototaxi legal. Rápido. Sin susto.", why: "'Sin susto' (without fear) is the entire value prop for mototaxi in Colombia, where informal mototaxis carry safety stigma. Legal + fast + safe in three words." }
+    ],
+    counter: { text: "El trancón no es tuyo. Es del conductor.", note: "Bogotá's trancón (traffic jam) is a daily shared trauma. Transferring the emotional burden of traffic to the driver — rather than the rider — is a relief-framing breakthrough." }
+  },
+  colombia_ecom: {
+    label: "Colombia · E-com",
+    hooks: [
+      { competitor: "Mercado Libre", text: "Despacho el mismo día si comprás antes de la 1.", why: "Specific cutoff time creates urgency without aggression. Same-day Colombian fulfillment is rare — making it conditional on time adds credibility to the promise." },
+      { competitor: "Rappi", text: "Se te acabó el tinto. En 10 minutos está en tu puerta.", why: "'Tinto' (Colombian black coffee) is hyper-local. Using the Colombian word instead of 'café' signals insider knowledge that converts." },
+      { competitor: "Linio", text: "Cuotas sin interés. Pagás como si fuera tuyo desde el primer día.", why: "Installment culture is strong in Colombia. 'Como si fuera tuyo' (as if it's already yours) shifts psychology from 'buying on credit' to 'having it now.'" }
+    ],
+    counter: { text: "Vendedor colombiano. Producto colombiano. Plata que se queda acá.", note: "National economic pride post-COVID. 'Plata que se queda acá' (money that stays here) — buy-local is a powerful emotional lever in the Colombian middle class." }
+  },
+  egypt_fintech: {
+    label: "Egypt · Fintech",
+    hooks: [
+      { competitor: "Vodafone Cash", text: "حوّل فلوس لأهلك في ثانية. في أي وقت.", why: "Family remittance is the #1 use case. 'أهلك' (your family/people) + instantaneous + anytime = the complete emotional and functional promise." },
+      { competitor: "Fawry", text: "ادفع أونلاين حتى لو معندكش بطاقة بنكية.", why: "Banking penetration in Egypt is ~35%. 'Even without a bank card' directly addresses the largest segment of excluded users — an enormous TAM." },
+      { competitor: "InstaPay", text: "البنك مش شرط. التحويل في ثانية.", why: "Bank bypass framing. Cuts directly to the core fear — 'I can't use this because I don't have a bank account' — and eliminates it in 5 words." }
+    ],
+    counter: { text: "مش محتاج فرع. محتاج تليفون بس.", note: "Branch elimination. 'You don't need a branch. Just a phone.' The Egyptian banking system is famously branch-dependent. Flipping the infrastructure requirement resonates deeply in 2nd-tier Egyptian cities." }
+  },
+  egypt_ecom: {
+    label: "Egypt · E-com",
+    hooks: [
+      { competitor: "Jumia Egypt", text: "اطلب دلوقتي. استلم بكره في بيتك.", why: "Next-day home delivery is still a premium signal in Egypt. 'بيتك' (your home) vs office/store pickup — home delivery feels like service, not logistics." },
+      { competitor: "Noon", text: "ادفع كاش عند الاستلام. وإذا مش عاجبك، ارجعه.", why: "COD + no-questions-return policy removes both purchase barriers in one hook. Egyptian e-com trust gap is primarily about payment risk and return difficulty." },
+      { competitor: "Amazon Egypt", text: "أسعار أوروبا. توصيل مصر.", why: "Price anchoring to European comparison while localizing delivery. Aspirational quality + accessible logistics = the core Egyptian premium e-com positioning." }
+    ],
+    counter: { text: "ما عندكش حساب بنكي؟ ادفع بالموبايل.", note: "Fintech-as-payment unlock. For e-com in Egypt, the mobile wallet integration is the growth lever — messaging mobile payment as the access key rather than the secondary option." }
+  },
+  brazil_dating: {
+    label: "Brazil · Dating",
+    hooks: [
+      { competitor: "Tinder", text: "O crush que mora a 2km não sabe que você existe ainda.", why: "Proximity + action gap. 'Ainda' (yet) implies you're about to fix that. Brazilian flirtation culture is direct — this matches the energy." },
+      { competitor: "Hinge", text: "Conversa de verdade, não só foto.", why: "Tinder fatigue + Brazilian cultural preference for conversation and warmth. 'De verdade' (real) is a powerful authenticity signal in a swiping-fatigued market." },
+      { competitor: "Bumble", text: "Ela manda a primeira mensagem. Sempre.", why: "Bumble's core mechanic as the entire hook. Brazilian gender dynamics make this genuinely differentiated — 'sempre' (always) reinforces the rule is the feature." }
+    ],
+    counter: { text: "Passaram um do outro na padaria. Se seguem. Nunca falaram.", note: "'Padaria' (bakery) is the most Brazilian social setting. Missed connection in the neighborhood padaria is a shared experience that makes this feel like a personal story, not an ad." }
+  },
+  brazil_ecom: {
+    label: "Brazil · E-com",
+    hooks: [
+      { competitor: "Mercado Livre", text: "Chegou antes do fim do dia. De verdade.", why: "Brazilian delivery skepticism is high after decades of 'prazo estimado' (estimated deadline) culture. 'De verdade' (for real) addresses the credibility gap directly." },
+      { competitor: "Shopee", text: "12x sem juros. Chega amanhã.", why: "Installment + speed. The two primary Brazilian purchase drivers in one line. PIX + parcelamento (installments) changed expectations — this reflects the new baseline." },
+      { competitor: "Amazon Brasil", text: "Prime: frete grátis, entrega rápida, qualquer dia.", why: "Subscription value reframe. 'Qualquer dia' (any day) fights the 'only for big orders' objection and normalizes the daily-use habit." }
+    ],
+    counter: { text: "Não é estimado. É garantido. Ou a gente te devolve.", note: "Delivery guarantee as a brand promise. 'Estimado' (estimated) is the enemy word in Brazilian logistics. Replacing it with 'garantido' (guaranteed) + refund condition builds the trust layer ads can't otherwise establish." }
+  },
+  southafrica_fintech: {
+    label: "South Africa · Fintech",
+    hooks: [
+      { competitor: "TymeBank", text: "Send R200 home without losing R20 on fees.", why: "Specific rand amounts make the fee pain concrete. Remittance from city workers to rural family is a massive behavioral use case — fee sensitivity is real." },
+      { competitor: "Capitec", text: "No monthly fee. Not this month. Not ever.", why: "Monthly banking fees are a genuine barrier for working-class South Africans. The repetition 'not this month. Not ever.' eliminates the 'promotional period' concern." },
+      { competitor: "FNB", text: "Bank on your phone. Not at a branch 40 minutes away.", why: "Branch distance is a real daily obstacle in South Africa's peri-urban areas. Physical distance becomes the emotional hook." }
+    ],
+    counter: { text: "Your salary arrives. Your bank shouldn't take a cut first.", note: "Salary + fee reframe. Immediately positions banking fees as theft from your own money. Works as a pre-payday awareness ad targeting the moment of highest financial anxiety." }
+  },
+  southafrica_ecom: {
+    label: "South Africa · E-com",
+    hooks: [
+      { competitor: "Takealot", text: "Delivered to your door by tomorrow. Not 'by end of week'.", why: "South African delivery culture has trained consumers to expect long waits. Tomorrow is a genuine premium promise — specificity vs the vague norm." },
+      { competitor: "Superbalist", text: "Try it at home. Keep what fits. Return what doesn't. Free.", why: "Home try-on removes the sizing risk — critical for apparel in a market where body diversity is strong and return friction has historically killed online fashion." },
+      { competitor: "Bash", text: "Local brands. Local delivery. Local price.", why: "Post-COVID buy-local movement in SA is strong. Three 'locals' in a row is rhythmic and reinforces the national pride anchor without sounding like a campaign slogan." }
+    ],
+    counter: { text: "Load-shedding schedule: 6–9pm. Your order arrives at 5:59.", note: "Load-shedding (power cuts) is South Africa's #1 daily planning challenge. Positioning delivery timing around loadshedding slots is hyper-contextual creative that only locals recognize as genius." }
+  },
+  mexico_fintech: {
+    label: "Mexico · Fintech",
+    hooks: [
+      { competitor: "Mercado Pago", text: "Manda dinero al rancho en 5 segundos. Sin comisión.", why: "'El rancho' (home village) is an emotionally loaded Mexican term for rural hometown. Remittance to family in the pueblo is a massive behavioral pattern." },
+      { competitor: "Stori", text: "Sin buró. Sin aval. Dinero en el día.", why: "Credit bureau exclusion is the primary fintech pain in Mexico. 'Sin buró' removes the largest barrier in 3 words. 'Aval' (guarantor) removal addresses the second barrier." },
+      { competitor: "Klar", text: "Tarjeta de crédito sin anualidad. Jamás.", why: "'Sin anualidad' (no annual fee) is the most searched fintech term in Mexico. 'Jamás' (never/ever) is a strong emotional amplifier that signals permanence, not promotion." }
+    ],
+    counter: { text: "El banco te rechazó. Nosotros te preguntamos cuándo empezamos.", note: "Rejection → invitation reframe. Bank rejection is a humiliating experience in Mexico. Flipping to an invitation ('when do we start?') is empowerment framing that works across demographic segments." }
+  },
+  mexico_ecom: {
+    label: "Mexico · E-com",
+    hooks: [
+      { competitor: "Mercado Libre", text: "Paga en OXXO. Recibe en casa. Sin tarjeta.", why: "OXXO payment is Mexico's most trusted checkout channel — 19,000+ stores. Explicitly naming OXXO removes the 'I don't have a card' barrier for ~40% of buyers." },
+      { competitor: "Liverpool", text: "Meses sin intereses. Hasta 18. Sin engaños.", why: "'Sin engaños' (no tricks) addresses the fine-print fear that plagues Mexican MSI offers. The credibility addition is as important as the installment offer itself." },
+      { competitor: "Amazon México", text: "Prime Day no es el único día. Ofertas todos los días.", why: "Positioning everyday value against the single-day event mentality. Mexican consumers are Prime Day-trained — this breaks the habit and drives daily visit behavior." }
+    ],
+    counter: { text: "Tu pedido llegó antes de que terminaras tu telenovela.", note: "Telenovela = universal Mexican cultural anchor for evening time. Delivery speed framed in local time units (a telenovela episode = ~45 min) makes it feel relatable, not corporate." }
+  },
+  vietnam_health: {
+    label: "Vietnam · Health",
+    hooks: [
+      { competitor: "Docosan", text: "Đặt lịch bác sĩ trong 30 giây. Không cần chờ đợi.", why: "Hospital queue time in Vietnam is 3-7 hours. '30 giây' (30 seconds) vs the implicit alternative is the entire value contrast. No need to say 'vs hospital.'" },
+      { competitor: "JioHealth", text: "Bác sĩ chuyên khoa gặp được ngay hôm nay.", why: "Specialist access is the real bottleneck. 'Ngay hôm nay' (right today) vs the typical months-long specialist referral wait is a genuine product breakthrough." },
+      { competitor: "eDoctor", text: "Tư vấn bác sĩ từ nhà. Đơn thuốc giao tận cửa.", why: "Home consultation + doorstep prescription delivery closes the full healthcare loop. Vietnamese consumers are increasingly mobile-native for services." }
+    ],
+    counter: { text: "Bệnh viện công: 6 tiếng xếp hàng. Ứng dụng: 5 phút.", note: "Direct comparison — 6 hours queue at public hospital vs 5 minutes on app. Vietnamese consumers have visceral hospital queue memories. Making the contrast explicit (rather than implied) drives highest conversion." }
+  },
+  vietnam_ecom: {
+    label: "Vietnam · E-com",
+    hooks: [
+      { competitor: "Shopee Vietnam", text: "Flash sale 12 giờ trưa. 15 phút thôi.", why: "Time-bounded lunch-hour flash sales are Shopee's signature behavior pattern in Vietnam. Specific time + short window creates calendar-anchored habit." },
+      { competitor: "Lazada Vietnam", text: "Giao hàng miễn phí. Không cần đơn tối thiểu.", why: "Minimum order free-shipping thresholds are a major purchase abandonment trigger. Removing the threshold entirely is a direct conversion driver." },
+      { competitor: "Tiki", text: "Hàng chính hãng. Hoàn tiền nếu hàng giả.", why: "Counterfeit goods anxiety is Vietnam's #1 e-com trust barrier. A money-back counterfeit guarantee directly answers the primary objection that prevents first purchase." }
+    ],
+    counter: { text: "Sản phẩm Việt. Chất lượng xuất khẩu. Giá trong nước.", note: "National pride + export-quality signal + local pricing. 'Xuất khẩu' (export) is an aspirational quality marker — Vietnamese consumers associate export products with higher standards." }
+  },
+  kenya_fintech: {
+    label: "Kenya · Fintech",
+    hooks: [
+      { competitor: "M-Pesa", text: "Send money to anyone with a phone. 30 seconds.", why: "M-Pesa set the behavioral baseline — any competitor must match its simplicity and speed promise before differentiating. This mirrors the user's mental model." },
+      { competitor: "Equitel", text: "Save as little as KES 10. Every day counts.", why: "Small-denomination savings framing. Kenya's mobile savings culture starts at micro-amounts — acknowledging KES 10 (≈$0.08) is a genuine trust signal with rural users." },
+      { competitor: "Absa Kenya", text: "Apply for a loan on your phone. No branch visit.", why: "Branch elimination for credit access is the primary fintech unlock in peri-urban Kenya. Loan application friction is the barrier — removing it is the entire product story." }
+    ],
+    counter: { text: "Your neighbor sent money home without airtime. Ask them how.", note: "Peer-to-peer discovery framing. 'Ask your neighbor' is a word-of-mouth mechanic that works in Kenya's strong community network culture — especially for financial behavior which spreads through trusted peers, not ads." }
+  },
+  kenya_ecom: {
+    label: "Kenya · E-com",
+    hooks: [
+      { competitor: "Jumia Kenya", text: "Pay on delivery. In Nairobi, Mombasa, Kisumu.", why: "COD + three specific cities. The third city (Kisumu) signals non-Nairobi reach — critical for conversion in Western Kenya where online trust is lower." },
+      { competitor: "Kilimall", text: "Order Sunday. Here Monday.", why: "Extreme delivery simplicity. No logistics jargon, no 'business days' caveat. The weekend order → Monday delivery promise is aspirational for Kenyan e-com." },
+      { competitor: "Amazon Kenya (via UAE)", text: "International brands. Delivered locally.", why: "Import arbitrage anxiety is real — Kenyans want global products but fear customs delays. 'Delivered locally' removes the import ambiguity." }
+    ],
+    counter: { text: "Mpesa lipa. Delivered tomorrow. No funny math.", note: "'No funny math' targets the hidden-fee anxiety common in Kenyan e-com. M-Pesa payment + next-day delivery + total price transparency = the three-part trust stack that drives first purchase." }
+  },
+  philippines_ecom: {
+    label: "Philippines · E-com",
+    hooks: [
+      { competitor: "Shopee Philippines", text: "COD pa rin. Mas mabilis na.", why: "COD remains dominant in PH — starting with affirmation ('still COD') before the upgrade ('faster now') respects existing behavior while signaling improvement." },
+      { competitor: "Lazada Philippines", text: "Flash sale. 11.11. 12 minuto lang.", why: "Super-short flash sale windows create extreme FOMO. '12 minutes only' is more urgent than 'sale ends soon' — and Filipinos track these exactly." },
+      { competitor: "Zalora PH", text: "Free delivery. Free returns. No minimum. Walang catch.", why: "'Walang catch' (no catch) in Taglish is the most trusted phrase to neutralize Filipino skepticism of 'too good to be true' offers." }
+    ],
+    counter: { text: "Hindi ka na kailangang pumunta sa mall. Pumunta ang mall sa'yo.", note: "'The mall comes to you' — mall culture in the Philippines is social and beloved, but positioning e-com as bringing the mall experience home (rather than replacing it) is less threatening and more aspirational." }
+  },
+  philippines_fintech: {
+    label: "Philippines · Fintech",
+    hooks: [
+      { competitor: "GCash", text: "Send money to family in the province. Libreng libre.", why: "'Libreng libre' (totally free) in Filipino is emphatic — the repetition is colloquially authentic, not grammatical error. OFW remittance to provinces is the core use case." },
+      { competitor: "Maya", text: "Open a bank account in 5 minutes. No documents needed.", why: "Document-free account opening removes the largest barrier. 'No documents' in a market where bank account opening requires NBI clearances is a genuine product breakthrough." },
+      { competitor: "Tonik", text: "5% interest on savings. Your bank gives you 0.1%.", why: "Direct interest rate comparison. Filipino consumers know their bank's savings rate is terrible — naming 0.1% makes the contrast viscerally clear." }
+    ],
+    counter: { text: "Bayad bills mo, padala sa probinsya, lahat sa isang app. Wala nang iba.", note: "'Wala nang iba' (nothing else needed) signals completeness. Bundling bill payment + province remittance in one sentence covers 80% of Filipino fintech daily use cases — the all-in-one claim resonates especially with OFW families." }
+  },
+  southafrica_mobility: {
+    label: "South Africa · Mobility",
+    hooks: [
+      { competitor: "Bolt SA", text: "Driver rated 4.9. ETA 4 minutes. Not guessing.", why: "South African ride-hail has a driver quality perception problem. Specific high rating + specific ETA signals real-time data rather than marketing estimates." },
+      { competitor: "inDrive SA", text: "You name the price. Driver agrees. Fair for both.", why: "Economic fairness framing resonates in post-load-shedding SA where both drivers and riders are economically stressed. 'Fair for both' is a positioning differentiator." },
+      { competitor: "Uber SA", text: "Surge pricing off. Price locked before you book.", why: "Surge pricing is South Africa's #1 ride-hail complaint — especially during Joburg rush hour and Cape Town tourist season. Price lock removes the biggest anxiety." }
+    ],
+    counter: { text: "Load-shedding stage 4. Your driver's already found you a lit route.", note: "Load-shedding (power cuts) affects traffic lights across SA, creating chaotic routing. A driver who proactively navigates loadshedding routes is a genuine value prop — but only locals immediately understand why it matters." }
+  },
+  mexico_mobility: {
+    label: "Mexico · Mobility",
+    hooks: [
+      { competitor: "DiDi Mexico", text: "Precio fijo antes de subir. Sin sorpresas al llegar.", why: "Price certainty before boarding. Mexico City traffic unpredictability makes dynamic pricing a major anxiety — locking the price upfront is the highest-converting trust signal." },
+      { competitor: "Uber Mexico", text: "Llega en 3 minutos. O te damos crédito.", why: "ETA guarantee with credit consequence. Specific time + accountability = credibility. The credit offer shows confidence, not just promise." },
+      { competitor: "inDrive Mexico", text: "Negocia tu tarifa. Tú mandas.", why: "'Tú mandas' (you're in charge) is empowerment language. In a market where consumers feel price manipulation is common, control framing converts." }
+    ],
+    counter: { text: "El tráfico de CDMX no es tu problema. Es del conductor.", note: "Mexico City's tráfico is a national shared frustration. Transferring the emotional burden of traffic from rider to driver — 'it's the driver's problem, not yours' — is relief-framing that resonates especially with CDMX commuters." }
+  },
+  brazil_fintech: {
+    label: "Brazil · Fintech",
+    hooks: [
+      { competitor: "Nubank", text: "Sem anuidade. Sem letrinhas miúdas. Nunca.", why: "'Letrinhas miúdas' (fine print) is Brazilian shorthand for financial trickery. Eliminating both the fee and the fine print in one hook covers the two deepest distrust anchors." },
+      { competitor: "PicPay", text: "PIX na hora. Todo dia, toda hora.", why: "PIX has become Brazil's payment baseline — but availability and speed anxiety remain. '24/7' framed in conversational Brazilian ('todo dia, toda hora') rather than technical language." },
+      { competitor: "Mercado Pago", text: "Rende mais que a poupança. Com liquidez diária.", why: "Poupança (savings account) is the reference product for 90% of Brazilian savers. Beating it + daily liquidity answers the two objections that keep money in poupança." }
+    ],
+    counter: { text: "Seu banco cobra taxa para você usar seu próprio dinheiro.", note: "The 'using your own money' framing of banking fees is morally outrageous when stated plainly. This counter-hook works best in contrast to a 0-fee alternative — the outrage of the status quo does the conversion work." }
+  },
+  brazil_mobility: {
+    label: "Brazil · Mobility",
+    hooks: [
+      { competitor: "99 (DiDi Brasil)", text: "Motorista verificado. Placa visível. Viagem gravada.", why: "Safety stack framing. Brazilian women (60%+ of urban mobility trips) list safety as #1 concern. Three concrete safety signals in one hook address it systematically." },
+      { competitor: "Uber Brasil", text: "Corrida cancelada? Motorista chega em 3 minutos ou você não paga.", why: "Cancel compensation + ETA guarantee. Uber cancellation anxiety is high in São Paulo — a concrete consequence for the company makes the promise credible." },
+      { competitor: "inDrive Brasil", text: "Negocia direto com o motorista. Sem algoritmo.", why: "'Sem algoritmo' (without algorithm) is anti-tech backlash appeal. Brazilian consumers are increasingly wary of opaque pricing — direct negotiation feels honest." }
+    ],
+    counter: { text: "O motorista conhece São Paulo de verdade. Não o GPS.", note: "'De verdade' (for real) applied to São Paulo local knowledge vs GPS. The implication: a human who knows the city finds better routes than algorithmic navigation. Resonates during rush hour when GPS often fails in São Paulo." }
+  },
+  egypt_mobility: {
+    label: "Egypt · Mobility",
+    hooks: [
+      { competitor: "Uber Egypt", text: "تاكسي بدون مساومة. السعر معروف قبل ما تركب.", why: "Price negotiation with traditional taxi drivers is a major Egyptian daily frustration. 'السعر معروف' (price is known) eliminates the most painful part of Cairo taxi culture." },
+      { competitor: "Careem", text: "كابتن معك. في أي وقت. في القاهرة الكبرى.", why: "'الكابتن' (captain) is Careem's beloved local terminology. Using it signals local brand understanding. 'القاهرة الكبرى' (Greater Cairo) acknowledges the 22M-city reality, not just downtown." },
+      { competitor: "inDrive Egypt", text: "أنت تحدد السعر. السائق يوافق أو لا.", why: "Negotiation framing works extremely well in Egyptian culture. 'Or not' signals fairness and driver respect, which is an increasingly important brand signal post-pandemic." }
+    ],
+    counter: { text: "زحمة القاهرة مش مشكلتك. هي مشكلة الكابتن.", note: "Cairo's traffic (زحمة) is the city's defining shared experience — second only to the Nile. Transferring the emotional burden of traffic to the driver relieves the rider's anxiety and positions the app as emotional intelligence, not just logistics." }
+  },
+  colombia_health: {
+    label: "Colombia · Health",
+    hooks: [
+      { competitor: "MiDoctor", text: "Cita médica hoy. Sin salir de tu casa.", why: "EPS appointment wait times in Colombia are 15-45 days. 'Hoy' (today) vs the implicit alternative is the entire product value in one word." },
+      { competitor: "Doctoralia Colombia", text: "Especialista disponible esta semana. No el próximo mes.", why: "Specialist access timeline is the core pain. 'Esta semana' (this week) vs 'next month' makes the comparison viscerally clear to anyone who has used the EPS system." },
+      { competitor: "SaludSa", text: "Tu historial médico. En tu celular. Siempre.", why: "Medical record portability is a genuine unmet need in Colombia's fragmented EPS system. 'Siempre' (always) signals continuous access, not just one-time download." }
+    ],
+    counter: { text: "La EPS tiene cita disponible en 3 semanas. Nosotros, hoy a las 4pm.", note: "Direct EPS (public health insurance system) comparison. Every Colombian knows the EPS wait time experience. 'Today at 4pm' turns the abstract time promise into a calendar event — the most concrete possible CTA." }
+  },
+  mexico_health: {
+    label: "Mexico · Health",
+    hooks: [
+      { competitor: "Doctor en Línea", text: "Médico en 10 minutos. Sin sala de espera.", why: "IMSS and private clinic wait times in Mexico City average 2-4 hours. '10 minutos' vs the implicit alternative converts immediately for anyone who has used IMSS." },
+      { competitor: "Mediclic", text: "Receta médica digital. Válida en toda farmacia.", why: "Digital prescription validity across pharmacies removes the friction of physical prescription requirements. 'Toda farmacia' signals genuine system-level integration." },
+      { competitor: "Salud Fácil", text: "Sin IMSS. Sin pagar consulta cara. Con médico real.", why: "IMSS exclusion (self-employed workers, informal economy) + private clinic cost anxiety + 'real doctor' trust signal in three consecutive objection-handlers." }
+    ],
+    counter: { text: "El IMSS tiene cita para dentro de tres semanas. Nosotros, hoy.", note: "IMSS (Mexican public health) is the universal reference point for health access frustration. 'Today vs three weeks' is a time-sensitive contrast that every Mexican understands viscerally — no additional context needed." }
+  },
+  vietnam_fintech: {
+    label: "Vietnam · Fintech",
+    hooks: [
+      { competitor: "MoMo", text: "Chuyển tiền miễn phí 24/7. Không cần tài khoản ngân hàng.", why: "Bank account penetration in Vietnam is ~70% — the remaining 30% is a massive addressable market. '24/7' + 'không cần tài khoản' (no bank account needed) covers both banked and unbanked." },
+      { competitor: "VNPay", text: "QR thanh toán. 3 giây. Ở đâu cũng được.", why: "QR payment is Vietnam's fastest-growing checkout behavior. '3 giây' (3 seconds) + universal availability ('ở đâu cũng được') covers both speed and ubiquity." },
+      { competitor: "Timo", text: "Lãi suất tiết kiệm 6%/năm. Rút bất cứ lúc nào.", why: "High interest + instant withdrawal. Vietnam's traditional bank savings rates are 3-4% — 6% + liquidity answers the two objections that keep money in low-yield accounts." }
+    ],
+    counter: { text: "Ngân hàng mở cửa 8 giờ. Tiền của bạn không nghỉ lễ.", note: "'Your money doesn't take holidays' — bank hours vs always-on fintech. In Vietnam's 6-day work culture, the idea that your banking infrastructure should match your work pace is an emotional resonance hit." }
+  },
+  kenya_health: {
+    label: "Kenya · Health",
+    hooks: [
+      { competitor: "MyDawa", text: "Medicine delivered to your door. Today. Nairobi only needs one pharmacy now.", why: "Doorstep medicine delivery removes the physical pharmacy trip — a significant barrier for working Kenyans with limited midday flexibility." },
+      { competitor: "Daktari Africa", text: "Doctor consultation in English or Swahili. Your choice.", why: "Language choice is a trust signal in Kenya's multilingual context. English-or-Swahili without judgment signals inclusive design, not colonial-default English." },
+      { competitor: "mHealth Kenya", text: "NHIF covered. No out-of-pocket.", why: "NHIF (National Health Insurance Fund) coverage removes the cost anxiety for insured Kenyans who assume digital health requires cash. 'No out-of-pocket' is the unlock phrase." }
+    ],
+    counter: { text: "Kenyatta National Hospital: 4 hours waiting. Your phone: 5 minutes.", note: "KNH (Kenyatta National Hospital) is Kenya's reference point for public health wait times — everyone knows the experience. Making the contrast with '5 minutes on phone' explicit converts the abstract speed promise into a lived comparison." }
+  },
+  philippines_mobility: {
+    label: "Philippines · Mobility",
+    hooks: [
+      { competitor: "Grab PH", text: "Walang surge. Bayad bago sumakay.", why: "'Walang surge' (no surge pricing) in Tagalog — surge pricing is the Philippine ride-hail community's top complaint, especially during typhoon season and rush hour." },
+      { competitor: "Angkas", text: "Habal-habal legal. Helmet kasama. Driver verified.", why: "Angkas legitimized motorcycle taxis in the Philippines. Naming the local term 'habal-habal' + safety stack (helmet included, verified driver) converts in tier 2/3 Philippine cities." },
+      { competitor: "inDrive PH", text: "Ikaw ang nagtatakda ng presyo. Sige o hindi ang driver.", why: "Negotiation in Filipino. 'Sige o hindi' (yes or no) from the driver is casual Tagalog that feels like a real conversation — not corporate copy." }
+    ],
+    counter: { text: "EDSA traffic? Driver knows the back roads. Wala kang iniintindi.", note: "'EDSA traffic' is the most universally dreaded Philippine experience — the highway is cultural shorthand for worst-case scenario. 'Wala kang iniintindi' (nothing to worry about) positions local driver knowledge as the antidote." }
+  },
+  philippines_health: {
+    label: "Philippines · Health",
+    hooks: [
+      { competitor: "KonsultaMD", text: "Doktor online. PhilHealth na ang bahala.", why: "PhilHealth coverage for telemedicine removes the cash payment barrier. 'PhilHealth na ang bahala' (PhilHealth will handle it) is the exact reassurance Filipino patients need." },
+      { competitor: "HealthNow PH", text: "Doctor in 10 minutes. Prescription delivered.", why: "Speed + prescription loop closes the healthcare journey. Filipino patients face long public clinic queues — 10-minute access is a genuine breakthrough promise." },
+      { competitor: "Mwell", text: "Specialist consultation. This week. Not next quarter.", why: "Specialist wait times in Philippine public hospitals are measured in months. 'This week' vs 'next quarter' is the visceral contrast that drives urgent adoption." }
+    ],
+    counter: { text: "Ospital: 3 oras pila. App: 10 minuto. Pili ka.", note: "'Pili ka' (you choose) is a direct Filipino challenge that turns the comparison into agency. '3 oras pila' (3 hours in line) vs '10 minuto' (10 minutes) — the math is obvious, but making it a choice honors the user's intelligence." }
+  },
+  vietnam_mobility: {
+    label: "Vietnam · Mobility",
+    hooks: [
+      { competitor: "Grab Vietnam", text: "Xe ôm không thương lượng. Giá cố định. Lên xe ngay.", why: "Xe ôm (motorcycle taxi) price negotiation is a Vietnamese daily friction. 'Không thương lượng' (no negotiation) + 'giá cố định' (fixed price) removes the most stressful part of the ride." },
+      { competitor: "Be Vietnam", text: "Tài xế người Việt. Hỗ trợ tiếng Việt. Hiểu bạn hơn.", why: "Local driver + Vietnamese-language support. 'Hiểu bạn hơn' (understands you better) is a competitive jab at Grab's regional operator experience vs genuine local understanding." },
+      { competitor: "Gojek Vietnam", text: "Đặt xe. Đặt đồ ăn. Đặt tất cả. Một app.", why: "Super-app positioning in Vietnamese. 'Một app' (one app) is the unlock phrase for app-fatigued Vietnamese smartphone users who want consolidation." }
+    ],
+    counter: { text: "Kẹt xe Hà Nội? Tài xế biết đường tắt mà Google không biết.", note: "'Đường tắt mà Google không biết' (shortcuts Google doesn't know) positions local human knowledge above algorithmic routing. Hà Nội's alley networks (ngõ hẻm) are genuinely not mapped by GPS — this is a real and relatable claim." }
+  },
+  southafrica_health: {
+    label: "South Africa · Health",
+    hooks: [
+      { competitor: "Ctrl (Discovery)", text: "Medical aid that actually covers what you need. From R299.", why: "Medical aid affordability is the #1 health access barrier in South Africa. 'From R299' anchors cost accessibility. 'Actually covers' addresses the infamous Discovery fine-print gap anxiety." },
+      { competitor: "Unu Health", text: "Doctor on call. Tonight. No medical aid needed.", why: "'No medical aid needed' opens the 17M uninsured South African market. 'Tonight' answers the emergency access anxiety that drives private ER visits." },
+      { competitor: "Pineapple Health", text: "Skip the government clinic queue. See a doctor today.", why: "Government clinic queues are 4-6 hours in South Africa — a universally shared experience. Naming the alternative explicitly (not vaguely 'a better option') converts faster." }
+    ],
+    counter: { text: "Load-shedding at 8pm. Your doctor is still online.", note: "Load-shedding and telemedicine — the connection is obvious once stated, invisible until named. A health app that works during Stage 4 load-shedding (when clinics may close early) is a genuinely differentiated claim in the SA market." }
+  },
+
+  /* ── SaaS ── */
+  nigeria_saas: {
+    label: "Nigeria · SaaS",
+    hooks: [
+      { competitor: "Zoho Nigeria", text: "Bill your clients in naira. Collect in dollars. No Excel.", why: "FX complexity is the #1 pain for Nigerian SMBs with international clients. Naira/USD split billing is a genuine gap that most global SaaS tools ignore. 'No Excel' signals a real alternative, not just a better spreadsheet." },
+      { competitor: "Paystack Business", text: "Your accountant charges ₦50K/month. This costs ₦8K.", why: "Price anchoring against local professional fees lands harder than comparing to Sage or QuickBooks pricing. Lagos accountants are expensive and the comparison is viscerally familiar." },
+      { competitor: "Sage Nigeria", text: "FIRS filing day. No panic. Everything's already done.", why: "FIRS (Federal Inland Revenue Service) deadlines cause genuine SMB stress. A hook that names the specific pain event and removes the emotion converts fast because it's about relief, not features." }
+    ],
+    counter: { text: "Your accountant is in Lagos traffic. Your invoices don't have to wait.", note: "Combines two universal Lagos frustrations — accountant dependency and traffic — into a single moment. The insight is that SaaS removes a human bottleneck without directly attacking the accountant relationship." }
+  },
+  indonesia_saas: {
+    label: "Indonesia · SaaS",
+    hooks: [
+      { competitor: "Mekari", text: "Kelola bisnis dari HP. Tanpa akuntan. Tanpa Excel.", why: "'Tanpa akuntan, tanpa Excel' (without accountant, without Excel) names both the current workarounds Indonesian SMBs use. Mobile-first framing is essential — Indonesian SMB owners often run their business primarily from phone." },
+      { competitor: "Jurnal", text: "Laporan pajak PPh 21 selesai sebelum deadline DJP.", why: "DJP (Direktorat Jenderal Pajak) and PPh 21 are the exact terminology Indonesian business owners fear. Naming them precisely signals category expertise that generic 'accounting software' copy misses." },
+      { competitor: "Majoo", text: "Dari 1 toko ke 10 cabang. Satu dashboard. Satu harga.", why: "Franchise and multi-outlet businesses are booming in Indonesian tier-2/3 cities. The 'one dashboard, one price' construct removes the biggest objection to scaling — perceived cost complexity." }
+    ],
+    counter: { text: "Tim finance-mu fokus pada strategi. Bukan pada rekap manual.", note: "Reframes automation from 'replacing your team' to 'freeing your team for strategy' — a more palatable message in a market where layoff anxiety is high and the finance team is often the founder's trusted inner circle." }
+  },
+  colombia_saas: {
+    label: "Colombia · SaaS",
+    hooks: [
+      { competitor: "Siigo", text: "Factura electrónica DIAN en 30 segundos. Sin contador.", why: "DIAN (Dirección de Impuestos y Aduanas Nacionales) facturación electrónica is mandatory in Colombia. The pain of compliance is universal for SMBs. '30 segundos, sin contador' removes the two biggest objections simultaneously." },
+      { competitor: "Alegra", text: "Tu contador cobra $3M/mes. El software, $180K.", why: "Direct cost comparison using local COP pricing. Colombian accountant market rates are well-known to business owners. The ×16 ratio creates immediate re-evaluation without needing feature lists." },
+      { competitor: "Aspire CO", text: "Nómina para 5. Nómina para 50. Mismo tiempo. Mismo clic.", why: "Scaling payroll (nómina) is a real inflection point for Colombian SMBs between 5-50 employees. The symmetry in the hook (mismo tiempo, mismo clic) creates a memorability effect that resonates on word of mouth." }
+    ],
+    counter: { text: "Semana de impuestos. Tú dormiste. Tu software trabajó.", note: "Tax season sleep loss is a shared SMB trauma in Colombia. The hook creates a contrast between the anxiety of 'impuesto week' and the calm of 'it's already handled' — relief-based conversion rather than feature-based." }
+  },
+  egypt_saas: {
+    label: "Egypt · SaaS",
+    hooks: [
+      { competitor: "Odoo Egypt", text: "أصدر فاتورة ضريبية معتمدة من الجوال في دقيقة.", why: "E-invoicing compliance with Egypt's Tax Authority (ETA) is mandatory since 2021. The promise of issuing a compliant invoice from mobile in one minute removes the two biggest barriers — complexity and location dependency." },
+      { competitor: "QuickBooks ME", text: "فريقك في الإسكندرية. حساباتك في القاهرة. كلها في شاشة واحدة.", why: "Egypt's major commercial corridor is Cairo–Alexandria. Multi-branch visibility for businesses operating across these cities is a genuine operational pain point. 'One screen' is the relief hook." },
+      { competitor: "Paymob Business", text: "الضريبة القيمة المضافة، الرواتب، الفواتير. كل شيء بضغطة.", why: "VAT, payroll (رواتب), and invoicing (فواتير) are the three compliance pillars that consume Egyptian SMB owners' time. Listing them all and promising one tap creates a 'finally, someone gets it' moment." }
+    ],
+    counter: { text: "نهاية الشهر بلا ضغط. كل الأرقام جاهزة قبل ما تطلبها.", note: "Month-end close anxiety is universal but especially acute in Egypt where many SMBs still reconcile manually. 'Before you ask' positions the software as proactively on top of things — intelligence, not just automation." }
+  },
+  brazil_saas: {
+    label: "Brazil · SaaS",
+    hooks: [
+      { competitor: "Conta Azul", text: "NF-e, boleto, DAS do MEI. Tudo sem sair do WhatsApp.", why: "Brazilian SMBs live in WhatsApp. NF-e (nota fiscal eletrônica), boleto payment, and DAS (MEI tax document) are the three most common compliance tasks. Integration with the app they're already in removes the switching cost entirely." },
+      { competitor: "Totvs", text: "Receita Federal na sua porta. Você já estava pronto.", why: "Receita Federal (Brazilian IRS) audits are feared by every small business. The hook creates the confidence of compliance-readiness rather than just compliance tooling. Fear-to-confidence arc converts." },
+      { competitor: "RD Station", text: "Seu concorrente automatizou as vendas. Você ainda usa planilha.", why: "Competitive pressure hook works in Brazil because the local business culture is intensely competitive, especially in retail and food service. Naming 'your competitor' without a name creates the 'who?' anxiety that drives urgency." }
+    ],
+    counter: { text: "Segunda de manhã sem aquela planilha de reconciliação.", note: "Monday morning reconciliation spreadsheet is a known suffering for Brazilian SMB owners. The relief is extremely specific and personal — the hook works because it names the exact moment, not the general category of pain." }
+  },
+  southafrica_saas: {
+    label: "South Africa · SaaS",
+    hooks: [
+      { competitor: "Sage SA", text: "SARS eFiling done before the deadline. Without the accountant.", why: "SARS (South African Revenue Service) eFiling is mandatory for registered businesses. 'Without the accountant' is provocative — it names the trusted intermediary being replaced, which creates both attention and a re-evaluation moment." },
+      { competitor: "Xero SA", text: "Load-shedding hits. Your invoices still went out.", why: "Load-shedding is an existential business disruption in South Africa. Cloud-based SaaS that works regardless of power interruptions is a genuine differentiator that any local business owner immediately understands." },
+      { competitor: "QuickBooks SA", text: "PAYE, VAT, UIF. All filed. You didn't touch Excel.", why: "PAYE (payroll tax), VAT, and UIF (Unemployment Insurance Fund) are the three compliance burdens every South African employer faces. The triple acronym hook signals deep local compliance knowledge — not generic 'accounting software.'" }
+    ],
+    counter: { text: "Your accountant is on leave. Your month-end isn't.", note: "South African leave culture (especially December school holidays) creates genuine business anxiety around accountant availability. The hook names a specific, seasonal, relatable moment of vulnerability." }
+  },
+  mexico_saas: {
+    label: "Mexico · SaaS",
+    hooks: [
+      { competitor: "Aspel", text: "CFDI sellado en segundos. El SAT, contento. Tú, dormido.", why: "CFDI (Comprobante Fiscal Digital por Internet) is Mexico's mandatory electronic invoice format. SAT compliance is the #1 SMB anxiety. 'Tú, dormido' is the relief signal — the work is done while you rest." },
+      { competitor: "CONTPAQi", text: "Tu despacho cobra $8K al mes. Esto cuesta $800.", why: "Contadores in Mexico charge despacho fees that small businesses resent. The 10× cost comparison is both accurate and immediately actionable. Despacho is the local term that signals insider knowledge." },
+      { competitor: "Contobox", text: "Nómina SUA, IMSS, Infonavit. Todo en un solo clic.", why: "SUA (Sistema Único de Autodeterminación), IMSS, and Infonavit payments are the three recurring payroll compliance tasks every Mexican employer knows. Naming all three in the hook signals 'we understand your whole situation.'" }
+    ],
+    counter: { text: "Declaración mensual. La hiciste en el Uber de regreso a la oficina.", note: "Mexico's monthly tax declaration (declaración mensual) is often done last minute. Completing it from mobile while commuting is both realistic and aspirational for the Mexican SMB owner who never has time at a desk." }
+  },
+  vietnam_saas: {
+    label: "Vietnam · SaaS",
+    hooks: [
+      { competitor: "MISA", text: "Báo cáo thuế cho Bộ Tài chính. Xong trước 9h sáng.", why: "Bộ Tài chính (Ministry of Finance) tax reporting is required monthly for Vietnamese businesses. 'Done before 9am' creates a vivid before-work completion image that resonates with Vietnam's early-rising business culture." },
+      { competitor: "Base.vn", text: "Kế toán ở Hà Nội. Giám đốc ở TP.HCM. Một màn hình.", why: "Hanoi–HCM City business split is extremely common for Vietnamese companies with operations in both cities. 'One screen' solves the operational visibility gap without requiring remote management complexity." },
+      { competitor: "Fast Accounting", text: "Hóa đơn điện tử VAT hợp lệ. Trong 30 giây. Từ điện thoại.", why: "E-invoicing (hóa đơn điện tử) is mandatory in Vietnam since 2022. '30 seconds, from phone' removes the complexity perception around compliance. The specificity (30 giây) signals confidence in the product." }
+    ],
+    counter: { text: "Quyết toán cuối năm. Không cần thức đến 2 giờ sáng.", note: "Year-end reconciliation (quyết toán) is Vietnam's most feared accounting period. Late-night reconciliation is a shared trauma for business owners and finance staff. The hook names the specific emotional cost, not the feature." }
+  },
+  kenya_saas: {
+    label: "Kenya · SaaS",
+    hooks: [
+      { competitor: "Odoo Kenya", text: "KRA PIN filing done. M-Pesa reconciled. Before your chai.", why: "KRA (Kenya Revenue Authority) PIN filing and M-Pesa reconciliation are the two most time-consuming daily business tasks in Kenya. 'Before your chai' is a local timing reference (morning tea break) that signals speed without sounding like a Western tech claim." },
+      { competitor: "Wave Kenya", text: "From Mpesa float to quarterly VAT. One tap.", why: "M-Pesa float management (for agents and retailers) to VAT compliance is the full financial arc for Kenyan SMBs. Connecting them with 'one tap' signals a unified system that no locally-built product currently offers." },
+      { competitor: "QuickBooks KE", text: "Your CPA is in Westlands traffic. Your payroll isn't waiting.", why: "Westlands (Nairobi's business district) traffic is a universally shared complaint. Using it as the reason your CPA is unavailable makes the 'software instead' argument feel logical rather than threatening." }
+    ],
+    counter: { text: "iTax deadline. You filed last week. Your competitor filed this morning.", note: "iTax is Kenya's online tax filing system. Filing early vs last-minute is a genuine differentiator for Kenyan businesses because late filing attracts penalties and audits. The competitive framing (your competitor) adds urgency." }
+  },
+  philippines_saas: {
+    label: "Philippines · SaaS",
+    hooks: [
+      { competitor: "Zoho PH", text: "BIR-compliant ORs in seconds. No CPA needed for this part.", why: "BIR (Bureau of Internal Revenue) Official Receipts (ORs) compliance is a constant operational pain in the Philippines. 'No CPA needed for this part' is a permission slip — it doesn't threaten the accountant relationship, it scopes what the software handles." },
+      { competitor: "QuickBooks PH", text: "Payroll for yung team mo. Done before the cutoff. Every time.", why: "'Yung team mo' uses Filipino colloquial mixed-code (Taglish) to signal local authenticity. Payroll cutoff anxiety is universal for Filipino SMB employers — missing it damages trust with employees fast." },
+      { competitor: "Alegra PH", text: "Monthly VAT return, withholding tax, SSS. Lahat, isang app.", why: "VAT return, withholding tax, and SSS (Social Security System) contributions are the three recurring compliance tasks every Filipino employer knows. 'Lahat, isang app' (all in one app) in Tagalog signals that this understands the local reality." }
+    ],
+    counter: { text: "Walang accountant? Walang problema. Your books are already done.", note: "'Walang' (there is no/nothing) in Tagalog is a casual, colloquial term that signals cultural fluency. The hook removes the biggest Philippine SMB objection — 'I can't do accounting without my accountant' — directly and without condescension." }
+  },
+
+  /* ── AI First Service ── */
+  nigeria_ai_first: {
+    label: "Nigeria · AI First Service",
+    hooks: [
+      { competitor: "Local creative agencies (Lagos)", text: "Your agency takes 6 weeks. The AI service takes 6 hours.", why: "Lagos agency timelines are notoriously long due to client approval chains and resource contention. The 6w vs 6h contrast is believable and specific enough to stop the scroll. Time-to-market is the real pain, not cost." },
+      { competitor: "Flutterwave Growth", text: "One product manager. Ten markets. AI handles the other nine.", why: "Nigerian tech companies expanding across Africa face a localization resourcing problem. AI-first framing as a force multiplier for a lean team resonates with the Andela-generation of African tech PMs who see themselves as operators, not operators-with-teams." },
+      { competitor: "Daba Finance content", text: "100 ad creatives. One brief. Three days. AI, not interns.", why: "'Not interns' is a provocative contrast that names the current workaround without making it an insult. Nigerian growth teams understand intern-powered content farms — the AI alternative is aspirational, not threatening." }
+    ],
+    counter: { text: "Your competitor launched in Ghana, Kenya, and Cameroon this quarter. You still have one market.", note: "Multi-market expansion at speed is the defining AI-first service value prop in Nigeria's tech ecosystem. The competitive framing creates urgency by naming the observable consequence of being slower — not a hypothetical risk." }
+  },
+  indonesia_ai_first: {
+    label: "Indonesia · AI First Service",
+    hooks: [
+      { competitor: "GoTo AI services", text: "Tim 3 orang. Output seperti tim 30. AI yang beda.", why: "The 3-vs-30 ratio is psychologically sticky. Indonesian startup culture has normalized 'lean team' as a badge of honor since Go-Jek's early days. AI as the force multiplier — not the replacement — is the right framing for this culture." },
+      { competitor: "Mekari AI", text: "Konten untuk 5 kanal. Dibuat dalam satu hari. Bukan copy-paste.", why: "'Bukan copy-paste' (not copy-paste) names the quality objection before the buyer raises it. Indonesian B2B buyers are skeptical of AI quality after being burned by low-quality machine translation. Preempting the objection converts." },
+      { competitor: "Local AI agencies Jakarta", text: "Kampanye lokal untuk Jawa, Sulawesi, Papua. Satu tim. Satu minggu.", why: "Indonesia's 17,000+ islands and 700+ languages make localization a genuine operational challenge. An AI service that can produce culturally appropriate content for regions as different as Java and Papua in one week is a real differentiator." }
+    ],
+    counter: { text: "Kuartal ini kamu masuk ke 3 pasar baru. Tanpa rekrut. Tanpa agensi.", note: "Entering three new markets in one quarter without hiring or agency overhead is the AI-first service promise that CFO and CMO both care about. The double 'tanpa' (without) construct creates a clean benefit stack." }
+  },
+  colombia_ai_first: {
+    label: "Colombia · AI First Service",
+    hooks: [
+      { competitor: "Local agencies Bogotá", text: "Tu agencia tarda 3 semanas. El servicio de IA, 3 días.", why: "Bogotá agency timelines are a known frustration for growth teams — the 7× speed comparison is realistic and the pairing of 'semanas' vs 'días' creates a memorable contrast. Time is the anchor, not price." },
+      { competitor: "Rappi Growth", text: "Una campaña para Medellín, una para Bogotá, una para Cali. Al mismo tiempo.", why: "Colombia's three major cities (Medellín, Bogotá, Cali) have meaningfully different consumer cultures and slang. An AI service that produces localized campaigns for all three simultaneously — not just Spanish-with-a-city-name-swap — is a genuine differentiator." },
+      { competitor: "Digital marketing boutiques", text: "Tu equipo de 2 creó más contenido este trimestre que el equipo de 20 del año pasado.", why: "Before/after comparisons with your own team are more persuasive than competitor comparisons in Colombia's trust-oriented B2B culture. The insight is that AI doesn't replace the team — it makes the same team look like a 10× version of itself." }
+    ],
+    counter: { text: "El tiempo entre la señal del mercado y el anuncio publicado: 48 horas.", note: "Time-to-Winner expressed in hours (not weeks) is the core AI-first service metric. For Colombian growth teams watching competitors move faster, 48 hours from signal to live ad is the promise that re-frames what 'fast' means." }
+  },
+  egypt_ai_first: {
+    label: "Egypt · AI First Service",
+    hooks: [
+      { competitor: "Cairo digital agencies", text: "إعلان مُحلَّق للقاهرة والإسكندرية والمنصورة. في يوم واحد.", why: "Egypt's three major markets (Cairo, Alexandria, Mansoura) have distinct dialects and consumer behaviors. AI-generated localized content for all three in one day removes the multi-city campaign production bottleneck that has historically required separate agency briefs." },
+      { competitor: "Instabug Growth", text: "فريقك من 3 أشخاص ينتج مثل فريق من 30. هذا هو الذكاء الاصطناعي.", why: "The 3-vs-30 ratio resonates universally but especially in Egypt where scaling a marketing team is costly due to office space, social insurance, and salary inflation in Cairo. AI as multiplier is more compelling than AI as replacement." },
+      { competitor: "Local martech agencies", text: "الحملة الإعلانية من الإشارة إلى الإطلاق: 72 ساعة.", why: "72 hours from signal to launch is a credible AI-first service promise for the Egyptian market where typical agency turnaround is 2-4 weeks. The specificity of '72 ساعة' signals operational confidence, not marketing vagueness." }
+    ],
+    counter: { text: "منافسك دخل السوق السعودي وأنت لا تزال تنتظر موافقة الوكالة.", note: "Regional expansion (Egypt to Saudi Arabia or UAE) is the growth ambition of every successful Egyptian tech company. The 'waiting for agency approval' line names the specific bottleneck that AI-first services remove — and frames it as a competitive loss." }
+  },
+  brazil_ai_first: {
+    label: "Brazil · AI First Service",
+    hooks: [
+      { competitor: "Rock Content", text: "A agência demora 3 semanas. O serviço de IA entrega em 3 dias.", why: "Brazilian agency timelines are notorious — the 7× speed comparison is accurate and relatable. The parallel structure (semanas vs dias) creates a natural reading rhythm that makes the comparison sticky." },
+      { competitor: "Pipedrive AI tools", text: "Um time de 4 entregou mais criativo este trimestre do que o time de 40 do ano passado.", why: "Before/after team comparison resonates with Brazilian growth teams who've experienced the pressure to 'do more with less' post-pandemic. The 10× multiplier is aspirational without being unbelievable." },
+      { competitor: "V4 Company", text: "Nordeste, Sudeste, Sul. Campanhas diferentes. Produzidas ao mesmo tempo.", why: "Brazil's regional marketing diversity is massive — Nordeste and Sul have different slang, cultural references, and product preferences. AI-first services that actually localize (not just translate) for Brazil's regions are genuinely differentiated from São Paulo-centric agencies." }
+    ],
+    counter: { text: "Seu concorrente testou 100 criativos esse trimestre. Você testou 10.", note: "Creative velocity as a proxy for performance is the AI-first service proof point that CMOs and performance marketers immediately understand. The gap (100 vs 10) creates urgency without requiring a features conversation." }
+  },
+  southafrica_ai_first: {
+    label: "South Africa · AI First Service",
+    hooks: [
+      { competitor: "Ogilvy SA", text: "Agency retainer: R120K/month. AI service: R12K. Same output.", why: "Ogilvy is the most recognized agency name in South African marketing circles. The 10× cost comparison using ZAR pricing creates immediate sticker shock. 'Same output' is the bold claim that earns the click." },
+      { competitor: "Loot AI", text: "Content for Cape Town, Joburg, and Durban. In their language. This week.", why: "Cape Town (Afrikaans/English), Johannesburg (Zulu/Sotho/English), and Durban (Zulu/Indian English) have genuinely different cultural registers. 'In their language' is about cultural fluency, not just translation — a meaningful AI-first differentiator." },
+      { competitor: "Local digital agencies", text: "Load-shedding hit. Your content schedule didn't stop.", why: "Load-shedding disrupts local agencies' production capacity — it doesn't disrupt AI services. Cloud-based AI creative production as load-shedding-resilient is a genuinely unique South African value proposition." }
+    ],
+    counter: { text: "Your Time-to-Winner used to be 8 weeks. It's now 8 days.", note: "Time-to-Winner as the metric reframes the AI-first value proposition from 'cheaper' to 'faster to results' — a more defensible claim for a South African CMO justifying budget to a cost-conscious CFO in a recession-pressured economy." }
+  },
+  mexico_ai_first: {
+    label: "Mexico · AI First Service",
+    hooks: [
+      { competitor: "Local CDMX agencies", text: "Tu agencia te cobra $150K/mes. Nosotros, $15K. Mismo ROI.", why: "CDMX agency retainers are a known pain point for Mexican marketing directors. The 10× cost delta using Mexican pesos creates an immediate re-evaluation moment. 'Mismo ROI' is the bold qualifier that earns attention." },
+      { competitor: "Clip Marketing", text: "Norte, Centro, Sur. Creativos diferentes para cada región. En una semana.", why: "Mexico's regional diversity (Norteños, Capitalinos, Sureños) is significant for consumer marketing. A service that produces genuinely regional creative — not just the same ad with different state names — is a meaningful differentiator in a market where CDMX agencies often miss the provinces." },
+      { competitor: "Marketeros MX", text: "De la señal de tendencia al anuncio publicado: menos de 72 horas.", why: "Trend-to-ad speed in Mexico is critical because social trends move fast in a market with very high TikTok and Instagram engagement rates among 18-35 year olds. 72 hours is specific enough to be credible and fast enough to matter." }
+    ],
+    counter: { text: "Tu competidor ya probó 50 creativos este mes. Tú vas en 5.", note: "Creative testing velocity is the metric that separates AI-first growth teams from traditional agency-dependent ones. The 50-vs-5 gap creates urgency without requiring a product demo — the number does the selling." }
+  },
+  vietnam_ai_first: {
+    label: "Vietnam · AI First Service",
+    hooks: [
+      { competitor: "FPT AI services", text: "Tiết kiệm 80% chi phí marketing. Không giảm chất lượng.", why: "80% cost reduction is a bold claim that works in Vietnam's price-sensitive B2B market, but the 'không giảm chất lượng' (without reducing quality) qualifier is essential — Vietnamese buyers have been burned by cheap-but-bad outsourcing and are skeptical." },
+      { competitor: "Base AI Vietnam", text: "Team 5 người. Output như team 50. AI làm phần còn lại.", why: "The force-multiplier framing (5 vs 50) is universally effective but especially resonant in Vietnam's startup ecosystem where lean teams are a norm and hiring is expensive due to rapid talent market inflation in HCM City." },
+      { competitor: "Local digital agencies HCM", text: "Từ trend TikTok đến quảng cáo đã chạy: 48 tiếng.", why: "TikTok is Vietnam's dominant growth channel for consumer apps and e-commerce. 48 hours from trending sound/format to live ad is the speed metric that Vietnamese performance marketers care about — agencies take 2-3 weeks for the same workflow." }
+    ],
+    counter: { text: "Đối thủ của bạn vào thị trường mới mỗi quý. Bạn vẫn đang lên kế hoạch.", note: "Vietnam's rapid regional expansion into neighboring SEA markets (Thailand, Philippines, Indonesia) is the growth ambition of leading Vietnamese tech companies. 'Still planning' vs 'already executing' is the competitive comparison that creates executive urgency." }
+  },
+  kenya_ai_first: {
+    label: "Kenya · AI First Service",
+    hooks: [
+      { competitor: "Local Nairobi agencies", text: "Nairobi agency: $5K/month. AI service: $500/month. You do the math.", why: "Direct cost comparison with local Nairobi agency pricing is viscerally effective for Kenyan marketing managers who know exactly what agencies charge. 'You do the math' is a confidence signal — the number is so clear it needs no explanation." },
+      { competitor: "Safaricom marketing", text: "Content for Nairobi, Mombasa, Kisumu, and Nakuru. This week. Not next quarter.", why: "Kenya's four major cities have distinct cultural and linguistic registers (Sheng in Nairobi, coastal Swahili in Mombasa, Luo influence in Kisumu). An AI service claiming genuine local relevance across these cities is differentiating in a market where most agencies default to Nairobi-centric English." },
+      { competitor: "Twiga Foods Growth", text: "From M-Pesa signal to Facebook ad: 48 hours.", why: "M-Pesa transaction data as a market signal is uniquely Kenyan. Connecting that local data source directly to paid social creative — and doing it in 48 hours — is a claim no traditional agency can make and signals deep market understanding." }
+    ],
+    counter: { text: "Your competitor expanded into Uganda and Tanzania this year. You noticed on LinkedIn.", note: "East Africa regional expansion is the strategic goal of every successful Kenyan tech company. Noticing a competitor's expansion on LinkedIn is the painful moment of realizing you moved too slowly — naming it creates visceral urgency." }
+  },
+  philippines_ai_first: {
+    label: "Philippines · AI First Service",
+    hooks: [
+      { competitor: "Local Manila agencies", text: "Agency retainer: ₱200K/month. AI service: ₱20K. Same output.", why: "Manila agency retainer rates are well-known to Philippine marketing managers. The 10× comparison in PHP makes it immediately tangible. 'Same output' is the provocative qualifier that earns the second look." },
+      { competitor: "Kumu AI", text: "Luzon, Visayas, Mindanao. Tatlong campaign. Isang linggo.", why: "The Philippines' three island groups (Luzon, Visayas, Mindanao) have distinct cultural identities, languages (Tagalog, Cebuano, Ilonggo), and consumer behaviors. An AI service producing genuinely distinct campaigns for all three in one week is a real differentiator vs Manila-centric agencies." },
+      { competitor: "BPO-based content teams", text: "Hindi na kailangan ng BPO para sa content. AI na ang gumawa. Mas mabilis.", why: "'Hindi na kailangan ng BPO' (No longer need a BPO) is a bold claim in a country where BPO is a national industry. Framing AI as faster — not cheaper (which would feel like an attack on livelihoods) — is the respectful version of the same comparison." }
+    ],
+    counter: { text: "Ang iyong kakumpitensya ay nag-test ng 100 creatives ngayong buwan. Ikaw, 10.", note: "Creative testing velocity in Tagalog. The 100-vs-10 ratio is the performance marketing truth that AI-first services unlock. Using Filipino language in the counter-hook signals genuine market commitment vs generic global messaging." }
+  },
+
+  /* ── Subscription App ── */
+  nigeria_subscription: {
+    label: "Nigeria · Subscription App",
+    hooks: [
+      { competitor: "Duolingo Nigeria", text: "Less than your weekly data bundle. Lasts the whole month.", why: "Data bundle cost is the primary price reference frame for Nigerian app buyers. Positioning a subscription app below the data bundle threshold removes the price objection entirely without requiring a discount." },
+      { competitor: "Headspace NG", text: "7 days free. No card. If you love it, ₦1,500 keeps it.", why: "Card skepticism is high in Nigeria due to debit card fraud and unauthorized charges. 'No card' for the trial explicitly removes the biggest barrier to trial signup. The '₦1,500 keeps it' framing anchors price to action, not obligation." },
+      { competitor: "Babbel Africa", text: "Cancel anytime. We mean it. No WhatsApp chasing you after.", why: "'No WhatsApp chasing you' directly addresses the Nigerian experience of subscription apps using aggressive local-market retention tactics. The promise of frictionless cancellation paradoxically increases subscription conversion in markets where lock-in is feared." }
+    ],
+    counter: { text: "Used it on the bus. Finished the lesson before Third Mainland Bridge.", note: "Third Mainland Bridge (Lagos) is Nigeria's longest bridge and a known commute landmark. Naming it as the time context for completing a lesson creates a vivid, specific, shareable image that works in word-of-mouth marketing among Lagos commuters." }
+  },
+  indonesia_subscription: {
+    label: "Indonesia · Subscription App",
+    hooks: [
+      { competitor: "Ruangguru Premium", text: "Kurang dari segelas kopi susu per minggu. Lebih berguna dari 10 buku.", why: "'Kopi susu' (milk coffee) is Indonesia's dominant café drink and a known cultural price anchor — GoTo named a major initiative after it. Below-kopi-susu pricing is an instantly relatable value reference that needs no further explanation." },
+      { competitor: "Belajar.id Premium", text: "Coba 7 hari gratis. Tidak perlu kartu kredit. Tidak ada jebakan.", why: "'Tidak ada jebakan' (no trap) directly addresses Indonesian consumer skepticism about subscription apps hiding cancellation hurdles. Naming the fear explicitly and denying it converts better than simply saying 'easy cancel.'" },
+      { competitor: "Headspace ID", text: "Batalkan kapan saja. Dari aplikasi. Bukan dari email ke customer service.", why: "The 'email to customer service' cancellation path is a known dark pattern that Indonesian consumers have experienced. Naming it as what this service doesn't do creates a trust signal that's more persuasive than generic 'cancel anytime' language." }
+    ],
+    counter: { text: "Langganan yang kamu pakai tiap hari. Bukan yang kamu lupakan tiap bulan.", note: "'Langganan yang kamu lupakan' (the subscription you forget) is a shared consumer experience. The contrast between 'use every day' vs 'forget every month' creates a quality signal without feature comparisons — product confidence through usage frequency." }
+  },
+  colombia_subscription: {
+    label: "Colombia · Subscription App",
+    hooks: [
+      { competitor: "Duolingo Plus CO", text: "Menos que un café al mes. Más que un coach particular.", why: "Café price anchoring works in Colombia where tinto (Colombian black coffee) is the cultural daily ritual and price reference. Compared to a coach (instructor), the subscription looks like an obvious deal — two anchors in one line." },
+      { competitor: "Calm Colombia", text: "7 días gratis. Sin tarjeta. Sin call center persiguiéndote.", why: "'Call center persiguiéndote' (call center chasing you) names the specific Colombian consumer trauma from telecoms and cable companies who use aggressive retention calling. Promising freedom from that behavior is a genuine differentiator." },
+      { competitor: "Babbel ES", text: "Cancela cuando quieras. Directo desde la app. Sin formularios.", why: "Colombian subscription apps often require email cancellation or form submission (influenced by US dark patterns). 'Directo desde la app, sin formularios' (directly from the app, no forms) is the specific frictionlessness that converts skeptical Colombian buyers." }
+    ],
+    counter: { text: "Menos que Netflix. Más útil para lo que realmente necesitas aprender.", note: "Netflix is the universal subscription price anchor in Colombia. Positioning below Netflix price while claiming higher personal utility creates an instant favorability shift — 'I already pay for entertainment subscriptions, why not one that actually helps me?'" }
+  },
+  egypt_subscription: {
+    label: "Egypt · Subscription App",
+    hooks: [
+      { competitor: "Noon Academy Premium", text: "أقل من وجبة فطور. أكثر من مدرس خصوصي.", why: "Breakfast cost (فطور) is a universal Egyptian household reference point. Positioning below it while claiming superiority to a private tutor (مدرس خصوصي — a significant cultural investment in Egypt) creates a powerful value ratio." },
+      { competitor: "LinguaArabica", text: "7 أيام مجاناً. بدون بطاقة بنكية. بدون التزام.", why: "Card registration skepticism is high in Egypt due to concerns about unauthorized charges and bank security. 'بدون بطاقة بنكية' (without a bank card) for the trial period directly removes the primary barrier to starting." },
+      { competitor: "Almentor Premium", text: "ألغِ الاشتراك في دقيقة. بدون اتصال بخدمة العملاء.", why: "Egyptian subscription services are known for difficult cancellation processes requiring phone calls to customer service. Promising one-minute self-service cancellation removes the most feared lock-in anxiety in the Egyptian consumer market." }
+    ],
+    counter: { text: "في المواصلات. في الاستراحة. في أي وقت. الدرس الواحد خمس دقائق.", note: "'في المواصلات' (on public transport/commute) names the most common Egyptian mobile usage context — crowded microbuses, metro, and ring-road service vehicles. Five-minute lessons designed for commute time is a genuinely local product insight." }
+  },
+  brazil_subscription: {
+    label: "Brazil · Subscription App",
+    hooks: [
+      { competitor: "Duolingo Plus BR", text: "R$14,90/mês. Menos que um açaí com granola.", why: "Açaí com granola (açaí bowl with granola) is Brazil's most recognizable healthy snack and a middle-class daily treat. The price comparison is both relatable and aspirational — the subscription is cheaper than the snack you already buy." },
+      { competitor: "Calm Brazil", text: "7 dias grátis. Sem cartão. Cancela pelo app em 30 segundos.", why: "Brazilian consumers fear subscription traps (cobranças escondidas) due to widespread experience with gym memberships and phone plans that are hard to cancel. Naming '30 seconds from the app' creates trust through specificity." },
+      { competitor: "Nalu Mindfulness", text: "Cancela quando quiser. Sem email para o suporte. Sem espera.", why: "Waiting for support to cancel is a shared Brazilian consumer trauma from telecom and streaming services. 'Sem espera' (no wait) combined with self-service cancellation is a trust signal that converts skeptical Brazilian app buyers." }
+    ],
+    counter: { text: "No Uber. No metrô. Nos 7 minutos antes da reunião. Sempre cabe.", note: "São Paulo and Rio commuting contexts (Uber, metrô) named explicitly. '7 minutes before a meeting' creates a specific mobile-learning moment that any Brazilian professional recognizes from their own life." }
+  },
+  southafrica_subscription: {
+    label: "South Africa · Subscription App",
+    hooks: [
+      { competitor: "Headspace SA", text: "Less than your Netflix. More useful than your gym membership.", why: "Netflix and gym memberships are the two universal subscription price references in South Africa. Positioning below Netflix (R99-199) and above gym value creates an immediate favorability frame without needing to state the actual price." },
+      { competitor: "8Fit SA", text: "7-day free trial. No card. Cancel from the app. That's it.", why: "South African consumers have been trained by cell phone contract culture to be extremely wary of 'free trials' that automatically charge. 'No card, cancel from the app' directly counters the learned skepticism from MTN and Vodacom's SIM deal history." },
+      { competitor: "Calm SA", text: "Works during load-shedding. Downloaded content. No excuses.", why: "Load-shedding kills data connectivity regularly. A subscription app with offline/downloaded content that explicitly works during Stage 4 load-shedding is a genuinely differentiated claim for South Africa that no other market requires." }
+    ],
+    counter: { text: "You kept the Netflix. You kept the Spotify. Keep this one too.", note: "The subscription stack framing ('you already have X and Y, add this') normalizes the decision by referencing existing subscription behavior. South Africans spend significantly on streaming despite economic pressure — this positions the app as peer to established categories." }
+  },
+  mexico_subscription: {
+    label: "Mexico · Subscription App",
+    hooks: [
+      { competitor: "Duolingo Plus MX", text: "Menos que un café de Starbucks al mes. Cancela cuando quieras.", why: "Starbucks México is culturally loaded in Mexico as a marker of urban middle-class spending. Below-Starbucks-coffee pricing creates both an accessibility signal and a 'you already spend more on a coffee' justification that neutralizes price objections." },
+      { competitor: "Calm MX", text: "7 días gratis. Sin tarjeta de crédito. Sin letra chica.", why: "'Sin letra chica' (no fine print) directly names the Mexican consumer's deepest subscription fear — the hidden clause that authorizes recurring charges. Naming it explicitly and denying it is more powerful than any reassurance about easy cancellation." },
+      { competitor: "Noom MX", text: "Cancela desde la app. Sin llamar al 800. Sin esperar 20 minutos.", why: "Mexican subscription cancellation processes notoriously route through 800 number call centers (a legacy of telecoms regulation). The specificity of '20 minutos de espera' (20 minute wait) names a shared consumer trauma that makes self-service cancellation feel like a gift." }
+    ],
+    counter: { text: "En el Metrobús. En el pesero. En los 8 minutos que nadie te habla.", note: "Metrobús and pesero (Mexico City's public microbuses) are the real commute contexts for Mexico City's 22M metro population. '8 minutes that nobody talks to you' is the specific commute dead-time that mobile learning apps should own." }
+  },
+  vietnam_subscription: {
+    label: "Vietnam · Subscription App",
+    hooks: [
+      { competitor: "ELSA Speak Premium", text: "Dùng thử 7 ngày miễn phí. Không cần thẻ tín dụng. Hủy bất kỳ lúc nào.", why: "Vietnamese consumers distrust subscription apps due to limited consumer protection for digital recurring charges. 'Không cần thẻ tín dụng' (no credit card) removes the primary barrier since most Vietnamese users prefer bank transfer (chuyển khoản) or e-wallets over card-based payments." },
+      { competitor: "Cake Learning", text: "Ít hơn một ly trà sữa mỗi tuần. Hữu ích hơn 10 lần.", why: "Bubble tea (trà sữa) is Vietnam's most culturally loaded consumer product — a status drink, a meeting place, and a price anchor all at once. Positioning a subscription app below trà sữa cost while claiming 10× the value is both playful and persuasive for the 20-30 demographic." },
+      { competitor: "Headspace VN", text: "Học trong lúc kẹt xe. 10 phút. Mỗi ngày.", why: "Ho Chi Minh City traffic (kẹt xe) is the defining urban experience of every working Vietnamese adult. A mobile learning app designed explicitly for 10-minute traffic sessions is a product insight, not just a feature — and it converts because it names the real usage moment." }
+    ],
+    counter: { text: "Hủy trong 30 giây từ ứng dụng. Không cần email hỗ trợ.", note: "Self-service cancellation from within the app (30 seconds) vs emailing support is the specific friction that Vietnamese app users have experienced with previous subscription services. Naming the exact alternative (email hỗ trợ) makes the promise concrete." }
+  },
+  kenya_subscription: {
+    label: "Kenya · Subscription App",
+    hooks: [
+      { competitor: "M-Shule Premium", text: "Cheaper than a matatu fare. Works offline. No data needed.", why: "Matatu fare (KSh 30-80 per trip) is Kenya's most universally relatable small spending reference. 'Works offline' is a genuine differentiator in a market where data costs are high relative to income and connectivity outside Nairobi is unreliable." },
+      { competitor: "Duolingo KE", text: "7 days free. Cancel via M-Pesa. No email, no call.", why: "M-Pesa-linked cancellation removes the credit card dependency that most Western subscription apps assume. In Kenya, if you can cancel via M-Pesa (which everyone has), the subscription feels controllable and safe." },
+      { competitor: "Headspace KE", text: "Downloaded for offline. Lesson done before Thika Road.", why: "Thika Road is Nairobi's main commuter highway and a universally recognized commute reference. Completing a downloaded lesson before reaching a commute landmark creates a specific, local, aspirational image of productive commuting." }
+    ],
+    counter: { text: "Paid via M-Pesa. Cancelled via M-Pesa. The whole subscription, in the app.", note: "Full M-Pesa integration (payment and cancellation) within the app is the Kenyan subscription app gold standard. It signals that the product was built for Kenya, not adapted to it — a critical distinction for local market trust." }
+  },
+  philippines_subscription: {
+    label: "Philippines · Subscription App",
+    hooks: [
+      { competitor: "Duolingo Plus PH", text: "Less than your milk tea budget this week. Cancel anytime. Walang catch.", why: "'Walang catch' (Tagalog: no catch/trick) directly addresses Filipino consumer skepticism from experience with telecom promos that have hidden conditions. The milk tea price anchor (₱80-150) is universally relatable for the 18-35 demographic that is the core subscription app buyer." },
+      { competitor: "Kumu Premium", text: "7 days free. No GCash or credit card needed to start. Just download.", why: "Removing GCash or credit card requirement for trial signup is a meaningful conversion unlock in the Philippines where card penetration is lower and GCash linking anxiety (unauthorized charges) is real. 'Just download' removes all barriers to starting." },
+      { competitor: "Calm PH", text: "Mag-cancel kahit kailan. Sa app mismo. Hindi email. Hindi hotline.", why: "'Hindi email, hindi hotline' (not email, not hotline) names the two most frustrating cancellation paths in Filipino consumer experience — telecoms and banks both use these. The Tagalog phrasing creates cultural authenticity that English-only copy misses." }
+    ],
+    counter: { text: "Sa commute. Sa lunch break. Sa 5 minutong walang nagche-check ng phone mo.", note: "'Sa 5 minutong walang nagche-check ng phone mo' (in the 5 minutes when nobody's checking your phone) captures the stolen moments of the Filipino office worker's day. This is the real mobile usage context — not dedicated study time, but micro-sessions in the in-between." }
+  }
+};
+
+// Normalize: ensure all combos have fallback
+function getHookData(cat, mkt) {
+  const key = mkt + '_' + cat;
+  return HOOK_DATA[key] || null;
+}
+
+function renderHookCard() {
+  const cat = document.getElementById('catSelect').value;
+  const mkt = document.getElementById('mktSelect').value;
+  const card = document.getElementById('hookCard');
+  const empty = document.getElementById('hookEmpty');
+  const noData = document.getElementById('hookNoData');
+
+  if (!cat || !mkt) {
+    card.style.display = 'none';
+    noData.style.display = 'none';
+    empty.style.display = 'block';
+    return;
+  }
+
+  const data = getHookData(cat, mkt);
+
+  if (!data) {
+    card.style.display = 'none';
+    empty.style.display = 'none';
+    noData.style.display = 'block';
+    return;
+  }
+
+  // Reset gate state
+  document.getElementById('hookGate').style.display = 'block';
+  document.getElementById('hookGateForm').style.display = 'flex';
+  document.getElementById('hookGateSuccess').style.display = 'none';
+  document.getElementById('hookGateError').style.display = 'none';
+  document.getElementById('hookEmail').value = '';
+  _gateUnlocked = false;
+  _applyBlur(true);
+
+  // Fill data
+  document.getElementById('hookCardTag').textContent = data.label;
+
+  // Hook 1 (free)
+  document.getElementById('hook1comp').textContent = data.hooks[0].competitor;
+  document.getElementById('hook1text').textContent = '"' + data.hooks[0].text + '"';
+  document.getElementById('hook1why').textContent = data.hooks[0].why;
+
+  // Hook 2
+  document.getElementById('hook2comp').textContent = data.hooks[1].competitor;
+  document.getElementById('hook2text').textContent = '"' + data.hooks[1].text + '"';
+  document.getElementById('hook2why').textContent = data.hooks[1].why;
+
+  // Hook 3
+  if (data.hooks[2]) {
+    document.getElementById('hook3').style.display = 'block';
+    document.getElementById('hook3comp').textContent = data.hooks[2].competitor;
+    document.getElementById('hook3text').textContent = '"' + data.hooks[2].text + '"';
+    document.getElementById('hook3why').textContent = data.hooks[2].why;
+  } else {
+    document.getElementById('hook3').style.display = 'none';
+  }
+
+  // Counter
+  document.getElementById('hookCounterText').textContent = '"' + data.counter.text + '"';
+  document.getElementById('hookCounterNote').textContent = data.counter.note;
+
+  empty.style.display = 'none';
+  noData.style.display = 'none';
+  card.style.display = 'block';
+}
+
+let _gateUnlocked = false;
+
+function _applyBlur(on) {
+  const els = document.querySelectorAll('.blurred');
+  els.forEach(el => {
+    if (on) el.classList.remove('revealed');
+    else el.classList.add('revealed');
+  });
+}
+
+function submitHookGate() {
+  const email = document.getElementById('hookEmail').value.trim();
+  if (!email || !email.includes('@')) {
+    document.getElementById('hookEmail').focus();
+    return;
+  }
+
+  const cat = document.getElementById('catSelect').value;
+  const mkt = document.getElementById('mktSelect').value;
+  const btn = document.querySelector('.hook-gate-btn');
+
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  // Reveal content immediately — don't wait for network
+  _gateUnlocked = true;
+  _applyBlur(false);
+
+  // Hide gate immediately
+  document.getElementById('hookGate').style.display = 'none';
+
+  // Show fixed toast so it's visible regardless of scroll position
+  var toast = document.getElementById('mlToast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'mlToast';
+    toast.style.cssText = 'position:fixed;bottom:28px;left:50%;transform:translateX(-50%);background:#111;color:#fff;padding:14px 22px;border-radius:10px;font-size:14px;font-weight:600;z-index:9999;box-shadow:0 4px 24px rgba(0,0,0,.35);white-space:nowrap;transition:opacity .4s';
+    document.body.appendChild(toast);
+  }
+  toast.innerHTML = '✓ Check your inbox. Magic link sent to <span style="color:#4ade80">' + email + '</span>.';
+  toast.style.opacity = '1';
+  toast.style.display = 'block';
+  setTimeout(function() {
+    toast.style.opacity = '0';
+    setTimeout(function() { toast.style.display = 'none'; }, 400);
+  }, 4000);
+
+  // Send magic link
+  fetch('https://app.orcool.com/api/auth/send-magic-link', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email, isBusiness: false, baseUrl: 'https://app.orcool.com' })
+  }).catch(function() {});
+}
+
+function toggleAcc(id,btn){
+  const body=document.getElementById(id);
+  const chev=btn.querySelector('.acc-chev');
+  const isOpen=body.style.maxHeight&&body.style.maxHeight!=='0px';
+  document.querySelectorAll('[id^="acc-"]').forEach(el=>{el.style.maxHeight='0px'});
+  document.querySelectorAll('.acc-chev').forEach(c=>{c.style.transform='rotate(0deg)'});
+  if(!isOpen){body.style.maxHeight='320px';chev.style.transform='rotate(180deg)'}
+}
+</script>
 
 <footer>
   <div class="wrap">
     <img class="logo" src="/orcool-logo.png" alt="Orcool">
     <div>&copy; 2026 Orcool Inc. Speed compounds. Opinions don't.</div>
     <div class="who">team@orcool.com &middot; San Francisco, CA</div>
-      <a href="https://elevenlabs.io/startup-grants" target="_blank" rel="noopener" style="display:inline-block;margin-top:18px" aria-label="Backed by ElevenLabs Grants">
-      <img src="https://eleven-public-cdn.elevenlabs.io/payloadcms/pwsc4vchsqt-ElevenLabsGrants.webp" alt="Backed by ElevenLabs Grants" style="width:150px;height:auto;display:block;margin:0 auto">
-    </a>
-</div>
+  </div>
 </footer>
 
 </body>
