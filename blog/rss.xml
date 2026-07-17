@@ -1,1 +1,86 @@
-PLACEHOLDER_RSS
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>The Orcool Blog</title>
+  <link>https://get.orcool.com/blog/</link>
+  <description>Data-backed writing on AI ad creative, creative scoring and category signals.</description>
+  <language>en</language>
+  <item>
+  <title>Time-to-Winner, shown not told: what a month of shipping looks like</title>
+  <link>https://get.orcool.com/blog/a-month-of-time-to-winner/</link>
+  <guid>https://get.orcool.com/blog/a-month-of-time-to-winner/</guid>
+  <pubDate>Fri, 17 Jul 2026 19:00:00 GMT</pubDate>
+  <description>Time-to-Winner walked through week by week: a signal, scored concepts judged by a real decision-maker, a launch, and the slower clock that decides if the winner holds.</description>
+</item>
+  <item>
+  <title>Signal speed beats scoring: why the fastest creative team wins</title>
+  <link>https://get.orcool.com/blog/signal-speed-beats-scoring/</link>
+  <guid>https://get.orcool.com/blog/signal-speed-beats-scoring/</guid>
+  <pubDate>Thu, 16 Jul 2026 17:00:00 GMT</pubDate>
+  <description>A score ranks the ads you already have; it cannot see the window closing. Why the team that reacts to signal fastest reaches a durable winner sooner, measured as Time-to-Winner.</description>
+</item>
+  <item>
+  <title>The 6% problem: why a handful of creatives eat the whole ad budget</title>
+  <link>https://get.orcool.com/blog/the-6-percent-problem/</link>
+  <guid>https://get.orcool.com/blog/the-6-percent-problem/</guid>
+  <pubDate>Thu, 09 Jul 2026 17:00:00 GMT</pubDate>
+  <description>Motion's 2026 benchmark found ~6% of creatives capture most enterprise spend. Our own 1,061-ad Meta panel shows the mechanism: the format teams ship most has the shortest lifespan of all.</description>
+</item>
+<item>
+  <title>The concept we passed on shipped as a competitor's ad three weeks later</title>
+  <link>https://get.orcool.com/blog/trend-mechanics-vs-taste/</link>
+  <guid>https://get.orcool.com/blog/trend-mechanics-vs-taste/</guid>
+  <pubDate>Wed, 08 Jul 2026 17:00:00 GMT</pubDate>
+  <description>Brand taste and trend mechanics are different signals that run on different clocks. Why a concept that reads as too strange to approve can still be the mechanically correct call.</description>
+</item>
+<item>
+  <title>The Hausa, Yoruba, Igbo voice gap: 164 million speakers, no native AI dubbing</title>
+  <link>https://get.orcool.com/blog/voice-fidelity-ladder/</link>
+  <guid>https://get.orcool.com/blog/voice-fidelity-ladder/</guid>
+  <pubDate>Tue, 07 Jul 2026 17:00:00 GMT</pubDate>
+  <description>No AI dubbing tool passes as native in Hausa, Yoruba or Igbo today. Why the training-data gap exists, and the three-rung voice ladder that works instead.</description>
+</item>
+<item>
+  <title>Creative talent doesn't travel. Your expansion plan assumes it does.</title>
+  <link>https://get.orcool.com/blog/creative-talent-doesnt-travel/</link>
+  <guid>https://get.orcool.com/blog/creative-talent-doesnt-travel/</guid>
+  <pubDate>Mon, 06 Jul 2026 21:30:00 GMT</pubDate>
+  <description>In-house teams ship outsider content to thirty markets; thirty agencies ship thirty brands. The third road starts from the local signal, and it changes time-to-winner per market.</description>
+</item>
+<item>
+    <title>No new dashboard: why creative intelligence lives in the chat</title>
+    <link>https://get.orcool.com/blog/no-new-dashboard/</link>
+    <guid>https://get.orcool.com/blog/no-new-dashboard/</guid>
+    <pubDate>Mon, 06 Jul 2026 17:00:00 GMT</pubDate>
+    <description>Tools that need a new login get checked once, then forgotten. The teams still acting on signal past week one never left the tool they already had open.</description>
+  </item>
+  <item>
+    <title>The creative producer is becoming a GTM engineer</title>
+    <link>https://get.orcool.com/blog/creative-producer-gtm-engineer/</link>
+    <guid>https://get.orcool.com/blog/creative-producer-gtm-engineer/</guid>
+    <pubDate>Fri, 03 Jul 2026 17:00:00 GMT</pubDate>
+    <description>Production got cheap, so the bottleneck moved upstream. The job that used to brief editors now briefs signal: competitor hooks, fatigue curves and real user language.</description>
+  </item>
+  <item>
+    <title>Selection is not creation: what per-impression ad pickers can't tell you</title>
+    <link>https://get.orcool.com/blog/selection-is-not-creation/</link>
+    <guid>https://get.orcool.com/blog/selection-is-not-creation/</guid>
+    <pubDate>Thu, 02 Jul 2026 17:00:00 GMT</pubDate>
+    <description>Automated selection ranks the library you already have. It cannot tell you how much life an ad has left, or which angle is missing. Durability data from 1,061 creatives.</description>
+  </item>
+  <item>
+    <title>Your user reviews are the best ad brief you already have</title>
+    <link>https://get.orcool.com/blog/user-reviews-best-ad-brief/</link>
+    <guid>https://get.orcool.com/blog/user-reviews-best-ad-brief/</guid>
+    <pubDate>Wed, 01 Jul 2026 17:00:00 GMT</pubDate>
+    <description>Most ad scripts start from a brand deck. Your customers do not talk like a brand deck. The better brief is already in your reviews.</description>
+</item>
+  <item>
+    <title>What makes an AI-generated ad convert? We scored the formats head to head.</title>
+    <link>https://get.orcool.com/blog/ai-ugc-ad-scoring-benchmark/</link>
+    <guid>https://get.orcool.com/blog/ai-ugc-ad-scoring-benchmark/</guid>
+    <pubDate>Tue, 30 Jun 2026 17:00:00 GMT</pubDate>
+    <description>Two AI-built ads, one app, scored blind on Google's ABCD framework. 0.76 vs 0.49. The gap was not polish.</description>
+  </item>
+</channel>
+</rss>
