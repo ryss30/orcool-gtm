@@ -1,0 +1,23 @@
+# Orcool
+
+> Orcool is a creative decision engine: it learns a brand's taste and returns ranked, production-ready angles to that brand's stack, getting faster to a winner with every yes or no. For teams without their own production engine, the same engine also delivers finished, performing videos end to end; that service tail funds the build, it is not the product's identity. The metric that matters is Time-to-Winner, the number of days from a fresh market signal to a concept that clears a client's KPI gate and holds, always paired with durability.
+
+## Product
+- [Home](https://get.orcool.com/): for GTM engineers and growth teams; Alerts, Patterns, Reports
+- [ChatGPT / OpenAI Ads](https://get.orcool.com/chatgpt/): read first entry point for marketers running OpenAI Ads
+- [Agencies](https://get.orcool.com/agency/): write tier access and the Brand Lens review loop, for agencies running their own production
+- [Global expansion](https://get.orcool.com/global/): local signals in, local winners out, for teams entering unfamiliar markets
+- [Mobile UA / gaming apps](https://get.orcool.com/gaming-ua/)
+- [Fintech apps](https://get.orcool.com/fintech/)
+- [Wellness / health apps](https://get.orcool.com/wellness/)
+- [Edtech apps](https://get.orcool.com/edtech/)
+- [Consumer DTC](https://get.orcool.com/dtc/)
+- [Travel apps](https://get.orcool.com/travel/)
+- [Mobility apps](https://get.orcool.com/mobility/)
+
+## Blog
+- [Blog index](https://get.orcool.com/blog/): original data and mechanics posts on ad creative durability, the Brand Lens loop, and Time-to-Winner
+
+## Notes
+- Client names are not published here; case references are described by category (for example "a travel eSIM app", "a mobility app").
+- Orcool does not sell standalone creative concepts or scripts by subscription. Briefs and angles are produced only inside a client's own Brand Lens review loop, gated by that client's pick/skip decisions.
