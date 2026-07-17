@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Time-to-Winner, shown not told: what a month of shipping looks like | Orcool</title>
+<meta name="description" content="Time-to-Winner sounds abstract until you walk through the four weeks it actually takes: a signal, a set of scored concepts, a shipped winner, and the slower clock that decides if it holds.">
+<link rel="canonical" href="https://get.orcool.com/blog/a-month-of-time-to-winner/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Orcool">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Orcool">
+<meta property="og:title" content="Time-to-Winner, shown not told: what a month of shipping looks like">
+<meta property="og:description" content="Four weeks, one cycle: a signal comes in, concepts get scored by a real decision-maker, a winner ships, and a slower clock decides if it holds.">
+<meta property="og:url" content="https://get.orcool.com/blog/a-month-of-time-to-winner/">
+<meta property="og:image" content="https://get.orcool.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Time-to-Winner, shown not told: what a month of shipping looks like">
+<meta name="twitter:description" content="Four weeks, one cycle: signal in, concepts scored, a winner ships, a slower clock decides if it holds.">
+<meta name="twitter:image" content="https://get.orcool.com/og-image.png">
+
+<link rel="icon" href="/orcool-mark-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Newsreader:ital@1&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Time-to-Winner, shown not told: what a month of shipping looks like",
+  "description": "A walkthrough of the four-week cycle behind Time-to-Winner: signal in, concepts scored by a real decision-maker, a winner ships, and a slower clock decides if it holds.",
+  "image": "https://get.orcool.com/og-image.png",
+  "datePublished": "2026-07-17",
+  "dateModified": "2026-07-17",
+  "author": { "@type": "Organization", "name": "Orcool", "url": "https://get.orcool.com" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Orcool",
+    "logo": { "@type": "ImageObject", "url": "https://get.orcool.com/orcool-logo.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://get.orcool.com/blog/a-month-of-time-to-winner/" },
+  "keywords": "Time-to-Winner, creative durability, Brand Lens, cycles-to-winner, ad creative testing"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Time-to-Winner?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Time-to-Winner is the number of calendar days from the start of a creative cycle to a concept that clears the client's own KPI gate and keeps running. It measures speed to a real winner, not how many ads got made along the way." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why pair Time-to-Winner with durability instead of tracking it alone?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A fast result that dies in a week is easy to game: ship something safe and mediocre and call it a win on day three. Durability, how long the winner keeps clearing the gate after it ships, is the check that speed did not come from picking a low bar. The two numbers are reported together, never one without the other." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between the fast loop and the slow loop in a creative cycle?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The fast loop is a client decision-maker approving, killing, or commenting on concepts before any media spend happens, often within a day of a concept existing. The slow loop is what the market does with a shipped winner over the following weeks: CTR, CVR, and hold-rate. The fast loop teaches the system taste immediately; the slow loop confirms that taste was right." }
+    },
+    {
+      "@type": "Question",
+      "name": "How is a winning concept picked before it ever runs as an ad?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Concepts are scored against a brand's own signal set, competitor patterns, category trends, and its own user reviews, then ranked and shown to the person who actually approves creative at that brand. Their pick or skip is the label that trains the next round, so the ranking gets sharper for that specific brand with every decision, not just from aggregate market data." }
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --bg:#f8f7f5; --ink:#443D3D; --ink-strong:#1a1614; --line:#e7e4e0;
+    --red:#FA3810; --blue:#387FFF; --green:#45B43B; --yellow:#FFB516;
+    --card:#ffffff;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:'Geist',system-ui,-apple-system,sans-serif;
+    font-size:18px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .mono{font-family:'Geist Mono',ui-monospace,monospace}
+  a{color:var(--blue);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  header.site{display:flex;align-items:center;justify-content:space-between;
+    max-width:1080px;margin:0 auto;padding:22px 24px}
+  header.site img{height:26px;display:block}
+  .nav-right{display:flex;gap:20px;align-items:center;font-size:15px}
+  .nav-right a{color:var(--ink)}
+  .nav-right a.pill{background:var(--ink);color:#fff;padding:8px 16px;border-radius:10px;font-size:14px}
+  .nav-right a.pill:hover{background:#5c5453;text-decoration:none}
+
+  main{max-width:720px;margin:0 auto;padding:24px 24px 80px}
+  .eyebrow{font-family:'Geist Mono',monospace;font-size:12.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--red);margin:28px 0 14px}
+  h1{font-size:40px;line-height:1.12;font-weight:700;color:var(--ink-strong);margin:0 0 18px;letter-spacing:-.02em}
+  .byline{font-size:14px;color:#8a827e;margin-bottom:8px}
+  .byline .mono{color:#8a827e}
+
+  .tldr{background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:22px 24px;margin:30px 0 8px}
+  .tldr h2{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;
+    font-family:'Geist Mono',monospace;color:var(--ink);margin:0 0 12px}
+  .tldr ul{margin:0;padding-left:20px}
+  .tldr li{margin:8px 0}
+
+  h2{font-size:26px;line-height:1.2;font-weight:650;color:var(--ink-strong);
+    margin:44px 0 14px;letter-spacing:-.01em}
+  h3{font-size:19px;font-weight:600;color:var(--ink-strong);margin:28px 0 8px}
+  p{margin:16px 0}
+  strong{color:var(--ink-strong);font-weight:600}
+
+  .loop{font-family:'Newsreader',Georgia,serif;font-style:italic;
+    font-size:22px;color:var(--ink-strong);text-align:center;margin:34px 0}
+  .loop b{font-style:normal;font-weight:600}
+  .loop span{color:var(--red);font-size:15px;display:inline-block}
+
+  table{width:100%;border-collapse:collapse;margin:26px 0;font-size:16px}
+  th,td{text-align:left;padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.06em;
+    text-transform:uppercase;color:#8a827e;font-weight:500}
+  td .score{font-family:'Geist Mono',monospace;font-weight:500;color:var(--ink-strong)}
+  .win{color:var(--green);font-weight:600}
+
+  .callout{border-left:3px solid var(--yellow);padding:4px 0 4px 20px;margin:26px 0;
+    color:var(--ink-strong);font-size:19px}
+
+  .faq h3{margin:24px 0 6px}
+  .faq p{margin:6px 0 0;color:var(--ink)}
+
+  .cta{background:#000;color:#fff;border-radius:20px;padding:36px 32px;margin:48px 0 0;text-align:center}
+  .cta h2{color:#fff;margin:0 0 10px}
+  .cta p{color:#c9c4c0;margin:0 auto 22px;max-width:440px}
+  .cta a.book{display:inline-block;background:#fff;color:#000;font-weight:600;
+    padding:13px 26px;border-radius:12px}
+  .cta a.book:hover{background:#eee;text-decoration:none}
+
+  .disclaimer{font-size:13.5px;color:#9a938e;border-top:1px solid var(--line);
+    margin-top:40px;padding-top:18px}
+
+  footer.site{border-top:1px solid var(--line);padding:26px 24px;max-width:1080px;
+    margin:40px auto 0;display:flex;justify-content:space-between;font-size:13px;color:#9a938e;flex-wrap:wrap;gap:10px}
+  footer.site a{color:#9a938e}
+
+  @media(max-width:600px){
+    h1{font-size:31px}
+    main{padding:16px 20px 60px}
+    body{font-size:17px}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <a href="/"><img src="/orcool-logo.png" alt="Orcool"></a>
+  <nav class="nav-right">
+    <a href="/blog/">Blog</a>
+    <a href="/" class="pill">Connect</a>
+  </nav>
+</header>
+
+<main>
+  <article>
+    <p class="eyebrow">Framework · Time-to-Winner</p>
+    <h1>Time-to-Winner, shown not told: what a month of shipping looks like</h1>
+    <p class="byline">By <strong>Orcool</strong> <span class="mono">·</span> July 17, 2026 <span class="mono">·</span> 6 min read</p>
+
+    <div class="tldr">
+      <h2>The short version</h2>
+      <ul>
+        <li><strong>Time-to-Winner</strong> is the number of days from the start of a cycle to a concept that clears the client's own KPI gate and keeps running. It is easy to say and hard to picture, so here is what one cycle actually looks like, week by week.</li>
+        <li>Week one is a signal, not a brainstorm. Week two is scoring and a real yes/no from the person who owns the brand's taste. Week three is a launch. Week four is the part almost nobody tracks: whether the winner is still winning.</li>
+        <li>Two clocks run at once. A <strong>fast loop</strong> (a decision-maker's pick or skip) trains the system in days. A <strong>slow loop</strong> (market performance) confirms whether that taste was right in weeks.</li>
+        <li>Speed without the second clock is a vanity metric. Time-to-Winner only means something paired with <strong>durability</strong>: how long the winner lasts, not just how fast it arrived.</li>
+      </ul>
+    </div>
+
+    <h2>Why show the cycle instead of just naming the metric</h2>
+    <p>Time-to-Winner gets thrown around as a single number, and a single number invites the wrong question: "can you make it smaller?" The honest question is what actually has to happen between a market moving and a brand having a concept that clears its own bar and holds. That is a sequence, not a sprint, and it is worth walking through once in full instead of compressing it into a headline stat.</p>
+    <p>What follows is a structural walkthrough of that sequence, the shape a cycle takes, not a single measured case study with a client name attached. The point is the mechanics: where the days go, and which parts of the loop are actually fast versus which parts have to stay slow on purpose.</p>
+
+    <h2>Week one: a signal, not a brainstorm</h2>
+    <p>A cycle does not start with someone opening a blank doc and asking "what should we make." It starts with something changing in the market: a competitor's angle stops running, a review pattern shifts, a format that was working starts fatiguing. That is the trigger, and the first days of the cycle are spent turning a noticed change into a specific, brand-relevant angle rather than a generic trend note.</p>
+    <p>This is the part most creative operations skip past too quickly, because it feels like research instead of output. But an angle sourced from something real happening right now starts the cycle already ahead of one invented cold at a desk.</p>
+
+    <h2>Week two: scored, then judged by one real person</h2>
+    <p>The angle becomes a set of concepts, ranked against the brand's own competitor set, category patterns, and its own user reviews. Ranking is not the finish line. The concepts go to the person who actually owns creative taste at that brand, and their pick, skip, or comment on each one is the label that matters most.</p>
+    <p>This is the <strong>fast loop</strong>: a real decision-maker's yes or no, often inside a day of the concept existing, with zero media spend involved. It is what closes the cold-start problem that trips up any system waiting for thousands of market data points before it can be useful. The expert judgment is available from day one; the market performance data arrives later and calibrates it.</p>
+
+    <p class="loop">
+      <b>signal</b> <span>something changed</span> &nbsp;→&nbsp; <b>concepts</b> <span>ranked, then judged</span> &nbsp;→&nbsp; <b>winner</b> <span>ships, then gets watched</span>
+    </p>
+
+    <h2>Week three: it ships, and the clock does not stop</h2>
+    <p>The approved concept goes into production and out into the world. This is usually where the story ends in a case study: the launch, a screenshot, a wrap-up line. But the launch is the midpoint of the cycle, not the end of it, because a concept clearing a client's KPI gate on day one and fading by day ten is not the same thing as a winner.</p>
+
+    <h2>Week four: the slow loop closes</h2>
+    <p>This is the part most creative reporting leaves out entirely. The winner keeps running, and its performance over the following days and weeks, CTR, CVR, whether it keeps clearing the gate, is the <strong>slow loop</strong> that confirms or corrects the fast loop's judgment. If the decision-maker's pick holds up against real market outcomes, the system's model of that brand's taste gets more trustworthy. If it does not, that gap is exactly the signal that improves the next round.</p>
+    <p>Reporting Time-to-Winner without this week is reporting half a metric. A number that only measures how fast something shipped, with no view of whether it lasted, rewards picking a safe, forgettable concept over a genuinely durable one.</p>
+
+    <p class="callout">Fast is not the hard part anymore. Anyone can ship something quickly. The hard part is a winner that is still a winner four weeks later, and being honest about the cases where it was not.</p>
+
+    <h2>What this means if you run creative</h2>
+    <p><strong>Track both clocks, not one.</strong> If your only reported number is speed to launch, you are measuring a fraction of the cycle. Ask what happened to the last five "winners" three weeks after they shipped.</p>
+    <p><strong>The fast loop is not optional.</strong> Waiting for enough market data before trusting any signal means waiting weeks for information that a single conversation with your own creative lead could have given you on day one. The two loops are not competing, the fast one is what makes the slow one worth waiting for.</p>
+    <p><strong>A cycle is a shape, not a sprint.</strong> Compressing the four weeks into one rushed pass usually means skipping the signal-grounding step, the judgment step, or the durability check, and each of those is where the actual accuracy lives.</p>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <h3>What is Time-to-Winner?</h3>
+      <p>Time-to-Winner is the number of calendar days from the start of a creative cycle to a concept that clears the client's own KPI gate and keeps running. It measures speed to a real winner, not how many ads got made along the way.</p>
+
+      <h3>Why pair Time-to-Winner with durability instead of tracking it alone?</h3>
+      <p>A fast result that dies in a week is easy to game: ship something safe and mediocre and call it a win on day three. Durability, how long the winner keeps clearing the gate after it ships, is the check that speed did not come from picking a low bar. The two numbers are reported together, never one without the other.</p>
+
+      <h3>What is the difference between the fast loop and the slow loop in a creative cycle?</h3>
+      <p>The fast loop is a client decision-maker approving, killing, or commenting on concepts before any media spend happens, often within a day of a concept existing. The slow loop is what the market does with a shipped winner over the following weeks: CTR, CVR, and hold-rate. The fast loop teaches the system taste immediately; the slow loop confirms that taste was right.</p>
+
+      <h3>How is a winning concept picked before it ever runs as an ad?</h3>
+      <p>Concepts are scored against a brand's own signal set, competitor patterns, category trends, and its own user reviews, then ranked and shown to the person who actually approves creative at that brand. Their pick or skip is the label that trains the next round, so the ranking gets sharper for that specific brand with every decision, not just from aggregate market data.</p>
+    </div>
+
+    <p class="disclaimer">Methodology note: this is a structural walkthrough of how a Time-to-Winner cycle is built, the sequence and the two feedback loops inside it, not a single measured case study with reported outcomes for one named brand. Week labels are illustrative of the cycle's shape, not a fixed timer that runs the same length every time. Client identity is never disclosed publicly.</p>
+
+    <div class="cta">
+      <h2>See what's winning in your market, in your chat</h2>
+      <p>Add Orcool to Claude, ChatGPT, or Cursor. Paste one URL, sign in with a magic link, and your competitor hooks, category patterns and your own reviews come back as a tool call. Free for two weeks, no card.</p>
+      <a class="book" href="https://get.orcool.com/#connect">Connect the MCP</a>
+    </div>
+
+    <p>Related reading: <a href="/blog/signal-speed-beats-scoring/">why signal speed beats a sharper scoring model</a> and <a href="/blog/the-6-percent-problem/">why a handful of creatives end up holding most of the budget</a>.</p>
+  </article>
+</main>
+
+<footer class="site">
+  <span>© 2026 Orcool. The fastest path to a winning ad.</span>
+  <span><a href="/blog/">Blog</a> &nbsp; <a href="/">Home</a></span>
+</footer>
+
+</body>
+</html>
