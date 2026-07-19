@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The real fight in AI advertising is not the model | Orcool</title>
+<meta name="description" content="AI-ad vendors compete on generation quality. Our own durability and scoring data shows the outcome was decided upstream and downstream of that layer instead.">
+<link rel="canonical" href="https://get.orcool.com/blog/the-layer-race-nobody-is-fighting/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Orcool">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Orcool">
+<meta property="og:title" content="The real fight in AI advertising is not the model">
+<meta property="og:description" content="AI-ad vendors compete on generation quality. Our durability and scoring data shows the outcome gets decided upstream and downstream of that layer instead.">
+<meta property="og:url" content="https://get.orcool.com/blog/the-layer-race-nobody-is-fighting/">
+<meta property="og:image" content="https://get.orcool.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The real fight in AI advertising is not the model">
+<meta name="twitter:description" content="AI-ad vendors compete on generation quality. Our durability and scoring data shows the outcome gets decided upstream and downstream of that layer instead.">
+<meta name="twitter:image" content="https://get.orcool.com/og-image.png">
+
+<link rel="icon" href="/orcool-mark-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Newsreader:ital@1&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The real fight in AI advertising is not the model",
+  "description": "AI-ad vendors compete on generation quality. Our own durability and scoring data shows the outcome was decided upstream and downstream of that layer instead.",
+  "image": "https://get.orcool.com/og-image.png",
+  "datePublished": "2026-07-19",
+  "dateModified": "2026-07-19",
+  "author": { "@type": "Organization", "name": "Orcool", "url": "https://get.orcool.com" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Orcool",
+    "logo": { "@type": "ImageObject", "url": "https://get.orcool.com/orcool-logo.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://get.orcool.com/blog/the-layer-race-nobody-is-fighting/" },
+  "keywords": "AI ad creative, generative video models, creative durability, ad scoring, competitive moat"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Isn't a better generation model still an advantage?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A small one, and a short-lived one. Generation quality is set by whichever model a vendor calls, and any competitor can call the same model the week it ships. It is a real edge, just not a durable one, because it is not owned by the team using it." }
+    },
+    {
+      "@type": "Question",
+      "name": "So the generation model does not matter at all?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It matters, it just is not where the competition actually happens. In both of our internal tests, the ad with the better underlying script and signal beat the ad with the smoother render. The model was a delivery step, not the decision." }
+    },
+    {
+      "@type": "Question",
+      "name": "What should I actually ask an AI ad vendor if not which model they use?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Ask how the brief gets built before generation starts, and ask what happens after an ad goes live. Those two answers describe the signal layer and the durability layer, the two places our data shows the real gap sits." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you measure whether an ad's advantage is durable?",
+      "acceptedAnswer": { "@type": "Answer", "text": "By tracking how long a creative keeps running before it gets pulled or fatigues, not just how it scores on day one. Our 1,061-ad panel measured exactly that, by format, and the results did not line up with which format looked the most produced." }
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --bg:#f8f7f5; --ink:#443D3D; --ink-strong:#1a1614; --line:#e7e4e0;
+    --red:#FA3810; --blue:#387FFF; --green:#45B43B; --yellow:#FFB516;
+    --card:#ffffff;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:'Geist',system-ui,-apple-system,sans-serif;
+    font-size:18px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .mono{font-family:'Geist Mono',ui-monospace,monospace}
+  a{color:var(--blue);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  header.site{display:flex;align-items:center;justify-content:space-between;
+    max-width:1080px;margin:0 auto;padding:22px 24px}
+  header.site img{height:26px;display:block}
+  .nav-right{display:flex;gap:20px;align-items:center;font-size:15px}
+  .nav-right a{color:var(--ink)}
+  .nav-right a.pill{background:var(--ink);color:#fff;padding:8px 16px;border-radius:10px;font-size:14px}
+  .nav-right a.pill:hover{background:#5c5453;text-decoration:none}
+
+  main{max-width:720px;margin:0 auto;padding:24px 24px 80px}
+  .eyebrow{font-family:'Geist Mono',monospace;font-size:12.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--red);margin:28px 0 14px}
+  h1{font-size:40px;line-height:1.12;font-weight:700;color:var(--ink-strong);margin:0 0 18px;letter-spacing:-.02em}
+  .byline{font-size:14px;color:#8a827e;margin-bottom:8px}
+  .byline .mono{color:#8a827e}
+
+  .tldr{background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:22px 24px;margin:30px 0 8px}
+  .tldr h2{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;
+    font-family:'Geist Mono',monospace;color:var(--ink);margin:0 0 12px}
+  .tldr ul{margin:0;padding-left:20px}
+  .tldr li{margin:8px 0}
+
+  h2{font-size:26px;line-height:1.2;font-weight:650;color:var(--ink-strong);
+    margin:44px 0 14px;letter-spacing:-.01em}
+  h3{font-size:19px;font-weight:600;color:var(--ink-strong);margin:28px 0 8px}
+  p{margin:16px 0}
+  strong{color:var(--ink-strong);font-weight:600}
+
+  .loop{font-family:'Newsreader',Georgia,serif;font-style:italic;
+    font-size:22px;color:var(--ink-strong);text-align:center;margin:34px 0}
+  .loop b{font-style:normal;font-weight:600}
+  .loop span{color:var(--red);font-size:15px;display:inline-block}
+
+  table{width:100%;border-collapse:collapse;margin:26px 0;font-size:16px}
+  th,td{text-align:left;padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.06em;
+    text-transform:uppercase;color:#8a827e;font-weight:500}
+  td .score{font-family:'Geist Mono',monospace;font-weight:500;color:var(--ink-strong)}
+  .win{color:var(--green);font-weight:600}
+
+  .callout{border-left:3px solid var(--yellow);padding:4px 0 4px 20px;margin:26px 0;
+    color:var(--ink-strong);font-size:19px}
+
+  .faq h3{margin:24px 0 6px}
+  .faq p{margin:6px 0 0;color:var(--ink)}
+
+  .cta{background:#000;color:#fff;border-radius:20px;padding:36px 32px;margin:48px 0 0;text-align:center}
+  .cta h2{color:#fff;margin:0 0 10px}
+  .cta p{color:#c9c4c0;margin:0 auto 22px;max-width:440px}
+  .cta a.book{display:inline-block;background:#fff;color:#000;font-weight:600;
+    padding:13px 26px;border-radius:12px}
+  .cta a.book:hover{background:#eee;text-decoration:none}
+
+  .disclaimer{font-size:13.5px;color:#9a938e;border-top:1px solid var(--line);
+    margin-top:40px;padding-top:18px}
+
+  footer.site{border-top:1px solid var(--line);padding:26px 24px;max-width:1080px;
+    margin:40px auto 0;display:flex;justify-content:space-between;font-size:13px;color:#9a938e;flex-wrap:wrap;gap:10px}
+  footer.site a{color:#9a938e}
+
+  @media(max-width:600px){
+    h1{font-size:31px}
+    main{padding:16px 20px 60px}
+    body{font-size:17px}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <a href="/"><img src="/orcool-logo.png" alt="Orcool"></a>
+  <nav class="nav-right">
+    <a href="/blog/">Blog</a>
+    <a href="/" class="pill">Connect</a>
+  </nav>
+</header>
+
+<main>
+  <article>
+    <p class="eyebrow">Strategy · Creative infrastructure</p>
+    <h1>The real fight in AI advertising is not the model.</h1>
+    <p class="byline">By <strong>Orcool</strong> <span class="mono">·</span> July 19, 2026 <span class="mono">·</span> 5 min read</p>
+
+    <div class="tldr">
+      <h2>The short version</h2>
+      <ul>
+        <li>Most AI-ad pitches lead with the generation model: which video engine, which avatar, which lip-sync. That layer is the one that becomes a commodity fastest, because any vendor can call the same model the week it ships.</li>
+        <li>In our own <strong>1,061-ad durability panel</strong>, the format teams ship the most, dynamic and automated, held for a median of just <strong>33 days at 57% of total volume</strong>, the shortest lifespan of any format measured.</li>
+        <li>In a separate <strong>blind ABCD scoring test</strong>, an ad built from real user language scored <strong>0.76</strong> against <strong>0.49</strong> for a polished single-tool competitor. The gap was attention and connection, not render quality.</li>
+        <li>Both results point the same direction: the layer that decided the outcome was <strong>what fed the model</strong>, and <strong>what happened after it shipped</strong>, not the model itself.</li>
+      </ul>
+    </div>
+
+    <h2>Everyone is racing the middle layer</h2>
+    <p>Ask most AI ad tools what makes them different and you get a model name. A newer video engine, a more realistic avatar, a faster render queue. It is an easy pitch, because it is demoable in thirty seconds and it changes every few months, which makes for a good headline.</p>
+    <p>It is also the layer with the least defensibility. A model is an API call. Whatever advantage a faster or cleaner generator gives one vendor this month, a competitor gets by switching providers the next. Nobody keeps a proprietary hold on how good AI video generation is, because nobody built it in house.</p>
+
+    <h2>Three layers, one race</h2>
+    <p>Strip an AI ad down and there are really three layers stacked on top of each other, and only one of them is the model.</p>
+    <p class="loop">
+      <b>signal</b> <span>what to build from</span> &nbsp;→&nbsp; <b>generation</b> <span>the model, the render</span> &nbsp;→&nbsp; <b>durability</b> <span>does the winner hold</span>
+    </p>
+    <p><strong>Signal</strong> is the brief before the brief: what real users already say, what competitors are already running, which angle a category has not tried yet. <strong>Generation</strong> is the part everyone photographs, the actual video coming out. <strong>Durability</strong> is what happens after launch, whether the ad keeps earning its spend for two weeks or two months.</p>
+    <p>The middle layer gets the marketing budget. Our own numbers say the first and third layers are where the outcome actually gets decided.</p>
+
+    <h2>What our own numbers already showed</h2>
+    <p>We were not looking for this pattern when we found it. Two separate, unrelated tests both landed on the same conclusion from different angles.</p>
+    <p>The first was a durability read across <strong>1,061 creatives</strong> in a single Meta panel, broken out by format (see <a href="/blog/the-6-percent-problem/">the 6% problem</a>). Static images held for a median of 101 days. Video held for 66. Dynamic, automated creative, the format built specifically to be generated fast and cheap at volume, held for a median of just <strong>33 days</strong>, despite making up <strong>57% of total volume</strong> shipped. The format most optimized for generation speed had the shortest life of the three.</p>
+    <p>The second was a blind scoring test on Google's ABCD framework (see <a href="/blog/user-reviews-best-ad-brief/">your user reviews are the best ad brief you already have</a>). Two AI-built ads for the same app, one built from a generic script through a polished single-tool generator, one built from real user reviews through an agent pipeline. The reviews-based ad scored <strong>0.76</strong>. The polished one scored <strong>0.49</strong>. Both were rendered competently. The gap was in the first three seconds and in whether the words sounded like something a person would actually say, not in how smooth the footage looked.</p>
+    <p>Neither result was about which model rendered the video. Both were about what fed the model going in, and in the durability panel, what happened to the ad once it was live.</p>
+
+    <p class="callout">The ad that wins is rarely the best rendered one. It is the one built from the right signal, and it stays a winner only as long as someone is actually watching whether it holds.</p>
+
+    <h2>Why the model layer commoditizes first</h2>
+    <p>This is not a complaint about generation models. They keep getting better, and that is good for everyone using them. It is the reason the middle layer cannot be a durable edge: improvements there spread to every buyer of the same API at the same time. Nobody owns a private version of a foundation model's video quality.</p>
+    <p>What is harder to copy overnight is a live, current picture of what a specific brand's users actually say, what a specific category's competitors are actually running this week, and a running measurement of whether last month's winner is still winning. Those three things change per brand, need constant updating, and do not ship as a product update from a model provider. That is the part of the stack worth competing on.</p>
+
+    <h2>What to actually watch as a buyer</h2>
+    <p>If a vendor's pitch stops at the model name, ask two different questions instead. First: where does the script come from before generation starts, and is it built from something a real user said or a real competitor is running, or from a generic prompt. Second: what happens to the ad after it goes live, does anything track whether it is still earning its spend in week three, or does the tool consider its job done at render.</p>
+    <p>Those two questions describe the signal layer and the durability layer. Our numbers say that is where the actual difference between a working ad and a wasted one gets made.</p>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <h3>Isn't a better generation model still an advantage?</h3>
+      <p>A small one, and a short-lived one. Generation quality is set by whichever model a vendor calls, and any competitor can call the same model the week it ships. It is a real edge, just not a durable one, because it is not owned by the team using it.</p>
+
+      <h3>So the generation model does not matter at all?</h3>
+      <p>It matters, it just is not where the competition actually happens. In both of our internal tests, the ad with the better underlying script and signal beat the ad with the smoother render. The model was a delivery step, not the decision.</p>
+
+      <h3>What should I actually ask an AI ad vendor if not which model they use?</h3>
+      <p>Ask how the brief gets built before generation starts, and ask what happens after an ad goes live. Those two answers describe the signal layer and the durability layer, the two places our data shows the real gap sits.</p>
+
+      <h3>How do you measure whether an ad's advantage is durable?</h3>
+      <p>By tracking how long a creative keeps running before it gets pulled or fatigues, not just how it scores on day one. Our 1,061-ad panel measured exactly that, by format, and the results did not line up with which format looked the most produced.</p>
+    </div>
+
+    <p class="disclaimer">Methodology note: the durability figures (101 / 66 / 33-day medians, 57% volume share) come from our internal read of a 1,061-ad Meta panel, first published in "the 6% problem." The ABCD scores (0.76 vs 0.49) come from a separate blind head-to-head test, first published in "your user reviews are the best ad brief you already have." Both are internal, single-panel results, not third-party audited studies. We are citing our own prior work rather than restating new figures here.</p>
+
+    <div class="cta">
+      <h2>See your own signal and durability layer, in your chat</h2>
+      <p>Add Orcool to Claude, ChatGPT, or Cursor. Paste one URL, sign in with a magic link, and your competitor hooks, category patterns and your own reviews come back as a tool call. Free for two weeks, no card.</p>
+      <a class="book" href="https://get.orcool.com/#connect">Connect the MCP</a>
+    </div>
+  </article>
+</main>
+
+<footer class="site">
+  <span>© 2026 Orcool. The fastest path to a winning ad.</span>
+  <span><a href="/blog/">Blog</a> &nbsp; <a href="/">Home</a></span>
+</footer>
+
+</body>
+</html>
