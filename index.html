@@ -543,6 +543,68 @@ REVIEWS:
   </div>
 </section>
 
+<!-- FROM THE BLOG -->
+<section style="padding-top:0" id="blog">
+  <div class="wrap">
+    <span class="eyebrow">From the blog</span>
+    <h2 style="margin-top:14px">What we're learning about AI ad creative.</h2>
+    <p class="muted" style="margin-top:14px;max-width:600px">Benchmarks and honest post-mortems from the team building Orcool. No dashboards required.</p>
+    <div class="panels blogpanels">
+      <a class="panel blogcard" href="https://get.orcool.com/blog/creative-producer-gtm-engineer/">
+        <div class="tag">Role shift</div>
+        <h3>The creative producer is becoming a GTM engineer.</h3>
+        <p>Production got cheap, so the bottleneck moved upstream, into signal instead of editors.</p>
+        <div class="ship"><span class="m">Read the post &rarr;</span></div>
+      </a>
+      <a class="panel blogcard" href="https://get.orcool.com/blog/no-new-dashboard/">
+        <div class="tag">Workflow</div>
+        <h3>No new dashboard: why creative intelligence lives in the chat.</h3>
+        <p>Tools that need a new login get checked once, then forgotten. Signal that stays in the chat gets used.</p>
+        <div class="ship"><span class="m">Read the post &rarr;</span></div>
+      </a>
+      <a class="panel blue blogcard" id="blog-latest" href="https://get.orcool.com/blog/one-person-creative-team-of-agents/">
+        <div class="tag" id="blog-latest-tag">Latest</div>
+        <h3 id="blog-latest-title">What a one-person creative team looks like when the team is agents.</h3>
+        <p id="blog-latest-dek">Three seats go to agents: research, drafting, ranking. The one seat that stays human is judgment.</p>
+        <div class="ship"><span class="m">Read the post &rarr;</span></div>
+      </a>
+    </div>
+    <p style="margin-top:26px"><a class="btn ghost" href="https://get.orcool.com/blog/">See all posts</a></p>
+  </div>
+</section>
+
+<style>
+  .blogcard{text-decoration:none;transition:border-color .14s ease}
+  .blogcard:hover{border:1px solid var(--ink)}
+</style>
+
+<script>
+(function(){
+  fetch('https://get.orcool.com/blog/rss.xml').then(function(r){return r.text();}).then(function(xml){
+    var doc = new DOMParser().parseFromString(xml, 'text/xml');
+    var item = doc.querySelector('item');
+    if(!item) return;
+    var title = (item.querySelector('title')||{}).textContent;
+    var link = (item.querySelector('link')||{}).textContent;
+    var descNode = item.querySelector('description');
+    var desc = descNode ? descNode.textContent.replace(/<[^>]+>/g,'').trim() : '';
+    var pubNode = item.querySelector('pubDate');
+    var el = document.getElementById('blog-latest');
+    if(!el || !title || !link) return;
+    el.href = link;
+    var t = document.getElementById('blog-latest-title'); if(t) t.textContent = title;
+    if(desc){ var d = document.getElementById('blog-latest-dek'); if(d) d.textContent = desc.slice(0,150); }
+    if(pubNode){
+      var dt = new Date(pubNode.textContent);
+      if(!isNaN(dt)){
+        var tag = document.getElementById('blog-latest-tag');
+        if(tag) tag.textContent = 'Latest \u00b7 ' + dt.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});
+      }
+    }
+  }).catch(function(){});
+})();
+</script>
+
 <!-- FINAL -->
 <section class="dark final">
   <div class="wrap">
