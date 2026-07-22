@@ -1,0 +1,16 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.ryss30/orcool",
+  "description": "Creative decision engine inside Claude: brand signals, ranked concepts, and finished video ads.",
+  "repository": {
+    "url": "https://github.com/ryss30/orcool-gtm",
+    "source": "github"
+  },
+  "version": "1.0.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.orcool.com"
+    }
+  ]
+}
