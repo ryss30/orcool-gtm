@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Pontus Rotana · Видео</title>
+<style>
+  :root{
+    --bg:#0A0A0B;
+    --surface:#141416;
+    --border:#26262A;
+    --text:#F5F5F4;
+    --muted:#8A8A90;
+    --accent:#FA3810;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+  }
+
+  #gate{
+    position:fixed;inset:0;z-index:50;
+    background:var(--bg);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:24px;text-align:center;
+  }
+  #gate img{height:28px;margin-bottom:40px;opacity:.95}
+  #gate h1{font-size:19px;font-weight:600;letter-spacing:-.01em;margin-bottom:8px}
+  #gate p{color:var(--muted);font-size:14px;margin-bottom:28px}
+  .gate-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+  input[type=password]{
+    background:var(--surface);
+    border:1px solid var(--border);
+    color:var(--text);
+    padding:13px 16px;border-radius:10px;
+    font-size:15px;width:230px;outline:none;
+    transition:border-color .15s;
+  }
+  input[type=password]:focus{border-color:var(--accent)}
+  button{
+    background:var(--accent);color:#fff;border:0;
+    padding:13px 26px;border-radius:10px;
+    font-size:15px;font-weight:600;cursor:pointer;
+    transition:opacity .15s;
+  }
+  button:hover{opacity:.88}
+  #err{color:var(--accent);font-size:13px;margin-top:16px;height:18px}
+
+  .wrap{display:none;max-width:1180px;margin:0 auto;padding:56px 24px 80px}
+  header{margin-bottom:44px}
+  header img{height:26px;margin-bottom:32px;opacity:.95}
+  header h1{font-size:30px;font-weight:600;letter-spacing:-.02em;margin-bottom:10px}
+  header p{color:var(--muted);font-size:15px;max-width:560px;line-height:1.55}
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+    gap:28px;
+  }
+  .card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:14px;
+    overflow:hidden;
+    transition:border-color .18s;
+  }
+  .card:hover{border-color:#3A3A40}
+  .card video{
+    width:100%;aspect-ratio:9/16;
+    display:block;background:#000;object-fit:cover;
+  }
+  .meta{padding:16px 18px 18px}
+  .meta h2{font-size:16px;font-weight:600;margin-bottom:5px;letter-spacing:-.01em}
+  .meta span{color:var(--muted);font-size:13.5px;line-height:1.5}
+
+  footer{
+    margin-top:64px;padding-top:26px;
+    border-top:1px solid var(--border);
+    color:var(--muted);font-size:13.5px;
+    display:flex;gap:20px;flex-wrap:wrap;
+  }
+  footer a{color:var(--muted);text-decoration:none;transition:color .15s}
+  footer a:hover{color:var(--text)}
+
+  @media(max-width:560px){
+    .wrap{padding:36px 18px 60px}
+    header h1{font-size:24px}
+    .grid{grid-template-columns:1fr;gap:22px}
+  }
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <img src="/orcool-logo.png" alt="Orcool">
+  <h1>Pontus Rotana</h1>
+  <p>Введите пароль для просмотра</p>
+  <div class="gate-row">
+    <input type="password" id="pw" autocomplete="off" placeholder="Пароль">
+    <button id="go">Смотреть</button>
+  </div>
+  <div id="err"></div>
+</div>
+
+<div class="wrap" id="wrap">
+  <header>
+    <img src="/orcool-logo.png" alt="Orcool">
+    <h1>Pontus Rotana · Черновики роликов</h1>
+    <p>Вертикальный формат 9:16 для Reels и Shorts. Видео воспроизводятся прямо здесь, скачивать ничего не нужно.</p>
+  </header>
+
+  <div class="grid" id="grid">
+    <div class="card">
+      <video controls preload="metadata" playsinline src="pontus-batumi.mp4"></video>
+      <div class="meta">
+        <h2>Батуми</h2>
+        <span>Ролик 1 · цветокоррекция, субтитры, лого в финале</span>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <a href="https://orcool.com" target="_blank" rel="noopener">orcool.com</a>
+    <a href="mailto:boris.ryss@orcool.com">boris.ryss@orcool.com</a>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var HASH = "c0f418983692a82c1902d894391b7949ffccc0c26af937bad41ec58a16622430";
+  var gate = document.getElementById('gate');
+  var wrap = document.getElementById('wrap');
+  var pw   = document.getElementById('pw');
+  var go   = document.getElementById('go');
+  var err  = document.getElementById('err');
+
+  function reveal(){
+    gate.style.display = 'none';
+    wrap.style.display = 'block';
+  }
+
+  if (sessionStorage.getItem('pontus_ok') === '1') { reveal(); }
+
+  async function check(){
+    var val = pw.value.trim();
+    if (!val) return;
+    try {
+      var buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(val));
+      var hex = Array.from(new Uint8Array(buf))
+        .map(function(b){ return b.toString(16).padStart(2,'0'); }).join('');
+      if (hex === HASH) {
+        sessionStorage.setItem('pontus_ok','1');
+        reveal();
+      } else {
+        err.textContent = 'Неверный пароль';
+        pw.value = '';
+        pw.focus();
+      }
+    } catch(e) {
+      err.textContent = 'Ошибка проверки';
+    }
+  }
+
+  go.addEventListener('click', check);
+  pw.addEventListener('keydown', function(e){
+    if (e.key === 'Enter') check();
+  });
+  pw.focus();
+})();
+</script>
+
+</body>
+</html>
