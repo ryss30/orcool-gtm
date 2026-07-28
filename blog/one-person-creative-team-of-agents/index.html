@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Newsreader:ital@1&display=swap" rel="stylesheet">
-<script defer data-domain="get.orcool.com" src="https://plausible.io/js/script.js"></script>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="40fd1792-b48f-4d93-867e-00ff641a0677"></script>
 
 <script type="application/ld+json">
 {
@@ -250,8 +250,7 @@
 
 <script>
 (function(){
-  window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)};
-  function fire(n){return function(){plausible(n);};}
+  function fire(n){return function(){if(window.umami){window.umami.track(n);}};}
   document.querySelectorAll('a[href*="#connect"]').forEach(function(a){a.addEventListener('click',fire('Connect click'));});
 })();
 </script>
