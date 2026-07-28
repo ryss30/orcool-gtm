@@ -51,35 +51,40 @@
   button:hover{opacity:.88}
   #err{color:var(--accent);font-size:13px;margin-top:16px;height:18px}
 
-  .wrap{display:none;max-width:1180px;margin:0 auto;padding:56px 24px 80px}
-  header{margin-bottom:44px}
-  header img{height:26px;margin-bottom:32px;opacity:.95}
+  .wrap{display:none;max-width:1180px;margin:0 auto;padding:48px 24px 80px}
+  header{margin-bottom:40px}
+  header img{height:26px;margin-bottom:30px;opacity:.95}
   header h1{font-size:30px;font-weight:600;letter-spacing:-.02em;margin-bottom:10px}
-  header p{color:var(--muted);font-size:15px;max-width:560px;line-height:1.55}
+  header p{color:var(--muted);font-size:15px;max-width:600px;line-height:1.55}
 
   .grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(260px,320px));
-    gap:28px;
+    display:flex;flex-wrap:wrap;
+    gap:40px;
+    align-items:flex-start;
   }
-  .card{
-    background:var(--surface);
+  .card{width:405px;max-width:100%}
+  .phone{
+    position:relative;
+    width:100%;
+    background:#000;
     border:1px solid var(--border);
-    border-radius:14px;
+    border-radius:20px;
     overflow:hidden;
-    transition:border-color .18s;
+    box-shadow:0 8px 34px rgba(0,0,0,.5);
   }
-  .card:hover{border-color:#3A3A40}
-  .card video{
-    width:100%;aspect-ratio:9/16;
-    display:block;background:#000;object-fit:cover;
+  .phone video{
+    width:100%;
+    aspect-ratio:9/16;
+    display:block;
+    background:#000;
   }
-  .meta{padding:16px 18px 18px}
+  .meta{padding:16px 4px 0}
   .meta h2{font-size:16px;font-weight:600;margin-bottom:5px;letter-spacing:-.01em}
-  .meta span{color:var(--muted);font-size:13.5px;line-height:1.5}
+  .meta span{color:var(--muted);font-size:13.5px;line-height:1.5;display:block}
+  .meta .spec{color:#5F5F66;font-size:12px;margin-top:7px;letter-spacing:.02em}
 
   footer{
-    margin-top:64px;padding-top:26px;
+    margin-top:60px;padding-top:26px;
     border-top:1px solid var(--border);
     color:var(--muted);font-size:13.5px;
     display:flex;gap:20px;flex-wrap:wrap;
@@ -88,9 +93,10 @@
   footer a:hover{color:var(--text)}
 
   @media(max-width:560px){
-    .wrap{padding:36px 18px 60px}
-    header h1{font-size:24px}
-    .grid{grid-template-columns:1fr;gap:22px}
+    .wrap{padding:34px 16px 60px}
+    header h1{font-size:23px}
+    .grid{gap:32px}
+    .card{width:100%}
   }
 </style>
 </head>
@@ -111,15 +117,18 @@
   <header>
     <img src="/orcool-logo.png" alt="Orcool">
     <h1>Pontus Rotana · Черновики роликов</h1>
-    <p>Вертикальный формат 9:16 для Reels и Shorts. Видео воспроизводятся прямо здесь, скачивать ничего не нужно.</p>
+    <p>Формат 9:16, ровно как ролик будет выглядеть в Reels, Shorts и TikTok. Видео играет прямо здесь, скачивать ничего не нужно. Для полноэкранного просмотра нажмите иконку разворота в плеере.</p>
   </header>
 
   <div class="grid" id="grid">
     <div class="card">
-      <video controls preload="metadata" playsinline poster="poster-batumi.jpg" src="pontus-batumi.mp4"></video>
+      <div class="phone">
+        <video controls preload="metadata" playsinline poster="poster-batumi.jpg" src="pontus-batumi.mp4"></video>
+      </div>
       <div class="meta">
         <h2>Батуми</h2>
         <span>Ролик 1 · цветокоррекция, субтитры, лого в финале</span>
+        <span class="spec">1080 x 1920 · 1:06</span>
       </div>
     </div>
   </div>
