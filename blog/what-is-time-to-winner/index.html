@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Is Time-to-Winner in Ad Creative Testing? | Orcool</title>
+<meta name="description" content="Time-to-Winner is the number of days from the start of a testing cycle to an ad concept that clears the KPI gate and holds up in rotation. Full definition.">
+<link rel="canonical" href="https://get.orcool.com/blog/what-is-time-to-winner/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Orcool">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Orcool">
+<meta property="og:title" content="Time-to-Winner: the metric that counts days to a working ad, not ads produced">
+<meta property="og:description" content="The definition, the two loops behind it, and a worked example of how to calculate Time-to-Winner without gaming the number.">
+<meta property="og:url" content="https://get.orcool.com/blog/what-is-time-to-winner/">
+<meta property="og:image" content="https://get.orcool.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What Is Time-to-Winner in Ad Creative Testing?">
+<meta name="twitter:description" content="Days to a durable winner, not ads produced. The definition, the two loops behind it, and how to calculate it.">
+<meta name="twitter:image" content="https://get.orcool.com/og-image.png">
+
+<link rel="icon" href="/orcool-mark-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Newsreader:ital@1&display=swap" rel="stylesheet">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="40fd1792-b48f-4d93-867e-00ff641a0677"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Time-to-Winner: the metric that counts days to a working ad, not ads produced",
+  "description": "Time-to-Winner is the number of calendar days from the start of a testing cycle to a concept that clears the client's KPI gate and holds up once it is live in rotation.",
+  "image": "https://get.orcool.com/og-image.png",
+  "datePublished": "2026-07-30",
+  "dateModified": "2026-07-30",
+  "author": { "@type": "Organization", "name": "Orcool", "url": "https://get.orcool.com" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Orcool",
+    "logo": { "@type": "ImageObject", "url": "https://get.orcool.com/orcool-logo.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://get.orcool.com/blog/what-is-time-to-winner/" },
+  "keywords": "Time-to-Winner, ad creative testing, KPI gate, creative durability, cycles-to-winner, ad testing metrics"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Time-to-Winner in ad creative testing?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Time-to-Winner is the number of calendar days from the start of a testing cycle to a concept that clears the client's KPI gate and holds up once it is live in rotation. It measures speed to a working ad rather than the volume of creative produced. The gate is defined by whoever owns the media budget, not by the team making the ads." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does Time-to-Winner have to be paired with durability?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Because a speed number reported on its own gets gamed. The fastest path to a low Time-to-Winner is to ship something safe and familiar that clears the bar today and fatigues within days. Pairing the day count with the winner's durability, meaning how long it stayed live and kept clearing the gate, removes the incentive to chase quick, forgettable wins." }
+    },
+    {
+      "@type": "Question",
+      "name": "What counts as a winner for Time-to-Winner purposes?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A winner is a concept that clears an externally defined KPI gate and keeps clearing it in live rotation through an agreed observation window. Three things have to be explicit: whose gate it is, what the numeric threshold is, and who confirmed the concept cleared it. A concept that spikes and then dies is not a winner regardless of how fast it cleared." }
+    },
+    {
+      "@type": "Question",
+      "name": "How is Time-to-Winner different from cycles-to-winner?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Time-to-Winner counts calendar days. Cycles-to-winner counts how many rounds of concepts it took to land one. Days measure how quickly the work gets done, rounds measure how well the brand's taste model is learning from its own yes and no decisions. If cycles-to-winner falls over time, the model is genuinely improving. If it stays flat, the loop is not learning, and shortening the calendar will not fix that." }
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --bg:#f8f7f5; --ink:#443D3D; --ink-strong:#1a1614; --line:#e7e4e0;
+    --red:#FA3810; --blue:#387FFF; --green:#45B43B; --yellow:#FFB516;
+    --card:#ffffff;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:'Geist',system-ui,-apple-system,sans-serif;
+    font-size:18px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .mono{font-family:'Geist Mono',ui-monospace,monospace}
+  a{color:var(--blue);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  header.site{display:flex;align-items:center;justify-content:space-between;
+    max-width:1080px;margin:0 auto;padding:22px 24px}
+  header.site img{height:26px;display:block}
+  .nav-right{display:flex;gap:20px;align-items:center;font-size:15px}
+  .nav-right a{color:var(--ink)}
+  .nav-right a.pill{background:var(--ink);color:#fff;padding:8px 16px;border-radius:10px;font-size:14px}
+  .nav-right a.pill:hover{background:#5c5453;text-decoration:none}
+
+  main{max-width:720px;margin:0 auto;padding:24px 24px 80px}
+  .eyebrow{font-family:'Geist Mono',monospace;font-size:12.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--red);margin:28px 0 14px}
+  h1{font-size:40px;line-height:1.12;font-weight:700;color:var(--ink-strong);margin:0 0 18px;letter-spacing:-.02em}
+  .byline{font-size:14px;color:#8a827e;margin-bottom:8px}
+  .byline .mono{color:#8a827e}
+
+  .tldr{background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:22px 24px;margin:30px 0 8px}
+  .tldr h2{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;
+    font-family:'Geist Mono',monospace;color:var(--ink);margin:0 0 12px}
+  .tldr ul{margin:0;padding-left:20px}
+  .tldr li{margin:8px 0}
+
+  h2{font-size:26px;line-height:1.2;font-weight:650;color:var(--ink-strong);
+    margin:44px 0 14px;letter-spacing:-.01em}
+  h3{font-size:19px;font-weight:600;color:var(--ink-strong);margin:28px 0 8px}
+  p{margin:16px 0}
+  strong{color:var(--ink-strong);font-weight:600}
+
+  .loop{font-family:'Newsreader',Georgia,serif;font-style:italic;
+    font-size:22px;color:var(--ink-strong);text-align:center;margin:34px 0}
+  .loop b{font-style:normal;font-weight:600}
+  .loop span{color:var(--red);font-size:15px;display:inline-block}
+
+  table{width:100%;border-collapse:collapse;margin:26px 0;font-size:16px}
+  th,td{text-align:left;padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.06em;
+    text-transform:uppercase;color:#8a827e;font-weight:500}
+  td .score{font-family:'Geist Mono',monospace;font-weight:500;color:var(--ink-strong)}
+  .win{color:var(--green);font-weight:600}
+
+  .callout{border-left:3px solid var(--yellow);padding:4px 0 4px 20px;margin:26px 0;
+    color:var(--ink-strong);font-size:19px}
+
+  .faq h3{margin:24px 0 6px}
+  .faq p{margin:6px 0 0;color:var(--ink)}
+
+  .cta{background:#000;color:#fff;border-radius:20px;padding:36px 32px;margin:48px 0 0;text-align:center}
+  .cta h2{color:#fff;margin:0 0 10px}
+  .cta p{color:#c9c4c0;margin:0 auto 22px;max-width:440px}
+  .cta a.book{display:inline-block;background:#fff;color:#000;font-weight:600;
+    padding:13px 26px;border-radius:12px}
+  .cta a.book:hover{background:#eee;text-decoration:none}
+
+  .disclaimer{font-size:13.5px;color:#9a938e;border-top:1px solid var(--line);
+    margin-top:40px;padding-top:18px}
+
+  footer.site{border-top:1px solid var(--line);padding:26px 24px;max-width:1080px;
+    margin:40px auto 0;display:flex;justify-content:space-between;font-size:13px;color:#9a938e;flex-wrap:wrap;gap:10px}
+  footer.site a{color:#9a938e}
+
+  @media(max-width:600px){
+    h1{font-size:31px}
+    main{padding:16px 20px 60px}
+    body{font-size:17px}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <a href="/"><img src="/orcool-logo.png" alt="Orcool"></a>
+  <nav class="nav-right">
+    <a href="/blog/">Blog</a>
+    <a href="/" class="pill">Connect</a>
+  </nav>
+</header>
+
+<main>
+  <article>
+    <p class="eyebrow">Definitions · Metrics</p>
+    <h1>Time-to-Winner: the metric that counts days to a working ad, not ads produced</h1>
+    <p class="byline">By <strong>Orcool</strong> <span class="mono">·</span> July 30, 2026 <span class="mono">·</span> 6 min read</p>
+
+    <div class="tldr">
+      <h2>The short version</h2>
+      <ul>
+        <li><strong>Time-to-Winner</strong> is the number of calendar days from the start of a testing cycle to a concept that clears the client's KPI gate and holds up once it is live in rotation.</li>
+        <li>It is a speed metric with a quality condition built in. A concept that clears the gate and then dies does not count.</li>
+        <li>It is always reported paired with the winner's <strong>durability</strong>. Reported alone, it gets gamed into safe, forgettable winners that clear the bar today and fatigue in days.</li>
+        <li>Its two supporting metrics are the <strong>hit rate</strong> of the cycle and <strong>cycles-to-winner</strong>, which shows whether the brand's taste model is actually learning.</li>
+      </ul>
+    </div>
+
+    <h2>Why this needed a name</h2>
+    <p>Most creative teams measure ad testing with numbers that do not answer the question anyone actually cares about.</p>
+    <p>The first is output. Variants made, concepts delivered, assets shipped this month. That number is easy to move and says nothing about whether any of the work performed. A team can double its output and get further from a working ad, because more mediocre variants means more budget spread across things that were never going to clear.</p>
+    <p>The second is velocity. Vague and self-flattering: we move fast, we ship weekly, our turnaround is two days. Turnaround is a production stat. It measures how quickly a file leaves the building, not whether the thing inside the file earns its media spend.</p>
+    <p>The real business question sits underneath both: starting from today, how many days until there is an ad that works, and stays working long enough to be worth putting budget behind? That question had no name, so nobody reported on it, so teams optimized the things that did have names. Time-to-Winner is the name for it.</p>
+
+    <h2>The definition</h2>
+    <p>Time-to-Winner is the number of calendar days from the start of a testing cycle to a concept that clears the client's KPI gate and holds up once it is live in rotation.</p>
+    <p>Three parts of that sentence carry weight.</p>
+    <p><strong>Calendar days.</strong> Not working days, not sprints, not "two cycles". Calendar days is the unit the budget is spent in and the unit the client feels. If a concept clears on day 12, the number is 12, including the weekend nobody worked.</p>
+    <p><strong>Clears the client's KPI gate.</strong> The gate is external and defined in advance by the buyer, not by whoever made the ad. Usually it is a threshold on the metric that account is actually managed against: a target CPA, a ROAS floor, a hook rate or a cost per install. The producer does not get to declare a winner. Whoever owns the media budget does.</p>
+    <p><strong>Holds up in rotation.</strong> A concept becomes a winner only when it is live, spending, and still clearing the gate after an observation window. Clearing on day one and collapsing on day four is not a winner. It is a spike.</p>
+
+    <h2>Two loops, not one number</h2>
+    <p>There are two loops running behind this metric, and they run at different speeds.</p>
+    <p>The fast loop runs from signal to shipped concept. Something lands: a competitor's new angle, a fresh review theme, a brief, a hypothesis worth testing. Work happens. A concept goes live. This loop is measured in days and it is the one everyone likes reporting, because it moves quickly and it feels like progress.</p>
+    <p>The slow loop runs after launch. It answers a single question: did the thing survive? Is it still spending a week later, two weeks later, past the point where most creatives fatigue?</p>
+    <p>Report only the fast loop and the metric gets gamed almost immediately, usually without anyone deciding to cheat. Under pressure to post a low number, the safe move is to ship a variation of something that already worked: the familiar hook, the proven format, the angle the audience has seen four times. It clears the gate on day three because it is not new enough to fail. It also fatigues within the week, because it was not new enough to matter.</p>
+    <p class="callout">That is why Time-to-Winner is always reported next to the winner's durability, never alone. Speed on its own selects for safe and mediocre. Speed paired with durability selects for something that was actually worth finding.</p>
+
+    <h2>How to actually calculate it</h2>
+    <p>Three definitions have to be written down before a cycle starts, because deciding them afterwards is how numbers get flattering.</p>
+    <p><strong>Cycle start.</strong> The clock starts when a real signal or brief lands, not when production begins. Backdating the start to the day the editor opened the file is the most common way this number gets shaved.</p>
+    <p><strong>The KPI gate.</strong> Client-specific and numeric. A target CPA, a ROAS threshold, a cost per install ceiling. Written down before anything ships, with a named person who confirms the concept cleared it.</p>
+    <p><strong>What "holds" means.</strong> Still live, still spending, still meeting the gate after an agreed observation window. The window should be tied to how long creatives typically last in that account, not picked at random.</p>
+    <p>Here is a worked illustration. The figures below come from <a href="/blog/the-6-percent-problem/">a panel we already published elsewhere</a>, not from a new benchmark, and they are here to make the arithmetic concrete: across a live panel of 1,061 Meta ad creatives, the median lifespan once launched was 39 days.</p>
+    <p>Take that 39-day median as the durability reference. A concept clears the KPI gate on day 12 and is still running past day 39. Time-to-Winner is 12 days, and the winner outlived the median. Fast and durable. That is the result the metric exists to reward.</p>
+    <p>Now the other case. A concept clears the gate on day 3 and dies six days later. The dashboard says 3. The number is fake. Nothing that lasted six days paid back the work of finding it, and if the team reports the 3 without the 6, it will keep producing threes forever.</p>
+
+    <h2>What it is not</h2>
+    <p><strong>It is not speed-to-ship.</strong> Shipping fast is easy and mostly a staffing question. Shipping something that clears an external gate and then survives contact with the auction is the hard part, and that is the only part Time-to-Winner counts.</p>
+    <p><strong>It is not output volume.</strong> The number of variants made says nothing about whether any of them worked. Output is a cost line. Winners are the product.</p>
+    <p><strong>It is not a velocity stat.</strong> Any speed number disconnected from whether the ad held up is a vanity metric with a stopwatch attached. Detach durability and the whole thing stops meaning anything within a quarter.</p>
+
+    <h2>Closing</h2>
+    <p>Naming a metric changes what a team argues about in its weekly meeting. Count output and the argument is about capacity. Count velocity and the argument is about process. Count days to a durable winner and the argument becomes the useful one: which signals are worth acting on, which angles are already used up, and whether the last round of yes and no calls taught anyone anything.</p>
+    <p>That last question is what cycles-to-winner tracks. If a brand's taste model is genuinely learning from its own decisions, each round should need fewer cycles to land a winner than the one before. If that number stays flat over months, the loop is not learning, it is just spinning, and no amount of extra output will fix it. For a walkthrough of what this looks like across a real four-week stretch, see <a href="/blog/a-month-of-time-to-winner/">a month of Time-to-Winner, shown not told</a>.</p>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <h3>What is Time-to-Winner in ad creative testing?</h3>
+      <p>Time-to-Winner is the number of calendar days from the start of a testing cycle to a concept that clears the client's KPI gate and holds up once it is live in rotation. It measures speed to a working ad rather than the volume of creative produced. The gate is defined by whoever owns the media budget, not by the team making the ads.</p>
+
+      <h3>Why does Time-to-Winner have to be paired with durability?</h3>
+      <p>Because a speed number reported on its own gets gamed. The fastest path to a low Time-to-Winner is to ship something safe and familiar that clears the bar today and fatigues within days. Pairing the day count with the winner's durability, meaning how long it stayed live and kept clearing the gate, removes the incentive to chase quick, forgettable wins.</p>
+
+      <h3>What counts as a winner for Time-to-Winner purposes?</h3>
+      <p>A winner is a concept that clears an externally defined KPI gate and keeps clearing it in live rotation through an agreed observation window. Three things have to be explicit: whose gate it is, what the numeric threshold is, and who confirmed the concept cleared it. A concept that spikes and then dies is not a winner regardless of how fast it cleared.</p>
+
+      <h3>How is Time-to-Winner different from cycles-to-winner?</h3>
+      <p>Time-to-Winner counts calendar days. Cycles-to-winner counts how many rounds of concepts it took to land one. Days measure how quickly the work gets done, rounds measure how well the brand's taste model is learning from its own yes and no decisions. If cycles-to-winner falls over time, the model is genuinely improving. If it stays flat, the loop is not learning, and shortening the calendar will not fix that.</p>
+    </div>
+
+    <p class="disclaimer">Methodology note: the 1,061-creative panel and 39-day median lifespan cited above are illustrative figures from a live Meta ad panel we have published in detail elsewhere on this blog. They are reused here only to make the Time-to-Winner calculation concrete, not presented as a new benchmark. Client examples throughout are anonymized by category.</p>
+
+    <div class="cta">
+      <h2>See what's winning in your market, in your chat</h2>
+      <p>Add Orcool to Claude, ChatGPT, or Cursor. Paste one URL, sign in with a magic link, and your competitor hooks, category patterns and your own reviews come back as a tool call. Free for two weeks, no card.</p>
+      <a class="book" href="https://get.orcool.com/#connect">Connect the MCP</a>
+    </div>
+  </article>
+</main>
+
+<footer class="site">
+  <span>© 2026 Orcool. The fastest path to a winning ad.</span>
+  <span><a href="/blog/">Blog</a> &nbsp; <a href="/">Home</a></span>
+</footer>
+
+<script>
+(function(){
+  function fire(n){return function(){if(window.umami){window.umami.track(n);}};}
+  document.querySelectorAll('a[href*="#connect"]').forEach(function(a){a.addEventListener('click',fire('Connect click'));});
+})();
+</script>
+</body>
+</html>
