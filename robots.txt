@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://get.orcool.com/sitemap.xml
 Sitemap: https://get.orcool.com/blog/sitemap.xml
