@@ -1,888 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Orcool · Creative intelligence for agencies</title>
-<meta name="description" content="See what's winning in each client's category before the brief. Competitive alerts, patterns, and weekly reports. In Slack or as tool calls.">
-<link rel="canonical" href="https://get.orcool.com/agency/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#f8f7f5; --ink:#443D3D; --black:#000000;
-    --red:#FA3810; --blue:#387FFF; --green:#45B43B; --yellow:#FFB516;
-    --grey:#6B6E80; --line:#E7E5E1; --panel:#FFFFFF;
-    --sans:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
-    --mono:"Geist Mono",ui-monospace,Menlo,Consolas,monospace;
-    --serif:Georgia,"Times New Roman",serif;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:1000px;margin:0 auto;padding:0 28px}
-  a{color:inherit}
-  h1{font-weight:800;letter-spacing:-.025em;line-height:1.02;font-size:46px}
-  h2{font-weight:700;letter-spacing:-.015em;line-height:1.12;font-size:30px}
-  h3{font-weight:600;font-size:18px}
-  p{color:var(--ink);font-size:17px}
-  .muted{color:var(--grey)}
-
-  header{position:sticky;top:0;z-index:50;background:rgba(248,247,245,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:62px}
-  .logo{height:22px;width:auto;display:block}
-  .pill{display:inline-block;background:var(--ink);color:#fff;font-weight:600;font-size:14px;text-decoration:none;padding:9px 18px;border-radius:10px;transition:background-color .14s ease}
-  .pill:hover{background:#332e2e}
-
-  .btn{display:inline-block;background:var(--ink);color:#fff;font-weight:600;font-size:16px;text-decoration:none;padding:14px 26px;border-radius:10px;transition:background-color .14s ease,border-color .14s ease}
-  .btn:hover{background:#332e2e}
-  .btn.ghost{background:transparent;color:var(--ink);border:1.5px solid #D8D5D0}
-  .btn.ghost:hover{border-color:var(--ink);background:rgba(68,61,61,.05)}
-  .btn.light{background:#fff;color:#111}
-  .btn.light:hover{background:#ededea}
-  .btn.on-dark{background:#fff;color:#111}
-  .btn.on-dark:hover{background:#ededea}
-  .btn.on-dark.ghost{color:#fff;border:1.5px solid #3a3a3a;background:transparent}
-  .btn.on-dark.ghost:hover{border-color:#5a5a5a;background:rgba(255,255,255,.07)}
-  .btnrow{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-  .eyebrow{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
-
-  section{padding:72px 0}
-
-  /* hero */
-  .hero{position:relative;text-align:center;padding:78px 0 96px;overflow:hidden}
-  .hero .eyebrow{display:inline-block;margin-bottom:18px}
-  .hero h1{max-width:760px;margin:0 auto 18px}
-  .hero .sub{font-size:20px;color:var(--ink);max-width:560px;margin:0 auto 30px}
-  .hero .micro{margin-top:18px;color:var(--grey);font-size:15px;line-height:1.7}
-  .hero .micro b{color:var(--ink);font-weight:600}
-  .glow{position:absolute;left:50%;transform:translateX(-50%);bottom:-120px;width:120%;height:320px;
-    background:linear-gradient(135deg,var(--red),var(--yellow),var(--green),var(--blue));
-    filter:blur(90px);opacity:.30;pointer-events:none;border-radius:50%;will-change:transform;backface-visibility:hidden}
-
-  .loop{max-width:720px;margin:44px auto 0}
-  .loopgrid{display:flex;align-items:flex-start;justify-content:center;gap:16px}
-  .li{display:flex;flex-direction:column;align-items:center}
-  .li .w{font-family:var(--serif);font-size:40px;line-height:1;color:var(--ink)}
-  .li .a{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--red);margin-top:10px}
-  .arr{font-size:30px;line-height:40px;color:var(--blue)}
-
-  .dark{background:var(--black);color:#fff}
-  .dark h2,.dark h3{color:#fff}
-  .dark p{color:#C9C7C4}
-  .dark .eyebrow{color:var(--yellow)}
-  .center{text-align:center}
-  .center .sub{max-width:560px;margin:14px auto 0}
-
-  /* feed panels */
-  .panels{display:grid;grid-template-columns:1fr;gap:18px;margin-top:40px;text-align:left}
-  .panel{background:var(--panel);border-radius:16px;padding:26px;color:var(--ink);box-shadow:0 8px 30px rgba(0,0,0,.18);display:flex;flex-direction:column}
-  .panel .tag{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
-  .panel.blue .tag{color:var(--blue)} .panel.green .tag{color:var(--green)}
-  .panel h3{margin-bottom:8px;color:var(--ink);line-height:1.3;min-height:47px}
-  .panel p{font-size:15px;color:#5a5450}
-  .panel .ship{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink);font-family:var(--mono);line-height:1.7}
-  .panel .ship .m{color:var(--grey)}
-
-  /* connect: url card + accordions */
-  .urlcard{margin-top:8px;max-width:640px}
-  .urllab{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#8f8d8a;margin-bottom:8px}
-  .urlfield{display:flex;align-items:center;gap:10px}
-  .urlfield .u{flex:1;background:#0c0c0c;border:1px solid #232323;border-radius:10px;padding:14px 16px;font-family:var(--mono);font-size:15px;color:#EDEBE8;overflow-x:auto;white-space:nowrap}
-  .urlfield .ucopy{background:#1d1d1d;border:1px solid #232323;color:#C9C7C4;border-radius:10px;padding:13px 16px;cursor:pointer;font-family:var(--mono);font-size:12px;font-weight:500}
-  .urlfield .ucopy:hover{background:#2a2a2a;color:#fff}
-  .lab{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--yellow);margin:34px 0 12px}
-  .note{font-size:13.5px;color:#8f8d8a;margin-top:16px;max-width:600px;line-height:1.6}
-
-  .acc{border:1px solid #232323;border-radius:12px;margin-top:10px;background:#0c0c0c;max-width:760px;overflow:hidden}
-  .acc summary{display:flex;align-items:center;gap:11px;padding:14px 16px;font-weight:600;font-size:15.5px;color:#fff;list-style:none;cursor:pointer}
-  .acc summary::-webkit-details-marker{display:none}
-  .acc summary::after{content:"\25BE";margin-left:auto;color:#8f8d8a;font-size:11px;transition:transform .15s ease}
-  .acc[open] summary::after{transform:rotate(180deg)}
-  .acc .badge{width:24px;height:24px;border-radius:7px;display:flex;align-items:center;justify-content:center;flex:0 0 24px}
-  .acc ol{margin:0;padding:2px 18px 18px 42px;color:#C9C7C4;font-size:14.5px;line-height:1.7;border-top:1px solid #1d1d1d}
-  .acc ol li{margin:9px 0;padding-left:4px}
-  .acc ol b{color:#fff;font-weight:600}
-  .acc .ar{color:#7a7a7a;padding:0 1px}
-
-  /* query boxes */
-  .qbox{background:#0c0c0c;border:1px solid #232323;border-left:3px solid var(--green);border-radius:12px;padding:14px 16px;margin-top:10px;position:relative;max-width:760px}
-  .qbox .ql{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--green);margin-bottom:7px}
-  .qbox p{color:#EDEBE8;font-size:15px;margin:0;padding-right:64px;font-family:var(--serif);font-style:italic}
-  .setuppre{background:#0c0c0c;border:1px solid #232323;border-radius:10px;padding:16px 18px;color:#EDEBE8;font-family:var(--mono);font-size:12.5px;line-height:1.6;white-space:pre-wrap;overflow-x:auto;margin:0}
-  .copy{position:absolute;top:10px;right:10px;background:#1d1d1d;color:#C9C7C4;border:none;border-radius:7px;font-family:var(--mono);font-size:11px;font-weight:500;padding:6px 10px;cursor:pointer}
-  .copy:hover{background:#2a2a2a;color:#fff}
-
-  /* steps */
-  .steps{counter-reset:s;margin-top:34px;max-width:720px}
-  .step{display:flex;gap:18px;padding:16px 0;border-bottom:1px solid var(--line);align-items:flex-start}
-  .step:last-child{border-bottom:none}
-  .step .n{counter-increment:s;flex:0 0 34px;height:34px;border-radius:50%;background:var(--ink);color:#fff;font-weight:600;display:flex;align-items:center;justify-content:center;font-size:14px;font-family:var(--mono)}
-  .step .n::before{content:counter(s)}
-  .step .t{font-family:var(--mono);font-size:12px;color:var(--red);letter-spacing:.05em;text-transform:uppercase;margin-bottom:3px}
-  .step h4{font-size:17px;font-weight:600;margin-bottom:3px}
-  .step p{font-size:15px;color:#5a5450}
-
-  /* compare */
-  .compare{display:grid;grid-template-columns:1fr;gap:18px;margin-top:34px}
-  .cbox{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px}
-  .cbox.lead{border:1.5px solid var(--ink)}
-  .cbox .ct{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--grey);margin-bottom:14px}
-  .cbox.lead .ct{color:var(--red)}
-  .cbox .ct .slack{width:16px;height:16px;display:block}
-  .cbox ul{list-style:none}
-  .cbox li{padding:8px 0 8px 26px;position:relative;font-size:15px;color:#5a5450}
-  .cbox li::before{content:"\2192";position:absolute;left:0;color:var(--blue);font-weight:700}
-
-  .faq details{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-top:12px;cursor:pointer}
-  .faq summary{font-weight:600;font-size:17px;list-style:none}
-  .faq summary::-webkit-details-marker{display:none}
-  .faq summary::after{content:"+";float:right;color:var(--red);font-weight:600}
-  .faq details[open] summary::after{content:"\2013"}
-  .faq p{margin-top:12px;font-size:15px;color:#5a5450}
-
-  .final{position:relative;text-align:center;overflow:hidden}
-  .final .glow{opacity:.34;bottom:-150px}
-
-  footer{border-top:1px solid var(--line);padding:34px 0;text-align:center;color:var(--grey);font-size:13px}
-  footer .logo{height:20px;margin:0 auto 14px}
-  footer .who{margin-top:8px;font-family:var(--mono);font-size:12px}
-
-  @media(min-width:740px){
-    h1{font-size:62px} h2{font-size:36px}
-    .panels{grid-template-columns:1fr 1fr 1fr}
-    .compare{grid-template-columns:1fr 1fr}
-  }
-</style>
-<script defer src="https://cloud.umami.is/script.js" data-website-id="40fd1792-b48f-4d93-867e-00ff641a0677"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orcool for Agencies · A performance-creative design partner</title>
+  <meta name="description" content="Give one client a bounded creative test: market evidence, traceable production hypotheses and a winner gate decided by real media spend.">
+  <link rel="canonical" href="https://get.orcool.com/agency/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Orcool for Agencies · A performance-creative design partner">
+  <meta property="og:description" content="Keep the client relationship and media operation. Add a traceable evidence-to-production loop.">
+  <meta property="og:url" content="https://get.orcool.com/agency/">
+  <meta property="og:image" content="https://get.orcool.com/og-performance-capital.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Orcool for Agencies">
+  <meta name="twitter:description" content="A bounded performance-creative test for one qualified client.">
+  <meta name="twitter:image" content="https://get.orcool.com/og-performance-capital.png">
+  <link rel="icon" href="/orcool-mark-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/site-v2.css">
+  <link rel="stylesheet" href="/assets/activation-v2.css">
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="40fd1792-b48f-4d93-867e-00ff641a0677"></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<header>
-  <div class="wrap nav">
-    <img class="logo" src="/orcool-logo.png" alt="Orcool">
-    <a class="pill" href="#connect">Connect the MCP</a>
-  </div>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="wrap">
-    <span class="eyebrow">For performance agencies</span>
-    <h1>Creative intelligence.<br>For every brand you run.</h1>
-    <p class="sub">See what's winning in each client's category before the brief. Competitive alerts, patterns that convert, weekly category reports. In Slack or as tool calls.</p>
-    <div class="btnrow" style="justify-content:center">
-      <a class="btn" href="#connect">Connect the MCP</a>
-      <a class="btn ghost" href="#feeds">See the three feeds</a>
-      <a class="btn ghost" href="#live-signal" style="border-color:var(--red);color:var(--red)">See what's winning now &rarr;</a>
+  <header class="site-header">
+    <div class="shell nav">
+      <a class="brand" href="/" aria-label="Orcool home"><img src="/orcool-logo.png" alt="Orcool"></a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="/blog/">Field notes</a>
+        <a href="/gtm-engineers/">Connect MCP</a>
+        <a class="button" href="/performance-capital/#apply" data-umami-event="Agency nav — discuss fit">Discuss a client test <span class="button-arrow">→</span></a>
+      </nav>
     </div>
-    <p class="micro"><b>One account. Each client is a brand.</b><br>No card. First report free.</p>
+  </header>
 
-    <div class="loop">
-      <div class="loopgrid">
-        <div class="li"><span class="w">Client</span><span class="a">per account</span></div>
-        <span class="arr">&rarr;</span>
-        <div class="li"><span class="w">Signal</span><span class="a">the why</span></div>
-        <span class="arr">&rarr;</span>
-        <div class="li"><span class="w">Winner</span><span class="a">faster</span></div>
-      </div>
-    </div>
-  </div>
-  <div class="glow"></div>
-</section>
-
-<!-- SHIFT -->
-<section class="dark">
-  <div class="wrap">
-    <span class="eyebrow">The shift</span>
-    <h2 style="margin-top:14px;max-width:700px">You run paid media for brands that need creative to work. Knowing what's winning was the one thing you couldn't call.</h2>
-    <p style="margin-top:16px;max-width:640px">It meant opening the Meta Ad Library once a week, per client, and turning it into a slide. Your media leads skipped it or guessed. The gap between media spend and a creative that clears a KPI gate isn't a brief problem. It's a signal problem.</p>
-    <p style="margin-top:14px;max-width:640px">The metric is Time-to-Winner: days from start to a creative that clears the client's KPI gate and holds in spend. Signal in the pipeline is how you cut it, across every brand you run.</p>
-  </div>
-</section>
-
-<!-- THREE FEEDS -->
-<section class="dark center" id="feeds" style="padding-top:0">
-  <div class="wrap">
-    <span class="eyebrow">Three feeds</span>
-    <h2 style="margin-top:14px">Three things ship today. Per client, in Slack, or as tool calls.</h2>
-    <p class="sub">Same engine behind all three. Read them in a channel, or call them from your stack.</p>
-    <div class="panels">
-      <div class="panel">
-        <div class="tag">Alerts</div>
-        <h3>The move, the morning it breaks</h3>
-        <p>A daily ping when a competitor makes a real move in the market for any brand in your stack. A major launch, a strategic decision, a competitor expanding into new cities or running a sponsorship. Caught from the press, not a week late. Per client. Per market.</p>
-        <div class="ship">Slack: per-brand channel<br><span class="m">MCP: watch per competitor and market</span></div>
-      </div>
-      <div class="panel blue">
-        <div class="tag">Patterns</div>
-        <h3>The winning mechanic, plus why</h3>
-        <p>The pattern running in a client's category, its format variants, and why it lands. Structured for a brief or a Slack card. Your media leads see it before the weekly call, not after.</p>
-        <div class="ship">Slack: pattern card per brand<br><span class="m">MCP: top patterns by category</span></div>
-      </div>
-      <div class="panel green">
-        <div class="tag">Reports</div>
-        <h3>The week in your client's category</h3>
-        <p>What worked in each brand's category this week and why. Drop it into a brief, a client email, or your scoring step. First one ships in minutes.</p>
-        <div class="ship">Slack: weekly digest per brand<br><span class="m">MCP: on demand, any category</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FEEDS → SIGNAL TEASER -->
-<div style="background:var(--black);padding:0 0 48px;text-align:center">
-  <a href="#live-signal" style="display:inline-flex;align-items:center;gap:8px;color:var(--red);font-size:15px;font-weight:600;text-decoration:none;font-family:var(--sans);border:1.5px solid var(--red);border-radius:10px;padding:11px 20px;transition:background .14s" onmouseover="this.style.background='rgba(250,56,16,.08)'" onmouseout="this.style.background='transparent'">
-    See what's actually winning in your client's market &darr;
-  </a>
-</div>
-
-<!-- CONNECT -->
-<section class="dark" id="connect" style="padding-top:0">
-  <div class="wrap">
-    <span class="eyebrow">Connect</span>
-    <h2 style="margin-top:14px">Add Orcool to your agency stack.</h2>
-    <p style="margin-top:14px;max-width:600px">Paste one URL into Claude, ChatGPT, or Cursor. Sign in with a magic link. Add each client brand from there.</p>
-
-    <div class="urlcard">
-      <div class="urllab">MCP Server URL</div>
-      <div class="urlfield">
-        <div class="u">https://mcp.orcool.com</div>
-        <button class="ucopy" data-c="https://mcp.orcool.com">Copy</button>
-      </div>
-    </div>
-    <p class="note">When your client connects, a browser tab opens. Enter your work email, click the link we send, and you're signed in. No password. One account covers every brand you add.</p>
-
-    <div class="lab">Setup instructions</div>
-
-    <details class="acc" open>
-      <summary><span class="badge" style="background:#D97757"><svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><g stroke="#fff" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="5.6" y1="5.6" x2="18.4" y2="18.4"/><line x1="18.4" y1="5.6" x2="5.6" y2="18.4"/></g></svg></span> Claude</summary>
-      <ol>
-        <li>Copy the MCP server URL above.</li>
-        <li>Open <b>Claude</b> <span class="ar">&rarr;</span> Settings <span class="ar">&rarr;</span> Connectors <span class="ar">&rarr;</span> <b>Add custom connector</b> <span class="ar">&rarr;</span> paste the URL <span class="ar">&rarr;</span> Add.</li>
-        <li>Sign in when prompted (magic link from your email).</li>
-        <li><b>Turn Orcool on in your chat</b> (the tools menu), then paste the setup prompt below to add your first client brand.</li>
-      </ol>
-    </details>
-
-    <details class="acc">
-      <summary><span class="badge" style="background:#000;border:1px solid #333"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M22.282 9.821a5.985 5.985 0 0 0-.516-4.91 6.046 6.046 0 0 0-6.51-2.9A6.065 6.065 0 0 0 4.981 4.18a5.985 5.985 0 0 0-3.998 2.9 6.046 6.046 0 0 0 .743 7.097 5.98 5.98 0 0 0 .51 4.911 6.051 6.051 0 0 0 6.515 2.9A5.985 5.985 0 0 0 13.26 24a6.056 6.056 0 0 0 5.772-4.206 5.99 5.99 0 0 0 3.997-2.9 6.056 6.056 0 0 0-.747-7.073zM13.26 22.43a4.476 4.476 0 0 1-2.876-1.04l.141-.081 4.779-2.758a.795.795 0 0 0 .392-.681v-6.737l2.02 1.168a.071.071 0 0 1 .038.052v5.583a4.504 4.504 0 0 1-4.494 4.494zM3.6 18.304a4.47 4.47 0 0 1-.535-3.014l.142.085 4.783 2.759a.771.771 0 0 0 .78 0l5.843-3.369v2.332a.08.08 0 0 1-.033.062L9.74 19.95a4.5 4.5 0 0 1-6.14-1.646zM2.34 7.896a4.485 4.485 0 0 1 2.366-1.973V11.6a.766.766 0 0 0 .388.676l5.815 3.355-2.02 1.168a.076.076 0 0 1-.071 0l-4.83-2.786A4.504 4.504 0 0 1 2.34 7.872zm16.597 3.855l-5.833-3.387L15.119 7.2a.076.076 0 0 1 .071 0l4.83 2.791a4.494 4.494 0 0 1-.676 8.105v-5.678a.79.79 0 0 0-.407-.667zm2.01-3.023l-.141-.085-4.774-2.782a.776.776 0 0 0-.785 0L9.409 9.23V6.897a.066.066 0 0 1 .028-.061l4.83-2.787a4.5 4.5 0 0 1 6.68 4.66zm-12.64 4.135l-2.02-1.164a.08.08 0 0 1-.038-.057V6.075a4.5 4.5 0 0 1 7.375-3.453l-.142.08L8.704 5.46a.795.795 0 0 0-.393.681zm1.097-2.365l2.602-1.5 2.607 1.5v3l-2.597 1.5-2.607-1.5z"/></svg></span> ChatGPT</summary>
-      <ol>
-        <li>Copy the MCP server URL above.</li>
-        <li>Open <b>ChatGPT</b> <span class="ar">&rarr;</span> Settings <span class="ar">&rarr;</span> Apps <span class="ar">&rarr;</span> Advanced settings <span class="ar">&rarr;</span> <b>Create app</b> <span class="ar">&rarr;</span> paste the URL <span class="ar">&rarr;</span> confirm.</li>
-        <li>Sign in when prompted. Orcool appears under <b>+ &rarr; More</b> in any chat.</li>
-      </ol>
-    </details>
-
-    <details class="acc">
-      <summary><span class="badge" style="background:#2a2a2a"><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l15 8.5-6.5 1.6L9.5 21z" fill="#fff"/></svg></span> Cursor &amp; other clients</summary>
-      <ol>
-        <li>Copy the MCP server URL above.</li>
-        <li>In Cursor: <b>Settings</b> <span class="ar">&rarr;</span> MCP <span class="ar">&rarr;</span> <b>Add new server</b> <span class="ar">&rarr;</span> paste the URL.</li>
-        <li>Sign in when prompted. Orcool works in any client that supports MCP.</li>
-      </ol>
-    </details>
-
-    <p class="note">ChatGPT's custom-MCP path needs Developer mode, which depends on your plan. If you don't see it, Claude or Cursor connect in under a minute.</p>
-
-    <div class="lab">Set up your first client brand in one paste</div>
-    <details class="acc">
-      <summary><span class="badge" style="background:#FA3810"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="4.5" y="3" width="13" height="18" rx="2"/><path d="M8.5 8h7M8.5 12h7M8.5 16h4"/></svg></span> Agency onboarding prompt</summary>
-      <div style="padding:6px 16px 18px">
-        <p class="note" style="margin:8px 0 12px">Fill the brackets and paste this once. It sets up the client brand, pulls their competitors, and returns what's winning in their category.</p>
-        <div style="position:relative">
-          <button class="copy" data-target="#setupPrompt">Copy</button>
-          <pre id="setupPrompt" class="setuppre">You have the Orcool MCP connected. Set up one of my agency's client brands.
-
-Client brand
-- Name: [client brand name]
-- Website: [https://clientwebsite.com]
-- Market / country: [US]
-- Category: [mobile_app / ecommerce / fintech / etc.]
-- Competitors (2-3): [Competitor A, Competitor B, Competitor C]
-- Inspiration (handle or hashtag): [#category or @handle]
-- Reviews: pasted below, or pull from [App Store / Trustpilot URL]
-
-Steps
-1. Brand: studio_list_brands; if missing, studio_create_brand (name, websiteUrl, countries, productCategory).
-2. Competitors: for each, search_advertisers on meta_ad_library, pick the verified match, then studio_create_competitor + studio_create_competitor_source (meta_ad_library_advertiser, advertiserId, country). Trial allows 3 reference sources total.
-3. Inspiration: within remaining quota, studio_create_inspiring_reference_source.
-4. Reviews: if pasted, studio_create_review for each; otherwise fetch ~10-15 from the URL above, then studio_analyze_reviews.
-5. Trends: studio_list_global_trends, summarize top 5 for this market.
-6. Read back: studio_list_competitor_references, studio_list_insights. Ingestion takes ~1 min; if empty, wait and re-check once.
-
-Then give me: 3 strongest competitor hooks, 2 inspiration angles, top review insight.
-Tell me what's populated and what's still loading.
-After that, tell me what to paste to add the next client brand.
-
-Reviews:
-[Paste 5-15 reviews here, or leave a URL above]</pre>
-        </div>
-      </div>
-    </details>
-
-    <div class="qbox">
-      <button class="copy" data-c="For [client brand]: which hook has run longest and spawned the most variants this month? Give me the top 3 proven hooks, then recommend one to test with two format variants.">Copy</button>
-      <div class="ql">Then, recurring · weekly</div>
-      <p>For [client brand]: which hook has run longest and spawned the most variants this month? Give me the top 3 proven hooks, then recommend one to test with two format variants.</p>
-    </div>
-    <p class="note">First time? The paste sets up the brand and returns the first competitor read right away. Ingested references (hooks, formats, the why) land in about a minute.</p>
-  </div>
-</section>
-
-<!-- FIRST WIN -->
-<section id="firstwin">
-  <div class="wrap">
-    <span class="eyebrow">First win</span>
-    <h2 style="margin-top:14px">From paste to a real answer for your first client, same session.</h2>
-    <div class="steps">
-      <div class="step"><div class="n"></div><div><div class="t">T+0</div><h4>Add the MCP</h4><p>Paste the URL into Claude, ChatGPT, or Cursor. Takes under a minute.</p></div></div>
-      <div class="step"><div class="n"></div><div><div class="t">Magic link</div><h4>Sign in by email</h4><p>A browser tab opens. Enter your email, click the link, you're in. No password. One account for all client brands.</p></div></div>
-      <div class="step"><div class="n"></div><div><div class="t">T+2 min</div><h4>Add your first client brand</h4><p>Paste the setup prompt above with one client's details. Competitors, patterns, and hooks come back as data.</p></div></div>
-      <div class="step"><div class="n"></div><div><div class="t">Ongoing</div><h4>Add each retainer client</h4><p>One brand per client. Separate intel, separate digests. When you close a new account, add the brand and the first weekly report runs that night.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- MCP vs SLACK -->
-<section style="padding-top:0">
-  <div class="wrap">
-    <span class="eyebrow">MCP vs Slack</span>
-    <h2 style="margin-top:14px">Slack reads it to you. The MCP lets you build on it.</h2>
-    <p class="muted" style="margin-top:14px;max-width:600px">Same three feeds per client brand. The difference is what you do next.</p>
-    <div class="compare">
-      <div class="cbox">
-        <div class="ct">
-          <svg class="slack" viewBox="0 0 122.8 122.8" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M25.8 77.6c0 7.1-5.8 12.9-12.9 12.9S0 84.7 0 77.6s5.8-12.9 12.9-12.9h12.9v12.9zm6.5 0c0-7.1 5.8-12.9 12.9-12.9s12.9 5.8 12.9 12.9v32.3c0 7.1-5.8 12.9-12.9 12.9s-12.9-5.8-12.9-12.9V77.6z" fill="#E01E5A"/><path d="M45.2 25.8c-7.1 0-12.9-5.8-12.9-12.9S38.1 0 45.2 0s12.9 5.8 12.9 12.9v12.9H45.2zm0 6.5c7.1 0 12.9 5.8 12.9 12.9s-5.8 12.9-12.9 12.9H12.9C5.8 58.1 0 52.3 0 45.2s5.8-12.9 12.9-12.9h32.3z" fill="#36C5F0"/><path d="M97 45.2c0-7.1 5.8-12.9 12.9-12.9s12.9 5.8 12.9 12.9-5.8 12.9-12.9 12.9H97V45.2zm-6.5 0c0 7.1-5.8 12.9-12.9 12.9s-12.9-5.8-12.9-12.9V12.9C64.7 5.8 70.5 0 77.6 0s12.9 5.8 12.9 12.9v32.3z" fill="#2EB67D"/><path d="M77.6 97c7.1 0 12.9 5.8 12.9 12.9s-5.8 12.9-12.9 12.9-12.9-5.8-12.9-12.9V97h12.9zm0-6.5c-7.1 0-12.9-5.8-12.9-12.9s5.8-12.9 12.9-12.9h32.3c7.1 0 12.9 5.8 12.9 12.9s-5.8 12.9-12.9 12.9H77.6z" fill="#ECB22E"/></svg>
-          Slack · the no-code path
-        </div>
-        <ul>
-          <li>Three feeds per client, landing in separate channels.</li>
-          <li>Zero setup beyond connecting once per brand.</li>
-          <li>For account managers and media leads who just want to read it.</li>
-        </ul>
-      </div>
-      <div class="cbox lead">
-        <div class="ct">MCP · the builder's path</div>
-        <ul>
-          <li>Every feed is a tool call your agent can compose.</li>
-          <li>Wire alerts into your pacing dashboard or brief template.</li>
-          <li>Drop patterns straight into your scoring or briefing step.</li>
-          <li>Read-only to start. Brand-write when you run a full cycle.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="faq" style="padding-top:0">
-  <div class="wrap">
-    <span class="eyebrow">Questions</span>
-    <h2 style="margin-top:14px">The honest answers.</h2>
-    <details><summary>How does multi-brand work?</summary>
-      <p>One Orcool account covers every client you run. You add each retainer as a separate brand with its own competitors, category, and Slack digest. They don't bleed into each other. When you close a new account, add the brand and the first weekly report runs that night.</p></details>
-    <details><summary>How does sign-in work?</summary>
-      <p>Paste the MCP URL into your client. It opens a browser tab, you enter your email, and we send a one-click magic link. No password, no separate account. After that the tools are live in every conversation, across all your client brands.</p></details>
-    <details><summary>What exactly are Alerts?</summary>
-      <p>Alerts are press and media moves: a competitor launching in a new market, making a strategic acquisition, running a major sponsorship or event. They are not ad-creative reports. They come from monitoring the press, not the ad library.</p></details>
-    <details><summary>Is the data real, or model guesswork?</summary>
-      <p>Real. Live competitor creative across 40+ markets, structured and scored. The why on a pattern is grounded in what's actually running and holding in spend, not what a model thinks sounds plausible. <a href="#live-signal" style="color:var(--red);font-weight:600">Try it below — pick a category and market.</a></p></details>
-    <details><summary>What does it cost?</summary>
-      <p>Connecting is free, first report is free. All three feeds run about $250/mo per brand, on a card, cancel anytime. The full loop with finished creative starts at $3K/mo plus a media share. We don't sell concepts on their own.</p></details>
-  </div>
-</section>
-
-
-<!-- LIVE SIGNAL -->
-<style>
-.hook-selectors{display:flex;gap:16px;justify-content:center;margin-top:36px;flex-wrap:wrap}
-.hook-select-wrap{display:flex;flex-direction:column;gap:6px;min-width:190px}
-.hook-label{font-size:12px;font-weight:600;letter-spacing:.07em;color:#9b9893;text-transform:uppercase}
-.hook-select{appearance:none;background:#1a1a1a url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B6E80' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 14px center;border:1.5px solid #2e2e2e;color:#f0efed;font-size:15px;font-weight:500;padding:12px 40px 12px 16px;border-radius:10px;cursor:pointer;font-family:var(--sans);transition:border-color .15s}
-.hook-select:focus{outline:none;border-color:#FA3810}
-.hook-select option{background:#1a1a1a;color:#f0efed}
-.hook-card{margin-top:36px;background:#fff;border-radius:16px;overflow:hidden;text-align:left;position:relative;max-width:700px;margin-left:auto;margin-right:auto}
-.hook-card-header{display:flex;align-items:center;justify-content:space-between;padding:16px 22px;border-bottom:1px solid #F0EFED}
-.hook-card-tag{font-size:13px;font-weight:700;letter-spacing:.04em;color:#443D3D;text-transform:uppercase}
-.hook-card-fresh{font-size:12px;color:#9b9893;font-weight:500}
-.hook-block{padding:20px 22px}
-.hook-section-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9b9893;margin-bottom:14px}
-.hook-item{background:#fafaf9;border:1px solid #eeede9;border-radius:10px;padding:16px 18px;margin-bottom:10px;position:relative}
-.hook-item.gated{overflow:hidden}
-.hook-platform{display:inline-flex;gap:6px;align-items:center;margin-bottom:8px}
-.hook-platform-tag{font-size:11px;font-weight:600;letter-spacing:.04em;padding:3px 8px;border-radius:6px;background:#f0efed;color:#443D3D}
-.hook-platform-tag.format{background:#e8f0fe;color:#1a56db}
-.hook-competitor{font-size:11px;font-weight:700;color:#9b9893;letter-spacing:.05em;text-transform:uppercase;margin-bottom:6px}
-.hook-text{font-size:16px;font-weight:600;color:#1a1a1a;line-height:1.45;margin-bottom:8px}
-.hook-why{font-size:13px;color:#5a5450;line-height:1.5}
-.hook-divider{height:1px;background:#F0EFED;margin:4px 0}
-.blurred{filter:blur(6px);user-select:none;pointer-events:none}
-.hook-gate{background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,#fff 50%);position:relative;padding:32px 22px 28px;text-align:center;margin-top:-60px}
-.hook-gate-inner{position:relative;z-index:2}
-.hook-gate-label{font-size:16px;font-weight:700;color:#1a1a1a;margin-bottom:6px}
-.hook-gate-sub{font-size:14px;color:#6e6c69;margin-bottom:18px}
-.hook-gate-form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-.hook-email-input{flex:1 1 220px;min-width:0;max-width:280px;border:1.5px solid #ddd;border-radius:10px;padding:12px 16px;font-size:15px;font-family:var(--sans);color:#1a1a1a;outline:none}
-.hook-email-input:focus{border-color:#FA3810}
-.hook-gate-btn{background:#FA3810;color:#fff;border:none;border-radius:10px;padding:12px 22px;font-size:15px;font-weight:700;cursor:pointer;font-family:var(--sans);white-space:nowrap}
-.hook-gate-btn:hover{background:#d42f0d}
-.hook-empty{text-align:center;padding:56px 0}
-.hook-empty-dots{display:flex;gap:10px;justify-content:center;align-items:center}
-.hook-empty-dots span{width:8px;height:8px;border-radius:50%;background:#2e2e2e}
-.hook-empty-dots span:nth-child(1){background:#FA3810}
-.hook-empty-dots span:nth-child(2){background:#FFB516}
-.hook-empty-dots span:nth-child(3){background:#45B43B}
-.hook-empty-dots span:nth-child(4){background:#387FFF}
-.hook-empty-dots span:nth-child(5){background:#FA3810;opacity:.3}
-@media(max-width:600px){
-  .hook-selectors{flex-direction:column;align-items:stretch;padding:0 4px}
-  .hook-gate-form{flex-direction:column}
-  .hook-email-input,.hook-gate-btn{width:100%;min-width:0}
-}
-</style>
-
-<section class="dark" style="padding:80px 0" id="live-signal">
-  <div class="wrap">
-    <span class="eyebrow" style="color:var(--red)">Live signal</span>
-    <h2 style="margin-top:14px">What's winning in your market right now.</h2>
-    <p class="sub" style="max-width:580px;margin:14px auto 0">Pick a category and a market. We show you the hooks that are actually running — platform, format, and why they hold in spend.</p>
-
-    <div class="hook-selectors" id="hookSelectors">
-      <div class="hook-select-wrap">
-        <label class="hook-label">Category</label>
-        <select id="catSelect" class="hook-select" onchange="renderAgencyHookCard()">
-          <option value="">Choose category</option>
-          <option value="fintech">Fintech</option>
-          <option value="ecom">E-com</option>
-          <option value="health">Health &amp; Fitness</option>
-          <option value="gaming">Gaming</option>
-          <option value="subscription">Subscription App</option>
-          <option value="saas">B2B SaaS</option>
-        </select>
-      </div>
-      <div class="hook-select-wrap">
-        <label class="hook-label">Market</label>
-        <select id="mktSelect" class="hook-select" onchange="renderAgencyHookCard()">
-          <option value="">Choose market</option>
-          <option value="us">United States</option>
-          <option value="uk">United Kingdom</option>
-          <option value="germany">Germany</option>
-          <option value="uae">UAE</option>
-          <option value="india">India</option>
-          <option value="australia">Australia</option>
-          <option value="brazil">Brazil</option>
-          <option value="indonesia">Indonesia</option>
-          <option value="mexico">Mexico</option>
-          <option value="saudiarabia">Saudi Arabia</option>
-        </select>
-      </div>
-    </div>
-
-    <div id="hookCard" class="hook-card" style="display:none">
-      <div class="hook-card-header">
-        <span class="hook-card-tag" id="hookCardTag"></span>
-        <span class="hook-card-fresh">Updated monthly</span>
-      </div>
-      <div class="hook-block">
-        <div class="hook-section-label">What's working now</div>
-        <div class="hook-item free" id="hook1">
-          <div class="hook-platform" id="hook1platform"></div>
-          <div class="hook-competitor" id="hook1comp"></div>
-          <div class="hook-text" id="hook1text"></div>
-          <div class="hook-why" id="hook1why"></div>
-        </div>
-        <div class="hook-item gated" id="hook2">
-          <div class="hook-platform" id="hook2platform"></div>
-          <div class="hook-competitor" id="hook2comp"></div>
-          <div class="hook-text blurred" id="hook2text"></div>
-          <div class="hook-why blurred" id="hook2why"></div>
-        </div>
-        <div class="hook-item gated" id="hook3">
-          <div class="hook-platform" id="hook3platform"></div>
-          <div class="hook-competitor" id="hook3comp"></div>
-          <div class="hook-text blurred" id="hook3text"></div>
-          <div class="hook-why blurred" id="hook3why"></div>
-        </div>
-      </div>
-      <div class="hook-divider"></div>
-      <div class="hook-block">
-        <div class="hook-section-label" style="color:#FA3810">What Orcool would write for your client</div>
-        <div class="hook-item gated" id="hookCounter">
-          <div class="hook-text blurred" id="hookCounterText"></div>
-          <div class="hook-why blurred" id="hookCounterNote"></div>
-        </div>
-      </div>
-      <div class="hook-gate" id="hookGate">
-        <div class="hook-gate-inner">
-          <div class="hook-gate-label">See 2 more hooks + the Orcool brief hook</div>
-          <div class="hook-gate-sub">We'll email you a magic link. No card.</div>
-          <div class="hook-gate-form" id="hookGateForm">
-            <input type="email" id="hookEmail" class="hook-email-input" placeholder="Agency email" required>
-            <button class="hook-gate-btn" onclick="submitAgencyHookGate()">Unlock full teardown</button>
+  <main id="main">
+    <section class="hero activation-hero">
+      <div class="shell">
+        <p class="breadcrumb">Orcool / Agencies</p>
+        <p class="eyebrow">Design-partner channel</p>
+        <div class="hero-copy">
+          <h1>Bring one client.<br><span class="accent">Prove one loop.</span></h1>
+          <p class="lead">Keep the relationship, strategy and media operation. Add Orcool’s evidence-to-production system to one qualified account, with a bounded scope and a business gate agreed before the first asset is made.</p>
+          <div class="button-row">
+            <a class="button" href="/performance-capital/#apply" data-umami-event="Agency hero — discuss test">Discuss a client test <span class="button-arrow">→</span></a>
+            <a class="button secondary" href="/performance-capital/#engine" data-umami-event="Agency hero — connect MCP">Connect Orcool MCP</a>
           </div>
-          <div id="hookGateSuccess" style="display:none;color:#45B43B;font-size:14px;font-weight:600;text-align:center">Sent. Check your inbox — full teardown on its way.</div>
-          <div id="hookGateError" style="display:none;color:#FA3810;font-size:13px;text-align:center">Something went wrong. Try again or email team@orcool.com</div>
+          <p class="hero-note">One sponsor · One media budget · One KPI gate · Explicit client approval before any public use</p>
+        </div>
+
+        <div class="responsibility-strip" aria-label="Agency pilot responsibilities">
+          <div class="responsibility"><span class="label">Agency</span><strong>Client, strategy and media operation</strong></div>
+          <div class="responsibility"><span class="label">Orcool</span><strong>Evidence loop and bounded production</strong></div>
+          <div class="responsibility"><span class="label">Advertiser</span><strong>Approval, distribution and KPI truth</strong></div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div id="hookEmpty" class="hook-empty">
-      <div class="hook-empty-dots">
-        <span></span><span></span><span></span><span></span><span></span>
+    <section class="section section-rule">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow">Where Orcool fits</p>
+          <h2>Between the market read and the media result.</h2>
+          <p class="lead">The agency does not need another vendor making disconnected assets. It needs a production loop whose reasoning survives the handoff.</p>
+        </div>
+        <div class="activation-grid">
+          <article class="activation-card"><span>Before the brief</span><h3>Make the evidence callable.</h3><p>Use Orcool through MCP to inspect category repetition, competitor moves and open territory inside the working conversation.</p></article>
+          <article class="activation-card feature"><span>Before production</span><h3>Lock a testable mechanism.</h3><p>Translate one reasoned angle into controlled creative cells, with approvals and lineage defined before production.</p></article>
+          <article class="activation-card"><span>After launch</span><h3>Let the account decide.</h3><p>Use the client’s agreed business KPI and sufficient media spend to decide which lineage earns the next iteration.</p></article>
+        </div>
       </div>
-      <p style="color:#6e6c69;font-size:15px;margin-top:16px">Select a category and market above.</p>
+    </section>
+
+    <section class="section section-dark">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow">A clean operating boundary</p>
+          <h2>No fight over who owns the account.</h2>
+          <p class="lead">Orcool is the creative intelligence and production layer for the test. The agency remains the client operator and media partner.</p>
+        </div>
+        <div class="activation-loop">
+          <article class="activation-step"><span>01</span><h3>Qualify</h3><p>Confirm the sponsor, approval owner, market, media budget, data access and KPI gate.</p></article>
+          <article class="activation-step"><span>02</span><h3>Design</h3><p>Agree the creative cells, production envelope, attribution rules, rights and decision cadence.</p></article>
+          <article class="activation-step"><span>03</span><h3>Run</h3><p>Orcool produces the bounded scope; the agency and advertiser launch it into the agreed distribution environment.</p></article>
+          <article class="activation-step"><span>04</span><h3>Compound</h3><p>Preserve the working mechanism, change controlled variables and return descendants to the same business gate.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow">Good first account</p>
+          <h2>Start where the test can answer the question.</h2>
+        </div>
+        <div class="terms-grid">
+          <article class="term-card"><span class="term">Required</span><strong>Real decision owner</strong><p>A sponsor who can approve the brief, rights, launch and next iteration without an indefinite committee loop.</p></article>
+          <article class="term-card"><span class="term">Required</span><strong>Real distribution</strong><p>A defined media budget and sufficiently complete delivery data. Organic reaction is not a substitute.</p></article>
+          <article class="term-card"><span class="term">Required</span><strong>Real business gate</strong><p>An agreed commercial KPI and winner threshold—not a retrospective story built around the best-looking chart.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="activation-cta">
+      <div class="shell activation-cta-grid">
+        <div><p class="eyebrow">One client, bounded</p><h2>Bring the account where a real test is possible.</h2></div>
+        <a class="button" href="/performance-capital/#apply" data-umami-event="Agency footer — discuss test">Discuss design-partner fit <span class="button-arrow">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div class="footer-brand"><img src="/orcool-logo.png" alt="Orcool"><p>© <span data-current-year>2026</span> Orcool. Performance creative, underwritten.</p></div>
+      <nav class="footer-links" aria-label="Footer navigation"><a href="/blog/">Field notes</a><a href="/gtm-engineers/">Orcool MCP</a><a href="/performance-capital/">Performance Capital</a></nav>
     </div>
-    <div id="hookNoData" style="display:none;text-align:center;padding:40px 0">
-      <p style="color:#6e6c69;font-size:15px">This combination is coming soon. <a href="mailto:team@orcool.com?subject=Hook+teardown+request" style="color:var(--red);text-decoration:underline">Ask us directly.</a></p>
-    </div>
-  </div>
-</section>
-
-<script>
-const AGENCY_HOOK_DATA = {
-  us_fintech: {
-    label: "United States · Fintech",
-    hooks: [
-      { platform: "Meta", format: "UGC", competitor: "Chime", text: "Your bank just charged you $35 for having $34.", why: "Overdraft fee as the inciting incident. The specific numbers make it feel like they read your bank statement." },
-      { platform: "TikTok", format: "Comparison", competitor: "PayPal", text: "Sent $500. They got $483. I'm done explaining that to people.", why: "Fee visibility framing. P2P transfer loss triggers switching intent at the exact moment of frustration." },
-      { platform: "Meta", format: "Testimonial", competitor: "Chase", text: "I earned more in interest this month than I did in two years at Chase.", why: "HYSA jealousy hook. 'Two years at Chase' is a relatable yardstick most US adults can test against their own account." }
-    ],
-    counter: { text: "Your bank is very proud of the app they redesigned in 2019.", note: "Product age as deadpan villain. Specific year triggers the memory of when banking apps were genuinely terrible — implies yours still is." }
-  },
-  us_ecom: {
-    label: "United States · E-com",
-    hooks: [
-      { platform: "Meta", format: "Product Demo", competitor: "Amazon", text: "Ordered at 11pm. At my door at 8am. Amazon still says Tuesday.", why: "Same-day delivery as direct Prime counter. Exact timestamps feel credible and personal, not brand copy." },
-      { platform: "TikTok", format: "UGC", competitor: "Temu", text: "I thought I was saving money on Temu. Then I added up what I threw out.", why: "TCO reframe. 'Added up what I threw out' triggers recognition guilt without attacking the brand directly." },
-      { platform: "YouTube", format: "Comparison", competitor: "SHEIN", text: "This shirt is from six years ago. Still wearing it. Explain.", why: "Durability as eco-flex. 'Explain' creates a rhetorical challenge that plays on in the viewer's head after the ad ends." }
-    ],
-    counter: { text: "Your cart from Tuesday called. It says you deserve it.", note: "Abandoned cart as cosmic nudge. 'You deserve it' sidesteps discount framing entirely — converts on self-permission rather than price." }
-  },
-  us_health: {
-    label: "United States · Health & Fitness",
-    hooks: [
-      { platform: "Meta", format: "Testimonial", competitor: "Noom", text: "I've been on every app. This is the first one that didn't make me feel like a failure after one cheeseburger.", why: "Anti-perfection positioning. Targets diet-app fatigue, which is extremely high among 30–45 US women." },
-      { platform: "TikTok", format: "UGC", competitor: "MyFitnessPal", text: "Tracking calories made me obsessed. Tracking habits changed how I live.", why: "Behavior vs. metric reframe. Lands with people who've hit the MFP obsession ceiling and want off it." },
-      { platform: "Meta", format: "Problem→Solution", competitor: "Peloton", text: "I don't have a Peloton. I have 22 minutes before the kids wake up.", why: "Time constraint plus household reality. '22 minutes' is specific enough to feel researched, not made up." }
-    ],
-    counter: { text: "The app didn't fail you. The one that made you log everything in grams failed you.", note: "Direct indictment of calorie-counting culture. Names the mechanism (logging in grams) not the brand — harder to defend against." }
-  },
-  us_subscription: {
-    label: "United States · Subscription App",
-    hooks: [
-      { platform: "Meta", format: "UGC", competitor: "Netflix", text: "I canceled Netflix in March. Still thinking about it in July.", why: "Content regret arc. FOMO framing without direct mention triggers attribution without liability." },
-      { platform: "TikTok", format: "Testimonial", competitor: "Spotify", text: "Six years of Spotify data and I still get recommended the same 40 songs.", why: "Algorithm disappointment. Specificity ('six years', '40 songs') signals real person, not brand copy." },
-      { platform: "Meta", format: "Comparison", competitor: "Gyms", text: "$180 a month for a gym I went to once in February.", why: "Subscription guilt is universal. 'Once in February' is a cultural shorthand — resonates with every January-resolution joiner." }
-    ],
-    counter: { text: "You're not paying for access. You're paying for not having to decide.", note: "Convenience as the real product truth. Reframes subscription value from content to cognitive relief — harder to cancel." }
-  },
-  us_gaming: {
-    label: "United States · Gaming",
-    hooks: [
-      { platform: "TikTok", format: "UGC", competitor: "Console gaming", text: "Console was $500. Controller broke in 8 months. PC was $1200. Still going after four years.", why: "TCO math over time. Gaming hardware longevity is a conversion argument that resonates with parents and older demographics." },
-      { platform: "Meta", format: "Testimonial", competitor: "EA Sports", text: "Paid $70 for the game. $20 for the season pass. $15 for the roster update I needed to play ranked.", why: "DLC fee stacking as audience-validated frustration. The cumulative number lands because the audience has lived it." },
-      { platform: "YouTube", format: "Comparison", competitor: "Mobile gacha", text: "I spent $300 on a gacha banner. Got the character. Then the meta changed.", why: "Gacha sunk cost humor. Extremely high recognition among mobile-to-PC conversion audience." }
-    ],
-    counter: { text: "The new season dropped. Your squad moved on. The game still charged for the battle pass.", note: "Squad churn plus continued billing. Two independent frustrations in one line — each one enough alone, together they close the argument." }
-  },
-  us_saas: {
-    label: "United States · B2B SaaS",
-    hooks: [
-      { platform: "LinkedIn", format: "Comparison", competitor: "Salesforce", text: "Your Salesforce license is more expensive per seat than your last two junior hires combined.", why: "License cost as headcount comparison. Finance and ops leads think in headcount costs — this lands as a provable, checkable claim." },
-      { platform: "Meta", format: "Problem→Solution", competitor: "Microsoft Teams", text: "The meeting about the meeting is on Thursday. In Teams. Again.", why: "Meeting culture satire. Self-aware enough not to feel like an attack — the 'again' is what makes it land." },
-      { platform: "LinkedIn", format: "Testimonial", competitor: "Legacy ERPs", text: "We migrated 18 months of data in a weekend. Our old system would have needed a project.", why: "'Would have needed a project' is the enterprise procurement nightmare. Exact framing that converts ops and IT decision-makers." }
-    ],
-    counter: { text: "The compliance audit found seven tools doing the same thing. None of them talking to each other.", note: "Tool sprawl as the real villain. Compliance framing resonates strongly in enterprise — audits make sprawl visible in the worst possible moment." }
-  },
-  uk_fintech: {
-    label: "United Kingdom · Fintech",
-    hooks: [
-      { platform: "Meta", format: "UGC", competitor: "Barclays", text: "My bank app loaded. Only took four taps and a card reader I can't find.", why: "'Card reader' is hyperlocal UK. Barclays users know exactly what this means. The four-tap count is earned frustration." },
-      { platform: "TikTok", format: "Comparison", competitor: "Monzo", text: "Monzo told me I spent £14 on coffee this week. I needed an intervention, not a notification.", why: "Notification fatigue reframe. Guilt-shaming spend trackers are a departure point for the next wave of fintech." },
-      { platform: "Meta", format: "Problem→Solution", competitor: "Traditional banks", text: "Direct debit rejected. Bank phone line: 35 minutes. App: 2 seconds.", why: "'35 minutes' references famously awful UK bank hold times. The asymmetry is the product proof." }
-    ],
-    counter: { text: "You can do it in the app. Unless it's Tuesday, or your account is over three months old, or you need to verify via post.", note: "Legacy banking bureaucracy list. Comic accumulation of conditions — every UK adult has hit at least one of them." }
-  },
-  uk_ecom: {
-    label: "United Kingdom · E-com",
-    hooks: [
-      { platform: "Meta", format: "Product Demo", competitor: "Amazon", text: "Next-day delivery. Which day is next? Amazon would like to discuss.", why: "Amazon UK delivery promise vs. reality. High-engagement topic in UK comment sections — collective frustration already primed." },
-      { platform: "TikTok", format: "UGC", competitor: "ASOS", text: "ASOS said it was my style. It was not.", why: "Personalization failure humor. ASOS recommendation failures are a shared UK cultural experience with high recognition." },
-      { platform: "Meta", format: "Testimonial", competitor: "Primark", text: "I stopped buying five £6 shirts a year. One shirt. Still wearing it three years later.", why: "Slow fashion ROI framing. Primark quality is understood but rarely quantified — the year count turns it into math." }
-    ],
-    counter: { text: "It's £4 shipping or collect in-store, which is in Slough.", note: "'Slough' is UK cultural shorthand for inconvenient geography. An instant joke that lands nationwide." }
-  },
-  germany_saas: {
-    label: "Germany · B2B SaaS",
-    hooks: [
-      { platform: "LinkedIn", format: "Comparison", competitor: "SAP", text: "Your SAP license costs more than your last three developer hires combined.", why: "German Mittelstand CFOs track headcount cost obsessively. Framed as a provable claim, not an attack." },
-      { platform: "Meta", format: "Problem→Solution", competitor: "Teams", text: "The meeting about the meeting is scheduled for Thursday. In Teams. Again.", why: "German corporate meeting culture is a recognized pain point. 'Again' signals insider knowledge, not outsider critique." },
-      { platform: "LinkedIn", format: "Testimonial", competitor: "Legacy ERPs", text: "We migrated 18 months of procurement data in a weekend. Our old system would have needed a project.", why: "Migration speed as enterprise proof. 'Would have needed a project' is the exact phrase that resonates with German procurement leads." }
-    ],
-    counter: { text: "The compliance audit found seven tools doing the same thing. None of them talking to each other.", note: "Tool sprawl as audit risk. Compliance framing hits specifically in Germany where audits carry genuine legal weight." }
-  },
-  germany_fintech: {
-    label: "Germany · Fintech",
-    hooks: [
-      { platform: "Meta", format: "Comparison", competitor: "Deutsche Bank", text: "Deutsche Bank: 8.90€ account fee, 90-minute branch wait. N26: 0€, 3 minutes.", why: "Fee plus time combined. German consumers are extremely fee-sensitive and the €8.90 line is verifiable — builds credibility." },
-      { platform: "TikTok", format: "UGC", competitor: "Traditional transfers", text: "IBAN, BIC, Verwendungszweck, two days, and I still typed it wrong.", why: "Traditional transfer complexity in German. The Verwendungszweck (payment reference) field is a shared nightmare for every German who's used it." },
-      { platform: "Meta", format: "Testimonial", competitor: "Sparkasse", text: "Sparkasse told me my overdraft wasn't covered until Tuesday. My rent was due Monday.", why: "Overdraft timing mismatch. Sparkasse is Germany's most-used bank — naming it is a specificity signal that converts." }
-    ],
-    counter: { text: "Ihr Konto hat eine Benachrichtigung. Es gibt keine Benachrichtigung. Bitte besuchen Sie Ihre Filiale.", note: "Bank notification absurdity in German. The call-to-visit-branch punchline lands because every German has received this exact non-information." }
-  },
-  uae_fintech: {
-    label: "UAE · Fintech",
-    hooks: [
-      { platform: "Meta", format: "UGC", competitor: "Exchange desks", text: "Sending money home used to cost me AED 45 and two days. Now it's 3 minutes.", why: "UAE has the highest per-capita outbound remittance volume globally. This is the daily reality for 9 out of 10 residents." },
-      { platform: "TikTok", format: "Testimonial", competitor: "Exchange houses", text: "The exchange desk in my building charges 3.2%. I found 0.4%. Nobody told me.", why: "'Nobody told me' triggers information injustice. Works strongly with UAE's expat demographic who rely on word-of-mouth for financial products." },
-      { platform: "Meta", format: "Comparison", competitor: "Emirates NBD", text: "Emirates NBD told me to come to the branch. I was in London.", why: "Remote banking friction. UAE's expat workforce travels constantly — branch-only requirements are an acute recurring pain." }
-    ],
-    counter: { text: "Your salary hits on the 25th. The exchange rate on the 26th is not the exchange rate today.", note: "Rate timing education as value prop. Payday plus immediate transfer is a behavioral pattern — this hook catches at the moment of maximum intent." }
-  },
-  india_ecom: {
-    label: "India · E-com",
-    hooks: [
-      { platform: "Meta", format: "UGC", competitor: "Flipkart", text: "Sale at 12. Site down at 12:01. Yeh toh har baar hota hai.", why: "Flash sale server crash in mixed Hindi-English. 'This happens every time' signals authentic voice, not brand copy." },
-      { platform: "TikTok", format: "Testimonial", competitor: "Meesho", text: "Meesho price, Amazon delivery speed, quality check before it ships. I thought I had to choose two.", why: "Three-way value stack. India e-com buyers know you pick two of: cheap, fast, quality. Claiming all three is a bold hook." },
-      { platform: "Meta", format: "Problem→Solution", competitor: "Local retail", text: "Main road shopkeeper said exchange in 2 days. Online was 30 seconds.", why: "Return speed is a tier-1 India e-com pain point. '2 days vs 30 seconds' is the exact comparison that converts." }
-    ],
-    counter: { text: "Order Monday. Delivery attempted Saturday when you're visiting your parents. Reschedule? That's a new order.", note: "Delivery rescheduling loop frustration. This is the most-complained-about India last-mile issue — nearly universal experience." }
-  },
-  india_fintech: {
-    label: "India · Fintech",
-    hooks: [
-      { platform: "Meta", format: "UGC", competitor: "HDFC", text: "HDFC gave me 3.5% on savings. Found 7.1% on the same phone, same minute.", why: "Rate comparison without switching friction. 'Same phone, same minute' removes the effort objection before it can form." },
-      { platform: "TikTok", format: "Testimonial", competitor: "Moneylenders", text: "My cousin borrowed from a lender. I borrowed from an app. He's still paying.", why: "Informal vs. formal credit comparison. Moneylender vs. BNPL is a real and emotionally charged financial choice in tier-2 India." },
-      { platform: "Meta", format: "Comparison", competitor: "Paytm", text: "UPI is instant. Your CIBIL score took four years to come back from that one late payment.", why: "UPI fluency plus credit score anxiety. The four-year recovery timeline is painfully specific and widely recognized." }
-    ],
-    counter: { text: "The SIP was set up in January. You checked it in March. It's still loading.", note: "Wealth app UX frustration during high-intent check moments. March is post-bonus season in India — peak investment review behavior." }
-  },
-  australia_health: {
-    label: "Australia · Health & Fitness",
-    hooks: [
-      { platform: "Meta", format: "UGC", competitor: "F45", text: "$75 a week, 5am, car park in Marrickville. I did it for eight months. I own headphones now.", why: "F45 specificity (suburb, cost, time) signals authenticity. 'I own headphones now' is deadpan Aussie humor for 'that's what I have to show for it.'" },
-      { platform: "TikTok", format: "Testimonial", competitor: "Gym culture", text: "First time back in four years. Nobody looked at me. Nobody cared. I think that's the point.", why: "Return-to-fitness anxiety relief. Australian directness in 'nobody cared' outperforms 'welcoming environment' marketing copy." },
-      { platform: "Meta", format: "Comparison", competitor: "Private health", text: "My private health covers physio twice a year. This app gives me 12 minutes a day, every day.", why: "Frequency of access comparison. Australian private health frustration is high — underutilization of physio benefits is endemic." }
-    ],
-    counter: { text: "The gym membership started in January. By March it was a tax-deductible monthly reminder of ambition.", note: "'Tax-deductible' is the Aussie self-justification move. Extremely local humor that signals real understanding of the market." }
-  },
-  brazil_ecom: {
-    label: "Brazil · E-com",
-    hooks: [
-      { platform: "Meta", format: "UGC", competitor: "Mercado Livre", text: "Enviou na segunda. Chegou sábado. O prazo dizia quarta. Mercado Livre sendo Mercado Livre.", why: "'Being Mercado Livre' is a known cultural phrase. Self-aware delivery-delay humor that validates the audience's frustration." },
-      { platform: "TikTok", format: "Testimonial", competitor: "Shopee", text: "Shopee sale, 80% off, frete 65 reais. Fiz as contas.", why: "Shopee Brazil's high shipping costs on discounted items is a meme. 'I did the math' is the punchline that everyone reaches." },
-      { platform: "Meta", format: "Comparison", competitor: "Parcelamento", text: "12x sem juros parece ótimo até você somar.", why: "Installment credit math realization. Brazil's parcelamento culture is ubiquitous — 'until you add it up' is a known consumer epiphany." }
-    ],
-    counter: { text: "O produto chegou. A nota fiscal vai chegar em algum momento do próximo mês.", note: "Invoice delivery delay as comic footnote. NF-e bureaucracy is a shared frustration — landing the joke in Portuguese signals market fluency." }
-  },
-  indonesia_gaming: {
-    label: "Indonesia · Gaming",
-    hooks: [
-      { platform: "TikTok", format: "UGC", competitor: "Mobile Legends", text: "Ranked solo di MLBB itu bukan game, itu latihan mental.", why: "'Latihan mental' (mental training) is the shared toxic positivity reframe every MLBB player uses. Pure cultural insider signal." },
-      { platform: "Meta", format: "Testimonial", competitor: "Top-up agents", text: "Top up diamond lewat agen, kena rate aneh. Langsung dari aplikasinya, harga resmi.", why: "Diamond top-up via unofficial agents is rampant. Direct app pricing as the legitimate alternative — a trust hook." },
-      { platform: "TikTok", format: "Comparison", competitor: "PC gaming", text: "PC gaming butuh budget 15 juta. HP gaming butuh skill 10 tahun.", why: "Mobile mastery as earned status, not a compromise. Powerful in Indonesia's mobile-first gaming culture." }
-    ],
-    counter: { text: "Ping 120ms. Teammate AFK. Jungle di-steal. Gak ada yang bisa dilakuin selain buka app lain.", note: "Gaming frustration escape valve. Specificity of each element (ping, AFK, jungle steal) signals authentic player voice, not marketing." }
-  },
-  mexico_fintech: {
-    label: "Mexico · Fintech",
-    hooks: [
-      { platform: "Meta", format: "UGC", competitor: "BBVA Mexico", text: "Fui al banco a las 10am. La fila decía 11:45. En 2024.", why: "Bank queue absurdity with the year as the punchline. '2024' signals that this is still happening, which is what makes it hit." },
-      { platform: "TikTok", format: "Testimonial", competitor: "Cash economy", text: "Mi negocio solo aceptaba efectivo. Empecé a aceptar transferencias. Mis ventas subieron 40%.", why: "SMB cashless conversion with a specific lift. Mexico's informal economy transition to digital payments is a live story." },
-      { platform: "Meta", format: "Comparison", competitor: "Western Union", text: "Western Union cobra $18 y tarda un día. Esto tarda 3 minutos y cobra $2.", why: "Mexico is the top remittance recipient globally. This hook has the largest addressable audience of any category in the market." }
-    ],
-    counter: { text: "Tu comisión por retiro en cajero ajeno: $35 pesos. Tu cara cuando lees el ticket: no tiene precio.", note: "ATM fee shock plus the Mastercard punchline structure. Familiar enough to be funny, specific enough to feel local." }
-  },
-  saudiarabia_ecom: {
-    label: "Saudi Arabia · E-com",
-    hooks: [
-      { platform: "Meta", format: "UGC", competitor: "Noon", text: "Noon Express said same day. Same day was four days ago.", why: "Noon Express same-day failures are a prominent complaint in Saudi social media. Audience frustration is already primed." },
-      { platform: "TikTok", format: "Testimonial", competitor: "Malls", text: "كنت أقضي كل جمعة في المول. الآن أقضيها مع أهلي.", why: "Friday is family day in KSA. Shopping app as 'time given back to family' is a value reframe that lands culturally." },
-      { platform: "Meta", format: "Product Demo", competitor: "International shipping", text: "Used to wait 3 weeks for a product from the US. Local warehouse. Two days. Same product.", why: "KSA e-com growth is driven by local warehouse expansion. The US-vs-local comparison tells the infrastructure story in one line." }
-    ],
-    counter: { text: "Free shipping on orders over SAR 200. Your order is SAR 187. The shipping is SAR 25.", note: "Free shipping threshold friction — the universal e-com frustration. Specific SAR amounts make it feel researched rather than generic." }
-  }
-};
-
-function renderAgencyHookCard() {
-  var cat = document.getElementById('catSelect').value;
-  var mkt = document.getElementById('mktSelect').value;
-  if (!cat || !mkt) { 
-    document.getElementById('hookCard').style.display = 'none';
-    document.getElementById('hookEmpty').style.display = 'block';
-    document.getElementById('hookNoData').style.display = 'none';
-    return; 
-  }
-  var key = mkt + '_' + cat;
-  var data = AGENCY_HOOK_DATA[key];
-  if (!data) {
-    document.getElementById('hookCard').style.display = 'none';
-    document.getElementById('hookEmpty').style.display = 'none';
-    document.getElementById('hookNoData').style.display = 'block';
-    return;
-  }
-  document.getElementById('hookCardTag').textContent = data.label;
-  var hooks = data.hooks;
-  for (var i = 0; i < 3; i++) {
-    var h = hooks[i] || { platform: '', format: '', competitor: '', text: '', why: '' };
-    var n = i + 1;
-    document.getElementById('hook' + n + 'platform').innerHTML =
-      '<span class="hook-platform-tag">' + h.platform + '</span>' +
-      '<span class="hook-platform-tag format">' + h.format + '</span>';
-    document.getElementById('hook' + n + 'comp').textContent = h.competitor ? h.competitor.toUpperCase() : '';
-    document.getElementById('hook' + n + 'text').textContent = h.text;
-    document.getElementById('hook' + n + 'why').textContent = h.why;
-  }
-  document.getElementById('hookCounterText').textContent = data.counter.text;
-  document.getElementById('hookCounterNote').textContent = data.counter.note;
-  document.getElementById('hookGateForm').style.display = 'flex';
-  document.getElementById('hookGateSuccess').style.display = 'none';
-  document.getElementById('hookGateError').style.display = 'none';
-  document.getElementById('hookEmpty').style.display = 'none';
-  document.getElementById('hookNoData').style.display = 'none';
-  document.getElementById('hookCard').style.display = 'block';
-}
-
-function submitAgencyHookGate() {
-  var email = document.getElementById('hookEmail').value.trim();
-  if (!email) return;
-  var btn = document.querySelector('.hook-gate-btn');
-  btn.disabled = true;
-  btn.textContent = 'Sending...';
-  fetch('https://app.orcool.com/api/auth/send-magic-link', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email: email, isBusiness: false, baseUrl: 'https://app.orcool.com' })
-  }).then(function(r) {
-    if (!r.ok) throw new Error('failed');
-    // Reveal all blurred elements immediately
-    document.querySelectorAll('.hook-item.gated').forEach(function(el) {
-      el.classList.remove('gated');
-    });
-    document.querySelectorAll('.blurred').forEach(function(el) {
-      el.classList.remove('blurred');
-    });
-    document.getElementById('hookGate').style.display = 'none';
-    document.getElementById('hookGateForm').style.display = 'none';
-    document.getElementById('hookGateSuccess').style.display = 'block';
-    document.getElementById('hookGateError').style.display = 'none';
-    var toast = document.getElementById('mlToast');
-    if (!toast) {
-      toast = document.createElement('div');
-      toast.id = 'mlToast';
-      toast.style.cssText = 'position:fixed;bottom:28px;left:50%;transform:translateX(-50%);background:#111;color:#fff;padding:14px 22px;border-radius:10px;font-size:14px;font-weight:600;z-index:9999;box-shadow:0 4px 24px rgba(0,0,0,.35);white-space:nowrap;transition:opacity .4s';
-      document.body.appendChild(toast);
-    }
-    toast.innerHTML = '✓ Magic link sent to <span style="color:#4ade80">' + email + '</span>.';
-    toast.style.opacity = '1';
-    toast.style.display = 'block';
-    setTimeout(function() { toast.style.opacity = '0'; setTimeout(function() { toast.style.display = 'none'; }, 400); }, 4000);
-  }).catch(function() {
-    document.getElementById('hookGateError').style.display = 'block';
-    btn.disabled = false;
-    btn.textContent = 'Unlock full teardown';
-  });
-}
-</script>
-
-<!-- FINAL CTA -->
-<section class="dark final">
-  <div class="wrap">
-    <span class="eyebrow" style="color:var(--red)">Start</span>
-    <h2 style="margin-top:14px">Connect once. Every client brand from there.</h2>
-    <p style="margin-top:14px;color:#C9C7C4;max-width:500px;margin-left:auto;margin-right:auto">First report free. No card.</p>
-    <div style="margin-top:32px;max-width:520px;margin-left:auto;margin-right:auto">
-      <form id="ml-form" onsubmit="submitMagicLink(event)"
-        style="display:flex;flex-wrap:wrap;gap:12px;align-items:stretch">
-        <input id="ml-email" type="email" required autocomplete="email"
-          placeholder="you@agency.com"
-          style="flex:1 1 240px;min-width:0;background:#111;border:1px solid #2a2a2a;
-                 border-radius:10px;padding:14px 18px;font-size:16px;color:#e8e8e8;
-                 font-family:var(--sans);outline:none">
-        <button id="ml-btn" type="submit" class="btn on-dark"
-          style="cursor:pointer;border:none;font-family:var(--sans);font-size:16px;
-                 white-space:nowrap">Get magic link</button>
-      </form>
-      <p id="ml-success"
-         style="display:none;font-size:15px;color:#4ade80;margin-top:12px;text-align:center"></p>
-      <p id="ml-error"
-         style="display:none;font-size:14px;color:#f87171;margin-top:10px;text-align:center">
-         Something went wrong. Try again.</p>
-      <p style="font-size:14px;color:#555;margin-top:10px;text-align:center">
-        We email you a magic link to sign in. No card.</p>
-    </div>
-  </div>
-  <div class="glow"></div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <img class="logo" src="/orcool-logo.png" alt="Orcool">
-    <div>© 2026 Orcool Inc. Creative intelligence for the agentic era.</div>
-    <div class="who">team@orcool.com · San Francisco, CA</div>
-      <a href="https://elevenlabs.io/startup-grants" target="_blank" rel="noopener" style="display:inline-block;margin-top:18px" aria-label="Backed by ElevenLabs Grants">
-      <img src="https://eleven-public-cdn.elevenlabs.io/payloadcms/pwsc4vchsqt-ElevenLabsGrants.webp" alt="Backed by ElevenLabs Grants" style="width:150px;height:auto;display:block;margin:0 auto">
-    </a>
-</div>
-</footer>
-
-<script>
-  document.querySelectorAll('.copy,.ucopy').forEach(function(b){
-    b.addEventListener('click',function(){
-      var t=b.getAttribute('data-c');
-      if(!t){var sel=b.getAttribute('data-target');var el=sel&&document.querySelector(sel);t=el?el.textContent:'';}
-      navigator.clipboard&&navigator.clipboard.writeText(t).then(function(){
-        var o=b.textContent;b.textContent='Copied';setTimeout(function(){b.textContent=o;},1400);
-      });
-    });
-  });
-
-  function submitMagicLink(e) {
-    e.preventDefault();
-    var form = document.getElementById('ml-form');
-    var btn  = document.getElementById('ml-btn');
-    var errEl = document.getElementById('ml-error');
-    var okEl  = document.getElementById('ml-success');
-    var email = document.getElementById('ml-email').value.trim();
-    if (!email) return;
-    btn.disabled = true;
-    btn.textContent = 'Sending...';
-    errEl.style.display = 'none';
-    fetch('https://app.orcool.com/api/auth/send-magic-link', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: email, isBusiness: false, baseUrl: 'https://app.orcool.com' })
-    }).then(function(r) {
-      if (!r.ok) throw new Error('failed');
-      form.style.display = 'none';
-      okEl.textContent = 'Check your inbox. Magic link sent to ' + email + '.';
-      okEl.style.display = 'block';
-      var toast = document.getElementById('mlToast');
-      if (!toast) {
-        toast = document.createElement('div');
-        toast.id = 'mlToast';
-        toast.style.cssText = 'position:fixed;bottom:28px;left:50%;transform:translateX(-50%);' +
-          'background:#111;color:#fff;padding:14px 22px;border-radius:10px;font-size:14px;' +
-          'font-weight:600;z-index:9999;box-shadow:0 4px 24px rgba(0,0,0,.35);' +
-          'white-space:nowrap;transition:opacity .4s';
-        document.body.appendChild(toast);
-      }
-      toast.innerHTML = '✓ Check your inbox. Magic link sent to <span style="color:#4ade80">'
-        + email + '</span>.';
-      toast.style.opacity = '1';
-      toast.style.display = 'block';
-      setTimeout(function() {
-        toast.style.opacity = '0';
-        setTimeout(function() { toast.style.display = 'none'; }, 400);
-      }, 4000);
-    }).catch(function() {
-      errEl.style.display = 'block';
-      btn.disabled = false;
-      btn.textContent = 'Get magic link';
-    });
-  }
-</script>
+  </footer>
+  <script src="/assets/site-v2.js"></script>
 </body>
 </html>
