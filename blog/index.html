@@ -1,354 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Orcool Blog · creative intelligence, benchmarks and signals</title>
-<meta name="description" content="Data-backed writing on AI ad creative: what actually converts, how to score creative before you spend, and the signals that move a category. From the team building the fastest path to a winning ad.">
-<link rel="canonical" href="https://get.orcool.com/blog/">
-<meta name="robots" content="index, follow, max-image-preview:large">
-<link rel="alternate" type="application/rss+xml" title="Orcool Blog" href="https://get.orcool.com/blog/rss.xml">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Orcool Field Notes · from market signal to performance creative</title>
+  <meta name="description" content="Field notes from inside Orcool: market signals, MCP workflows, production systems and the evidence loop behind performance creative.">
+  <link rel="canonical" href="https://get.orcool.com/blog/">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="alternate" type="application/rss+xml" title="Orcool Field Notes" href="https://get.orcool.com/blog/rss.xml">
 
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Orcool">
-<meta property="og:title" content="The Orcool Blog · creative intelligence, benchmarks and signals">
-<meta property="og:description" content="Data-backed writing on AI ad creative: what converts, how to score creative before you spend, and the signals that move a category.">
-<meta property="og:url" content="https://get.orcool.com/blog/">
-<meta property="og:image" content="https://get.orcool.com/og-image.png">
-<meta name="twitter:card" content="summary_large_image">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Orcool">
+  <meta property="og:title" content="Orcool Field Notes · signal, production and spend">
+  <meta property="og:description" content="How market evidence becomes a creative hypothesis, a production lineage and—only after real spend—a winner.">
+  <meta property="og:url" content="https://get.orcool.com/blog/">
+  <meta property="og:image" content="https://get.orcool.com/og-from-signal-to-spend.png">
+  <meta name="twitter:card" content="summary_large_image">
 
-<link rel="icon" href="/orcool-mark-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Newsreader:ital@1&display=swap" rel="stylesheet">
-<script defer src="https://cloud.umami.is/script.js" data-website-id="40fd1792-b48f-4d93-867e-00ff641a0677"></script>
+  <link rel="icon" href="/orcool-mark-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/site-v2.css">
+  <link rel="stylesheet" href="/assets/blog-v2.css">
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="40fd1792-b48f-4d93-867e-00ff641a0677"></script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Blog",
-  "name": "The Orcool Blog",
-  "url": "https://get.orcool.com/blog/",
-  "description": "Data-backed writing on AI ad creative, creative scoring and category signals.",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Orcool",
-    "logo": { "@type": "ImageObject", "url": "https://get.orcool.com/orcool-logo.png" }
-  },
-  "blogPost": [
-    {
-      "@type": "BlogPosting",
-      "headline": "Time-to-Winner: the metric that counts days to a working ad, not ads produced",
-      "url": "https://get.orcool.com/blog/what-is-time-to-winner/",
-      "datePublished": "2026-07-30",
-      "author": { "@type": "Organization", "name": "Orcool" }
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Orcool Field Notes",
+    "url": "https://get.orcool.com/blog/",
+    "description": "Field notes on market signals, MCP workflows, performance creative production and winner evidence.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Orcool",
+      "logo": { "@type": "ImageObject", "url": "https://get.orcool.com/orcool-logo.png" }
     },
-    {
-      "@type": "BlogPosting",
-      "headline": "There is no day 7: conversational ads break the durability clock",
-      "url": "https://get.orcool.com/blog/there-is-no-day-7/",
-      "datePublished": "2026-07-29",
-      "author": { "@type": "Organization", "name": "Orcool" }
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Founders build empires on an operating system, not an idea. Ad creative runs on the same rule.",
-      "url": "https://get.orcool.com/blog/an-os-for-fast-creative-decisions/",
-      "datePublished": "2026-07-22",
-      "author": { "@type": "Organization", "name": "Orcool" }
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "The durability floor by vertical: subscription ads outlast DTC six to one",
-      "url": "https://get.orcool.com/blog/durability-floor-by-vertical/",
-      "datePublished": "2026-07-21",
-      "author": { "@type": "Organization", "name": "Orcool" }
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "What a one-person creative team looks like when the team is agents",
-      "url": "https://get.orcool.com/blog/one-person-creative-team-of-agents/",
-      "datePublished": "2026-07-20",
-      "author": { "@type": "Organization", "name": "Orcool" }
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "The real fight in AI advertising is not the model",
-      "url": "https://get.orcool.com/blog/the-layer-race-nobody-is-fighting/",
-      "datePublished": "2026-07-19",
-      "author": { "@type": "Organization", "name": "Orcool" }
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Why most AI-UGC ads look the same, and what actually breaks the pattern",
-      "url": "https://get.orcool.com/blog/why-ai-ugc-looks-the-same/",
-      "datePublished": "2026-07-18",
-      "author": { "@type": "Organization", "name": "Orcool" }
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Time-to-Winner, shown not told: what a month of shipping looks like",
-      "url": "https://get.orcool.com/blog/a-month-of-time-to-winner/",
-      "datePublished": "2026-07-17",
-      "author": { "@type": "Organization", "name": "Orcool" }
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Signal speed beats scoring: why the fastest creative team wins",
-      "url": "https://get.orcool.com/blog/signal-speed-beats-scoring/",
-      "datePublished": "2026-07-16",
-      "author": { "@type": "Organization", "name": "Orcool" }
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "The 6% problem: why a handful of creatives eat the whole ad budget",
-      "url": "https://get.orcool.com/blog/the-6-percent-problem/",
-      "datePublished": "2026-07-09",
-      "author": { "@type": "Organization", "name": "Orcool" }
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "The concept we passed on shipped as a competitor's ad three weeks later",
-      "url": "https://get.orcool.com/blog/trend-mechanics-vs-taste/",
-      "datePublished": "2026-07-08",
-      "author": { "@type": "Organization", "name": "Orcool" }
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "The Hausa, Yoruba, Igbo voice gap: 164 million speakers, no native AI dubbing",
-      "url": "https://get.orcool.com/blog/voice-fidelity-ladder/",
-      "datePublished": "2026-07-07",
-      "author": { "@type": "Organization", "name": "Orcool" }
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Creative talent doesn't travel. Your expansion plan assumes it does",
-      "url": "https://get.orcool.com/blog/creative-talent-doesnt-travel/",
-      "datePublished": "2026-07-06",
-      "author": { "@type": "Organization", "name": "Orcool" }
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "No new dashboard: why creative intelligence lives in the chat",
-      "url": "https://get.orcool.com/blog/no-new-dashboard/",
-      "datePublished": "2026-07-06",
-      "author": { "@type": "Organization", "name": "Orcool" }
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "The creative producer is becoming a GTM engineer",
-      "url": "https://get.orcool.com/blog/creative-producer-gtm-engineer/",
-      "datePublished": "2026-07-03",
-      "author": { "@type": "Organization", "name": "Orcool" }
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Selection is not creation: what per-impression ad pickers can't tell you",
-      "url": "https://get.orcool.com/blog/selection-is-not-creation/",
-      "datePublished": "2026-07-02",
-      "author": { "@type": "Organization", "name": "Orcool" }
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Your user reviews are the best ad brief you already have",
-      "url": "https://get.orcool.com/blog/user-reviews-best-ad-brief/",
-      "datePublished": "2026-07-01",
-      "author": { "@type": "Organization", "name": "Orcool" }
-    }
-  ]
-}
-</script>
-
-<style>
-  :root{--bg:#f8f7f5;--ink:#443D3D;--ink-strong:#1a1614;--line:#e7e4e0;
-    --red:#FA3810;--blue:#387FFF;--green:#45B43B;--yellow:#FFB516;--card:#fff}
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--ink);
-    font-family:'Geist',system-ui,-apple-system,sans-serif;font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
-  .mono{font-family:'Geist Mono',ui-monospace,monospace}
-  a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
-
-  header.site{display:flex;align-items:center;justify-content:space-between;max-width:1080px;margin:0 auto;padding:22px 24px}
-  header.site img{height:26px;display:block}
-  .nav-right{display:flex;gap:20px;align-items:center;font-size:15px}
-  .nav-right a{color:var(--ink)}
-  .nav-right a.pill{background:var(--ink);color:#fff;padding:8px 16px;border-radius:10px;font-size:14px}
-  .nav-right a.pill:hover{background:#5c5453;text-decoration:none}
-
-  .hero{max-width:820px;margin:0 auto;padding:40px 24px 8px}
-  .hero .eyebrow{font-family:'Geist Mono',monospace;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin:0 0 14px}
-  .hero h1{font-size:44px;line-height:1.1;font-weight:700;color:var(--ink-strong);margin:0 0 16px;letter-spacing:-.02em}
-  .hero p{font-size:20px;color:var(--ink);margin:0;max-width:620px}
-
-  .list{max-width:820px;margin:0 auto;padding:30px 24px 80px}
-  .post{display:block;background:var(--card);border:1px solid var(--line);border-radius:16px;
-    padding:26px 28px;margin:16px 0;transition:border-color .15s}
-  .post:hover{border-color:#cfcac5;text-decoration:none}
-  .post .tag{font-family:'Geist Mono',monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
-  .post h2{font-size:25px;line-height:1.2;font-weight:650;color:var(--ink-strong);margin:10px 0 8px;letter-spacing:-.01em}
-  .post p{margin:0 0 12px;color:var(--ink);font-size:16.5px}
-  .post .meta{font-size:13.5px;color:#9a938e}
-  .post .meta .mono{color:#9a938e}
-
-  .soon{border-top:1px solid var(--line);margin-top:34px;padding-top:22px}
-  .soon h3{font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8a827e;margin:0 0 14px}
-  .soon ul{list-style:none;padding:0;margin:0}
-  .soon li{padding:11px 0;border-bottom:1px solid var(--line);color:var(--ink-strong);font-size:16.5px}
-  .soon li span{font-family:'Geist Mono',monospace;font-size:12px;color:var(--yellow);margin-right:10px}
-
-  footer.site{border-top:1px solid var(--line);padding:26px 24px;max-width:1080px;margin:40px auto 0;
-    display:flex;justify-content:space-between;font-size:13px;color:#9a938e;flex-wrap:wrap;gap:10px}
-  footer.site a{color:#9a938e}
-  @media(max-width:600px){.hero h1{font-size:33px}.hero p{font-size:18px}}
-</style>
+    "blogPost": [
+      {
+        "@type": "BlogPosting",
+        "headline": "From signal to spend: inside Orcool's performance creative engine",
+        "url": "https://get.orcool.com/blog/from-signal-to-spend/",
+        "datePublished": "2026-08-06"
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Time-to-Winner: the metric that counts days to a working ad, not ads produced",
+        "url": "https://get.orcool.com/blog/what-is-time-to-winner/",
+        "datePublished": "2026-07-30"
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "There is no day 7: conversational ads break the durability clock",
+        "url": "https://get.orcool.com/blog/there-is-no-day-7/",
+        "datePublished": "2026-07-29"
+      }
+    ]
+  }
+  </script>
 </head>
-<body>
+<body class="blog-body">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Primary navigation">
+      <a class="brand" href="/" aria-label="Orcool home"><img src="/orcool-logo.png" alt="Orcool"></a>
+      <div class="nav-links">
+        <a href="/blog/" aria-current="page">Field notes</a>
+        <a href="/performance-capital/#engine">Connect MCP</a>
+        <a class="button" href="/performance-capital/#apply">Discuss fit <span class="button-arrow">→</span></a>
+      </div>
+    </nav>
+  </header>
 
-<header class="site">
-  <a href="/"><img src="/orcool-logo.png" alt="Orcool"></a>
-  <nav class="nav-right">
-    <a href="/blog/">Blog</a>
-    <a href="/" class="pill">Connect</a>
-  </nav>
-</header>
+  <main id="main">
+    <section class="blog-hero">
+      <div class="shell blog-hero-copy">
+        <p class="eyebrow">Orcool Field Notes</p>
+        <h1>Signal is not the product. <span style="color:var(--red)">A winner is.</span></h1>
+        <p class="lead">Notes from the full performance-creative loop: what we source, what the agent can call, what production receives and what real media spend is allowed to decide.</p>
+        <div class="blog-hero-meta">
+          <span>Market intelligence</span>
+          <span>MCP-native workflow</span>
+          <span>Traceable production</span>
+          <span>Winner evidence</span>
+        </div>
+      </div>
+    </section>
 
-<section class="hero">
-  <p class="eyebrow">The Orcool Blog</p>
-  <h1>What actually works in AI ad creative.</h1>
-  <p>Benchmarks, category signals and honest post-mortems from the team building the fastest path to a winning ad. Data first. No dashboards required.</p>
-</section>
+    <section class="blog-section">
+      <div class="shell">
+        <div class="blog-section-head">
+          <div>
+            <p class="eyebrow">Inside the engine</p>
+            <h2>See the handoffs, not just the output.</h2>
+          </div>
+          <p class="lead">The first visual walkthrough uses public-safe artifacts from Orcool's working system. No fictional ROAS chart. No blurred dashboard theatre.</p>
+        </div>
 
-<section class="list">
-  <!-- POSTS:START (daily engine prepends new cards here) -->
-  <a class="post" href="/blog/what-is-time-to-winner/">
-    <span class="tag">Definitions</span>
-    <h2>Time-to-Winner: the metric that counts days to a working ad, not ads produced.</h2>
-    <p>The definition, the two loops behind it (fast loop to launch, slow loop for durability), and a worked example showing why a fast number without durability is a fake win.</p>
-    <p class="meta">July 30, 2026 <span class="mono">&middot;</span> 6 min read</p>
-  </a>
-  <a class="post" href="/blog/there-is-no-day-7/">
-    <span class="tag">Strategy</span>
-    <h2>There is no day 7: conversational ads break the durability clock.</h2>
-    <p>Creative fatigue is a frequency effect, and a chat impression is triggered by a question instead. The refresh calendar being copied into the new placement manages a decay curve that may not be there.</p>
-    <p class="meta">July 29, 2026 <span class="mono">&middot;</span> 6 min read</p>
-  </a>
-  <a class="post" href="/blog/an-os-for-fast-creative-decisions/">
-    <span class="tag">Operating model</span>
-    <h2>Founders build empires on an operating system, not an idea. Ad creative runs on the same rule.</h2>
-    <p>Fast-moving founders win on decision loops, not ideas. Applied to ad creative: one metric (Time-to-Winner), one place signals land, and one gate before spend, not after.</p>
-    <p class="meta">July 22, 2026 <span class="mono">&middot;</span> 6 min read</p>
-  </a>
-  <a class="post" href="/blog/durability-floor-by-vertical/">
-    <span class="tag">Data</span>
-    <h2>The durability floor by vertical: subscription ads outlast DTC six to one.</h2>
-    <p>Same 1,061-ad Meta panel, split by vertical this time. Subscription creatives reach a 283-day p75 lifespan; ecommerce DTC reaches 45, six times apart before format is even chosen.</p>
-    <p class="meta">July 21, 2026 <span class="mono">&middot;</span> 6 min read</p>
-  </a>
-  <a class="post" href="/blog/one-person-creative-team-of-agents/">
-    <span class="tag">Operating model</span>
-    <h2>What a one-person creative team looks like when the team is agents.</h2>
-    <p>Three seats go to agents: research, drafting, ranking. The one seat that stays human is judgment, and adding more agents defends that bottleneck instead of removing it.</p>
-    <p class="meta">July 20, 2026 <span class="mono">&middot;</span> 5 min read</p>
-  </a>
-  <a class="post" href="/blog/the-layer-race-nobody-is-fighting/">
-    <span class="tag">Strategy</span>
-    <h2>The real fight in AI advertising is not the model.</h2>
-    <p>Every AI-ad pitch leads with the generation model. Our own durability panel and a blind scoring test both point the same way: the outcome gets decided upstream and downstream of that layer instead.</p>
-    <p class="meta">July 19, 2026 <span class="mono">&middot;</span> 5 min read</p>
-  </a>
-  <a class="post" href="/blog/why-ai-ugc-looks-the-same/">
-    <span class="tag">Signals</span>
-    <h2>Why most AI-UGC ads look the same, and what actually breaks the pattern.</h2>
-    <p>Same opener, same avatar cadence, same soft close. The sameness lives in the script, not the render, and the fix is real user language, competitor durability, and category-specific formats.</p>
-    <p class="meta">July 18, 2026 <span class="mono">&middot;</span> 5 min read</p>
-  </a>
-  <a class="post" href="/blog/a-month-of-time-to-winner/">
-    <span class="tag">Time-to-Winner</span>
-    <h2>Time-to-Winner, shown not told: what a month of shipping looks like.</h2>
-    <p>A signal, a scored set of concepts, a real yes or no from the person who owns the brand's taste, a launch, and the slower clock that decides if the winner actually holds.</p>
-    <p class="meta">July 17, 2026 <span class="mono">&middot;</span> 6 min read</p>
-  </a>
-  <a class="post" href="/blog/signal-speed-beats-scoring/">
-    <span class="tag">Time-to-Winner</span>
-    <h2>Signal speed beats scoring: why the fastest creative team wins.</h2>
-    <p>A score ranks the ads you already have; it cannot see the window closing. Why the team that reacts to signal fastest, not the one with the best score, reaches a durable winner sooner.</p>
-    <p class="meta">July 16, 2026 <span class="mono">&middot;</span> 6 min read</p>
-  </a>
-  <a class="post" href="/blog/the-6-percent-problem/">
-    <span class="tag">Data</span>
-    <h2>The 6% problem: why a handful of creatives eat the whole ad budget.</h2>
-    <p>Motion's 2026 benchmark found 6% of creatives capture most enterprise spend. Our own 1,061-ad panel shows the mechanism: the format teams ship most, dynamic/DCO, has the shortest lifespan of all.</p>
-    <p class="meta">July 9, 2026 <span class="mono">&middot;</span> 6 min read</p>
-  </a>
-  <a class="post" href="/blog/trend-mechanics-vs-taste/">
-    <span class="tag">Signals</span>
-    <h2>The concept we passed on shipped as a competitor's ad three weeks later.</h2>
-    <p>Brand taste and trend mechanics are different signals that run on different clocks. Why a concept that reads as too strange to approve can still be the mechanically correct call.</p>
-    <p class="meta">July 8, 2026 <span class="mono">&middot;</span> 5 min read</p>
-  </a>
-  <a class="post" href="/blog/voice-fidelity-ladder/">
-    <span class="tag">Global expansion</span>
-    <h2>164 million speakers, and no AI dubbing tool that passes as native.</h2>
-    <p>Hausa, Yoruba and Igbo have no AI dubbing tool that sounds native today. Why the training-data gap exists, and the three-rung voice ladder that works instead.</p>
-    <p class="meta">July 7, 2026 <span class="mono">&middot;</span> 6 min read</p>
-  </a>
-  <a class="post" href="/blog/creative-talent-doesnt-travel/">
-    <span class="tag">Expansion</span>
-    <h2>Creative talent doesn't travel. Your expansion plan assumes it does.</h2>
-    <p>In-house teams ship outsider content to thirty markets; thirty agencies ship thirty brands. The third road starts from the local signal, and it changes time-to-winner per market.</p>
-    <p class="meta">July 6, 2026 <span class="mono">&middot;</span> 6 min read</p>
-  </a>
-  <a class="post" href="/blog/no-new-dashboard/">
-    <span class="tag">Workflow</span>
-    <h2>No new dashboard: why creative intelligence lives in the chat.</h2>
-    <p>Tools that need a new login get checked once, then forgotten. The teams still acting on competitor alerts and pattern data past week one never left the tool they already had open.</p>
-    <p class="meta">July 6, 2026 <span class="mono">·</span> 5 min read</p>
-  </a>
-  <a class="post" href="/blog/creative-producer-gtm-engineer/">
-    <span class="tag">Role shift</span>
-    <h2>The creative producer is becoming a GTM engineer.</h2>
-    <p>Production got cheap, so the bottleneck moved upstream. The job that used to brief editors now briefs signal: competitor hooks, fatigue curves and real user language, inside the same chat where the work happens.</p>
-    <p class="meta">July 3, 2026 <span class="mono">·</span> 5 min read</p>
-  </a>
-  <a class="post" href="/blog/selection-is-not-creation/">
-    <span class="tag">Signals</span>
-    <h2>Selection is not creation: what per-impression ad pickers can't tell you.</h2>
-    <p>Advantage+, Smart+ and Performance+ rank the library you already have. They can't say how much life a winner has left, or which angle is missing. Durability data from 1,061 creatives.</p>
-    <p class="meta">July 2, 2026 <span class="mono">·</span> 5 min read</p>
-  </a>
-  <a class="post" href="/blog/user-reviews-best-ad-brief/">
-    <span class="tag">Playbook</span>
-    <h2>Your user reviews are the best ad brief you already have.</h2>
-    <p>Most ad scripts start from a brand deck. Your customers do not talk like a brand deck. The better brief is already in your reviews, and building from it scored 0.76 vs 0.49 on ABCD in our test.</p>
-    <p class="meta">July 1, 2026 <span class="mono">·</span> 6 min read</p>
-  </a>
-  <a class="post" href="/blog/ai-ugc-ad-scoring-benchmark/">
-    <span class="tag">Benchmark</span>
-    <h2>What makes an AI-generated ad convert? We scored the formats head to head.</h2>
-    <p>Two AI-built ads, one app, scored blind on Google's ABCD framework. The agent-built testimonial hit 0.76; a leading single-tool generator hit 0.49. The gap was not polish.</p>
-    <p class="meta">June 30, 2026 <span class="mono">·</span> 6 min read</p>
-  </a>
-  <!-- POSTS:END -->
+        <article class="feature-story">
+          <div class="feature-copy">
+            <span class="story-label">New · 9 min read</span>
+            <h2>From signal to spend: inside Orcool’s performance creative engine.</h2>
+            <p>A market pattern becomes useful only after it survives five handoffs: evidence, agent access, a controlled brief, production lineage and an externally owned KPI gate.</p>
+            <div class="button-row">
+              <a class="button" href="/blog/from-signal-to-spend/" data-umami-event="Blog featured — open signal to spend">Read the walkthrough <span class="button-arrow">→</span></a>
+              <a class="button secondary" href="/performance-capital/#engine">Call the MCP</a>
+            </div>
+          </div>
+          <div class="feature-art" aria-label="The five handoffs in the Orcool engine">
+            <div class="feature-flow">
+              <div class="feature-step"><span>01</span>Source evidence</div>
+              <div class="feature-step"><span>02</span>Call it through MCP</div>
+              <div class="feature-step"><span>03</span>Lock the hypothesis</div>
+              <div class="feature-step"><span>04</span>Produce traceable variants</div>
+              <div class="feature-step"><span>05</span>Let spend decide</div>
+            </div>
+            <p class="small">The loop compounds only after a winner is observed. Production volume is not the success metric.</p>
+          </div>
+        </article>
+      </div>
+    </section>
 
-  <div class="soon">
-    <h3>In the pipeline</h3>
-    <ul>
-      <li><span>next</span>The 3-second problem: where ad budgets quietly die.</li>
-      <li><span>next</span>Attention economy to intelligence economy: what advertisers are actually buying next.</li>
-    </ul>
-  </div>
-</section>
+    <section class="blog-section blog-section-dark">
+      <div class="shell">
+        <div class="blog-section-head">
+          <div>
+            <p class="eyebrow">Three reading paths</p>
+            <h2>Follow the part of the loop you own.</h2>
+          </div>
+          <p class="lead">The archive stays intact. These paths make the new Orcool operating model visible without pretending every older article was written for it.</p>
+        </div>
+        <div class="paths-grid">
+          <a class="path-card" href="/blog/signal-speed-beats-scoring/">
+            <span class="path-label">01 · Intelligence</span>
+            <h3>Read the market before you render.</h3>
+            <p>Competitor durability, category mechanics, real customer language and local signal.</p>
+            <span class="path-link">Start with signal speed →</span>
+          </a>
+          <a class="path-card" href="/blog/no-new-dashboard/">
+            <span class="path-label">02 · MCP workflow</span>
+            <h3>Put the signal inside the agent.</h3>
+            <p>Why intelligence is more useful as a callable layer in Claude, ChatGPT or Cursor.</p>
+            <span class="path-link">Start with no new dashboard →</span>
+          </a>
+          <a class="path-card" href="/performance-capital/">
+            <span class="path-label">03 · Performance Capital</span>
+            <h3>Fund the hypothesis. Measure the winner.</h3>
+            <p>Orcool funds bounded production. The advertiser funds media. Agreed evidence controls the next decision.</p>
+            <span class="path-link">See the design-partner model →</span>
+          </a>
+        </div>
+      </div>
+    </section>
 
-<footer class="site">
-  <span>© 2026 Orcool. The fastest path to a winning ad.</span>
-  <span><a href="/blog/rss.xml">RSS</a> &nbsp; <a href="/">Home</a></span>
-</footer>
+    <section class="blog-section">
+      <div class="shell">
+        <div class="blog-section-head">
+          <div>
+            <p class="eyebrow">Latest field notes</p>
+            <h2>Evidence, operating models and honest limits.</h2>
+          </div>
+          <p class="lead">We publish what changed a decision, the assumptions behind it and where the available evidence stops.</p>
+        </div>
+        <div class="post-grid">
+          <a class="post-card featured" href="/blog/from-signal-to-spend/">
+            <span class="post-tag">Inside the engine</span>
+            <h3>From signal to spend.</h3>
+            <p>The visible handoffs between intelligence, MCP, production and a real KPI gate.</p>
+            <span class="post-meta">August 6, 2026 · 9 min</span>
+          </a>
+          <a class="post-card" href="/blog/what-is-time-to-winner/">
+            <span class="post-tag">Definitions</span>
+            <h3>Time-to-Winner is not ads produced.</h3>
+            <p>How to count calendar days to a working ad without gaming the number.</p>
+            <span class="post-meta">July 30, 2026 · 6 min</span>
+          </a>
+          <a class="post-card" href="/blog/there-is-no-day-7/">
+            <span class="post-tag">Strategy</span>
+            <h3>Conversational ads break the durability clock.</h3>
+            <p>A chat impression is triggered by a question, not scheduled into a frequency curve.</p>
+            <span class="post-meta">July 29, 2026 · 6 min</span>
+          </a>
+          <a class="post-card" href="/blog/an-os-for-fast-creative-decisions/">
+            <span class="post-tag">Operating model</span>
+            <h3>Ad creative needs an operating system.</h3>
+            <p>One metric, one place signals land and one gate before spend.</p>
+            <span class="post-meta">July 22, 2026 · 6 min</span>
+          </a>
+          <a class="post-card" href="/blog/durability-floor-by-vertical/">
+            <span class="post-tag">Data</span>
+            <h3>Durability floors differ six to one.</h3>
+            <p>A 1,061-ad panel split by vertical before format is even chosen.</p>
+            <span class="post-meta">July 21, 2026 · 6 min</span>
+          </a>
+          <a class="post-card" href="/blog/one-person-creative-team-of-agents/">
+            <span class="post-tag">Agents</span>
+            <h3>A one-person creative team of agents.</h3>
+            <p>Research, drafting and ranking become agent seats. Judgment stays human.</p>
+            <span class="post-meta">July 20, 2026 · 5 min</span>
+          </a>
+        </div>
+      </div>
+    </section>
 
-<script>
-(function(){
-  function fire(n){return function(){if(window.umami){window.umami.track(n);}};}
-  document.querySelectorAll('a[href*="#connect"]').forEach(function(a){a.addEventListener('click',fire('Connect click'));});
-})();
-</script>
+    <section class="blog-section">
+      <div class="shell">
+        <div class="blog-section-head">
+          <div>
+            <p class="eyebrow">Archive</p>
+            <h2>The working library.</h2>
+          </div>
+          <p class="lead">Older notes remain useful inputs to the same loop. They are grouped by the decision they help make.</p>
+        </div>
+        <div class="archive-list">
+          <a class="archive-row" href="/blog/the-layer-race-nobody-is-fighting/"><span class="archive-tag">Strategy</span><span class="archive-title">The real fight in AI advertising is not the model.</span><span class="archive-date">Jul 19</span></a>
+          <a class="archive-row" href="/blog/why-ai-ugc-looks-the-same/"><span class="archive-tag">Signals</span><span class="archive-title">Why most AI-UGC ads look the same.</span><span class="archive-date">Jul 18</span></a>
+          <a class="archive-row" href="/blog/a-month-of-time-to-winner/"><span class="archive-tag">Evidence loop</span><span class="archive-title">Time-to-Winner, shown not told.</span><span class="archive-date">Jul 17</span></a>
+          <a class="archive-row" href="/blog/signal-speed-beats-scoring/"><span class="archive-tag">Intelligence</span><span class="archive-title">Signal speed beats scoring.</span><span class="archive-date">Jul 16</span></a>
+          <a class="archive-row" href="/blog/the-6-percent-problem/"><span class="archive-tag">Data</span><span class="archive-title">The 6% problem.</span><span class="archive-date">Jul 09</span></a>
+          <a class="archive-row" href="/blog/trend-mechanics-vs-taste/"><span class="archive-tag">Signals</span><span class="archive-title">The concept we passed on shipped three weeks later.</span><span class="archive-date">Jul 08</span></a>
+          <a class="archive-row" href="/blog/voice-fidelity-ladder/"><span class="archive-tag">Localization</span><span class="archive-title">The Hausa, Yoruba and Igbo voice gap.</span><span class="archive-date">Jul 07</span></a>
+          <a class="archive-row" href="/blog/creative-talent-doesnt-travel/"><span class="archive-tag">Expansion</span><span class="archive-title">Creative talent doesn't travel.</span><span class="archive-date">Jul 06</span></a>
+          <a class="archive-row" href="/blog/no-new-dashboard/"><span class="archive-tag">MCP workflow</span><span class="archive-title">No new dashboard.</span><span class="archive-date">Jul 06</span></a>
+          <a class="archive-row" href="/blog/creative-producer-gtm-engineer/"><span class="archive-tag">Role shift</span><span class="archive-title">The creative producer is becoming a GTM engineer.</span><span class="archive-date">Jul 03</span></a>
+          <a class="archive-row" href="/blog/selection-is-not-creation/"><span class="archive-tag">Signals</span><span class="archive-title">Selection is not creation.</span><span class="archive-date">Jul 02</span></a>
+          <a class="archive-row" href="/blog/user-reviews-best-ad-brief/"><span class="archive-tag">Playbook</span><span class="archive-title">Your user reviews are the best ad brief you already have.</span><span class="archive-date">Jul 01</span></a>
+          <a class="archive-row" href="/blog/ai-ugc-ad-scoring-benchmark/"><span class="archive-tag">Benchmark</span><span class="archive-title">What makes an AI-generated ad convert?</span><span class="archive-date">Jun 30</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="blog-section">
+      <div class="shell">
+        <div class="blog-cta">
+          <div>
+            <p class="eyebrow">Use the signal layer</p>
+            <h2>Ask Orcool before you write the next brief.</h2>
+            <p class="lead">Connect the MCP to Claude, ChatGPT or Cursor. Map a category, inspect a mechanism and turn the evidence into a sharper production input.</p>
+            <div class="button-row">
+              <a class="button light-secondary" href="/performance-capital/#engine">Setup instructions</a>
+              <a class="button light-secondary" href="/performance-capital/#apply">Discuss a funded pilot</a>
+            </div>
+          </div>
+          <form class="magic-form" id="magic-link-form" novalidate>
+            <span class="mcp-label">Start with your email</span>
+            <h3>Email yourself an Orcool sign-in link.</h3>
+            <div class="magic-row">
+              <label class="sr-only" for="magic-email">Work email</label>
+              <input id="magic-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="work@email.com" required>
+              <button class="magic-submit" type="submit">Send magic link</button>
+            </div>
+            <p class="magic-note">No password. You will still add <strong>mcp.orcool.com</strong> in your client.</p>
+            <p class="magic-message" id="magic-message" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="blog-footer">
+    <div class="shell blog-footer-inner">
+      <span>© <span data-current-year>2026</span> Orcool. Performance creative, underwritten.</span>
+      <span class="blog-footer-links"><a href="/blog/rss.xml">RSS</a><a href="/performance-capital/">Performance Capital</a><a href="/">Orcool</a></span>
+    </div>
+  </footer>
+  <script src="/assets/site-v2.js"></script>
 </body>
 </html>

@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
 <channel>
-  <title>The Orcool Blog</title>
+  <title>Orcool Field Notes</title>
   <link>https://get.orcool.com/blog/</link>
-  <description>Data-backed writing on AI ad creative, creative scoring and category signals.</description>
+  <description>Field notes on market signals, MCP workflows, performance creative production and winner evidence.</description>
   <language>en</language>
+  <item>
+    <title>From signal to spend: inside Orcool's performance creative engine</title>
+    <link>https://get.orcool.com/blog/from-signal-to-spend/</link>
+    <guid>https://get.orcool.com/blog/from-signal-to-spend/</guid>
+    <pubDate>Thu, 06 Aug 2026 17:00:00 GMT</pubDate>
+    <description>A visual walkthrough of the five handoffs between market evidence, MCP, a controlled brief, production lineage and a winner decided by real media spend.</description>
+  </item>
   <item>
   <title>Time-to-Winner: the metric that counts days to a working ad, not ads produced</title>
   <link>https://get.orcool.com/blog/what-is-time-to-winner/</link>
