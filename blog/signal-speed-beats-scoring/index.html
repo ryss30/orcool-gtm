@@ -155,14 +155,16 @@
     body{font-size:17px}
   }
 </style>
+<link rel="stylesheet" href="/assets/article-v2.css">
 </head>
 <body>
 
 <header class="site">
   <a href="/"><img src="/orcool-logo.png" alt="Orcool"></a>
   <nav class="nav-right">
-    <a href="/blog/">Blog</a>
-    <a href="/" class="pill">Connect</a>
+    <a href="/blog/">Field notes</a>
+    <a href="/performance-capital/#engine">Connect MCP</a>
+    <a href="/performance-capital/#apply" class="pill">Discuss fit</a>
   </nav>
 </header>
 
@@ -181,6 +183,8 @@
         <li>The fastest team is not the one with the best scoring model. It is the one that turns a signal into a live test <strong>before the window closes</strong>, then lets a loop learn its taste so it misses less each cycle.</li>
       </ul>
     </div>
+
+    <p class="engine-note">This note covers one part of the operating loop. For the full visual walkthrough from market evidence through MCP and production to a real KPI gate, read <a href="/blog/from-signal-to-spend/">From signal to spend</a>.</p>
 
     <h2>Why scoring feels like the answer</h2>
     <p>Creative scoring had a good year. Score every ad before it runs, rank them, put budget behind the top of the list. It feels like control, and next to pure guesswork it is a real upgrade. But a score answers one question and one only: of the ads in front of me, which looks strongest right now. It is a snapshot of a single creative, and a snapshot cannot tell you the one thing that decides whether spend pays off, which is timing.</p>
@@ -227,22 +231,26 @@
     <p class="disclaimer">Methodology note: the format durability figures come from a single internal panel of 1,061 live Meta ads pulled from the public ad library and split by format, using median days still running as a lifespan proxy. One panel is a signal, not a universal law, and any client work referenced here is anonymized. The argument is about method; the numbers are included so you can weigh it for yourself.</p>
 
     <div class="cta">
-      <h2>See what's shifting in your market, in your chat</h2>
-      <p>Add Orcool to Claude, ChatGPT, or Cursor. Paste one URL, sign in with a magic link, and your competitor hooks, category patterns and your own reviews come back as a tool call. Free for two weeks, no card.</p>
-      <a class="book" href="https://get.orcool.com/#connect">Connect the MCP</a>
+      <p class="cta-kicker">Next step</p>
+      <h2>Ask Orcool before you write the next brief.</h2>
+      <p>Connect the signal layer in Claude, ChatGPT or Cursor—or discuss a bounded test where real spend decides the winner.</p>
+      <div class="cta-actions">
+        <a class="book" href="/performance-capital/#engine">Connect Orcool MCP</a>
+        <a class="book secondary" href="/performance-capital/#apply">Discuss a funded pilot</a>
+      </div>
     </div>
   </article>
 </main>
 
 <footer class="site">
-  <span>© 2026 Orcool. The fastest path to a winning ad.</span>
-  <span><a href="/blog/">Blog</a> &nbsp; <a href="/">Home</a></span>
+  <span>© 2026 Orcool. Performance creative, underwritten.</span>
+  <span><a href="/blog/">Field notes</a> &nbsp; <a href="/performance-capital/">Performance Capital</a> &nbsp; <a href="/">Orcool</a></span>
 </footer>
 
 <script>
 (function(){
   function fire(n){return function(){if(window.umami){window.umami.track(n);}};}
-  document.querySelectorAll('a[href*="#connect"]').forEach(function(a){a.addEventListener('click',fire('Connect click'));});
+  document.querySelectorAll('a[href*="/performance-capital/"]').forEach(function(a){a.addEventListener('click',fire('Performance Capital CTA click'));});
 })();
 </script>
 </body>

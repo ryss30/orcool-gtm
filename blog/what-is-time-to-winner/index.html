@@ -155,14 +155,16 @@
     body{font-size:17px}
   }
 </style>
+<link rel="stylesheet" href="/assets/article-v2.css">
 </head>
 <body>
 
 <header class="site">
   <a href="/"><img src="/orcool-logo.png" alt="Orcool"></a>
   <nav class="nav-right">
-    <a href="/blog/">Blog</a>
-    <a href="/" class="pill">Connect</a>
+    <a href="/blog/">Field notes</a>
+    <a href="/performance-capital/#engine">Connect MCP</a>
+    <a href="/performance-capital/#apply" class="pill">Discuss fit</a>
   </nav>
 </header>
 
@@ -181,6 +183,8 @@
         <li>Its two supporting metrics are the <strong>hit rate</strong> of the cycle and <strong>cycles-to-winner</strong>, which shows whether the brand's taste model is actually learning.</li>
       </ul>
     </div>
+
+    <p class="engine-note">This note covers one part of the operating loop. For the full visual walkthrough from market evidence through MCP and production to a real KPI gate, read <a href="/blog/from-signal-to-spend/">From signal to spend</a>.</p>
 
     <h2>Why this needed a name</h2>
     <p>Most creative teams measure ad testing with numbers that do not answer the question anyone actually cares about.</p>
@@ -238,22 +242,26 @@
     <p class="disclaimer">Methodology note: the 1,061-creative panel and 39-day median lifespan cited above are illustrative figures from a live Meta ad panel we have published in detail elsewhere on this blog. They are reused here only to make the Time-to-Winner calculation concrete, not presented as a new benchmark. Client examples throughout are anonymized by category.</p>
 
     <div class="cta">
-      <h2>See what's winning in your market, in your chat</h2>
-      <p>Add Orcool to Claude, ChatGPT, or Cursor. Paste one URL, sign in with a magic link, and your competitor hooks, category patterns and your own reviews come back as a tool call. Free for two weeks, no card.</p>
-      <a class="book" href="https://get.orcool.com/#connect">Connect the MCP</a>
+      <p class="cta-kicker">Next step</p>
+      <h2>Ask Orcool before you write the next brief.</h2>
+      <p>Connect the signal layer in Claude, ChatGPT or Cursor—or discuss a bounded test where real spend decides the winner.</p>
+      <div class="cta-actions">
+        <a class="book" href="/performance-capital/#engine">Connect Orcool MCP</a>
+        <a class="book secondary" href="/performance-capital/#apply">Discuss a funded pilot</a>
+      </div>
     </div>
   </article>
 </main>
 
 <footer class="site">
-  <span>© 2026 Orcool. The fastest path to a winning ad.</span>
-  <span><a href="/blog/">Blog</a> &nbsp; <a href="/">Home</a></span>
+  <span>© 2026 Orcool. Performance creative, underwritten.</span>
+  <span><a href="/blog/">Field notes</a> &nbsp; <a href="/performance-capital/">Performance Capital</a> &nbsp; <a href="/">Orcool</a></span>
 </footer>
 
 <script>
 (function(){
   function fire(n){return function(){if(window.umami){window.umami.track(n);}};}
-  document.querySelectorAll('a[href*="#connect"]').forEach(function(a){a.addEventListener('click',fire('Connect click'));});
+  document.querySelectorAll('a[href*="/performance-capital/"]').forEach(function(a){a.addEventListener('click',fire('Performance Capital CTA click'));});
 })();
 </script>
 </body>

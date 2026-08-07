@@ -155,14 +155,16 @@
     body{font-size:17px}
   }
 </style>
+<link rel="stylesheet" href="/assets/article-v2.css">
 </head>
 <body>
 
 <header class="site">
   <a href="/"><img src="/orcool-logo.png" alt="Orcool"></a>
   <nav class="nav-right">
-    <a href="/blog/">Blog</a>
-    <a href="/" class="pill">Connect</a>
+    <a href="/blog/">Field notes</a>
+    <a href="/performance-capital/#engine">Connect MCP</a>
+    <a href="/performance-capital/#apply" class="pill">Discuss fit</a>
   </nav>
 </header>
 
@@ -181,6 +183,8 @@
         <li>Push beats pull. Signal that arrives inside the chat where a brief is already being written keeps getting used past week one. Signal that sits behind a separate tab does not.</li>
       </ul>
     </div>
+
+    <p class="engine-note">This note covers one part of the operating loop. For the full visual walkthrough from market evidence through MCP and production to a real KPI gate, read <a href="/blog/from-signal-to-spend/">From signal to spend</a>.</p>
 
     <h2>The tool nobody opens doesn't exist</h2>
     <p>Most creative teams already run more tools than they use. An ad library login here, a project tracker there, a reporting tool that someone checks on Mondays if they remember. Every new tab competes for the same five minutes of attention a producer has between briefs.</p>
@@ -230,22 +234,26 @@
     <p class="disclaimer">This piece describes a pattern we see across the brand teams we work with, generalized and anonymized. No client names, tools, or account data are referenced. If you recognize your own workflow in it, that is the point.</p>
 
     <div class="cta">
-      <h2>Get the signal where you already work</h2>
-      <p>Add Orcool to Claude, ChatGPT, or Cursor. Paste one URL, sign in with a magic link, and your competitor hooks, category patterns and your own reviews come back as a tool call. Free for two weeks, no card.</p>
-      <a class="book" href="https://get.orcool.com/#connect">Connect the MCP</a>
+      <p class="cta-kicker">Next step</p>
+      <h2>Put the signal in the chat you already use.</h2>
+      <p>Connect Orcool in Claude, ChatGPT or Cursor—or discuss a bounded test where real spend decides the winner.</p>
+      <div class="cta-actions">
+        <a class="book" href="/performance-capital/#engine">Connect Orcool MCP</a>
+        <a class="book secondary" href="/performance-capital/#apply">Discuss a funded pilot</a>
+      </div>
     </div>
   </article>
 </main>
 
 <footer class="site">
-  <span>© 2026 Orcool. Name the winning angle. Prove it holds.</span>
-  <span><a href="/blog/">Blog</a> &nbsp; <a href="/">Home</a></span>
+  <span>© 2026 Orcool. Performance creative, underwritten.</span>
+  <span><a href="/blog/">Field notes</a> &nbsp; <a href="/performance-capital/">Performance Capital</a> &nbsp; <a href="/">Orcool</a></span>
 </footer>
 
 <script>
 (function(){
   function fire(n){return function(){if(window.umami){window.umami.track(n);}};}
-  document.querySelectorAll('a[href*="#connect"]').forEach(function(a){a.addEventListener('click',fire('Connect click'));});
+  document.querySelectorAll('a[href*="/performance-capital/"]').forEach(function(a){a.addEventListener('click',fire('Performance Capital CTA click'));});
 })();
 </script>
 </body>
