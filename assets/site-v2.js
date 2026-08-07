@@ -1,4 +1,9 @@
 (function () {
+  var pageContext = window.location.pathname.indexOf('/chatgpt/') === 0 ? 'chatgpt' :
+    window.location.pathname.indexOf('/gtm-engineers/') === 0 ? 'mcp overview' :
+    window.location.pathname.indexOf('/blog/') === 0 ? 'field notes' :
+    'performance capital';
+
   var year = document.querySelector('[data-current-year]');
   if (year) year.textContent = new Date().getFullYear();
 
@@ -96,7 +101,7 @@
       magicEmail.removeAttribute('aria-invalid');
       magicMessage.textContent = '';
       magicMessage.classList.remove('is-error');
-      track('Magic link requested — performance capital');
+      track('Magic link requested — ' + pageContext);
 
       fetch('https://app.orcool.com/api/auth/send-magic-link', {
         method: 'POST',
@@ -112,13 +117,13 @@
         magicEmail.readOnly = true;
         magicButton.textContent = 'Sent';
         magicMessage.textContent = 'Magic link sent to ' + email + '. Open it to sign in, then add the MCP URL below.';
-        track('Magic link sent — performance capital');
+        track('Magic link sent — ' + pageContext);
       }).catch(function () {
         magicButton.disabled = false;
         magicButton.textContent = 'Send magic link';
         magicMessage.textContent = 'Couldn’t send the link. Try again or copy the MCP URL below.';
         magicMessage.classList.add('is-error');
-        track('Magic link failed — performance capital');
+        track('Magic link failed — ' + pageContext);
       });
     });
   }
