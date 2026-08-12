@@ -1,0 +1,264 @@
+{
+  "schema_version": 1,
+  "title": "FxPro English video review",
+  "generated_at": "2026-08-12T18:55:24.392Z",
+  "status_boundary": "Internal production review complete; client review pending.",
+  "protection": "AES-256-GCM assets unlocked through the encrypted review page",
+  "video_count": 24,
+  "scripts": [
+    "Script 03",
+    "Script 04",
+    "Script 05",
+    "Script 07",
+    "Script 08",
+    "Script 09"
+  ],
+  "formats": [
+    "16:9",
+    "9:16",
+    "1:1",
+    "Reels"
+  ],
+  "items": [
+    {
+      "script": "Script 03",
+      "format": "16:9",
+      "status": "internally_approved",
+      "asset": "media/eng/script03/16x9.mp4.enc",
+      "source_bytes": 10986555,
+      "source_sha256": "24c401ff910fed4b66d98557dfeef2651480a7c634a9ca618136e7d9b976cf6c",
+      "encrypted_bytes": 10986571,
+      "encrypted_sha256": "93dc0df39d4749ab82696b663559dcbd734c46ba886fbde6ea2db63ee69268f0"
+    },
+    {
+      "script": "Script 03",
+      "format": "9:16",
+      "status": "internally_approved",
+      "asset": "media/eng/script03/9x16.mp4.enc",
+      "source_bytes": 14802641,
+      "source_sha256": "d5e313e4d3233602e40530d9570016081c1542dbdbfaf8b8217943a490c4ccf9",
+      "encrypted_bytes": 14802657,
+      "encrypted_sha256": "a3e6a818a638b36f3ca41207e5a9795a168a55fc8613048b6a51b48adde1ecf0"
+    },
+    {
+      "script": "Script 03",
+      "format": "1:1",
+      "status": "internally_approved",
+      "asset": "media/eng/script03/1x1.mp4.enc",
+      "source_bytes": 8161083,
+      "source_sha256": "cbf4a3ce2c59e61758314a06a8e9ef1d9079446dabf8c84668520f16409cd3cc",
+      "encrypted_bytes": 8161099,
+      "encrypted_sha256": "b5e2c52a9b35e6e0839bad4f52d2b18ae575b5b0318e630a991d82b9b512edcc"
+    },
+    {
+      "script": "Script 03",
+      "format": "Reels",
+      "status": "internally_approved",
+      "asset": "media/eng/script03/reels.mp4.enc",
+      "source_bytes": 9971237,
+      "source_sha256": "c468c3c2ebf4f4a68f6d30ded273f8011906c4cfccdfff884172d5f93b3237a6",
+      "encrypted_bytes": 9971253,
+      "encrypted_sha256": "0f8f0e167b7f2459fb054369066af8057db7d9e114402f8e49be26dc689fb4dc"
+    },
+    {
+      "script": "Script 04",
+      "format": "16:9",
+      "status": "internally_approved",
+      "asset": "media/eng/script04/16x9.mp4.enc",
+      "source_bytes": 10411686,
+      "source_sha256": "45e709df5d9a3b6b22d3959e5106a8ed5d3067b1f5981bd9ec03019932c5352b",
+      "encrypted_bytes": 10411702,
+      "encrypted_sha256": "3931731c466fe71bdcbe59d3398924e6ea68897c254bb993966aaf125895b212"
+    },
+    {
+      "script": "Script 04",
+      "format": "9:16",
+      "status": "internally_approved",
+      "asset": "media/eng/script04/9x16.mp4.enc",
+      "source_bytes": 13945106,
+      "source_sha256": "b8e8734acc71af2adca58fd3aa45f9e55a8740fa34ff5ad15ba85454aaa18588",
+      "encrypted_bytes": 13945122,
+      "encrypted_sha256": "9fad71d2b67bdf0560c0406963d03a28656452e0939d4703b2ae551e0a209406"
+    },
+    {
+      "script": "Script 04",
+      "format": "1:1",
+      "status": "internally_approved",
+      "asset": "media/eng/script04/1x1.mp4.enc",
+      "source_bytes": 7785463,
+      "source_sha256": "0e72a7ba124367b6f9176c1feefc7e5a493bee295a7ff618c3d319665fda5ba3",
+      "encrypted_bytes": 7785479,
+      "encrypted_sha256": "4416d32763da30b57a975bf38002cd6d7267f89c656a4d9f984bb802d821cdc0"
+    },
+    {
+      "script": "Script 04",
+      "format": "Reels",
+      "status": "internally_approved",
+      "asset": "media/eng/script04/reels.mp4.enc",
+      "source_bytes": 9169344,
+      "source_sha256": "7aca8913a724843aba0e66591bad0fe32b83118ec8194307b6727a9f6a02f635",
+      "encrypted_bytes": 9169360,
+      "encrypted_sha256": "c1d79b64340e8193cea57988196ebe4c3cc329e78dab31eb1776f43850a1abd0"
+    },
+    {
+      "script": "Script 05",
+      "format": "16:9",
+      "status": "internally_approved",
+      "asset": "media/eng/script05/16x9.mp4.enc",
+      "source_bytes": 12706342,
+      "source_sha256": "c1092c8219a4c8aaef507b94376b856366150f24471ee66a655af06160da14b5",
+      "encrypted_bytes": 12706358,
+      "encrypted_sha256": "7e0d5e795869bdb6db6c0d43b5e3a6855a292e8cdd9ea2cc8e99d9a775b2a280"
+    },
+    {
+      "script": "Script 05",
+      "format": "9:16",
+      "status": "internally_approved",
+      "asset": "media/eng/script05/9x16.mp4.enc",
+      "source_bytes": 15992471,
+      "source_sha256": "ae323b2492dc70fb37e712164461463185411d036238874772a35ff6dccb5305",
+      "encrypted_bytes": 15992487,
+      "encrypted_sha256": "3fd1f8fca491eb64b5cba5f41ee44608a3e0b82a2b475db44bbb85915dc64b7b"
+    },
+    {
+      "script": "Script 05",
+      "format": "1:1",
+      "status": "internally_approved",
+      "asset": "media/eng/script05/1x1.mp4.enc",
+      "source_bytes": 9177451,
+      "source_sha256": "351c3d31306d94c30898d9b4d601aa519d7517b8e3e870e293226d4018cb0d3e",
+      "encrypted_bytes": 9177467,
+      "encrypted_sha256": "c4004ad3fa6b1915d42f80a12f67e8f9e049d2b94a09a6670fbbe39d83a44a73"
+    },
+    {
+      "script": "Script 05",
+      "format": "Reels",
+      "status": "internally_approved",
+      "asset": "media/eng/script05/reels.mp4.enc",
+      "source_bytes": 10909068,
+      "source_sha256": "e788ccad08873d3a0d37ca16f7fc9050884993ab51b69d590a5bdf8bcc3307d7",
+      "encrypted_bytes": 10909084,
+      "encrypted_sha256": "f67f53dff2acecbd779531f36d62d86f913e1aed78170c18bc5fa24960042527"
+    },
+    {
+      "script": "Script 07",
+      "format": "16:9",
+      "status": "internally_approved",
+      "asset": "media/eng/script07/16x9.mp4.enc",
+      "source_bytes": 14814695,
+      "source_sha256": "643a33b6f0b326a7a6ce304ed6a75a918a19cbc095d18f5be1b196b85c03e9bb",
+      "encrypted_bytes": 14814711,
+      "encrypted_sha256": "8a41062601ce665884366cedcfdbc65eff014739993afe2e4cbe4d5c934f080a"
+    },
+    {
+      "script": "Script 07",
+      "format": "9:16",
+      "status": "internally_approved",
+      "asset": "media/eng/script07/9x16.mp4.enc",
+      "source_bytes": 18496379,
+      "source_sha256": "3f88887d783708c638f7a87eb3a7f429c0a73a4bb1f5140a15035004603d5b64",
+      "encrypted_bytes": 18496395,
+      "encrypted_sha256": "5651a1ccfd7065fc9a7adc5009afcda997f493697bf37f27fff132f09849aa08"
+    },
+    {
+      "script": "Script 07",
+      "format": "1:1",
+      "status": "internally_approved",
+      "asset": "media/eng/script07/1x1.mp4.enc",
+      "source_bytes": 10132054,
+      "source_sha256": "83279fe2d2f4f1ff9dba963ee7ffeb53e1ea2610f7ee8501f1ba4e87b55ba380",
+      "encrypted_bytes": 10132070,
+      "encrypted_sha256": "17b75c3c51f616e3c34c968fcbafbd0b30a7f58903f0b4c83a614f53c47fdce2"
+    },
+    {
+      "script": "Script 07",
+      "format": "Reels",
+      "status": "internally_approved",
+      "asset": "media/eng/script07/reels.mp4.enc",
+      "source_bytes": 12136955,
+      "source_sha256": "c600c6cdaa989796cb0d4286a829a10d8df147022e56b8a84d3b4c30bbb04624",
+      "encrypted_bytes": 12136971,
+      "encrypted_sha256": "12b5b4b92694b0fa89bc05e8ac5bb7acd5739be179bbc90f63160bb621fbbb2d"
+    },
+    {
+      "script": "Script 08",
+      "format": "16:9",
+      "status": "internally_approved",
+      "asset": "media/eng/script08/16x9.mp4.enc",
+      "source_bytes": 10356315,
+      "source_sha256": "6ab1c8d34a0dc0020bb7305bfd4ad96cae003caca133981f0bcacf389184e0be",
+      "encrypted_bytes": 10356331,
+      "encrypted_sha256": "9fed4358a3495c1d206ff01813dcce223141de0a2018fbcbd9450dc1d1bf4f8f"
+    },
+    {
+      "script": "Script 08",
+      "format": "9:16",
+      "status": "internally_approved",
+      "asset": "media/eng/script08/9x16.mp4.enc",
+      "source_bytes": 13123521,
+      "source_sha256": "113614635bea255c7ad30940a3a060d827040cddaf6b26e22c62e449e3625586",
+      "encrypted_bytes": 13123537,
+      "encrypted_sha256": "fc3fca5c38c21d121df990fdcf009c2f7fcaaa084038f4fab3428d9ee2f261ac"
+    },
+    {
+      "script": "Script 08",
+      "format": "1:1",
+      "status": "internally_approved",
+      "asset": "media/eng/script08/1x1.mp4.enc",
+      "source_bytes": 7426337,
+      "source_sha256": "5e3b4f2aeeb5b2d6df3e9b8df3d2ce252980d7e55f3810345b1faff42c6538f0",
+      "encrypted_bytes": 7426353,
+      "encrypted_sha256": "8756e211fb335c353bb2057c2eaa36f32ae3ad54fd7842d6c7cd5a8ed3d7b0b8"
+    },
+    {
+      "script": "Script 08",
+      "format": "Reels",
+      "status": "internally_approved",
+      "asset": "media/eng/script08/reels.mp4.enc",
+      "source_bytes": 8748302,
+      "source_sha256": "6867ef727b76c94388de7a6bff06a590014538f22727bee498c71e3b67f723e1",
+      "encrypted_bytes": 8748318,
+      "encrypted_sha256": "d2ade45e94263742d400a8c4c299ff467606203f5434e5054dc4b8262924a455"
+    },
+    {
+      "script": "Script 09",
+      "format": "16:9",
+      "status": "internally_approved",
+      "asset": "media/eng/script09/16x9.mp4.enc",
+      "source_bytes": 15634046,
+      "source_sha256": "8cc3ebbdf8311fa76047070958c971affde52479006d3f18d3d9cd153ec2e471",
+      "encrypted_bytes": 15634062,
+      "encrypted_sha256": "0578a3461838b17a4a75b3614621c4b7ea5d4231372107d49186441824572d34"
+    },
+    {
+      "script": "Script 09",
+      "format": "9:16",
+      "status": "internally_approved",
+      "asset": "media/eng/script09/9x16.mp4.enc",
+      "source_bytes": 18293582,
+      "source_sha256": "5acf761d3040aeef4f475e22162f6875066ef796691c4b6d28baf2dbb6113932",
+      "encrypted_bytes": 18293598,
+      "encrypted_sha256": "216707f38d1e3dbd294432dc33e453e8847c7e9e36ab1e6e6ce773a049e25636"
+    },
+    {
+      "script": "Script 09",
+      "format": "1:1",
+      "status": "internally_approved",
+      "asset": "media/eng/script09/1x1.mp4.enc",
+      "source_bytes": 10202939,
+      "source_sha256": "bc9dfc54ab4ad97145145e93f5c747d620200d3ced5b8c1ac5ff8e77e02c061f",
+      "encrypted_bytes": 10202955,
+      "encrypted_sha256": "df03d9f76e5634c0bc03750b160d7ff7d3c9d7959e6097ef95183b0b4e818f7e"
+    },
+    {
+      "script": "Script 09",
+      "format": "Reels",
+      "status": "internally_approved",
+      "asset": "media/eng/script09/reels.mp4.enc",
+      "source_bytes": 12338190,
+      "source_sha256": "0094e0eb7fed8eadf5a67258acd6f228ae84193d4f9fe05823800b13142aa9d6",
+      "encrypted_bytes": 12338206,
+      "encrypted_sha256": "33f80d810be3078d6a38f0eff6c54595ee7fdc3c8fab4fd55ae1ea2e5bfb0078"
+    }
+  ]
+}
