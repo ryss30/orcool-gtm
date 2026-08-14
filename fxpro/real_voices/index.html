@@ -58,6 +58,47 @@
         const clear = await crypto.subtle.decrypt({name:"AES-GCM",iv:fromB64(iv),tagLength:128}, key, fromB64(payload));
         const page = new TextDecoder().decode(clear);
         document.open(); document.write(page); document.close();
+        setTimeout(() => {
+          document.querySelector(".decision-section")?.remove();
+          const vietnamese = document.querySelector(".section-vn");
+          const arabic = document.querySelector(".section-ar");
+          const production = document.querySelector(".video-section");
+          const topActions = document.querySelector(".top-actions");
+          if (!vietnamese || !arabic || !production || !topActions) return;
+
+          const castingPanel = document.createElement("div");
+          castingPanel.className = "hub-panel";
+          castingPanel.dataset.hubPanel = "casting";
+          vietnamese.before(castingPanel);
+          castingPanel.append(vietnamese, arabic);
+
+          const productionPanel = document.createElement("div");
+          productionPanel.className = "hub-panel";
+          productionPanel.dataset.hubPanel = "production";
+          production.before(productionPanel);
+          productionPanel.append(production);
+
+          topActions.querySelector(".review-link")?.remove();
+          const tabs = document.createElement("div");
+          tabs.className = "hub-tabs";
+          tabs.setAttribute("role", "tablist");
+          tabs.setAttribute("aria-label", "FxPro review sections");
+          tabs.innerHTML = '<button class="hub-tab" type="button" role="tab" data-hub-tab="production">Production review</button><button class="hub-tab" type="button" role="tab" data-hub-tab="casting">Casting</button>';
+          topActions.prepend(tabs);
+
+          const tabButtons = [...tabs.querySelectorAll("[data-hub-tab]")];
+          const panels = [productionPanel, castingPanel];
+          const selectTab = name => {
+            tabButtons.forEach(button => button.setAttribute("aria-selected", button.dataset.hubTab === name ? "true" : "false"));
+            panels.forEach(panel => { panel.hidden = panel.dataset.hubPanel !== name; });
+          };
+          tabButtons.forEach(button => button.addEventListener("click", () => selectTab(button.dataset.hubTab)));
+          selectTab("production");
+
+          const style = document.createElement("style");
+          style.textContent = '.hub-tabs{display:inline-flex;align-items:center;gap:3px;padding:3px;border:1px solid #d8d5d0;border-radius:12px;background:rgba(255,255,255,.58)}.hub-tab{border:0;border-radius:8px;padding:8px 13px;color:#6b6e80;background:transparent;font:650 12px "Geist",sans-serif;cursor:pointer;transition:160ms ease}.hub-tab:hover{color:#443d3d}.hub-tab[aria-selected="true"]{color:#fff;background:#443d3d}.hub-tab:focus-visible{outline:2px solid #387fff;outline-offset:2px}.hub-panel[hidden]{display:none!important}@media(max-width:720px){.top-actions{flex-wrap:wrap;justify-content:flex-end}.hub-tabs{order:2}.hub-tab{padding:8px 10px}}';
+          document.head.append(style);
+        }, 0);
       } catch {
         error.textContent = "Incorrect password. Please try again.";
         input.select(); button.disabled = false; button.textContent = "Open review";
