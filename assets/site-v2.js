@@ -7,9 +7,9 @@
   var year = document.querySelector('[data-current-year]');
   if (year) year.textContent = new Date().getFullYear();
 
-  function track(name) {
+  function track(name, data) {
     if (window.umami && typeof window.umami.track === 'function') {
-      window.umami.track(name);
+      window.umami.track(name, data || {});
     }
   }
 
@@ -142,9 +142,12 @@
       var original = button.textContent;
       copyText(value).then(function () {
         var isPrompt = button.classList.contains('prompt-copy');
+        var client = button.getAttribute('data-copy-client');
+        var promptId = button.getAttribute('data-copy-prompt');
         button.textContent = 'Copied';
-        if (status) status.textContent = isPrompt ? 'First prompt copied.' : 'MCP URL copied. Add it in your client.';
-        track(isPrompt ? 'First MCP prompt copied' : 'MCP URL copied');
+        if (status) status.textContent = isPrompt && client ? client + ' prompt copied.' : (isPrompt ? 'Prompt copied.' : 'MCP URL copied. Add it in your client.');
+        if (isPrompt) track('mcp_prompt_copied', { client: client || 'unknown', prompt_id: promptId || 'unknown' });
+        else track('MCP URL copied');
         window.setTimeout(function () { button.textContent = original; }, 1600);
       }).catch(function () {
         if (status) status.textContent = 'Copy failed. Select the text and copy it manually.';
