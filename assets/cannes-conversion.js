@@ -393,7 +393,11 @@
       mode: 'Strategic synthesis · Limited preview',
       headline: 'Think with the market before you write.',
       library: 'These prompts use Claude for strategic synthesis while Orcool keeps the evidence boundary visible.',
-      setup: 'Connect the custom connector named Orcool in Claude. The workflows shown use an audited read-tool set; review connector permissions before use.',
+      connectTitle: 'Add Orcool to Claude',
+      setup: 'Open Customize → Connectors → + → Add custom connector. Name it Orcool, paste the endpoint, choose Add, then Connect.',
+      auth: 'Complete Orcool browser sign-in, then return to Claude.',
+      verify: 'Enable Orcool for this conversation from + → Connectors.',
+      verifyCommand: '+ → Connectors → Orcool',
       caveat: 'Availability depends on your Claude plan and workspace policy.',
       steps: ['Email link', 'Connect Orcool', 'Start a strategy thread'],
       prompts: [
@@ -418,11 +422,37 @@
       ]
     },
     Codex: {
-      mode: 'Audits & working artifacts · Validated',
+      mode: 'Read & audit workflow · Validated',
       headline: 'Turn evidence into an inspectable working file.',
       library: 'Codex can turn read-only Orcool evidence into auditable briefs, matrices and claim-gate artifacts in your workspace.',
-      setup: 'Connect the `.orcool.com` app in the Codex task that owns the output. The working prompts call Orcool first and restrict the evidence read to list/get tools.',
-      caveat: 'Review local file changes separately. Orcool does not write source records or infer performance results.',
+      connectTitle: 'Add the Orcool MCP server to Codex',
+      setup: 'Open Settings → MCP servers → Add server. Choose Streamable HTTP, name the server orcool, paste the endpoint, save, then restart Codex.',
+      auth: 'Choose Authenticate when Codex shows the Orcool server. Your browser opens Orcool sign-in.',
+      verify: 'Open /mcp and confirm that the server named orcool is enabled before running the prompt.',
+      verifyCommand: '/mcp',
+      caveat: 'Starter prompts use an audited read-tool allowlist. Review local file changes and connector permissions separately.',
+      surfaces: {
+        Desktop: {
+          setup: 'Open Settings → MCP servers → Add server. Choose Streamable HTTP, name the server orcool, paste the endpoint, save, then restart Codex.',
+          auth: 'Choose Authenticate when Codex shows the Orcool server. Your browser opens Orcool sign-in.',
+          verify: 'Open /mcp and confirm that the server named orcool is enabled before running the prompt.',
+          verifyCommand: '/mcp'
+        },
+        CLI: {
+          setup: 'Add the remote server from your terminal. Codex stores the shared MCP configuration for the same host.',
+          setupCommand: 'codex mcp add orcool --url https://mcp.orcool.com',
+          auth: 'Authenticate the server from your terminal. The command opens Orcool browser sign-in.',
+          authCommand: 'codex mcp login orcool',
+          verify: 'Confirm that orcool is listed and enabled before running the working prompt.',
+          verifyCommand: 'codex mcp list'
+        },
+        IDE: {
+          setup: 'Open the gear menu → MCP servers → Add server. Choose Streamable HTTP, name it orcool, paste the endpoint, save, then restart the extension.',
+          auth: 'Choose Authenticate for the Orcool server and complete browser sign-in.',
+          verify: 'Open the MCP servers panel and confirm that orcool is enabled for the task.',
+          verifyCommand: 'MCP servers → orcool → Enabled'
+        }
+      },
       steps: ['Email link', 'Connect Orcool', 'Run a scoped task'],
       prompts: [
         {
@@ -449,7 +479,11 @@
       mode: 'Evidence inside the workspace · Workflow template',
       headline: 'Bring market truth into the brief you are editing.',
       library: 'Cursor compares the files already in your workspace with Orcool evidence before proposing a precise patch.',
-      setup: 'Configure the Orcool MCP server as `orcool` in the Cursor workspace containing the brief or campaign schema. This remains a workflow template until a clean Cursor replay passes.',
+      connectTitle: 'Add the Orcool MCP server to Cursor',
+      setup: 'Open Cursor Settings → MCP → Add server. Add orcool as a remote Streamable HTTP server and paste the endpoint.',
+      auth: 'Choose Connect or Authenticate for orcool and complete Orcool browser sign-in.',
+      verify: 'Confirm that orcool and its tools appear as available in the MCP panel before asking Cursor to use them.',
+      verifyCommand: 'Settings → MCP → orcool',
       caveat: 'Cursor conformance is not yet validated; custom MCP availability depends on the version and workspace policy.',
       steps: ['Email link', 'Connect Orcool', 'Open the working repo'],
       prompts: [
@@ -523,16 +557,67 @@
       var mode = agentAccessRoot.querySelector('[data-agent-mode]');
       var headline = agentAccessRoot.querySelector('[data-agent-headline]');
       var library = agentAccessRoot.querySelector('[data-agent-library-copy]');
-      var setupSummary = agentAccessRoot.querySelector('[data-agent-setup-summary]');
+      var connectTitle = agentAccessRoot.querySelector('[data-agent-connect-title]');
       var setup = agentAccessRoot.querySelector('[data-agent-setup]');
+      var auth = agentAccessRoot.querySelector('[data-agent-auth]');
+      var verify = agentAccessRoot.querySelector('[data-agent-verify]');
+      var verifyCommand = agentAccessRoot.querySelector('[data-agent-verify-command]');
+      var surfacePicker = agentAccessRoot.querySelector('[data-agent-surface-picker]');
       var caveat = agentAccessRoot.querySelector('[data-agent-caveat]');
       var formLabel = agentAccessRoot.querySelector('[data-agent-form-label]');
       var steps = Array.prototype.slice.call(agentAccessRoot.querySelectorAll('[data-agent-step]'));
       if (mode) mode.textContent = access.mode;
       if (headline) headline.textContent = access.headline;
       if (library) library.textContent = access.library;
-      if (setupSummary) setupSummary.textContent = agent + ' setup';
-      if (setup) setup.textContent = access.setup;
+      if (connectTitle) connectTitle.textContent = access.connectTitle;
+      function renderSurface(surfaceName) {
+        var surface = access.surfaces && access.surfaces[surfaceName] ? access.surfaces[surfaceName] : access;
+        if (setup) {
+          setup.textContent = surface.setup;
+          if (surface.setupCommand) {
+            var setupCode = document.createElement('code');
+            setupCode.className = 'pc5-inline-command';
+            setupCode.textContent = surface.setupCommand;
+            setup.appendChild(setupCode);
+          }
+        }
+        if (auth) {
+          auth.textContent = surface.auth;
+          if (surface.authCommand) {
+            var authCode = document.createElement('code');
+            authCode.className = 'pc5-inline-command';
+            authCode.textContent = surface.authCommand;
+            auth.appendChild(authCode);
+          }
+        }
+        if (verify) verify.textContent = surface.verify;
+        if (verifyCommand) verifyCommand.textContent = surface.verifyCommand;
+      }
+      if (surfacePicker) {
+        surfacePicker.replaceChildren();
+        var surfaceNames = access.surfaces ? Object.keys(access.surfaces) : [];
+        surfacePicker.hidden = surfaceNames.length === 0;
+        surfaceNames.forEach(function (surfaceName, index) {
+          var surfaceButton = document.createElement('button');
+          surfaceButton.type = 'button';
+          surfaceButton.textContent = surfaceName;
+          surfaceButton.className = index === 0 ? 'is-active' : '';
+          surfaceButton.setAttribute('aria-pressed', index === 0 ? 'true' : 'false');
+          surfaceButton.addEventListener('click', function () {
+            Array.prototype.slice.call(surfacePicker.querySelectorAll('button')).forEach(function (button) {
+              var active = button === surfaceButton;
+              button.classList.toggle('is-active', active);
+              button.setAttribute('aria-pressed', active ? 'true' : 'false');
+            });
+            renderSurface(surfaceName);
+            if (interaction) track('agent_surface_selected', { client: agent, surface: surfaceName });
+          });
+          surfacePicker.appendChild(surfaceButton);
+        });
+        renderSurface(surfaceNames[0]);
+      } else {
+        renderSurface();
+      }
       if (caveat) caveat.textContent = access.caveat;
       if (formLabel) formLabel.textContent = agent;
       steps.forEach(function (step, index) { step.textContent = access.steps[index] || ''; });
