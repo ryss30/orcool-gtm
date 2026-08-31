@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Approval latency is part of Time-to-Winner | Orcool</title>
+<meta name="description" content="Creative teams should count approval latency inside Time-to-Winner, separate it from production and preserve the checks that make a durable win credible.">
+<link rel="canonical" href="https://get.orcool.com/blog/approval-latency-time-to-winner/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Orcool">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Orcool">
+<meta property="og:title" content="Approval latency is part of Time-to-Winner">
+<meta property="og:description" content="Measure the hidden clock between evidence, human approval and launch without weakening the decision gate.">
+<meta property="og:url" content="https://get.orcool.com/blog/approval-latency-time-to-winner/">
+<meta property="og:image" content="https://get.orcool.com/blog/approval-latency-time-to-winner/og-image.png">
+<meta property="article:published_time" content="2026-08-31T09:00:00-07:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Approval latency is part of Time-to-Winner">
+<meta name="twitter:description" content="The creative is ready. The decision is not. That waiting time still belongs on the clock.">
+<meta name="twitter:image" content="https://get.orcool.com/blog/approval-latency-time-to-winner/og-image.png">
+
+<link rel="icon" href="/orcool-mark-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;family=Newsreader:ital@1&amp;display=swap" rel="stylesheet">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="40fd1792-b48f-4d93-867e-00ff641a0677"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Approval latency is part of Time-to-Winner",
+  "description": "How to count approval latency inside Time-to-Winner while preserving human ownership, claims review, rights checks and durability validation.",
+  "image": "https://get.orcool.com/blog/approval-latency-time-to-winner/og-image.png",
+  "datePublished": "2026-08-31",
+  "dateModified": "2026-08-31",
+  "author": { "@type": "Organization", "name": "Orcool", "url": "https://get.orcool.com" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Orcool",
+    "logo": { "@type": "ImageObject", "url": "https://get.orcool.com/orcool-logo.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://get.orcool.com/blog/approval-latency-time-to-winner/" },
+  "keywords": "approval latency, Time-to-Winner, creative approval workflow, creative operations, decision latency, durable winner"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is approval latency in creative operations?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Approval latency is the calendar time between a reviewable creative hypothesis reaching the accountable decision owner and that owner recording a clear approve, revise or stop decision." }
+    },
+    {
+      "@type": "Question",
+      "name": "Should approval time count toward Time-to-Winner?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Time-to-Winner counts calendar days from cycle start to a result that clears the advertiser's KPI gate and holds. Removing approval time would hide a real part of the operating system that produced the outcome." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does faster approval always improve creative performance?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Faster approval can shorten the path to a valid test, but it cannot replace claims review, rights clearance, local judgment, an accountable owner or market validation. The goal is less unowned waiting, not fewer safeguards." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you reduce approval latency without rushing the decision?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Give one accountable owner a bounded decision packet: the source evidence, what is observed versus inferred, the exact version, the claim and rights constraints, the requested decision and the response deadline. Record the decision and reason in the same lineage." }
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --bg:#f8f7f5; --ink:#443D3D; --ink-strong:#1a1614; --line:#e7e4e0;
+    --red:#FA3810; --blue:#387FFF; --green:#45B43B; --yellow:#FFB516;
+    --card:#ffffff;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Geist',system-ui,-apple-system,sans-serif;font-size:18px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .mono{font-family:'Geist Mono',ui-monospace,monospace}
+  a{color:var(--blue);text-decoration:none}
+  a:hover{text-decoration:underline}
+  header.site{display:flex;align-items:center;justify-content:space-between;max-width:1080px;margin:0 auto;padding:22px 24px}
+  header.site img{height:26px;display:block}
+  .nav-right{display:flex;gap:20px;align-items:center;font-size:15px}
+  .nav-right a{color:var(--ink)}
+  .nav-right a.pill{background:var(--ink);color:#fff;padding:8px 16px;border-radius:10px;font-size:14px}
+  .nav-right a.pill:hover{background:#5c5453;text-decoration:none}
+  main{max-width:720px;margin:0 auto;padding:24px 24px 80px}
+  .eyebrow{font-family:'Geist Mono',monospace;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin:28px 0 14px}
+  h1{font-size:40px;line-height:1.12;font-weight:700;color:var(--ink-strong);margin:0 0 18px;letter-spacing:-.02em}
+  .byline{font-size:14px;color:#8a827e;margin-bottom:8px}
+  .tldr{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin:30px 0 8px}
+  .tldr h2{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;font-family:'Geist Mono',monospace;color:var(--ink);margin:0 0 12px}
+  .tldr ul{margin:0;padding-left:20px}
+  .tldr li{margin:8px 0}
+  h2{font-size:26px;line-height:1.2;font-weight:650;color:var(--ink-strong);margin:44px 0 14px;letter-spacing:-.01em}
+  h3{font-size:19px;font-weight:600;color:var(--ink-strong);margin:28px 0 8px}
+  p{margin:16px 0}
+  strong{color:var(--ink-strong);font-weight:600}
+  table{width:100%;border-collapse:collapse;margin:26px 0;font-size:16px}
+  th,td{text-align:left;padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#8a827e;font-weight:500}
+  .callout{border-left:3px solid var(--yellow);padding:4px 0 4px 20px;margin:26px 0;color:var(--ink-strong);font-size:19px}
+  .faq h3{margin:24px 0 6px}
+  .faq p{margin:6px 0 0;color:var(--ink)}
+  .cta{background:#000;color:#fff;border-radius:20px;padding:36px 32px;margin:48px 0 0;text-align:center}
+  .cta h2{color:#fff;margin:0 0 10px}
+  .cta p{color:#c9c4c0;margin:0 auto 22px;max-width:500px}
+  .cta a.book{display:inline-block;background:#fff;color:#000;font-weight:600;padding:13px 26px;border-radius:12px}
+  .cta a.book:hover{background:#eee;text-decoration:none}
+  .disclaimer{font-size:13.5px;color:#9a938e;border-top:1px solid var(--line);margin-top:40px;padding-top:18px}
+  footer.site{border-top:1px solid var(--line);padding:26px 24px;max-width:1080px;margin:40px auto 0;display:flex;justify-content:space-between;font-size:13px;color:#9a938e;flex-wrap:wrap;gap:10px}
+  footer.site a{color:#9a938e}
+  @media(max-width:600px){h1{font-size:31px}main{padding:16px 20px 60px}body{font-size:17px}table{font-size:14px}th,td{padding:10px 8px}}
+</style>
+</head>
+<body data-article-slug="approval-latency-time-to-winner">
+
+<header class="site">
+  <a href="/"><img src="/orcool-logo.png" alt="Orcool"></a>
+  <nav class="nav-right">
+    <a href="/blog/">Blog</a>
+    <a href="/" class="pill">Connect</a>
+  </nav>
+</header>
+
+<main>
+  <article>
+    <p class="eyebrow">Decision operations · Time-to-Winner</p>
+    <h1>Approval latency is part of Time-to-Winner</h1>
+    <p class="byline">By <strong>Orcool</strong> <span class="mono">·</span> August 31, 2026 <span class="mono">·</span> 7 min read</p>
+
+    <div class="tldr">
+      <h2>The short version</h2>
+      <ul>
+        <li>The Time-to-Winner clock does not pause when work becomes <strong>ready for review</strong>.</li>
+        <li>Separate <strong>production time, approval latency, launch time and durability validation</strong> so the real bottleneck stays visible.</li>
+        <li>Reduce unowned waiting with one decision owner, one exact version, one bounded question and one recorded reason.</li>
+        <li>Do not confuse faster approval with a valid winner. Claims, rights, local judgment, the advertiser's KPI gate and durability still hold.</li>
+      </ul>
+    </div>
+
+    <p>A creative team can finish the work on Tuesday and still learn nothing until Friday.</p>
+    <p>The file is ready. The evidence is attached. Three people have been asked for feedback. Nobody knows whose answer closes the decision. Comments arrive in separate channels, a new version appears, and the launch moves by another day.</p>
+    <p>Most operating reports call those three days review time, as if the clock belongs to someone else. It does not. If the goal is a durable winner, <strong>approval latency is part of Time-to-Winner</strong>.</p>
+
+    <h2>The clock does not stop at ready for review</h2>
+    <p><a href="/blog/what-is-time-to-winner/">Time-to-Winner</a> counts calendar days from the start of a creative cycle to a result that clears the advertiser's KPI gate and holds in delivery. Calendar days include weekends, production, review, launch and the wait for comparable market evidence.</p>
+    <p>Removing approval time makes the number look better without making the operating system faster. It also points improvement work at the wrong place. A team may automate production while the real delay sits between a reviewable hypothesis and an accountable decision.</p>
+    <p class="callout">If the creative is ready but nobody can say yes, no or revise, production is not the bottleneck.</p>
+
+    <h2>Separate the clocks before trying to shorten them</h2>
+    <p>One total calendar number keeps Time-to-Winner honest. A useful diagnosis still needs the journey split into distinct intervals.</p>
+
+    <table>
+      <thead>
+        <tr><th>Interval</th><th>Starts</th><th>Stops</th><th>What it reveals</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Evidence to review</strong></td><td>A bounded market question opens.</td><td>An exact hypothesis is ready for a decision.</td><td>Research and preparation speed.</td></tr>
+        <tr><td><strong>Approval latency</strong></td><td>The decision packet reaches its owner.</td><td>Approve, revise or stop is recorded.</td><td>Decision ownership and review friction.</td></tr>
+        <tr><td><strong>Decision to launch</strong></td><td>The exact version is approved.</td><td>That version enters paid delivery.</td><td>Claims, rights and trafficking readiness.</td></tr>
+        <tr><td><strong>Launch to durable outcome</strong></td><td>Comparable delivery begins.</td><td>The KPI gate clears and the result holds.</td><td>Market response and durability.</td></tr>
+      </tbody>
+    </table>
+
+    <p>These intervals answer different questions. Combining them into production speed hides the decision layer. Treating launch as the finish hides the market layer. Reporting a fast first spike without durability games the royal metric into a safe, shallow number.</p>
+
+    <h2>Approval latency is not automatically waste</h2>
+    <p>Some review takes time because it should.</p>
+    <p>A claim may need evidence. A real voice may need scope-specific rights. A local reviewer may catch a cultural assumption that the central team cannot see. The advertiser must own the business KPI and the final launch decision. Removing those checks would make the clock shorter and the decision weaker.</p>
+    <p>The avoidable part is <strong>unowned waiting</strong>:</p>
+    <ul>
+      <li>the request has no single accountable owner;</li>
+      <li>reviewers are looking at different versions;</li>
+      <li>the question mixes taste, compliance, rights and performance prediction;</li>
+      <li>evidence and inference are presented as the same thing;</li>
+      <li>feedback arrives without a final approve, revise or stop state.</li>
+    </ul>
+    <p>A useful system does not pressure people to click approve faster. It removes ambiguity about what decision is needed, who owns it and which exact version the answer applies to.</p>
+
+    <h2>Give the owner a decision packet, not a folder</h2>
+    <p>The fastest review surface is rarely the one with the fewest pixels. It is the one that makes the decision legible.</p>
+    <p>A bounded decision packet should include six things.</p>
+
+    <h3>1. The source evidence</h3>
+    <p>Show where the hypothesis came from. Keep observed facts separate from inference and unsupported possibilities. The owner should be able to challenge the premise before judging the expression.</p>
+
+    <h3>2. The exact version</h3>
+    <p>Attach the decision to one immutable version, not the latest file in a changing folder. If the work changes after approval, the prior approval cannot silently move with it.</p>
+
+    <h3>3. The requested decision</h3>
+    <p>Ask for approve, revise or stop. A broad request for thoughts creates commentary, not closure. If revision is needed, record which layer changes: narrative, hook, proof, claim, expression or call to action.</p>
+
+    <h3>4. The constraints</h3>
+    <p>Make claims, rights, local credibility and channel limits visible before the decision. A reminder in a separate document is not a binding constraint.</p>
+
+    <h3>5. The owner and deadline</h3>
+    <p>One accountable person closes the decision. Other reviewers can advise, but responsibility cannot be averaged across a group. The deadline belongs to the requested decision, not to an open-ended discussion.</p>
+
+    <h3>6. The reason</h3>
+    <p>Store a short reason with the answer. That reason becomes a label for the fast expert loop. Later, paid delivery can confirm the judgment, expose a blind spot or show that the test was inconclusive.</p>
+
+    <h2>Measure delay without rewarding reckless speed</h2>
+    <p>A single approval-time average is easy to misuse. Teams begin celebrating quick decisions, regardless of whether the right person reviewed the right version with the right evidence.</p>
+    <p>Track the timestamps, but keep the quality conditions beside them:</p>
+    <ul>
+      <li>when the decision packet became reviewable;</li>
+      <li>when the accountable owner first reviewed it;</li>
+      <li>when approve, revise or stop was recorded;</li>
+      <li>whether claims and rights were cleared for that exact version;</li>
+      <li>when the approved version launched;</li>
+      <li>when the business KPI gate cleared;</li>
+      <li>when durability was confirmed for the agreed window.</li>
+    </ul>
+    <p>The point is not to produce a prettier dashboard. It is to locate the controllable delay without confusing a recommendation, a human decision and a market outcome.</p>
+
+    <h2>Shorten the queue, not the safeguards</h2>
+    <p>When approval latency is visible, the next intervention becomes specific.</p>
+    <p>If the owner sees the packet late, fix routing. If the packet triggers endless commentary, narrow the decision. If reviewers disagree about the version, lock lineage. If claims or rights arrive after creative review, move those constraints earlier. If the decision is fast but launch waits, diagnose trafficking rather than approval.</p>
+    <p>None of these changes predicts a winner. They shorten the path to a valid test while preserving the conditions that make the result useful.</p>
+    <p>This is the positive case for evidence-to-decision lineage. Market evidence informs a hypothesis. A qualified person owns the judgment. The advertiser approves and funds delivery. The external KPI decides whether the exact launched version won. Durability decides whether that win belongs in the next cycle.</p>
+    <p><a href="/blog/define-winner-before-production/">Define the winner gate before production</a>, then keep every calendar day visible until the result clears it and holds.</p>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <h3>What is approval latency in creative operations?</h3>
+      <p>Approval latency is the calendar time between a reviewable creative hypothesis reaching the accountable decision owner and that owner recording a clear approve, revise or stop decision.</p>
+
+      <h3>Should approval time count toward Time-to-Winner?</h3>
+      <p>Yes. Time-to-Winner counts calendar days from cycle start to a result that clears the advertiser's KPI gate and holds. Removing approval time would hide a real part of the operating system that produced the outcome.</p>
+
+      <h3>Does faster approval always improve creative performance?</h3>
+      <p>No. Faster approval can shorten the path to a valid test, but it cannot replace claims review, rights clearance, local judgment, an accountable owner or market validation. The goal is less unowned waiting, not fewer safeguards.</p>
+
+      <h3>How do you reduce approval latency without rushing the decision?</h3>
+      <p>Give one accountable owner a bounded decision packet: the source evidence, what is observed versus inferred, the exact version, the claim and rights constraints, the requested decision and the response deadline. Record the decision and reason in the same lineage.</p>
+    </div>
+
+    <p class="disclaimer">Methodology note: this article describes an operating protocol, not a performance benchmark. No approval-time reduction, client result or media lift is claimed. The advertiser's pre-agreed KPI gate and durability window remain the authority for winner language.</p>
+
+    <div class="cta">
+      <h2>Bring evidence to the decision, not another dashboard.</h2>
+      <p>Start with 3 Evidence Runs in the agent you already use. The Orcool MCP trial is $0 to start, with no card. Starter workflows are read-only by design.</p>
+      <a class="book" href="https://get.orcool.com/?utm_source=blog&amp;utm_medium=article&amp;utm_campaign=approval-latency-time-to-winner#connect">Connect the MCP</a>
+    </div>
+  </article>
+</main>
+
+<footer class="site">
+  <span>© 2026 Orcool. The fastest path to a winning ad.</span>
+  <span><a href="/blog/">Blog</a> &nbsp; <a href="/">Home</a></span>
+</footer>
+
+<script>
+(function(){
+  var articleSlug = document.body.dataset.articleSlug || "approval-latency-time-to-winner";
+  function fire(name, target){
+    return function(){
+      if(window.umami){
+        window.umami.track(name, {
+          article_slug: articleSlug,
+          source: "blog_article",
+          target: target
+        });
+      }
+    };
+  }
+  document.querySelectorAll('a.book, a.button, a[href*="#connect"]').forEach(function(a){
+    var label = (a.textContent || "").toLowerCase();
+    var href = a.getAttribute("href") || "";
+    var isConnect = label.indexOf("mcp") !== -1 || label.indexOf("connect") !== -1 || href.indexOf("#engine") !== -1 || href.indexOf("#connect") !== -1;
+    a.addEventListener("click", fire(isConnect ? "Connect click" : "Blog CTA click", isConnect ? "mcp_connect" : "performance_capital"));
+  });
+  var magicForm = document.getElementById("magic-link-form");
+  if(magicForm){ magicForm.addEventListener("submit", fire("Connect click", "magic_link")); }
+})();
+</script>
+</body>
+</html>
