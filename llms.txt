@@ -1,12 +1,19 @@
 # Orcool
 
-> Orcool is a creative decision engine: it learns a brand's taste and returns ranked, production-ready angles to that brand's stack, getting faster to a winner with every yes or no. For teams without their own production engine, the same engine also delivers finished, performing videos end to end; that service tail funds the build, it is not the product's identity. The metric that matters is Time-to-Winner, the number of days from a fresh market signal to a concept that clears a client's KPI gate and holds, always paired with durability.
+> Orcool is a creative decision engine. It connects source-visible market evidence, accountable human judgment, exact-version lineage and comparable paid-delivery outcomes. Orcool does not predict or declare a winner. The advertiser's pre-agreed business KPI and durability condition do.
+
+## Product truth
+- MCP provides market evidence.
+- People provide local judgment and accountable approval.
+- Paid delivery provides the decision.
+- Time-to-Winner counts calendar days to a result that clears the advertiser's KPI gate and holds. It is always reported with durability.
 
 ## Product
-- [Home](https://get.orcool.com/): for GTM engineers and growth teams; Alerts, Patterns, Reports
-- [ChatGPT / OpenAI Ads](https://get.orcool.com/chatgpt/): read first entry point for marketers running OpenAI Ads
-- [Agencies](https://get.orcool.com/agency/): write tier access and the Brand Lens review loop, for agencies running their own production
-- [Global expansion](https://get.orcool.com/global/): local signals in, local winners out, for teams entering unfamiliar markets
+- [Home and Orcool MCP](https://get.orcool.com/): teams with their own production and live media can start with 3 Evidence Runs, no card. Standard includes 25 Evidence Runs, 1 brand workspace and 1 active market for $20 per month. Starter workflows are read-only by design. Video generation and media buying are not included.
+- [Performance Capital](https://get.orcool.com/performance-capital/): selected advertisers can apply for a scoped funded-creative test. Scope, rights and commercial terms are agreed before production. The advertiser approves claims, launches and funds media, and returns comparable outcomes.
+- [ChatGPT and OpenAI Ads](https://get.orcool.com/chatgpt/): a read-first entry point for marketers working on conversational advertising.
+- [Agencies](https://get.orcool.com/agency/): evidence and Brand Lens workflows for agencies with their own production and live media.
+- [Global expansion](https://get.orcool.com/global/): local evidence and qualified local judgment for teams entering unfamiliar markets.
 - [Mobile UA / gaming apps](https://get.orcool.com/gaming-ua/)
 - [Fintech apps](https://get.orcool.com/fintech/)
 - [Wellness / health apps](https://get.orcool.com/wellness/)
@@ -16,8 +23,15 @@
 - [Mobility apps](https://get.orcool.com/mobility/)
 
 ## Blog
-- [Blog index](https://get.orcool.com/blog/): original data and mechanics posts on ad creative durability, the Brand Lens loop, and Time-to-Winner
+- [Creative decision systems](https://get.orcool.com/blog/): the canonical Orcool Field Notes hub.
+- [What is Time-to-Winner?](https://get.orcool.com/blog/what-is-time-to-winner/): the metric definition, including the advertiser-owned KPI gate and durability.
+- [How Brand Lens learns](https://get.orcool.com/blog/creative-director-no-training-data/): why approvals, rejections and reasons teach a brand-specific decision boundary.
+- [Off-brand versus unfamiliar](https://get.orcool.com/blog/off-brand-vs-unfamiliar-creative/): a decision protocol that separates known violations from credible unfamiliar hypotheses.
+- [Evidence to paid delivery](https://get.orcool.com/blog/from-signal-to-spend/): the handoffs from market evidence to an externally validated result.
+- [Creative durability data](https://get.orcool.com/blog/the-6-percent-problem/): methodology and findings from a 1,061-creative Meta Ad Library panel.
 
-## Notes
+## Limits
 - Client names are not published here; case references are described by category (for example "a travel eSIM app", "a mobility app").
-- Orcool does not sell standalone creative concepts or scripts by subscription. Briefs and angles are produced only inside a client's own Brand Lens review loop, gated by that client's pick/skip decisions.
+- Orcool does not sell standalone creative concepts or scripts by subscription.
+- An Evidence Run returns evidence, observed versus inferred versus unsupported claims, one action and missing inputs for one bounded brand and market question.
+- No page should be read as a guarantee of performance, autonomous media buying or a predicted winner.

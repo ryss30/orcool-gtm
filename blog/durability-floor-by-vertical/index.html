@@ -34,7 +34,7 @@
   "description": "We split our 1,061-ad Meta durability panel by vertical instead of format. Subscription creatives run a 283-day p75 lifespan. Ecommerce DTC creatives: 45 days, a six-times gap before format is even chosen.",
   "image": "https://get.orcool.com/og-image.png",
   "datePublished": "2026-07-21",
-  "dateModified": "2026-07-21",
+  "dateModified": "2026-09-01",
   "author": { "@type": "Organization", "name": "Orcool", "url": "https://get.orcool.com" },
   "publisher": {
     "@type": "Organization",
@@ -157,7 +157,7 @@
   }
 </style>
 </head>
-<body>
+<body data-article-slug="durability-floor-by-vertical">
 
 <header class="site">
   <a href="/"><img src="/orcool-logo.png" alt="Orcool"></a>
@@ -281,8 +281,8 @@
 
     <div class="cta">
       <h2>See what's winning in your market, in your chat</h2>
-      <p>Add Orcool to Claude, ChatGPT, or Cursor. Paste one URL, sign in with a magic link, and your competitor hooks, category patterns and your own reviews come back as a tool call. Free for two weeks, no card.</p>
-      <a class="book" href="https://get.orcool.com/#connect">Connect the MCP</a>
+      <p>Start with 3 Evidence Runs in the agent you already use. The Orcool MCP trial is $0 to start, with no card. Starter workflows are read-only by design.</p>
+      <a class="book" href="https://get.orcool.com/?utm_source=blog&amp;utm_medium=article&amp;utm_campaign=durability-floor-by-vertical#connect">Connect the MCP</a>
     </div>
   </article>
 </main>
@@ -294,8 +294,12 @@
 
 <script>
 (function(){
-  function fire(n){return function(){if(window.umami){window.umami.track(n);}};}
-  document.querySelectorAll('a[href*="#connect"]').forEach(function(a){a.addEventListener('click',fire('Connect click'));});
+  var articleSlug = document.body.dataset.articleSlug || "durability-floor-by-vertical";
+  document.querySelectorAll('a[href*="#connect"]').forEach(function(a){
+    a.addEventListener('click', function(){
+      if(window.umami){window.umami.track('Connect click',{article_slug:articleSlug,source:'blog_article',target:'mcp_connect'});}
+    });
+  });
 })();
 </script>
 </body>
