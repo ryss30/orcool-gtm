@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <filter id="blur" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="72"/></filter>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fa3810"/>
+      <stop offset="0.36" stop-color="#ffb516"/>
+      <stop offset="0.7" stop-color="#45b43b"/>
+      <stop offset="1" stop-color="#387fff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#f8f7f5"/>
+  <rect x="0" y="0" width="14" height="630" fill="#fa3810"/>
+  <circle cx="1060" cy="620" r="330" fill="url(#glow)" opacity="0.48" filter="url(#blur)"/>
+  <text x="72" y="82" fill="#171515" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" letter-spacing="4">ORCOOL</text>
+  <text x="1128" y="82" text-anchor="end" fill="#706b68" font-family="ui-monospace, monospace" font-size="15">get.orcool.com</text>
+  <text x="72" y="158" fill="#fa3810" font-family="ui-monospace, monospace" font-size="16" font-weight="700" letter-spacing="2.6">EVIDENCE RUNS</text>
+  <text x="72" y="220" fill="#171515" font-family="Arial, Helvetica, sans-serif" font-size="70" font-weight="700" letter-spacing="-2.4">Creative research needs a</text>
+  <text x="72" y="298" fill="#171515" font-family="Arial, Helvetica, sans-serif" font-size="70" font-weight="700" letter-spacing="-2.4">decision question</text>
+  <line x1="72" y1="520" x2="1128" y2="520" stroke="#171515" stroke-opacity="0.18"/>
+  <text x="72" y="570" fill="#4f4a47" font-family="Arial, Helvetica, sans-serif" font-size="22">One bounded question. Source-visible evidence. One accountable action.</text>
+</svg>
