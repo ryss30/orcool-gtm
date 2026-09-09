@@ -390,15 +390,8 @@
   var agentPromptCards = Array.prototype.slice.call(document.querySelectorAll('[data-agent-prompt-card]'));
   var agentAccessContent = {
     Claude: {
-      mode: 'Strategic synthesis · Limited preview',
       headline: 'Think with the market before you write.',
       library: 'These prompts use Claude for strategic synthesis while Orcool keeps the evidence boundary visible.',
-      connectTitle: 'Add Orcool to Claude',
-      setup: 'Open Customize → Connectors → + → Add custom connector. Name it Orcool, paste the endpoint, choose Add, then Connect.',
-      auth: 'Complete Orcool browser sign-in, then return to Claude.',
-      verify: 'Enable Orcool for this conversation from + → Connectors.',
-      verifyCommand: '+ → Connectors → Orcool',
-      caveat: 'Availability depends on your Claude plan and workspace policy.',
       steps: ['Email link', 'Connect Orcool', 'Start a strategy thread'],
       prompts: [
         {
@@ -422,37 +415,8 @@
       ]
     },
     Codex: {
-      mode: 'Read & audit workflow · Validated',
       headline: 'Turn evidence into an inspectable working file.',
       library: 'Codex can turn read-only Orcool evidence into auditable briefs, matrices and claim-gate artifacts in your workspace.',
-      connectTitle: 'Add the Orcool MCP server to Codex',
-      setup: 'Open Settings → MCP servers → Add server. Choose Streamable HTTP, name the server orcool, paste the endpoint, save, then restart Codex.',
-      auth: 'Choose Authenticate when Codex shows the Orcool server. Your browser opens Orcool sign-in.',
-      verify: 'Open /mcp and confirm that the server named orcool is enabled before running the prompt.',
-      verifyCommand: '/mcp',
-      caveat: 'Starter prompts use an audited read-tool allowlist. Review local file changes and connector permissions separately.',
-      surfaces: {
-        Desktop: {
-          setup: 'Open Settings → MCP servers → Add server. Choose Streamable HTTP, name the server orcool, paste the endpoint, save, then restart Codex.',
-          auth: 'Choose Authenticate when Codex shows the Orcool server. Your browser opens Orcool sign-in.',
-          verify: 'Open /mcp and confirm that the server named orcool is enabled before running the prompt.',
-          verifyCommand: '/mcp'
-        },
-        CLI: {
-          setup: 'Add the remote server from your terminal. Codex stores the shared MCP configuration for the same host.',
-          setupCommand: 'codex mcp add orcool --url https://mcp.orcool.com',
-          auth: 'Authenticate the server from your terminal. The command opens Orcool browser sign-in.',
-          authCommand: 'codex mcp login orcool',
-          verify: 'Confirm that orcool is listed and enabled before running the working prompt.',
-          verifyCommand: 'codex mcp list'
-        },
-        IDE: {
-          setup: 'Open the gear menu → MCP servers → Add server. Choose Streamable HTTP, name it orcool, paste the endpoint, save, then restart the extension.',
-          auth: 'Choose Authenticate for the Orcool server and complete browser sign-in.',
-          verify: 'Open the MCP servers panel and confirm that orcool is enabled for the task.',
-          verifyCommand: 'MCP servers → orcool → Enabled'
-        }
-      },
       steps: ['Email link', 'Connect Orcool', 'Run a scoped task'],
       prompts: [
         {
@@ -476,15 +440,8 @@
       ]
     },
     Cursor: {
-      mode: 'Evidence inside the workspace · Workflow template',
       headline: 'Bring market truth into the brief you are editing.',
       library: 'Cursor compares the files already in your workspace with Orcool evidence before proposing a precise patch.',
-      connectTitle: 'Add the Orcool MCP server to Cursor',
-      setup: 'Open Cursor Settings → MCP → Add server. Add orcool as a remote Streamable HTTP server and paste the endpoint.',
-      auth: 'Choose Connect or Authenticate for orcool and complete Orcool browser sign-in.',
-      verify: 'Confirm that orcool and its tools appear as available in the MCP panel before asking Cursor to use them.',
-      verifyCommand: 'Settings → MCP → orcool',
-      caveat: 'Cursor conformance is not yet validated; custom MCP availability depends on the version and workspace policy.',
       steps: ['Email link', 'Connect Orcool', 'Open the working repo'],
       prompts: [
         {
@@ -508,6 +465,11 @@
       ]
     }
   };
+  // Runtime and generated static setup share one maintained source.
+  var setupClients = window.OrcoolMcpSetup && window.OrcoolMcpSetup.clients;
+  if (setupClients) Object.keys(agentAccessContent).forEach(function (name) {
+    Object.assign(agentAccessContent[name], setupClients[name]);
+  });
   var prompt = document.querySelector('[data-mission-prompt]');
   var missionPrompts = {
     'Map my category': 'Map the creative whitespace for eSIM in Japan. Show what the category repeats, what remains unclaimed and three routes worth testing.',
@@ -618,7 +580,12 @@
       } else {
         renderSurface();
       }
-      if (caveat) caveat.textContent = access.caveat;
+      if (caveat && access.caveat) caveat.textContent = access.caveat;
+      var docs = agentAccessRoot.querySelector('[data-agent-docs]');
+      if (docs && access.docs) {
+        docs.href = access.docs;
+        docs.textContent = 'Official ' + agent + ' setup guide';
+      }
       if (formLabel) formLabel.textContent = agent;
       steps.forEach(function (step, index) { step.textContent = access.steps[index] || ''; });
       agentPromptCards.forEach(function (card, index) {
