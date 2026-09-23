@@ -1,0 +1,30 @@
+.oc-contact-page{background:#f5f7ef;color:#1b201a}
+.oc-contact-page .site-header{background:#f8f7f3ec}
+.oc-contact-hero{position:relative;overflow:hidden;min-height:calc(100vh - 69px);padding:clamp(70px,8vw,120px) 0 68px;background:radial-gradient(circle at 76% 19%,#e7f77680 0,transparent 28%),linear-gradient(135deg,#f5f7ef,#e9f2ec)}
+.oc-contact-hero:before{content:"";position:absolute;right:-110px;top:220px;width:380px;height:380px;border:1px solid #9abbc4;border-radius:50%;box-shadow:0 0 0 70px #387fff0c,0 0 0 140px #387fff08;pointer-events:none}
+.oc-contact-hero>.shell{position:relative;z-index:1}
+.oc-contact-hero .eyebrow{color:#b63f2d;font-size:12px}
+.oc-contact-intro{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.65fr);align-items:end;gap:clamp(28px,5vw,90px);margin:27px 0 clamp(44px,6vw,80px)}
+.oc-contact-intro h1{max-width:890px;margin:0;font-size:clamp(60px,7.5vw,112px);line-height:.91;letter-spacing:-.075em}
+.oc-contact-intro h1 em{color:#e74a32;font-style:normal}
+.oc-contact-intro>p{max-width:350px;margin:0 0 9px;color:#475347;font-size:clamp(18px,1.8vw,23px);line-height:1.45}
+.oc-contact-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr);gap:16px}
+.oc-contact-email-card,.oc-contact-place{border:1px solid #27372e;border-radius:13px;box-shadow:7px 7px 0 #24473425}
+.oc-contact-email-card{display:flex;flex-direction:column;min-height:404px;padding:clamp(24px,3.6vw,46px);background:#1b2d29;color:#f7fbef}
+.oc-contact-number{display:block;font:800 12px var(--mono);letter-spacing:.08em}
+.oc-contact-email-card .oc-contact-number{color:#dcef74}
+.oc-contact-email-card>div{margin:auto 0 26px}.oc-contact-email-card h2{max-width:570px;margin:0 0 13px;font-size:clamp(43px,4.6vw,68px);line-height:.98}.oc-contact-email-card p{max-width:520px;margin:0;color:#d2dfd4;font-size:18px;line-height:1.5}
+.oc-contact-email-card>a{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:19px;border-top:1px solid #9eb8a47a;color:#eff99c;font-size:clamp(23px,3.2vw,42px);font-weight:800;letter-spacing:-.045em;text-decoration:none;overflow-wrap:anywhere}
+.oc-contact-email-card>a:hover{color:#fff}.oc-contact-email-card>a:focus-visible,.oc-contact-close a:focus-visible{outline:3px solid #387fff;outline-offset:4px}
+.oc-contact-email-card>a span{flex:none;font-size:42px;font-weight:400}
+.oc-contact-place-stack{display:grid;grid-template-rows:1fr 1fr;gap:16px}
+.oc-contact-place{padding:clamp(22px,2.6vw,31px);background:#fffdf7}
+.oc-contact-sf{background:#e7f177}
+.oc-contact-place h2{margin:24px 0 7px;font-size:clamp(30px,3.3vw,46px);line-height:1;letter-spacing:-.05em}
+.oc-contact-place p,.oc-contact-place address{margin:0;color:#37483b;font-size:18px;font-style:normal;line-height:1.4}
+.oc-contact-place small{display:block;margin-top:13px;color:#4c604f;font-size:13px;line-height:1.35}
+.oc-contact-registered h2{margin:16px 0 7px;font-size:34px}.oc-contact-registered address{font-size:16px}
+.oc-contact-close{display:flex;align-items:center;justify-content:space-between;gap:25px;margin-top:43px;padding-top:17px;border-top:1px solid #a2b8a7;color:#435849;font:800 11px var(--mono);letter-spacing:.075em}
+.oc-contact-close a{font:750 15px var(--sans);letter-spacing:0;text-decoration:none}.oc-contact-close a:hover{text-decoration:underline;text-underline-offset:4px}
+@media(max-width:900px){.oc-contact-intro{grid-template-columns:1fr;gap:28px}.oc-contact-intro>p{max-width:690px}.oc-contact-grid{grid-template-columns:1fr}.oc-contact-email-card{min-height:345px}.oc-contact-place-stack{grid-template-columns:1fr 1fr;grid-template-rows:1fr}.oc-contact-place{min-height:245px}}
+@media(max-width:600px){.oc-contact-hero{padding:65px 0 54px}.oc-contact-intro{margin:24px 0 41px}.oc-contact-intro h1{font-size:clamp(58px,15vw,82px)}.oc-contact-intro>p{font-size:18px}.oc-contact-email-card{min-height:330px;padding:24px}.oc-contact-email-card h2{font-size:45px}.oc-contact-email-card p{font-size:16px}.oc-contact-email-card>a{font-size:24px}.oc-contact-email-card>a span{font-size:30px}.oc-contact-place-stack{grid-template-columns:1fr}.oc-contact-place{min-height:0;padding:25px}.oc-contact-place h2{margin-top:20px}.oc-contact-close{align-items:flex-start;flex-direction:column;gap:13px}}
