@@ -1,0 +1,17 @@
+Orcool: creative test readout template
+
+Parent hypothesis and version:
+Exact launched asset and campaign:
+KPI source, rule and comparison:
+Delivery conditions, exposure and window:
+Observed result and source links:
+Inferred explanation:
+Unsupported claims and confounds:
+Spend decision:
+Hypothesis verdict:
+Next change / what stays fixed:
+Owners and approval requirements:
+Budget / stop rule / review date:
+Validation and durability condition:
+
+Source: https://get.orcool.com/blog/creative-test-readout-next-decision/
